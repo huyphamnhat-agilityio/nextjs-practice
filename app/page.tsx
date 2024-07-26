@@ -7,7 +7,7 @@ import { HeroSection } from "@/containers";
 import Image from "next/image";
 
 export default function Home() {
-  const [isLightMode, setIsLightMode] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
