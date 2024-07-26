@@ -12,8 +12,7 @@ import {
 } from "@nextui-org/react";
 
 // Components
-import { RightArrowIcon } from "../common";
-import { Button } from "@/themes/components/Button";
+import { Button, RightArrowIcon } from "../common";
 
 // Constants
 import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";

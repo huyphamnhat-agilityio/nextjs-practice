@@ -1,4 +1,4 @@
-export const HamburgerIcon = ({ colorFill }: { colorFill?: string }) => (
+export const HamburgerIcon = () => (
   <svg
     width="36"
     height="34"
