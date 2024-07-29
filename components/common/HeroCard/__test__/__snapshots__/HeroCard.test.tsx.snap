@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroCard test cases should render correctly 1`] = `
+<div>
+  <div
+    class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
+    tabindex="-1"
+  >
+    <div
+      class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
+    >
+      <button
+        class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
+        type="button"
+      />
+      <h3
+        class="text-2xl font-bold text-foreground"
+      >
+        Test Title
+      </h3>
+    </div>
+    <hr
+      class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
+      role="separator"
+    />
+    <div
+      class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
+    >
+      <p
+        class="text-sm text-foreground-100"
+      >
+        Test Description
+      </p>
+    </div>
+  </div>
+</div>
+`;

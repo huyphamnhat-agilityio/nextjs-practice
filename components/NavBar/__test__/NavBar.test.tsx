@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 // Components
 import NavBar from "..";
 
-describe("NavBar", () => {
+describe("NavBar test cases", () => {
   const setup = () => render(<NavBar />);
 
   it("should render correctly", () => {

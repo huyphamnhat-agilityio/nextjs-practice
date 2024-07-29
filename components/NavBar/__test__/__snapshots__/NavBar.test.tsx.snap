@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar should render correctly 1`] = `
+exports[`NavBar test cases should render correctly 1`] = `
 <div>
   <nav
     class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 bg-transparent"
@@ -149,7 +149,7 @@ exports[`NavBar should render correctly 1`] = `
 </div>
 `;
 
-exports[`NavBar should render correctly on mobile screen 1`] = `
+exports[`NavBar test cases should render correctly on mobile screen 1`] = `
 <div>
   <nav
     class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 bg-transparent"
