@@ -3,10 +3,10 @@
 exports[`HeroSection test cases should render correctly 1`] = `
 <div>
   <section
-    class="h-screen relative"
+    class="relative"
   >
     <img
-      alt="Hero background children image"
+      alt="An image of a child holding notebooks"
       class="hidden 2xl:block absolute top-0 right-10"
       data-nimg="1"
       decoding="async"
