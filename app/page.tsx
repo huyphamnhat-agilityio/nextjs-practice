@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 // Sections
-import { HeroSection } from "@/containers";
+import { GetQualitySection, HeroSection } from "@/containers";
 
 export default function Home() {
   const [isLightMode, setIsLightMode] = useState(false);
@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <GetQualitySection />
     </main>
   );
 }

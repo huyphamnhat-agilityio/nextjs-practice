@@ -31,7 +31,9 @@ export default {
       },
       width: {
         12.5: "3.125rem",
+        23.5: "5.875rem",
         82: "20.5rem",
+        95.25: "23.8125rem",
       },
       maxWidth: {
         84.5: "21.125rem",
@@ -42,19 +44,23 @@ export default {
       },
       height: {
         0.5: "0.125rem",
+        1.75: "0.4375rem",
       },
       backgroundImage: {
         "hero-block": "url('/hero-background-block.svg')",
       },
       screens: {
+        lg: "992px",
         "2xl": "1440px",
       },
       lineHeight: {
         5.5: "1.375rem",
         7.5: "1.875rem",
+        12.5: "3.125rem",
         20: "5rem",
       },
       fontSize: {
+        "5xl": "40px",
         "6xl": "58px",
       },
     },

@@ -10,10 +10,10 @@ import { HERO_CARD_LIST } from "@/constants";
 
 const HeroSection = () => {
   return (
-    <section className="h-screen relative">
+    <section className="relative">
       <Image
         src="/hero-background-children.svg"
-        alt="Hero background children image"
+        alt="An image of a child holding notebooks"
         className="hidden 2xl:block absolute top-0 right-10"
         width={625}
         height={721}

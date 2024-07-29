@@ -1,1 +1,2 @@
-export { default as HeroSection } from "./hero-section";
+export { default as HeroSection } from "./HeroSection";
+export { default as GetQualitySection } from "./GetQualitySection";

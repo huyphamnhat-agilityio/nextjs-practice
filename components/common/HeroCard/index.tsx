@@ -27,18 +27,13 @@ const HeroCard = ({
         >
           {icon}
         </Button>
-        <h3 className="text-2xl font-bold text-foreground">
-          {/* Expert instruction */}
-          {title}
-        </h3>
+        <h3 className="text-2xl font-bold text-foreground">{title}</h3>
       </CardHeader>
+
       <Divider className="w-12.5 h-0.5 bg-primary" />
+
       <CardBody className="p-0">
-        <p className="text-sm text-foreground-100">
-          {/* The gradual accumulation of information about atomic and small-scale
-          behaviour... */}
-          {description}
-        </p>
+        <p className="text-sm text-foreground-100">{description}</p>
       </CardBody>
     </Card>
   );
