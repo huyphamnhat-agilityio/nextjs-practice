@@ -17,6 +17,7 @@ const HeroSection = () => {
         className="hidden 2xl:block absolute top-0 right-10"
         width={625}
         height={721}
+        priority
       />
       <div className="max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20">
         <div className="max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0">

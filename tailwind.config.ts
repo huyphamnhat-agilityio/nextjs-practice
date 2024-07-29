@@ -28,6 +28,7 @@ export default {
         22: "5.5rem",
         25: "6.25rem",
         26: "6.5rem",
+        50: "12.5rem",
       },
       width: {
         12.5: "3.125rem",
