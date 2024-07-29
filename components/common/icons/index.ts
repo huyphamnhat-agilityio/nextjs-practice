@@ -11,3 +11,4 @@ export * from "./LyftLogo";
 export * from "./RedditLogo";
 export * from "./StripeLogo";
 export * from "./AmazonLogo";
+export * from "./FavoriteIcon";

@@ -28,7 +28,11 @@ export default {
         22: "5.5rem",
         25: "6.25rem",
         26: "6.5rem",
+        32.5: "8.125rem",
         50: "12.5rem",
+      },
+      borderRadius: {
+        0.75: "0.1875rem",
       },
       width: {
         12.5: "3.125rem",
@@ -46,6 +50,7 @@ export default {
       height: {
         0.5: "0.125rem",
         1.75: "0.4375rem",
+        75: "18.75rem",
       },
       backgroundImage: {
         "hero-block": "url('/hero-background-block.svg')",
@@ -63,6 +68,12 @@ export default {
       fontSize: {
         "5xl": "40px",
         "6xl": "58px",
+      },
+      backgroundColor: {
+        "dark-blue": {
+          DEFAULT: "#26335D",
+        },
+        danger: "#E74040",
       },
     },
   },

@@ -8,17 +8,15 @@ import {
   StripeLogo,
 } from "@/components/common";
 
-const SponsorSection = () => {
-  return (
-    <div className="flex gap-7.5 flex-wrap max-w-5xl my-0 mx-auto mt-50 justify-evenly p-4 xl:p-0">
-      <HooliLogo />
-      <LyftLogo />
-      <PieldPiperLogo />
-      <StripeLogo />
-      <AmazonLogo />
-      <RedditLogo />
-    </div>
-  );
-};
+const SponsorSection = () => (
+  <div className="flex gap-7.5 flex-wrap max-w-5xl my-0 mx-auto mt-50 justify-evenly p-4 xl:p-0">
+    <HooliLogo />
+    <LyftLogo />
+    <PieldPiperLogo />
+    <StripeLogo />
+    <AmazonLogo />
+    <RedditLogo />
+  </div>
+);
 
 export default SponsorSection;

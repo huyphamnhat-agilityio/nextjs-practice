@@ -3,7 +3,12 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 // Sections
-import { GetQualitySection, HeroSection, SponsorSection } from "@/containers";
+import {
+  GetQualitySection,
+  HeroSection,
+  PopularCoursesSection,
+  SponsorSection,
+} from "@/containers";
 
 export default function Home() {
   const [isLightMode, setIsLightMode] = useState(false);
@@ -17,6 +22,7 @@ export default function Home() {
       <HeroSection />
       <GetQualitySection />
       <SponsorSection />
+      <PopularCoursesSection />
     </main>
   );
 }
