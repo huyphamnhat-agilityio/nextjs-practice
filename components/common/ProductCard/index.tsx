@@ -1,4 +1,9 @@
-import { Image as NextUIImage } from "@nextui-org/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Image as NextUIImage,
+} from "@nextui-org/react";
 
 // Types
 import { Product } from "@/types";
@@ -25,8 +30,8 @@ const ProductCard = ({
   sales,
 }: Product) => {
   return (
-    <div className="w-82 flex flex-col">
-      <div className="relative">
+    <Card className="w-82 flex flex-col rounded-none">
+      <CardHeader className="relative p-0">
         <NextUIImage
           src={coverImageUrl}
           alt={`An image about ${title}`}
@@ -48,8 +53,8 @@ const ProductCard = ({
             <EyeIcon />
           </Button>
         </div>
-      </div>
-      <div className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
+      </CardHeader>
+      <CardBody className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
         <div className="flex justify-between">
           <span className="text-primary text-sm/6 font-bold">{category}</span>
           <div className="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]">
@@ -82,8 +87,8 @@ const ProductCard = ({
             Learn More
           </Button>
         </div>
-      </div>
-    </div>
+      </CardBody>
+    </Card>
   );
 };
 

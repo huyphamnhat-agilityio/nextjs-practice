@@ -16,3 +16,5 @@ export * from "./EyeIcon";
 export * from "./CartIcon";
 export * from "./SolidStarIcon";
 export * from "./DownloadIcon";
+export * from "./HeartIcon";
+export * from "./CheckMarkIcon";

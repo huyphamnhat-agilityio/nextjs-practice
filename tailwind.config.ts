@@ -25,6 +25,7 @@ export default {
         5.625: "1.40625rem",
         6.25: "1.5625rem",
         8.75: "2.1875rem",
+        12.5: "3.125rem",
         21: "5.25rem",
         22: "5.5rem",
         25: "6.25rem",
@@ -42,6 +43,7 @@ export default {
         95.25: "23.8125rem",
       },
       maxWidth: {
+        82: "20.5rem",
         84.5: "21.125rem",
         xl: "37.5rem",
         "5xl": "65.5rem",
@@ -71,9 +73,8 @@ export default {
         "6xl": "58px",
       },
       backgroundColor: {
-        "dark-blue": {
-          DEFAULT: "#26335D",
-        },
+        "dark-blue": "#26335D",
+        "dull-orange": "#E77C40",
         danger: "#E74040",
       },
     },
@@ -86,25 +87,33 @@ export default {
         light: {
           colors: {
             primary: "#ff6551",
-            secondary: "#2435A1",
+            secondary: {
+              DEFAULT: "#2435A1",
+              50: "#0D4172",
+            },
             default: "#FFC652",
             foreground: {
               DEFAULT: "#252B42",
               50: "#BDBDBD",
               100: "#737373",
             },
+            success: "#2DC071",
           },
         },
         dark: {
           colors: {
             primary: "#ff6551",
-            secondary: "#2435A1",
+            secondary: {
+              DEFAULT: "#2435A1",
+              50: "#8EC2F2",
+            },
             default: "#FFC652",
             foreground: {
               DEFAULT: "#ADB5D1",
               50: "#BDBDBD",
               100: "#B3B3B3",
             },
+            success: "#2DC071",
           },
         },
       },
