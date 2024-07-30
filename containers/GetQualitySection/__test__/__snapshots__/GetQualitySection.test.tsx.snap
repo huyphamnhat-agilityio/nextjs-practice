@@ -2,81 +2,83 @@
 
 exports[`GetQualitySection test cases should render correctly 1`] = `
 <div>
-  <section
-    class="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0 max-w-5xl my-0 mx-auto mt-52"
-  >
-    <div>
-      <div
-        class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-large"
-        style="max-width: fit-content;"
-      >
-         
-        <img
-          alt="An image of a girl holding a pencil"
-          class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
-          src="/girl-holding-pencil-image.svg"
-        />
-      </div>
-    </div>
+  <section>
     <div
-      class="flex flex-col gap-8.75 w-95.25  "
+      class="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0 max-w-5xl my-0 mx-auto mt-52"
     >
-      <hr
-        class="shrink-0 border-none w-23.5 h-1.75 bg-primary"
-        role="separator"
-      />
-      <h2
-        class="text-foreground text-5xl/12.5 font-bold"
-      >
-        Get Quality Education
-      </h2>
-      <p
-        class="text-foreground-100 text-sm"
-      >
-        Problems trying to resolve the conflict between
-        <br />
-        the two major realms of Classical physics:
-        <br />
-        Newtonian mechanics
-      </p>
-      <a
-        class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 text-sm/6 font-bold"
-        href="/"
-        role="link"
-        tabindex="0"
-      >
-        Learn More
-        <svg
-          fill="none"
-          height="17"
-          viewBox="0 0 10 17"
-          width="10"
-          xmlns="http://www.w3.org/2000/svg"
+      <div>
+        <div
+          class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-large"
+          style="max-width: fit-content;"
         >
-          <g
-            clip-path="url(#clip0_2685_983)"
+           
+          <img
+            alt="An image of a girl holding a pencil"
+            class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
+            src="/girl-holding-pencil-image.svg"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-8.75 w-95.25  "
+      >
+        <hr
+          class="shrink-0 border-none w-23.5 h-1.75 bg-primary"
+          role="separator"
+        />
+        <h2
+          class="text-foreground text-5xl/12.5 font-bold"
+        >
+          Get Quality Education
+        </h2>
+        <p
+          class="text-foreground-100 text-sm"
+        >
+          Problems trying to resolve the conflict between
+          <br />
+          the two major realms of Classical physics:
+          <br />
+          Newtonian mechanics
+        </p>
+        <a
+          class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 text-sm/6 font-bold"
+          href="/"
+          role="link"
+          tabindex="0"
+        >
+          Learn More
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              clip-rule="evenodd"
-              d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
-              fill="currentColor"
-              fill-rule="evenodd"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="clip0_2685_983"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <rect
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
                 fill="currentColor"
-                height="16"
-                transform="translate(0.5 0.826172)"
-                width="9"
+                fill-rule="evenodd"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </a>
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
+              >
+                <rect
+                  fill="currentColor"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 </div>

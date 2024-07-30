@@ -2,324 +2,326 @@
 
 exports[`HeroSection test cases should render correctly 1`] = `
 <div>
-  <section
-    class="relative"
-  >
-    <img
-      alt="An image of a child holding notebooks"
-      class="hidden 2xl:block absolute top-0 right-10"
-      data-nimg="1"
-      decoding="async"
-      fetchpriority="high"
-      height="721"
-      src="/hero-background-children.svg"
-      style="color: transparent;"
-      width="625"
-    />
+  <section>
     <div
-      class="max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20"
+      class="relative"
     >
+      <img
+        alt="An image of a child holding notebooks"
+        class="hidden 2xl:block absolute top-0 right-10"
+        data-nimg="1"
+        decoding="async"
+        fetchpriority="high"
+        height="721"
+        src="/hero-background-children.svg"
+        style="color: transparent;"
+        width="625"
+      />
       <div
-        class="max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0"
-      >
-        <h5
-          class="max text-base font-bold text-primary"
-        >
-          For Better Future
-        </h5>
-        <h1
-          class="text-6xl/20 font-bold uppercase text-foreground"
-        >
-          High Quality Course
-        </h1>
-        <p
-          class="text-xl/7.5 text-foreground-100 max-w-84.5 mx-auto my-0 2xl:m-0 2xl:max-w-84.5 font-normal"
-        >
-          Every day brings with it a fresh set of learning possibilities.
-        </p>
-        <div
-          class="flex gap-2.5 justify-center 2xl:justify-start flex-wrap"
-        >
-          <button
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-24 text-medium gap-3 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-10 py-3.75 w-auto h-auto rounded-[5px] text-white"
-            type="button"
-          >
-            Get Quote Now
-          </button>
-          <button
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium min-w-24 text-medium gap-3 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-10 py-3.75 w-auto h-auto rounded-[5px] hover:bg-primary hover:bg-opacity-25"
-            type="button"
-          >
-            Learn More
-          </button>
-        </div>
-      </div>
-      <div
-        class="flex flex-wrap gap-7.5 justify-center"
+        class="max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20"
       >
         <div
-          class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
-          tabindex="-1"
+          class="max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0"
         >
+          <h5
+            class="max text-base font-bold text-primary"
+          >
+            For Better Future
+          </h5>
+          <h1
+            class="text-6xl/20 font-bold uppercase text-foreground"
+          >
+            High Quality Course
+          </h1>
+          <p
+            class="text-xl/7.5 text-foreground-100 max-w-84.5 mx-auto my-0 2xl:m-0 2xl:max-w-84.5 font-normal"
+          >
+            Every day brings with it a fresh set of learning possibilities.
+          </p>
           <div
-            class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
+            class="flex gap-2.5 justify-center 2xl:justify-start flex-wrap"
           >
             <button
-              class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
+              class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-24 text-medium gap-3 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-10 py-3.75 w-auto h-auto rounded-[5px] text-white"
               type="button"
             >
-              <svg
-                fill="none"
-                height="32"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  clip-path="url(#clip0_2696_360)"
-                  id="012-blackboards"
-                >
-                  <path
-                    d="M1.71387 19.9999C1.71387 20.3155 1.96973 20.5714 2.2853 20.5714H29.7139C30.0294 20.5714 30.2853 20.3155 30.2853 19.9999V2.28564H1.71387V19.9999Z"
-                    fill="currentColor"
-                    id="Vector"
-                  />
-                  <path
-                    d="M31.4286 0H0.571429C0.255859 0 0 0.255859 0 0.571429C0 0.886998 0.255859 1.14286 0.571429 1.14286H31.4286C31.7441 1.14286 32 0.886998 32 0.571429C32 0.255859 31.7441 0 31.4286 0Z"
-                    fill="currentColor"
-                    id="Vector_2"
-                  />
-                  <path
-                    d="M20.571 29.7144H16.571V22.8572H17.1424C17.458 22.8572 17.7139 22.6014 17.7139 22.2858V21.7144H14.2853V22.2858C14.2853 22.6014 14.5412 22.8572 14.8567 22.8572H15.4282V29.7144H11.4282C10.4814 29.7144 9.71387 30.4819 9.71387 31.4286V32.0001H22.2853V31.4286C22.2853 30.4819 21.5177 29.7144 20.571 29.7144Z"
-                    fill="currentColor"
-                    id="Vector_3"
-                  />
-                </g>
-                <defs>
-                  <clippath
-                    id="clip0_2696_360"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="32"
-                      width="32"
-                    />
-                  </clippath>
-                </defs>
-              </svg>
+              Get Quote Now
             </button>
-            <h3
-              class="text-2xl font-bold text-foreground"
+            <button
+              class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium min-w-24 text-medium gap-3 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-10 py-3.75 w-auto h-auto rounded-[5px] hover:bg-primary hover:bg-opacity-25"
+              type="button"
             >
-              Expert instruction
-            </h3>
-          </div>
-          <hr
-            class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
-            role="separator"
-          />
-          <div
-            class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
-          >
-            <p
-              class="text-sm text-foreground-100"
-            >
-              The gradual accumulation of information about atomic and small-scale behaviour...
-            </p>
+              Learn More
+            </button>
           </div>
         </div>
         <div
-          class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
-          tabindex="-1"
+          class="flex flex-wrap gap-7.5 justify-center"
         >
           <div
-            class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
+            tabindex="-1"
           >
-            <button
-              class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-secondary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
-              type="button"
+            <div
+              class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
-              <svg
-                fill="none"
-                height="32"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
+                type="button"
               >
-                <g
-                  clip-path="url(#clip0_2696_365)"
-                >
-                  <path
-                    d="M13.5947 12.4947C13.6323 12.465 13.6716 12.4384 13.7105 12.4104C13.8096 12.339 13.9131 12.2745 14.0207 12.2172C14.0629 12.1941 14.1038 12.1711 14.1472 12.1508C15.1515 11.663 16.3506 11.8274 17.1867 12.5671C17.2308 12.6056 17.2668 12.6492 17.3085 12.6898C17.3925 12.7708 17.4716 12.8567 17.5451 12.9473C17.5868 12.9994 17.6217 13.0557 17.6576 13.1108C17.7175 13.1976 17.7726 13.2876 17.8223 13.3806C17.8544 13.4413 17.8824 13.5031 17.9099 13.5662C17.951 13.6603 17.9867 13.7569 18.0172 13.8549C18.0375 13.9208 18.0567 13.9856 18.0735 14.0523C18.0965 14.1546 18.1138 14.2578 18.1253 14.3621C18.133 14.4272 18.1426 14.4914 18.1459 14.557C18.15 14.6715 18.147 14.7859 18.1371 14.9001C18.133 14.9561 18.1336 15.0124 18.1264 15.0686C18.1036 15.2328 18.0658 15.3947 18.0139 15.552C18.0139 15.5605 18.0112 15.5684 18.0084 15.5767L19.5177 16.4481L22.3282 11.5758L6.7539 2.58203L3.94336 7.45381L13.2417 12.8213C13.3496 12.7024 13.4679 12.5932 13.5947 12.4947Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M1.1543 7.78827L5.65116 0L6.62414 0.561834L2.12728 8.3501L1.1543 7.78827Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M26.4883 17.872L27.0507 16.8979L30.9448 19.1464L30.3824 20.1205L26.4883 17.872Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M21.0586 16.0343L22.7449 13.1143L26.639 15.363L24.9527 18.283L21.0586 16.0343Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M16.6697 15.9645C16.6439 15.917 16.6113 15.8736 16.5726 15.8358C16.6612 15.7438 16.7389 15.6417 16.8037 15.5317C17.2678 14.7247 16.9936 13.6947 16.1897 13.2253C16.0741 13.1605 15.9512 13.1098 15.8238 13.0735C15.7862 13.0623 15.7475 13.0554 15.7116 13.0469C15.6191 13.0269 15.5249 13.0145 15.4305 13.0099C15.3899 13.0099 15.3501 13.0049 15.3095 13.006C15.1753 13.009 15.0419 13.028 14.912 13.0623C14.3392 13.213 13.8883 13.6551 13.7266 14.2252C13.565 14.7953 13.7165 15.4082 14.1251 15.8374C14.0867 15.8747 14.0543 15.9176 14.0285 15.9645L6.4118 31.1862C6.2732 31.4642 6.386 31.8018 6.66376 31.9407C6.94152 32.0793 7.27939 31.9667 7.418 31.6887L14.7844 16.9504V31.4376C14.7844 31.748 15.0361 31.9997 15.3465 31.9997C15.6569 31.9997 15.9086 31.748 15.9086 31.4376V16.9548L23.2723 31.6887C23.4112 31.9667 23.7488 32.0793 24.0268 31.9407C24.3046 31.8018 24.4174 31.4642 24.2785 31.1862L16.6697 15.9645Z"
-                    fill="currentColor"
-                  />
-                </g>
-                <defs>
-                  <clippath
-                    id="clip0_2696_365"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="32"
-                      width="32"
-                    />
-                  </clippath>
-                </defs>
-              </svg>
-            </button>
-            <h3
-              class="text-2xl font-bold text-foreground"
-            >
-              Training Courses
-            </h3>
-          </div>
-          <hr
-            class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
-            role="separator"
-          />
-          <div
-            class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
-          >
-            <p
-              class="text-sm text-foreground-100"
-            >
-              The gradual accumulation of information about atomic and small-scale behaviour...
-            </p>
-          </div>
-        </div>
-        <div
-          class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
-          tabindex="-1"
-        >
-          <div
-            class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
-          >
-            <button
-              class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-default data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
-              type="button"
-            >
-              <svg
-                fill="none"
-                height="32"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  clip-path="url(#clip0_2696_371)"
+                <svg
+                  fill="none"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <g
-                    clip-path="url(#clip1_2696_371)"
+                    clip-path="url(#clip0_2696_360)"
+                    id="012-blackboards"
                   >
-                    <g
-                      clip-path="url(#clip2_2696_371)"
-                    >
-                      <path
-                        d="M32 21.8742C32 20.6536 31.2139 19.6227 30.125 19.2344V9.52228L32 8.74922L16 2.32959L0 8.74922L16 15.1689L28.25 10.2752V19.2344C27.1611 19.6227 26.375 20.6536 26.375 21.8742C26.375 22.9917 27.035 23.951 27.9813 24.4043L26.4236 29.0776L28.2015 29.6708L29.1875 26.7128L30.1735 29.6708L31.9514 29.0776L30.3937 24.4043C31.34 23.951 32 22.9918 32 21.8742Z"
-                        fill="currentColor"
-                      />
-                    </g>
+                    <path
+                      d="M1.71387 19.9999C1.71387 20.3155 1.96973 20.5714 2.2853 20.5714H29.7139C30.0294 20.5714 30.2853 20.3155 30.2853 19.9999V2.28564H1.71387V19.9999Z"
+                      fill="currentColor"
+                      id="Vector"
+                    />
+                    <path
+                      d="M31.4286 0H0.571429C0.255859 0 0 0.255859 0 0.571429C0 0.886998 0.255859 1.14286 0.571429 1.14286H31.4286C31.7441 1.14286 32 0.886998 32 0.571429C32 0.255859 31.7441 0 31.4286 0Z"
+                      fill="currentColor"
+                      id="Vector_2"
+                    />
+                    <path
+                      d="M20.571 29.7144H16.571V22.8572H17.1424C17.458 22.8572 17.7139 22.6014 17.7139 22.2858V21.7144H14.2853V22.2858C14.2853 22.6014 14.5412 22.8572 14.8567 22.8572H15.4282V29.7144H11.4282C10.4814 29.7144 9.71387 30.4819 9.71387 31.4286V32.0001H22.2853V31.4286C22.2853 30.4819 21.5177 29.7144 20.571 29.7144Z"
+                      fill="currentColor"
+                      id="Vector_3"
+                    />
                   </g>
-                  <g
-                    clip-path="url(#clip3_2696_371)"
-                  >
-                    <g
-                      clip-path="url(#clip4_2696_371)"
+                  <defs>
+                    <clippath
+                      id="clip0_2696_360"
                     >
-                      <path
-                        d="M16 17.1893L7.5625 13.8013V16.249C7.5625 18.9215 11.1898 20.9365 16 20.9365C20.8102 20.9365 24.4375 18.9215 24.4375 16.249V13.8013L16 17.1893Z"
+                      <rect
                         fill="currentColor"
+                        height="32"
+                        width="32"
                       />
-                    </g>
-                  </g>
-                </g>
-                <defs>
-                  <clippath
-                    id="clip0_2696_371"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="32"
-                      width="32"
-                    />
-                  </clippath>
-                  <clippath
-                    id="clip1_2696_371"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="27.3413"
-                      transform="translate(0 2.32959)"
-                      width="32"
-                    />
-                  </clippath>
-                  <clippath
-                    id="clip2_2696_371"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="27.3413"
-                      transform="translate(0 2.32959)"
-                      width="32"
-                    />
-                  </clippath>
-                  <clippath
-                    id="clip3_2696_371"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="7.13525"
-                      transform="translate(7.5625 13.8013)"
-                      width="16.875"
-                    />
-                  </clippath>
-                  <clippath
-                    id="clip4_2696_371"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="7.13525"
-                      transform="translate(7.5625 13.8013)"
-                      width="16.875"
-                    />
-                  </clippath>
-                </defs>
-              </svg>
-            </button>
-            <h3
-              class="text-2xl font-bold text-foreground"
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+              <h3
+                class="text-2xl font-bold text-foreground"
+              >
+                Expert instruction
+              </h3>
+            </div>
+            <hr
+              class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
+              role="separator"
+            />
+            <div
+              class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
             >
-              Lifetime access
-            </h3>
+              <p
+                class="text-sm text-foreground-100"
+              >
+                The gradual accumulation of information about atomic and small-scale behaviour...
+              </p>
+            </div>
           </div>
-          <hr
-            class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
-            role="separator"
-          />
           <div
-            class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
+            tabindex="-1"
           >
-            <p
-              class="text-sm text-foreground-100"
+            <div
+              class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
-              The gradual accumulation of information about atomic and small-scale behaviour...
-            </p>
+              <button
+                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-secondary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#clip0_2696_365)"
+                  >
+                    <path
+                      d="M13.5947 12.4947C13.6323 12.465 13.6716 12.4384 13.7105 12.4104C13.8096 12.339 13.9131 12.2745 14.0207 12.2172C14.0629 12.1941 14.1038 12.1711 14.1472 12.1508C15.1515 11.663 16.3506 11.8274 17.1867 12.5671C17.2308 12.6056 17.2668 12.6492 17.3085 12.6898C17.3925 12.7708 17.4716 12.8567 17.5451 12.9473C17.5868 12.9994 17.6217 13.0557 17.6576 13.1108C17.7175 13.1976 17.7726 13.2876 17.8223 13.3806C17.8544 13.4413 17.8824 13.5031 17.9099 13.5662C17.951 13.6603 17.9867 13.7569 18.0172 13.8549C18.0375 13.9208 18.0567 13.9856 18.0735 14.0523C18.0965 14.1546 18.1138 14.2578 18.1253 14.3621C18.133 14.4272 18.1426 14.4914 18.1459 14.557C18.15 14.6715 18.147 14.7859 18.1371 14.9001C18.133 14.9561 18.1336 15.0124 18.1264 15.0686C18.1036 15.2328 18.0658 15.3947 18.0139 15.552C18.0139 15.5605 18.0112 15.5684 18.0084 15.5767L19.5177 16.4481L22.3282 11.5758L6.7539 2.58203L3.94336 7.45381L13.2417 12.8213C13.3496 12.7024 13.4679 12.5932 13.5947 12.4947Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M1.1543 7.78827L5.65116 0L6.62414 0.561834L2.12728 8.3501L1.1543 7.78827Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M26.4883 17.872L27.0507 16.8979L30.9448 19.1464L30.3824 20.1205L26.4883 17.872Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M21.0586 16.0343L22.7449 13.1143L26.639 15.363L24.9527 18.283L21.0586 16.0343Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M16.6697 15.9645C16.6439 15.917 16.6113 15.8736 16.5726 15.8358C16.6612 15.7438 16.7389 15.6417 16.8037 15.5317C17.2678 14.7247 16.9936 13.6947 16.1897 13.2253C16.0741 13.1605 15.9512 13.1098 15.8238 13.0735C15.7862 13.0623 15.7475 13.0554 15.7116 13.0469C15.6191 13.0269 15.5249 13.0145 15.4305 13.0099C15.3899 13.0099 15.3501 13.0049 15.3095 13.006C15.1753 13.009 15.0419 13.028 14.912 13.0623C14.3392 13.213 13.8883 13.6551 13.7266 14.2252C13.565 14.7953 13.7165 15.4082 14.1251 15.8374C14.0867 15.8747 14.0543 15.9176 14.0285 15.9645L6.4118 31.1862C6.2732 31.4642 6.386 31.8018 6.66376 31.9407C6.94152 32.0793 7.27939 31.9667 7.418 31.6887L14.7844 16.9504V31.4376C14.7844 31.748 15.0361 31.9997 15.3465 31.9997C15.6569 31.9997 15.9086 31.748 15.9086 31.4376V16.9548L23.2723 31.6887C23.4112 31.9667 23.7488 32.0793 24.0268 31.9407C24.3046 31.8018 24.4174 31.4642 24.2785 31.1862L16.6697 15.9645Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="clip0_2696_365"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="32"
+                        width="32"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+              <h3
+                class="text-2xl font-bold text-foreground"
+              >
+                Training Courses
+              </h3>
+            </div>
+            <hr
+              class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
+              role="separator"
+            />
+            <div
+              class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
+            >
+              <p
+                class="text-sm text-foreground-100"
+              >
+                The gradual accumulation of information about atomic and small-scale behaviour...
+              </p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none"
+            tabindex="-1"
+          >
+            <div
+              class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
+            >
+              <button
+                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-default data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
+                type="button"
+              >
+                <svg
+                  fill="none"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#clip0_2696_371)"
+                  >
+                    <g
+                      clip-path="url(#clip1_2696_371)"
+                    >
+                      <g
+                        clip-path="url(#clip2_2696_371)"
+                      >
+                        <path
+                          d="M32 21.8742C32 20.6536 31.2139 19.6227 30.125 19.2344V9.52228L32 8.74922L16 2.32959L0 8.74922L16 15.1689L28.25 10.2752V19.2344C27.1611 19.6227 26.375 20.6536 26.375 21.8742C26.375 22.9917 27.035 23.951 27.9813 24.4043L26.4236 29.0776L28.2015 29.6708L29.1875 26.7128L30.1735 29.6708L31.9514 29.0776L30.3937 24.4043C31.34 23.951 32 22.9918 32 21.8742Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </g>
+                    <g
+                      clip-path="url(#clip3_2696_371)"
+                    >
+                      <g
+                        clip-path="url(#clip4_2696_371)"
+                      >
+                        <path
+                          d="M16 17.1893L7.5625 13.8013V16.249C7.5625 18.9215 11.1898 20.9365 16 20.9365C20.8102 20.9365 24.4375 18.9215 24.4375 16.249V13.8013L16 17.1893Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                  <defs>
+                    <clippath
+                      id="clip0_2696_371"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="32"
+                        width="32"
+                      />
+                    </clippath>
+                    <clippath
+                      id="clip1_2696_371"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="27.3413"
+                        transform="translate(0 2.32959)"
+                        width="32"
+                      />
+                    </clippath>
+                    <clippath
+                      id="clip2_2696_371"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="27.3413"
+                        transform="translate(0 2.32959)"
+                        width="32"
+                      />
+                    </clippath>
+                    <clippath
+                      id="clip3_2696_371"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="7.13525"
+                        transform="translate(7.5625 13.8013)"
+                        width="16.875"
+                      />
+                    </clippath>
+                    <clippath
+                      id="clip4_2696_371"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="7.13525"
+                        transform="translate(7.5625 13.8013)"
+                        width="16.875"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+              <h3
+                class="text-2xl font-bold text-foreground"
+              >
+                Lifetime access
+              </h3>
+            </div>
+            <hr
+              class="shrink-0 border-none w-12.5 h-0.5 bg-primary"
+              role="separator"
+            />
+            <div
+              class="relative flex w-full flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased p-0"
+            >
+              <p
+                class="text-sm text-foreground-100"
+              >
+                The gradual accumulation of information about atomic and small-scale behaviour...
+              </p>
+            </div>
           </div>
         </div>
       </div>
