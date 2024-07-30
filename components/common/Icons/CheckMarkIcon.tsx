@@ -8,7 +8,7 @@ export const CheckMarkIcon = () => (
     viewBox="0 0 16 11"
     fill="none"
   >
-    <g clip-path="url(#clip0_2685_1156)">
+    <g clipPath="url(#clip0_2685_1156)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
