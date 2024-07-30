@@ -12,10 +12,11 @@ import {
 } from "@nextui-org/react";
 
 // Components
-import { Button, RightArrowIcon } from "../common";
+import { Button } from "../common";
 
 // Constants
 import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
+import { RightArrowIcon } from "../common/Icons";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

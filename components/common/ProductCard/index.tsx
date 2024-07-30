@@ -5,7 +5,7 @@ import { Product } from "@/types";
 
 // Components
 import { Button } from "../Button";
-import { FavoriteIcon } from "@/components";
+import { FavoriteIcon } from "../Icons";
 
 const ProductCard = ({
   category,

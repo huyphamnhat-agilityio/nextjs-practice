@@ -1,7 +1,7 @@
 import { Divider, Image, Link } from "@nextui-org/react";
 
 // Components
-import { NextArrowIcon, RightArrowIcon } from "@/components";
+import { NextArrowIcon } from "@/components/common/Icons";
 
 const GetQualitySection = () => (
   <section className="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0 max-w-5xl my-0 mx-auto mt-52">

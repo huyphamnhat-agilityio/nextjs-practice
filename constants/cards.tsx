@@ -1,10 +1,10 @@
 // Components
+import { HeroCardProps } from "@/components/common/HeroCard";
 import {
   BlackBoardIcon,
   MortarboardIcon,
   TelescopeIcon,
-} from "@/components/common";
-import { HeroCardProps } from "@/components/common/HeroCard";
+} from "@/components/common/Icons";
 
 export const HERO_CARD_LIST: Array<HeroCardProps> = [
   {
