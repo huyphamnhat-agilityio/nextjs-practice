@@ -2,8 +2,10 @@ import { Image as NextUIImage } from "@nextui-org/react";
 
 // Types
 import { Product } from "@/types";
+
+// Components
 import { Button } from "../Button";
-import { FavoriteIcon } from "../Icons";
+import { FavoriteIcon } from "@/components";
 
 const ProductCard = ({
   category,
