@@ -5,7 +5,14 @@ import { Product } from "@/types";
 
 // Components
 import { Button } from "../Button";
-import { FavoriteIcon } from "../Icons";
+import {
+  CartIcon,
+  DownloadIcon,
+  EyeIcon,
+  FavoriteIcon,
+  NextArrowIcon,
+  SolidStarIcon,
+} from "../Icons";
 
 const ProductCard = ({
   category,
@@ -19,30 +26,62 @@ const ProductCard = ({
 }: Product) => {
   return (
     <div className="w-82 flex flex-col">
-      <div className=" h-75 relative">
+      <div className="relative">
         <NextUIImage
           src={coverImageUrl}
           alt={`An image about ${title}`}
+          height={300}
           isZoomed
           radius="none"
         />
         <div className="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10">
           <h6 className="text-white text-sm/6 font-bold">Sale</h6>
         </div>
-        <div className="flex gap-2.5 absolute bottom-10 left-24 z-10">
+        <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
           <Button className="bg-white" variant="action" size="tiny" isIconOnly>
             <FavoriteIcon />
           </Button>
           <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-            <FavoriteIcon />
+            <CartIcon />
           </Button>
           <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-            <FavoriteIcon />
+            <EyeIcon />
           </Button>
         </div>
       </div>
-      <div className="px-6.25 pt-6.25 pb-8.75 ">
-        <p>{category}</p>
+      <div className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
+        <div className="flex justify-between">
+          <span className="text-primary text-sm/6 font-bold">{category}</span>
+          <div className="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]">
+            <SolidStarIcon />
+            <span className="text-white text-xs">{rate}</span>
+          </div>
+        </div>
+        <h5 className="text-foreground text-base font-bold">{title}</h5>
+        <p className="text-foreground-100 text-sm">{description}</p>
+        <div className="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold">
+          <DownloadIcon />
+          {sales} Sales
+        </div>
+        <div className="py-1.25 px-0.75 flex gap-1.25">
+          <span className="text-foreground-50 text-base font-bold">
+            ${originalPrice}
+          </span>
+          <span className="text-secondary text-base font-bold">
+            ${salePrice}
+          </span>
+        </div>
+        <div>
+          <Button
+            color="primary"
+            variant="bordered"
+            size="xs"
+            endContent={<NextArrowIcon />}
+            className="font-bold"
+          >
+            Learn More
+          </Button>
+        </div>
       </div>
     </div>
   );

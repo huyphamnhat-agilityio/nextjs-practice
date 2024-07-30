@@ -13,10 +13,10 @@ import {
 
 // Components
 import { Button } from "../common";
+import { RightArrowIcon } from "../common/Icons";
 
 // Constants
 import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
-import { RightArrowIcon } from "../common/Icons";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

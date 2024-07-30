@@ -14,6 +14,7 @@ export default {
     extend: {
       spacing: {
         0: "0rem",
+        0.75: "0.1875rem",
         1.25: "0.3125rem",
         2.5: "0.625rem",
         3.75: "0.9375rem",
@@ -89,6 +90,7 @@ export default {
             default: "#FFC652",
             foreground: {
               DEFAULT: "#252B42",
+              50: "#BDBDBD",
               100: "#737373",
             },
           },
@@ -100,6 +102,7 @@ export default {
             default: "#FFC652",
             foreground: {
               DEFAULT: "#ADB5D1",
+              50: "#BDBDBD",
               100: "#B3B3B3",
             },
           },

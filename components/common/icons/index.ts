@@ -12,3 +12,7 @@ export * from "./RedditLogo";
 export * from "./StripeLogo";
 export * from "./AmazonLogo";
 export * from "./FavoriteIcon";
+export * from "./EyeIcon";
+export * from "./CartIcon";
+export * from "./SolidStarIcon";
+export * from "./DownloadIcon";
