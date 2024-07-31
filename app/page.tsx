@@ -1,4 +1,3 @@
-"use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -11,20 +10,28 @@ import {
   SponsorSection,
 } from "@/containers";
 
-export default function Home() {
-  const [isLightMode, setIsLightMode] = useState(true);
-  const { theme, setTheme } = useTheme();
+export default function Home({
+  searchParams,
+}: {
+  searchParams?: {
+    page?: string;
+  };
+}) {
+  // const [isLightMode, setIsLightMode] = useState(true);
+  // const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setTheme(isLightMode ? "light" : "dark");
-  }, [isLightMode, setTheme]);
+  const currentPage = Number(searchParams?.page) || 1;
+
+  // useEffect(() => {
+  //   setTheme(isLightMode ? "light" : "dark");
+  // }, [isLightMode, setTheme]);
 
   return (
     <main>
       <HeroSection />
       <GetQualitySection />
       <SponsorSection />
-      <PopularCoursesSection />
+      <PopularCoursesSection currentPage={currentPage} />
       <PaymentSection />
     </main>
   );

@@ -1,7 +1,18 @@
+// Components
 import { Pagination, ProductCard } from "@/components";
-import { MOCK_PRODUCTS } from "@/mocks/product";
 
-const PopularCoursesSection = () => {
+// Constants
+import { LIMIT } from "@/constants";
+
+// Services
+import { getProducts } from "@/services";
+
+const PopularCoursesSection = async ({
+  currentPage,
+}: {
+  currentPage: number;
+}) => {
+  const products = await getProducts(currentPage, LIMIT);
   return (
     <section>
       <div className="bg-dark-blue mt-32.5">
@@ -20,16 +31,12 @@ const PopularCoursesSection = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly">
-            {MOCK_PRODUCTS.map((product) => (
+            {products.data.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
 
-          <Pagination
-            total={10}
-            initialPage={1}
-            className="flex justify-center"
-          />
+          <Pagination total={products.totalPages} initialPage={products.page} />
         </div>
       </div>
     </section>

@@ -35,6 +35,7 @@ const ProductCard = ({
         <NextUIImage
           src={coverImageUrl}
           alt={`An image about ${title}`}
+          width={328}
           height={300}
           isZoomed
           radius="none"
