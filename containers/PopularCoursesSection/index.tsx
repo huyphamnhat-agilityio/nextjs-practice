@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components";
+import { Pagination, ProductCard } from "@/components";
 import { MOCK_PRODUCTS } from "@/mocks/product";
 
 const PopularCoursesSection = () => {
@@ -24,6 +24,12 @@ const PopularCoursesSection = () => {
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
+
+          <Pagination
+            total={10}
+            initialPage={1}
+            className="flex justify-center"
+          />
         </div>
       </div>
     </section>
