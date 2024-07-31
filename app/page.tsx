@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 // Sections
 import {
+  FeedbackSection,
   GetQualitySection,
   HeroSection,
   PaymentSection,
@@ -33,6 +34,7 @@ export default function Home({
       <SponsorSection />
       <PopularCoursesSection currentPage={currentPage} />
       <PaymentSection />
+      <FeedbackSection />
     </main>
   );
 }

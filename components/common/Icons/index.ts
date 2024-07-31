@@ -18,3 +18,4 @@ export * from "./SolidStarIcon";
 export * from "./DownloadIcon";
 export * from "./HeartIcon";
 export * from "./CheckMarkIcon";
+export * from "./OutlinedStarIcon";

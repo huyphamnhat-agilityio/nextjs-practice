@@ -45,6 +45,7 @@ export default {
       maxWidth: {
         82: "20.5rem",
         84.5: "21.125rem",
+        87: "21.75rem",
         xl: "37.5rem",
         "5xl": "65.5rem",
         "6xl": "67.5rem",
