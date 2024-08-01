@@ -9,6 +9,7 @@ import { resolvedComponent } from "@/utils";
 // Mocks
 import { MOCK_PRODUCTS, mockFetch } from "@/mocks";
 
+// reference: https://github.com/vercel/next.js/discussions/53499
 jest.mock("next/navigation", () => ({
   __esModule: true,
   useRouter() {

@@ -35,6 +35,7 @@ export default {
       },
       borderRadius: {
         0.75: "0.1875rem",
+        2.5: "0.625rem",
       },
       width: {
         12.5: "3.125rem",

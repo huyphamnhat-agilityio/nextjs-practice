@@ -3,14 +3,14 @@ import Image from "next/image";
 // Components
 import { Button, HeroCard } from "@/components";
 // Constants
-import { HERO_CARD_LIST } from "@/constants";
+import { HERO_CARD_LIST, IMAGES } from "@/constants";
 
 const HeroSection = () => (
   <section>
     <div className="relative">
       <Image
-        src="/hero-background-children.svg"
-        alt="An image of a child holding notebooks"
+        src={IMAGES.HERO_BACKGROUND_THUMBNAIL.src}
+        alt={IMAGES.HERO_BACKGROUND_THUMBNAIL.alt}
         className="hidden 2xl:block absolute top-0 right-10"
         width={625}
         height={721}

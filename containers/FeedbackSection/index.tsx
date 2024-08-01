@@ -1,5 +1,6 @@
 // Components
 import { FeedbackCard } from "@/components";
+import { MOCK_AVATARS } from "@/mocks/avatar";
 
 const FeedbackSection = () => {
   return (
@@ -11,12 +12,15 @@ const FeedbackSection = () => {
             Approdable Packages
           </h2>
           <p className="text-foreground-100 text-sm">
-            Problems trying to resolve the conflict between the two major realms
-            of Classical physics: Newtonian mechanics
+            Problems trying to resolve the conflict between
+            <br />
+            the two major realms of Classical physics: Newtonian mechanics
           </p>
         </div>
-        <div className="flex flex-wrap gap-7.5">
-          <FeedbackCard />
+        <div className="flex flex-wrap gap-7.5 justify-evenly">
+          <FeedbackCard avatar={MOCK_AVATARS[0]} />
+          <FeedbackCard avatar={MOCK_AVATARS[1]} />
+          <FeedbackCard avatar={MOCK_AVATARS[2]} />
         </div>
       </div>
     </section>

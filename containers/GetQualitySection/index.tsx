@@ -3,13 +3,16 @@ import { Divider, Image, Link } from "@nextui-org/react";
 // Components
 import { NextArrowIcon } from "@/components/common/Icons";
 
+// Constants
+import { IMAGES } from "@/constants";
+
 const GetQualitySection = () => (
   <section>
     <div className="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-0 max-w-5xl my-0 mx-auto mt-52">
       <div>
         <Image
-          src="/girl-holding-pencil-image.svg"
-          alt="An image of a girl holding a pencil"
+          src={IMAGES.GET_QUALITY_SECTION_THUMBNAIL.src}
+          alt={IMAGES.GET_QUALITY_SECTION_THUMBNAIL.alt}
         />
       </div>
 
