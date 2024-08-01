@@ -77,7 +77,7 @@ const ProductCard = ({
             ${salePrice}
           </span>
         </div>
-        <div>
+        <div className="mt-auto">
           <Button
             color="primary"
             variant="bordered"

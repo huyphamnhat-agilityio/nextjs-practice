@@ -1,11 +1,17 @@
 // Components
-import { Pagination, ProductCard } from "@/components";
+import {
+  Pagination,
+  ProductCard,
+  ProductList,
+  ProductListSkeleton,
+} from "@/components";
 
 // Constants
 import { LIMIT } from "@/constants";
 
 // Services
 import { getProducts } from "@/services";
+import { Suspense } from "react";
 
 const PopularCoursesSection = async ({
   currentPage,
@@ -13,6 +19,7 @@ const PopularCoursesSection = async ({
   currentPage: number;
 }) => {
   const products = await getProducts(currentPage, LIMIT);
+
   return (
     <section>
       <div className="bg-dark-blue mt-32.5">
@@ -30,11 +37,10 @@ const PopularCoursesSection = async ({
               the two major realms of Classical physics: Newtonian mechanics
             </p>
           </div>
-          <div className="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly">
-            {products.data.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
+
+          <Suspense fallback={<ProductListSkeleton />}>
+            <ProductList currentPage={currentPage} />
+          </Suspense>
 
           <Pagination total={products.totalPages} initialPage={products.page} />
         </div>
