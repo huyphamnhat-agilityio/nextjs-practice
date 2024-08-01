@@ -65,9 +65,8 @@ exports[`HeroSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
-                type="button"
+              <div
+                class="text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-primary"
               >
                 <svg
                   fill="none"
@@ -108,7 +107,7 @@ exports[`HeroSection test cases should render correctly 1`] = `
                     </clippath>
                   </defs>
                 </svg>
-              </button>
+              </div>
               <h3
                 class="text-2xl font-bold text-foreground"
               >
@@ -136,9 +135,8 @@ exports[`HeroSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-secondary data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
-                type="button"
+              <div
+                class="text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-secondary"
               >
                 <svg
                   fill="none"
@@ -183,7 +181,7 @@ exports[`HeroSection test cases should render correctly 1`] = `
                     </clippath>
                   </defs>
                 </svg>
-              </button>
+              </div>
               <h3
                 class="text-2xl font-bold text-foreground"
               >
@@ -211,9 +209,8 @@ exports[`HeroSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-default data-[hover=true]:opacity-hover px-4.75 py-5.5 w-auto h-auto rounded-[10px] text-white"
-                type="button"
+              <div
+                class="text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-default"
               >
                 <svg
                   fill="none"
@@ -302,7 +299,7 @@ exports[`HeroSection test cases should render correctly 1`] = `
                     </clippath>
                   </defs>
                 </svg>
-              </button>
+              </div>
               <h3
                 class="text-2xl font-bold text-foreground"
               >
