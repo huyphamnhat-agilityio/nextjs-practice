@@ -20,7 +20,7 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col gap-8.75 w-95.25  "
+        class="flex flex-col gap-8.75 w-95.25 text-center lg:text-start items-center lg:items-start"
       >
         <hr
           class="shrink-0 border-none w-23.5 h-1.75 bg-primary"
