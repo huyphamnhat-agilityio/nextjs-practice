@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 // Components
-import ProductCard from ".";
+import ProductCardSkeleton from ".";
 
 // Mocks
 import { MOCK_PRODUCTS } from "@/mocks/product";
 
-const meta: Meta<typeof ProductCard> = {
-  title: "Components/common/ProductCard",
-  component: ProductCard,
+const meta: Meta<typeof ProductCardSkeleton> = {
+  title: "Components/common/ProductCardSkeleton",
+  component: ProductCardSkeleton,
   argTypes: {
     id: {
       description: "Product ID",
@@ -47,8 +47,8 @@ const meta: Meta<typeof ProductCard> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ProductCard>;
+type Story = StoryObj<typeof ProductCardSkeleton>;
 
 export const Primary: Story = {
-  args: { id: "1", ...MOCK_PRODUCTS[0] },
+  args: { ...MOCK_PRODUCTS[0] },
 };
