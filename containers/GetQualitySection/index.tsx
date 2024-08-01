@@ -16,7 +16,7 @@ const GetQualitySection = () => (
         />
       </div>
 
-      <div className="flex flex-col gap-8.75 w-95.25  ">
+      <div className="flex flex-col gap-8.75 w-95.25 text-center lg:text-start items-center lg:items-start">
         <Divider className="w-23.5 h-1.75 bg-primary" />
         <h2 className="text-foreground text-5xl/12.5 font-bold">
           Get Quality Education

@@ -9,6 +9,7 @@ import {
   PaymentSection,
   PopularCoursesSection,
   SponsorSection,
+  SubscribeSection,
 } from "@/containers";
 
 export default function Home({
@@ -35,6 +36,7 @@ export default function Home({
       <PopularCoursesSection currentPage={currentPage} />
       <PaymentSection />
       <FeedbackSection />
+      <SubscribeSection />
     </main>
   );
 }

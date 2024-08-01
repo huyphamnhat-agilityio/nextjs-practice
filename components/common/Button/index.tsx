@@ -8,9 +8,9 @@ export const Button = extendVariants(NextUIButton, {
       tiny: "p-2.5 min-w-0 w-auto h-auto rounded-full",
       xs: "px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px]",
       sm: "px-5.625 py-3.75 w-auto h-auto",
-      md: "px-6.25 py-3.75 w-auto h-auto rounded-[5px]",
-      lg: "px-10 py-3.75 w-auto h-auto rounded-[5px]",
-      icon: "px-4.75 py-5.5 w-auto h-auto rounded-[10px]",
+      md: "px-6.25 py-3.75 w-auto h-auto rounded-1.25",
+      lg: "px-10 py-3.75 w-auto h-auto rounded-1.25",
+      icon: "px-4.75 py-5.5 w-auto h-auto rounded-2.5",
     },
     variant: {
       ghost: "hover:bg-opacity-25",
