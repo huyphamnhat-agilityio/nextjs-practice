@@ -4,7 +4,10 @@
 name: "Chromatic Publish"
 
 # Event for the workflow
-on: push
+on:
+  push:
+    branches:
+      - nextjs-practice
 
 # List of jobs
 jobs:
@@ -13,13 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: 18
-          cache: "pnpm"
+          version: 9
+
       - run: pnpm
       #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
