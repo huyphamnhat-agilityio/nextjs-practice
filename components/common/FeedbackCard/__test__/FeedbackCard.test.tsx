@@ -6,7 +6,7 @@ import { FeedbackCard, FeedbackCardProps } from "..";
 // Mocks
 import { MOCK_AVATARS } from "@/mocks/avatar";
 
-describe("PaymentCard test cases", () => {
+describe("FeedbackCard test cases", () => {
   const setup = (props: FeedbackCardProps) =>
     render(<FeedbackCard {...props} />);
 
