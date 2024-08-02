@@ -17,18 +17,14 @@ exports[`ProductList test cases should render correctly 1`] = `
           style="max-width: 328px;"
         >
            
-          <div
-            class="relative overflow-hidden rounded-inherit rounded-none"
-          >
-            <img
-              alt="An image about Video in Live Action"
-              class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-              height="300"
-              src="/product-cover-1.png"
-              style="height: 300px;"
-              width="328"
-            />
-          </div>
+          <img
+            alt="An image about Video in Live Action"
+            class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+            height="300"
+            src="/product-cover-1.png"
+            style="height: 300px;"
+            width="328"
+          />
         </div>
         <div
           class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
@@ -268,18 +264,14 @@ exports[`ProductList test cases should render correctly 1`] = `
           style="max-width: 328px;"
         >
            
-          <div
-            class="relative overflow-hidden rounded-inherit rounded-none"
-          >
-            <img
-              alt="An image about Every Client Matters"
-              class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-              height="300"
-              src="/product-cover-2.png"
-              style="height: 300px;"
-              width="328"
-            />
-          </div>
+          <img
+            alt="An image about Every Client Matters"
+            class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+            height="300"
+            src="/product-cover-2.png"
+            style="height: 300px;"
+            width="328"
+          />
         </div>
         <div
           class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
@@ -519,18 +511,14 @@ exports[`ProductList test cases should render correctly 1`] = `
           style="max-width: 328px;"
         >
            
-          <div
-            class="relative overflow-hidden rounded-inherit rounded-none"
-          >
-            <img
-              alt="An image about Get Quality Education"
-              class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-              height="300"
-              src="/product-cover-3.png"
-              style="height: 300px;"
-              width="328"
-            />
-          </div>
+          <img
+            alt="An image about Get Quality Education"
+            class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+            height="300"
+            src="/product-cover-3.png"
+            style="height: 300px;"
+            width="328"
+          />
         </div>
         <div
           class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
