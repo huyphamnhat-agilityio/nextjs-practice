@@ -16,8 +16,8 @@ const HeroSection = () => (
         height={721}
         priority
       />
-      <div className="max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20">
-        <div className="max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0">
+      <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20">
+        <div className="md:max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0">
           <h5 className="max text-base font-bold text-primary">
             For Better Future
           </h5>
@@ -28,10 +28,10 @@ const HeroSection = () => (
             Every day brings with it a fresh set of learning possibilities.
           </p>
           <div className="flex gap-2.5 justify-center 2xl:justify-start flex-wrap">
-            <Button size="lg" className="text-white">
+            <Button size="lg" className="text-white w-full sm:w-fit ">
               Get Quote Now
             </Button>
-            <Button size="lg" variant="bordered">
+            <Button size="lg" variant="bordered" className="w-full sm:w-fit">
               Learn More
             </Button>
           </div>

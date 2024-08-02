@@ -6,7 +6,7 @@ import { Button } from "@/components";
 const SubscribeSection = () => {
   return (
     <section>
-      <div className="max-w-lg md:max-w-4xl lg:max-w-5xl my-0 mx-auto py-40 flex flex-col gap-20">
+      <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto my-0 py-40 flex flex-col gap-20 justify-center">
         <div className="flex flex-col gap-2.5 text-center">
           <h6 className="text-primary text-sm/6 font-bold">Newsletter</h6>
           <h3 className="text-foreground text-2xl font-bold">

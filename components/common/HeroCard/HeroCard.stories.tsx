@@ -33,6 +33,7 @@ const meta: Meta<typeof HeroCard> = {
     title: "Expert instruction",
     description:
       "The gradual accumulation of information about atomic and small-scale behaviour...",
+    iconBackgroundColor: "primary",
   },
   parameters: {
     controls: {

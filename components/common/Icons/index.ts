@@ -19,3 +19,8 @@ export * from "./DownloadIcon";
 export * from "./HeartIcon";
 export * from "./CheckMarkIcon";
 export * from "./OutlinedStarIcon";
+export * from "./TelephoneIcon";
+export * from "./LocationIcon";
+export * from "./FacebookLogoIcon";
+export * from "./InstagramLogoIcon";
+export * from "./TwitterLogoIcon";

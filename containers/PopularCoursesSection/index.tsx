@@ -22,8 +22,8 @@ const PopularCoursesSection = async ({
 
   return (
     <section>
-      <div className="bg-dark-blue mt-32.5">
-        <div className="max-w-lg md:max-w-4xl lg:max-w-5xl my-0 mx-auto py-40 flex flex-col gap-20">
+      <div className="bg-dark-blue mt-32.5 flex justify-center">
+        <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 py-40 flex flex-col gap-20">
           <div className="flex flex-col gap-2.5 text-center 2xl:text-start">
             <h6 className="text-primary text-sm/6 font-bold">
               Practice Advice
