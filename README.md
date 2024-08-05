@@ -1,90 +1,57 @@
-# Next.js & NextUI Template
+# Overview
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+- This document is intended to describe the requirements for my NextJS Practice.
+- Design: [Figma](<https://www.figma.com/design/Ruc6a1cpVgwZOCQn3dROzF/School-Genuine---responsive-website%C2%A0template-download-html-with%C2%A0css-for-school-(Community)-(Copy)?node-id=2685-976&m=dev>)
+- Plan: [Note](https://docs.google.com/document/d/1snKnf8E34OfCgZoeeRO8W3F3sZlMBTH1N0HX_GzQ-ew/edit)
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+# Target
 
-## Technologies Used
+- Understand and apply Next.js key features: streaming, data fetching, caching, app routing
+- Achieve the highest score of PageSpeed score
+- Solve all Axes issues
+- Unit test covers at components, utils functions level first
+- Supports responsiveness
+- Support dark/light mode
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+# Techstacks
 
-## How to Use
+- NextJS
+- TypeScript
+- NextUI
+- Mockapi
 
-### Use the template with create-next-app
+# Development Tools
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- [Eslint](https://eslint.org/docs/latest/)
+- [Prettier](https://prettier.io/docs/en/)
+- [Lint-staged](https://github.com/okonet/lint-staged)
+- [Husky](https://github.com/typicode/husky)
+- [Commitlint](https://commitlint.js.org/#/)
+- [Storybook](https://storybook.js.org/)
 
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
+# Timeline
 
-### Install dependencies
+- Estimate time: 8 days.
+- Start date: Jul 25, 2024
+- End date: Aug 5, 2024
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+# Requirements
 
-```bash
-npm install
-```
+- Build a NextJS web app including pagination.
 
-### Run the development server
+# Getting Started
 
-```bash
-npm run dev
-```
+| Command                                                         | Action                                         |
+| --------------------------------------------------------------- | ---------------------------------------------- |
+| `git clone git@gitlab.asoft-python.com:huy.phamnhat/nextJS.git` | Clone repository from GitLab                   |
+| `git checkout nextjs-practice`                                  | Checkout branch                                |
+| `pnpm i`                                                        | Install dependencies                           |
+| `pnpm dev`                                                      | Host local web app at http://localhost:3000/   |
+| `pnpm storybook`                                                | Host local storybook at http://localhost:6006/ |
+| `pnpm test`                                                     | Run all test cases                             |
+| `pnpm coverage`                                                 | Coverage all test cases                        |
 
-### Setup pnpm (optional)
+# Author
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-# Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Huy Pham Nhat.
+- Email: huy.phamnhat@asnet.com.vn.
