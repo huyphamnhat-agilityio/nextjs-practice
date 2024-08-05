@@ -1,8 +1,46 @@
 // Components
-import { FeedbackCard } from "@/components";
+import { FeedbackCard, FeedbackCardProps } from "@/components";
 import { MOCK_AVATARS } from "@/mocks/avatar";
 
 const FeedbackSection = () => {
+  const mockFeedBacks: Array<FeedbackCardProps & { id: string }> = [
+    {
+      id: "1",
+      avatar: MOCK_AVATARS[0],
+      comment:
+        "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      rate: 3,
+      user: {
+        id: "1",
+        name: "Regina Miles",
+        role: "Designer",
+      },
+    },
+    {
+      id: "2",
+      avatar: MOCK_AVATARS[1],
+      comment:
+        "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      rate: 4,
+      user: {
+        id: "1",
+        name: "Regina Miles",
+        role: "Designer",
+      },
+    },
+    {
+      id: "3",
+      avatar: MOCK_AVATARS[2],
+      comment:
+        "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      rate: 5,
+      user: {
+        id: "1",
+        name: "Regina Miles",
+        role: "Designer",
+      },
+    },
+  ];
   return (
     <section>
       <div className="flex justify-center">
@@ -21,9 +59,9 @@ const FeedbackSection = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-7.5 justify-evenly">
-            <FeedbackCard avatar={MOCK_AVATARS[0]} />
-            <FeedbackCard avatar={MOCK_AVATARS[1]} />
-            <FeedbackCard avatar={MOCK_AVATARS[2]} />
+            {mockFeedBacks.map((feedback) => (
+              <FeedbackCard key={feedback.id} {...feedback} />
+            ))}
           </div>
         </div>
       </div>

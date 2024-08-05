@@ -11,7 +11,17 @@ describe("FeedbackCard test cases", () => {
     render(<FeedbackCard {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup({ avatar: MOCK_AVATARS[0] });
+    const { container } = setup({
+      avatar: MOCK_AVATARS[0],
+      comment:
+        "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      rate: 3,
+      user: {
+        id: "1",
+        name: "Regina Miles",
+        role: "Designer",
+      },
+    });
 
     expect(container).toMatchSnapshot();
   });

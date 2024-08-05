@@ -19,15 +19,7 @@ export default function Home({
     page?: string;
   };
 }) {
-  // const [isLightMode, setIsLightMode] = useState(true);
-  // const { theme, setTheme } = useTheme();
-
   const currentPage = Number(searchParams?.page) || 1;
-
-  // useEffect(() => {
-  //   setTheme(isLightMode ? "light" : "dark");
-  // }, [isLightMode, setTheme]);
-
   return (
     <main>
       <HeroSection />

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar test cases should render correctly 1`] = `
+exports[`NavBar test cases should be able to switch the theme when clicking on switch button 1`] = `
 <div>
   <nav
     class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 bg-transparent"
@@ -14,7 +14,7 @@ exports[`NavBar test cases should render correctly 1`] = `
         data-justify="start"
       >
         <div
-          class="flex gap-11 lg:gap-22 items-center"
+          class="flex gap-3 base:gap-11 lg:gap-22 items-center"
         >
           <div
             class="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border"
@@ -27,7 +27,7 @@ exports[`NavBar test cases should render correctly 1`] = `
             </a>
           </div>
           <ul
-            class="gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex"
+            class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
             data-justify="start"
           >
             <li
@@ -74,9 +74,447 @@ exports[`NavBar test cases should render correctly 1`] = `
         </div>
       </ul>
       <ul
-        class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
+        class="flex h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 gap-2 base:gap-4"
         data-justify="end"
       >
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <label
+            class="group relative max-w-fit items-center justify-start cursor-pointer touch-none tap-highlight-transparent hidden md:flex"
+            data-focus="true"
+            data-hover="true"
+          >
+            <span
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-labelledby=":r0:"
+                checked=""
+                role="switch"
+                type="checkbox"
+                value=""
+              />
+            </span>
+            <span
+              aria-hidden="true"
+              class="px-1 relative inline-flex items-center justify-start flex-shrink-0 overflow-hidden rounded-full outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background group-data-[selected=true]:bg-primary group-data-[selected=true]:text-primary-foreground w-14 h-8 mr-2 rtl:ml-2 rtl:mr-[unset] transition-background bg-foreground-100"
+            >
+              <span
+                class="z-10 flex items-center justify-center bg-white shadow-small rounded-full origin-right w-6 h-6 text-medium group-data-[selected=true]:ml-6 rtl:group-data-[selected=true]:ml-0 rtl:group-data-[selected=true]:mr-6 transition-all group-data-[pressed=true]:w-7 group-data-[selected]:group-data-[pressed]:ml-5"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="text-black"
+                  focusable="false"
+                  height="1em"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </label>
+        </li>
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <button
+            class="z-0 group relative items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-primary data-[hover=true]:bg-primary/20 px-6.25 py-3.75 w-auto h-auto rounded-1.25 hover:bg-opacity-25 text-sm/5.5 font-bold hidden md:flex"
+            type="button"
+          >
+            Login
+          </button>
+        </li>
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <button
+            class="z-0 group relative items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-6.25 py-3.75 w-auto h-auto rounded-1.25 text-white text-sm/5.5 font-bold hidden md:flex"
+            type="button"
+          >
+            JOIN US
+            <svg
+              fill="none"
+              height="10"
+              viewBox="0 0 12 10"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-path="url(#clip0_2685_910)"
+                id="icn arrow-right .icn-xs"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M0 5C0 4.81059 0.079009 4.62895 0.219646 4.49502C0.360282 4.36109 0.551026 4.28584 0.749916 4.28584H9.43845L6.21831 1.22068C6.07749 1.08658 5.99838 0.904705 5.99838 0.715059C5.99838 0.525414 6.07749 0.343536 6.21831 0.209436C6.35912 0.0753365 6.5501 0 6.74925 0C6.94839 0 7.13937 0.0753365 7.28019 0.209436L11.7797 4.49438C11.8495 4.56072 11.9049 4.63952 11.9427 4.72629C11.9805 4.81305 12 4.90606 12 5C12 5.09394 11.9805 5.18695 11.9427 5.27371C11.9049 5.36048 11.8495 5.43928 11.7797 5.50562L7.28019 9.79056C7.13937 9.92466 6.94839 10 6.74925 10C6.5501 10 6.35912 9.92466 6.21831 9.79056C6.07749 9.65646 5.99838 9.47459 5.99838 9.28494C5.99838 9.0953 6.07749 8.91342 6.21831 8.77932L9.43845 5.71416H0.749916C0.551026 5.71416 0.360282 5.63892 0.219646 5.50499C0.079009 5.37106 0 5.18941 0 5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  id="Vector"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="clip0_2685_910"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    width="12"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </button>
+        </li>
+        <button
+          aria-label="Open menu"
+          aria-pressed="false"
+          class="group flex items-center justify-center w-6 h-full rounded-small tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 md:hidden"
+          type="button"
+        >
+          <span
+            class="sr-only"
+          >
+            open navigation menu
+          </span>
+          <span
+            class="w-full h-full pointer-events-none flex flex-col items-center justify-center text-inherit group-data-[pressed=true]:opacity-70 transition-opacity before:content-[''] before:block before:h-px before:w-6 before:bg-current before:transition-transform before:duration-150 before:-translate-y-1 before:rotate-0 group-data-[open=true]:before:translate-y-px group-data-[open=true]:before:rotate-45 after:content-[''] after:block after:h-px after:w-6 after:bg-current after:transition-transform after:duration-150 after:translate-y-1 after:rotate-0 group-data-[open=true]:after:translate-y-0 group-data-[open=true]:after:-rotate-45"
+          />
+        </button>
+      </ul>
+    </header>
+  </nav>
+</div>
+`;
+
+exports[`NavBar test cases should be able to switch the theme when clicking on switch button 2`] = `
+<div>
+  <nav
+    class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 bg-transparent"
+    data-menu-open="true"
+    style="--navbar-height: 4rem;"
+  >
+    <header
+      class="z-40 flex px-6 gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]"
+      data-menu-open="true"
+    >
+      <ul
+        class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
+        data-justify="start"
+      >
+        <div
+          class="flex gap-3 base:gap-11 lg:gap-22 items-center"
+        >
+          <div
+            class="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border"
+          >
+            <a
+              class="text-foreground text-2xl font-bold"
+              href="/"
+            >
+              Brandname
+            </a>
+          </div>
+          <ul
+            class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
+            data-justify="start"
+          >
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Product
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Pricing
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+      <ul
+        class="flex h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 gap-2 base:gap-4"
+        data-justify="end"
+      >
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <label
+            class="group relative max-w-fit items-center justify-start cursor-pointer touch-none tap-highlight-transparent hidden md:flex"
+            data-hover="true"
+          >
+            <span
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-labelledby=":r0:"
+                checked=""
+                role="switch"
+                type="checkbox"
+                value=""
+              />
+            </span>
+            <span
+              aria-hidden="true"
+              class="px-1 relative inline-flex items-center justify-start flex-shrink-0 overflow-hidden rounded-full outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background group-data-[selected=true]:bg-primary group-data-[selected=true]:text-primary-foreground w-14 h-8 mr-2 rtl:ml-2 rtl:mr-[unset] transition-background bg-foreground-100"
+            >
+              <span
+                class="z-10 flex items-center justify-center bg-white shadow-small rounded-full origin-right w-6 h-6 text-medium group-data-[selected=true]:ml-6 rtl:group-data-[selected=true]:ml-0 rtl:group-data-[selected=true]:mr-6 transition-all group-data-[pressed=true]:w-7 group-data-[selected]:group-data-[pressed]:ml-5"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="text-black"
+                  focusable="false"
+                  height="1em"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </label>
+        </li>
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <button
+            class="z-0 group relative items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-primary data-[hover=true]:bg-primary/20 px-6.25 py-3.75 w-auto h-auto rounded-1.25 hover:bg-opacity-25 text-sm/5.5 font-bold hidden md:flex"
+            type="button"
+          >
+            Login
+          </button>
+        </li>
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <button
+            class="z-0 group relative items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-6.25 py-3.75 w-auto h-auto rounded-1.25 text-white text-sm/5.5 font-bold hidden md:flex"
+            type="button"
+          >
+            JOIN US
+            <svg
+              fill="none"
+              height="10"
+              viewBox="0 0 12 10"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-path="url(#clip0_2685_910)"
+                id="icn arrow-right .icn-xs"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M0 5C0 4.81059 0.079009 4.62895 0.219646 4.49502C0.360282 4.36109 0.551026 4.28584 0.749916 4.28584H9.43845L6.21831 1.22068C6.07749 1.08658 5.99838 0.904705 5.99838 0.715059C5.99838 0.525414 6.07749 0.343536 6.21831 0.209436C6.35912 0.0753365 6.5501 0 6.74925 0C6.94839 0 7.13937 0.0753365 7.28019 0.209436L11.7797 4.49438C11.8495 4.56072 11.9049 4.63952 11.9427 4.72629C11.9805 4.81305 12 4.90606 12 5C12 5.09394 11.9805 5.18695 11.9427 5.27371C11.9049 5.36048 11.8495 5.43928 11.7797 5.50562L7.28019 9.79056C7.13937 9.92466 6.94839 10 6.74925 10C6.5501 10 6.35912 9.92466 6.21831 9.79056C6.07749 9.65646 5.99838 9.47459 5.99838 9.28494C5.99838 9.0953 6.07749 8.91342 6.21831 8.77932L9.43845 5.71416H0.749916C0.551026 5.71416 0.360282 5.63892 0.219646 5.50499C0.079009 5.37106 0 5.18941 0 5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  id="Vector"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="clip0_2685_910"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    width="12"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </button>
+        </li>
+        <button
+          aria-label="Close menu"
+          aria-pressed="true"
+          class="group flex items-center justify-center w-6 h-full rounded-small tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 md:hidden"
+          data-hover="true"
+          data-open="true"
+          type="button"
+        >
+          <span
+            class="sr-only"
+          >
+            close navigation menu
+          </span>
+          <span
+            class="w-full h-full pointer-events-none flex flex-col items-center justify-center text-inherit group-data-[pressed=true]:opacity-70 transition-opacity before:content-[''] before:block before:h-px before:w-6 before:bg-current before:transition-transform before:duration-150 before:-translate-y-1 before:rotate-0 group-data-[open=true]:before:translate-y-px group-data-[open=true]:before:rotate-45 after:content-[''] after:block after:h-px after:w-6 after:bg-current after:transition-transform after:duration-150 after:translate-y-1 after:rotate-0 group-data-[open=true]:after:translate-y-0 group-data-[open=true]:after:-rotate-45"
+          />
+        </button>
+      </ul>
+    </header>
+  </nav>
+</div>
+`;
+
+exports[`NavBar test cases should render correctly 1`] = `
+<div>
+  <nav
+    class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 bg-transparent"
+    style="--navbar-height: 4rem;"
+  >
+    <header
+      class="z-40 flex px-6 gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]"
+    >
+      <ul
+        class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
+        data-justify="start"
+      >
+        <div
+          class="flex gap-3 base:gap-11 lg:gap-22 items-center"
+        >
+          <div
+            class="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border"
+          >
+            <a
+              class="text-foreground text-2xl font-bold"
+              href="/"
+            >
+              Brandname
+            </a>
+          </div>
+          <ul
+            class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
+            data-justify="start"
+          >
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Product
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Pricing
+              </a>
+            </li>
+            <li
+              class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+            >
+              <a
+                class="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                href="/"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+      <ul
+        class="flex h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 gap-2 base:gap-4"
+        data-justify="end"
+      >
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <label
+            class="group relative max-w-fit items-center justify-start cursor-pointer touch-none tap-highlight-transparent hidden md:flex"
+            data-selected="true"
+          >
+            <span
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-labelledby=":r0:"
+                checked=""
+                role="switch"
+                type="checkbox"
+                value=""
+              />
+            </span>
+            <span
+              aria-hidden="true"
+              class="px-1 relative inline-flex items-center justify-start flex-shrink-0 overflow-hidden rounded-full outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background group-data-[selected=true]:bg-primary group-data-[selected=true]:text-primary-foreground w-14 h-8 mr-2 rtl:ml-2 rtl:mr-[unset] transition-background bg-foreground-100"
+            >
+              <span
+                class="z-10 flex items-center justify-center bg-white shadow-small rounded-full origin-right w-6 h-6 text-medium group-data-[selected=true]:ml-6 rtl:group-data-[selected=true]:ml-0 rtl:group-data-[selected=true]:mr-6 transition-all group-data-[pressed=true]:w-7 group-data-[selected]:group-data-[pressed]:ml-5"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="text-black"
+                  focusable="false"
+                  height="1em"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <g
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M19 12a7 7 0 11-7-7 7 7 0 017 7z"
+                    />
+                    <path
+                      d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z"
+                    />
+                  </g>
+                </svg>
+              </span>
+            </span>
+          </label>
+        </li>
         <li
           class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
         >
@@ -163,7 +601,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
         data-justify="start"
       >
         <div
-          class="flex gap-11 lg:gap-22 items-center"
+          class="flex gap-3 base:gap-11 lg:gap-22 items-center"
         >
           <div
             class="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border"
@@ -176,7 +614,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
             </a>
           </div>
           <ul
-            class="gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex"
+            class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
             data-justify="start"
           >
             <li
@@ -223,9 +661,58 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
         </div>
       </ul>
       <ul
-        class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
+        class="flex h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 gap-2 base:gap-4"
         data-justify="end"
       >
+        <li
+          class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+        >
+          <label
+            class="group relative max-w-fit items-center justify-start cursor-pointer touch-none tap-highlight-transparent hidden md:flex"
+            data-selected="true"
+          >
+            <span
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <input
+                aria-labelledby=":r1:"
+                checked=""
+                role="switch"
+                type="checkbox"
+                value=""
+              />
+            </span>
+            <span
+              aria-hidden="true"
+              class="px-1 relative inline-flex items-center justify-start flex-shrink-0 overflow-hidden rounded-full outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background group-data-[selected=true]:bg-primary group-data-[selected=true]:text-primary-foreground w-14 h-8 mr-2 rtl:ml-2 rtl:mr-[unset] transition-background bg-foreground-100"
+            >
+              <span
+                class="z-10 flex items-center justify-center bg-white shadow-small rounded-full origin-right w-6 h-6 text-medium group-data-[selected=true]:ml-6 rtl:group-data-[selected=true]:ml-0 rtl:group-data-[selected=true]:mr-6 transition-all group-data-[pressed=true]:w-7 group-data-[selected]:group-data-[pressed]:ml-5"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="text-black"
+                  focusable="false"
+                  height="1em"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <g
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M19 12a7 7 0 11-7-7 7 7 0 017 7z"
+                    />
+                    <path
+                      d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z"
+                    />
+                  </g>
+                </svg>
+              </span>
+            </span>
+          </label>
+        </li>
         <li
           class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
         >

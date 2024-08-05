@@ -15,6 +15,7 @@ const config: Config = {
     "!**/*.d.ts",
     "!<rootDir>/**/*.stories.{js,jsx,ts,tsx}",
     "!<rootDir>/node_modules/",
+    "!<rootDir>/.storybook/**",
   ],
   // Add more setup options before each test is run
   setupFilesAfterEnv: ["./jest.setup.ts"],

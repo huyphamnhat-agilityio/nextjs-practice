@@ -40,9 +40,8 @@ exports[`PaymentSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large p-0 flex flex-col gap-8.75 text-start items-start"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary text-primary-foreground data-[hover=true]:opacity-hover min-w-0 w-auto h-auto p-6 rounded-full"
-                type="button"
+              <div
+                class="bg-primary p-6 rounded-full"
               >
                 <svg
                   fill="none"
@@ -56,7 +55,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                     fill="white"
                   />
                 </svg>
-              </button>
+              </div>
               <h3
                 class="uppercase text-foreground text-2xl font-bold"
               >
@@ -324,9 +323,8 @@ exports[`PaymentSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large p-0 flex flex-col gap-8.75 text-start items-start"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary text-primary-foreground data-[hover=true]:opacity-hover min-w-0 w-auto h-auto p-6 rounded-full"
-                type="button"
+              <div
+                class="bg-primary p-6 rounded-full"
               >
                 <svg
                   fill="none"
@@ -340,7 +338,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                     fill="white"
                   />
                 </svg>
-              </button>
+              </div>
               <h3
                 class="uppercase text-foreground text-2xl font-bold"
               >
@@ -603,9 +601,8 @@ exports[`PaymentSection test cases should render correctly 1`] = `
             <div
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large p-0 flex flex-col gap-8.75 text-start items-start"
             >
-              <button
-                class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-primary text-primary-foreground data-[hover=true]:opacity-hover min-w-0 w-auto h-auto p-6 rounded-full"
-                type="button"
+              <div
+                class="bg-primary p-6 rounded-full"
               >
                 <svg
                   fill="none"
@@ -619,7 +616,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                     fill="white"
                   />
                 </svg>
-              </button>
+              </div>
               <h3
                 class="uppercase text-foreground text-2xl font-bold"
               >

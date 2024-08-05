@@ -39,4 +39,22 @@ describe("NavBar test cases", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("should be able to switch the theme when clicking on switch button", async () => {
+    const { container } = setup();
+
+    const switchBtn = screen.getByRole("switch");
+
+    await userEvent.click(switchBtn);
+
+    expect(container).toMatchSnapshot();
+
+    const menuBtn = screen.getByRole("button", {
+      name: /open menu/i,
+    });
+
+    await userEvent.click(menuBtn);
+
+    expect(container).toMatchSnapshot();
+  });
 });

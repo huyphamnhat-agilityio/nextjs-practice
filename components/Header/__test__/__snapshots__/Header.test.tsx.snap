@@ -17,7 +17,7 @@ exports[`Header test cases should render correctly 1`] = `
           data-justify="start"
         >
           <div
-            class="flex gap-11 lg:gap-22 items-center"
+            class="flex gap-3 base:gap-11 lg:gap-22 items-center"
           >
             <div
               class="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border"
@@ -30,7 +30,7 @@ exports[`Header test cases should render correctly 1`] = `
               </a>
             </div>
             <ul
-              class="gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex"
+              class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
               data-justify="start"
             >
               <li
@@ -77,9 +77,58 @@ exports[`Header test cases should render correctly 1`] = `
           </div>
         </ul>
         <ul
-          class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
+          class="flex h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 gap-2 base:gap-4"
           data-justify="end"
         >
+          <li
+            class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
+          >
+            <label
+              class="group relative max-w-fit items-center justify-start cursor-pointer touch-none tap-highlight-transparent hidden md:flex"
+              data-selected="true"
+            >
+              <span
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <input
+                  aria-labelledby=":r0:"
+                  checked=""
+                  role="switch"
+                  type="checkbox"
+                  value=""
+                />
+              </span>
+              <span
+                aria-hidden="true"
+                class="px-1 relative inline-flex items-center justify-start flex-shrink-0 overflow-hidden rounded-full outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background group-data-[selected=true]:bg-primary group-data-[selected=true]:text-primary-foreground w-14 h-8 mr-2 rtl:ml-2 rtl:mr-[unset] transition-background bg-foreground-100"
+              >
+                <span
+                  class="z-10 flex items-center justify-center bg-white shadow-small rounded-full origin-right w-6 h-6 text-medium group-data-[selected=true]:ml-6 rtl:group-data-[selected=true]:ml-0 rtl:group-data-[selected=true]:mr-6 transition-all group-data-[pressed=true]:w-7 group-data-[selected]:group-data-[pressed]:ml-5"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="text-black"
+                    focusable="false"
+                    height="1em"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <g
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M19 12a7 7 0 11-7-7 7 7 0 017 7z"
+                      />
+                      <path
+                        d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </li>
           <li
             class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
           >
