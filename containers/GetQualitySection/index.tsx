@@ -1,4 +1,5 @@
-import { Divider, Image, Link } from "@nextui-org/react";
+import { Divider, Link } from "@nextui-org/react";
+import Image from "next/image";
 
 // Components
 import { NextArrowIcon } from "@/components/common/Icons";
@@ -13,6 +14,8 @@ const GetQualitySection = () => (
         <Image
           src={IMAGES.GET_QUALITY_SECTION_THUMBNAIL.src}
           alt={IMAGES.GET_QUALITY_SECTION_THUMBNAIL.alt}
+          width={458}
+          height={535}
         />
       </div>
 

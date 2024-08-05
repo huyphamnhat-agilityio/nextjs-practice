@@ -41,16 +41,34 @@ const ProductCard = ({
           radius="none"
         />
         <div className="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10">
-          <h6 className="text-white text-sm/6 font-bold">Sale</h6>
+          <p className="text-white text-sm/6 font-bold">Sale</p>
         </div>
         <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
-          <Button className="bg-white" variant="action" size="tiny" isIconOnly>
+          <Button
+            className="bg-white"
+            variant="action"
+            size="tiny"
+            aria-label="favorite button"
+            isIconOnly
+          >
             <FavoriteIcon />
           </Button>
-          <Button className="bg-white" variant="action" size="tiny" isIconOnly>
+          <Button
+            className="bg-white"
+            variant="action"
+            size="tiny"
+            aria-label="cart button"
+            isIconOnly
+          >
             <CartIcon />
           </Button>
-          <Button className="bg-white" variant="action" size="tiny" isIconOnly>
+          <Button
+            className="bg-white"
+            variant="action"
+            size="tiny"
+            aria-label="watch later button"
+            isIconOnly
+          >
             <EyeIcon />
           </Button>
         </div>
@@ -63,7 +81,7 @@ const ProductCard = ({
             <span className="text-white text-xs">{rate}</span>
           </div>
         </div>
-        <h5 className="text-foreground text-base font-bold">{title}</h5>
+        <p className="text-foreground text-base font-bold">{title}</p>
         <p className="text-foreground-100 text-sm">{description}</p>
         <div className="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold">
           <DownloadIcon />

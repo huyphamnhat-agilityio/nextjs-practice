@@ -45,9 +45,10 @@ export const FeedbackCard = ({
           height={50}
           radius="full"
           className="object-cover"
+          loading="lazy"
         />
         <div className="flex flex-col">
-          <h6 className="text-primary text-sm/6 font-bold">{user.name}</h6>
+          <p className="text-primary text-sm/6 font-bold">{user.name}</p>
           <small className="text-foreground text-xs">{user.role}</small>
         </div>
       </CardFooter>

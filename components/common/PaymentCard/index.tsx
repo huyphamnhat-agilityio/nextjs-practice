@@ -21,9 +21,9 @@ const PaymentCard = ({ isNew }: PaymentCardProps) => (
       <h3 className="uppercase text-foreground text-2xl font-bold">Free</h3>
     </CardHeader>
     <CardBody className="flex flex-col gap-8.75 p-0 text-start items-start">
-      <h6 className="text-foreground-100 text-sm/6 font-bold pr-2">
+      <p className="text-foreground-100 text-sm/6 font-bold pr-2">
         Organize across all apps by hand
-      </h6>
+      </p>
 
       <div className="flex flex-col items-center">
         <p className="text-primary text-5xl/12.5 font-bold">19$</p>

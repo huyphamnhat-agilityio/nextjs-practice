@@ -15,7 +15,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     sales: 15,
     originalPrice: 16.48,
     salePrice: 6.48,
-    coverImageUrl: "/product-cover-1.png",
+    coverImageUrl: "/product-cover-1.webp",
   },
   {
     id: "2",
@@ -27,7 +27,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     sales: 15,
     originalPrice: 16.48,
     salePrice: 6.48,
-    coverImageUrl: "/product-cover-2.png",
+    coverImageUrl: "/product-cover-2.webp",
   },
   {
     id: "3",
@@ -39,6 +39,6 @@ export const MOCK_PRODUCTS: Array<Product> = [
     sales: 15,
     originalPrice: 16.48,
     salePrice: 6.48,
-    coverImageUrl: "/product-cover-3.png",
+    coverImageUrl: "/product-cover-3.webp",
   },
 ];

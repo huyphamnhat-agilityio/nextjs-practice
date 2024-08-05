@@ -108,9 +108,9 @@ const Footer = () => {
       {/* Reference https://stackoverflow.com/a/31391593 */}
       <div className="w-[calc(100vw-20px)] ml-[calc(-50vw+50%+10px)] bg-foreground-400">
         <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl flex flex-col justify-center sm:flex-row py-6.25 sm:justify-between gap-2 sm:gap-0 my-0 mx-auto ">
-          <h6 className="text-foreground-100 text-sm/6 font-bold text-center sm:text-start">
+          <p className="text-foreground-100 text-sm/6 font-bold text-center sm:text-start">
             Made With Love By Figmaland All Right Reserved
-          </h6>
+          </p>
           <div className="flex gap-5 m-auto sm:m-0">
             <FacebookLogoIcon />
             <InstagramLogoIcon />

@@ -30,11 +30,11 @@ exports[`ProductCard test cases should render correctly 1`] = `
       <div
         class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
       >
-        <h6
+        <p
           class="text-white text-sm/6 font-bold"
         >
           Sale
-        </h6>
+        </p>
       </div>
       <div
         class="flex gap-2.5 absolute bottom-6 left-24 z-10"

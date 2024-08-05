@@ -38,26 +38,28 @@ const NavBar = () => {
       isBlurred={false}
     >
       <NavbarContent>
-        <div className="flex gap-3 base:gap-11 lg:gap-22 items-center">
-          <NavbarBrand as="div">
-            <Link href="/" className="text-foreground text-2xl font-bold">
-              Brandname
-            </Link>
-          </NavbarBrand>
+        <NavbarItem>
+          <div className="flex gap-3 base:gap-11 lg:gap-22 items-center">
+            <NavbarBrand as="div">
+              <Link href="/" className="text-foreground text-2xl font-bold">
+                Brandname
+              </Link>
+            </NavbarBrand>
 
-          <NavbarContent className="hidden md:flex gap-2 base:gap-4">
-            {NAV_LIST_DESKTOP.map((item) => (
-              <NavbarItem key={item.id}>
-                <Link
-                  href={item.destination}
-                  className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
-                >
-                  {item.label}
-                </Link>
-              </NavbarItem>
-            ))}
-          </NavbarContent>
-        </div>
+            <NavbarContent className="hidden md:flex gap-2 base:gap-4">
+              {NAV_LIST_DESKTOP.map((item) => (
+                <NavbarItem key={item.id}>
+                  <Link
+                    href={item.destination}
+                    className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </NavbarItem>
+              ))}
+            </NavbarContent>
+          </div>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end" className=" gap-2 base:gap-4">
@@ -73,8 +75,11 @@ const NavBar = () => {
             classNames={{
               wrapper: "bg-foreground-100",
             }}
+            aria-label=""
             onValueChange={onChangeTheme}
-          />
+          >
+            <span className="sr-only">switch theme button</span>
+          </Switch>
         </NavbarItem>
 
         <NavbarItem>
@@ -126,7 +131,9 @@ const NavBar = () => {
               wrapper: "bg-foreground-100",
             }}
             onValueChange={onChangeTheme}
-          />
+          >
+            <span className="sr-only">switch theme button</span>
+          </Switch>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
