@@ -6,7 +6,7 @@ export const EmailIcon = () => (
     viewBox="0 0 24 26"
     fill="none"
   >
-    <g clip-path="url(#clip0_2685_1392)">
+    <g clipPath="url(#clip0_2685_1392)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

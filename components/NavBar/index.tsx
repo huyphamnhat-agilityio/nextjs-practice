@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Navbar,
@@ -9,17 +9,27 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  Switch,
 } from "@nextui-org/react";
+import { useTheme } from "next-themes";
 
 // Components
 import { Button } from "../common";
-import { RightArrowIcon } from "../common/Icons";
+import { DarkModeIcon, LightModeIcon, RightArrowIcon } from "../common/Icons";
 
 // Constants
 import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(true);
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme(isLightMode ? "light" : "dark");
+  }, [isLightMode, setTheme]);
+
+  const onChangeTheme = () => setIsLightMode((prev) => !prev);
 
   return (
     <Navbar
@@ -28,14 +38,14 @@ const NavBar = () => {
       isBlurred={false}
     >
       <NavbarContent>
-        <div className="flex gap-11 lg:gap-22 items-center">
+        <div className="flex gap-3 base:gap-11 lg:gap-22 items-center">
           <NavbarBrand as="div">
             <Link href="/" className="text-foreground text-2xl font-bold">
               Brandname
             </Link>
           </NavbarBrand>
 
-          <NavbarContent className="hidden md:flex">
+          <NavbarContent className="hidden md:flex gap-2 base:gap-4">
             {NAV_LIST_DESKTOP.map((item) => (
               <NavbarItem key={item.id}>
                 <Link
@@ -50,7 +60,23 @@ const NavBar = () => {
         </div>
       </NavbarContent>
 
-      <NavbarContent justify="end">
+      <NavbarContent justify="end" className=" gap-2 base:gap-4">
+        <NavbarItem>
+          <Switch
+            isSelected={isLightMode}
+            size="lg"
+            color="primary"
+            thumbIcon={({ isSelected }) =>
+              isSelected ? <LightModeIcon /> : <DarkModeIcon />
+            }
+            className="hidden md:flex"
+            classNames={{
+              wrapper: "bg-foreground-100",
+            }}
+            onValueChange={onChangeTheme}
+          />
+        </NavbarItem>
+
         <NavbarItem>
           <Button
             color="primary"
@@ -87,6 +113,21 @@ const NavBar = () => {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarMenuItem>
+          <Switch
+            isSelected={isLightMode}
+            size="lg"
+            color="primary"
+            thumbIcon={({ isSelected }) =>
+              isSelected ? <LightModeIcon /> : <DarkModeIcon />
+            }
+            className="md:hidden"
+            classNames={{
+              wrapper: "bg-foreground-100",
+            }}
+            onValueChange={onChangeTheme}
+          />
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );

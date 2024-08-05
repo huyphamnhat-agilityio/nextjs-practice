@@ -24,3 +24,5 @@ export * from "./LocationIcon";
 export * from "./FacebookLogoIcon";
 export * from "./InstagramLogoIcon";
 export * from "./TwitterLogoIcon";
+export * from "./DarkModeIcon";
+export * from "./LightModeIcon";

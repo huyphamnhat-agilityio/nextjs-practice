@@ -67,6 +67,7 @@ export default {
         "hero-block": "url('/hero-background-block.svg')",
       },
       screens: {
+        base: "832px",
         lg: "992px",
         "2xl": "1440px",
       },
@@ -131,7 +132,6 @@ export default {
           },
         },
       },
-      defaultTheme: "dark",
     }),
   ],
 } satisfies Config;

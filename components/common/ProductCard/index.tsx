@@ -37,7 +37,7 @@ const ProductCard = ({
           alt={`An image about ${title}`}
           width={328}
           height={300}
-          // isZoomed
+          isZoomed
           radius="none"
         />
         <div className="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10">

@@ -15,9 +15,9 @@ const PaymentCard = ({ isNew }: PaymentCardProps) => (
       </div>
     )}
     <CardHeader className="p-0 flex flex-col gap-8.75 text-start items-start">
-      <Button isIconOnly className="p-6 rounded-full">
+      <div className="bg-primary p-6 rounded-full">
         <HeartIcon />
-      </Button>
+      </div>
       <h3 className="uppercase text-foreground text-2xl font-bold">Free</h3>
     </CardHeader>
     <CardBody className="flex flex-col gap-8.75 p-0 text-start items-start">
