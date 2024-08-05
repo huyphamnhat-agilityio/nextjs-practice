@@ -89,7 +89,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
               style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
             >
               <input
-                aria-labelledby=":r0:"
+                aria-labelledby=":r4:"
                 checked=""
                 role="switch"
                 type="checkbox"
@@ -283,7 +283,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
               style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
             >
               <input
-                aria-labelledby=":r0:"
+                aria-labelledby=":r4:"
                 checked=""
                 role="switch"
                 type="checkbox"
