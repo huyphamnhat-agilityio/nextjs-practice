@@ -52,6 +52,7 @@ export const Primary: Story = {
 
 export const New: Story = {
   args: {
+    ...MOCK_PLAN,
     isNew: true,
   },
 };
