@@ -1,5 +1,10 @@
 // Components
-import { FeedbackCard, FeedbackCardProps } from "@/components";
+import { FeedbackCard } from "@/components";
+
+// Types
+import { FeedbackCardProps } from "@/components/common/FeedbackCard";
+
+// Mocks
 import { MOCK_AVATARS } from "@/mocks/avatar";
 
 const FeedbackSection = () => {
