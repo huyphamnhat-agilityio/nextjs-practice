@@ -27,6 +27,7 @@ export const getProducts = async (page: number, limit: number) => {
     console.error("Fetch Error:", error);
     throw new Error("Failed to fetch product data.");
   }
+
   // try {
   //   const products = await fetchApi<Array<Product>>(
   //     `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`

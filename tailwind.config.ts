@@ -63,6 +63,12 @@ export default {
         1.75: "0.4375rem",
         75: "18.75rem",
       },
+      maxHeight: {
+        75: "300px",
+      },
+      minHeight: {
+        75: "300px",
+      },
       backgroundImage: {
         "hero-block": "url('/hero-background-block.svg')",
       },

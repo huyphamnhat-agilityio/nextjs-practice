@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 // Components
-import { FeedbackCard } from ".";
+import FeedbackCard from ".";
 
 // Mocks
 import { MOCK_AVATARS } from "@/mocks/avatar";

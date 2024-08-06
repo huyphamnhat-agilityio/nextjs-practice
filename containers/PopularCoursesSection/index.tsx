@@ -1,17 +1,14 @@
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
 // Components
-import {
-  Pagination,
-  ProductCard,
-  ProductList,
-  ProductListSkeleton,
-} from "@/components";
+import { Pagination, ProductList, ProductListSkeleton } from "@/components";
 
 // Constants
 import { LIMIT } from "@/constants";
 
 // Services
 import { getProducts } from "@/services";
-import { Suspense } from "react";
 
 const PopularCoursesSection = async ({
   currentPage,
@@ -36,7 +33,7 @@ const PopularCoursesSection = async ({
             </p>
           </div>
 
-          <Suspense fallback={<ProductListSkeleton />}>
+          <Suspense key={currentPage} fallback={<ProductListSkeleton />}>
             <ProductList currentPage={currentPage} />
           </Suspense>
 

@@ -1,4 +1,5 @@
-import { PaymentCard } from "@/components";
+import { PlanCard } from "@/components";
+import { MOCK_PLAN } from "@/mocks/plan";
 import React from "react";
 
 const PaymentSection = () => (
@@ -17,9 +18,9 @@ const PaymentSection = () => (
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-10 2xl:gap-8">
-          <PaymentCard />
-          <PaymentCard isNew />
-          <PaymentCard />
+          <PlanCard {...MOCK_PLAN} />
+          <PlanCard {...MOCK_PLAN} isNew />
+          <PlanCard {...MOCK_PLAN} />
         </div>
       </div>
     </div>

@@ -13,12 +13,7 @@ export type FeedbackCardProps = {
   user: User;
 };
 
-export const FeedbackCard = ({
-  avatar,
-  rate,
-  comment,
-  user,
-}: FeedbackCardProps) => {
+const FeedbackCard = ({ avatar, rate, comment, user }: FeedbackCardProps) => {
   return (
     <Card className="p-6.25 max-w-87 border-none rounded-none" shadow="none">
       <CardBody className="flex flex-col gap-3.75 items-center p-7.5">
@@ -55,3 +50,5 @@ export const FeedbackCard = ({
     </Card>
   );
 };
+
+export default FeedbackCard;

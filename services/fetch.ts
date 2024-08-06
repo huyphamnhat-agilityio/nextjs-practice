@@ -5,6 +5,7 @@ export const fetchApi = async <T>(url: string, options?: RequestInit) => {
       "Content-Type": "application/json",
     },
     body: options?.body,
+    ...options,
   });
 
   if (response.ok) return response.json() as T;
