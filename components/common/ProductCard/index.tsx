@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardBody,
@@ -30,13 +31,15 @@ const ProductCard = ({
   sales,
 }: Product) => {
   return (
-    <Card className="w-82 flex flex-col rounded-none">
+    <Card className="max-w-82 flex flex-col rounded-none">
       <CardHeader className="relative p-0">
         <NextUIImage
+          as={Image}
           src={coverImageUrl}
           alt={`An image about ${title}`}
           width={328}
           height={300}
+          className="w-full h-auto"
           isZoomed
           radius="none"
         />

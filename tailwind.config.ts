@@ -67,6 +67,7 @@ export default {
         "hero-block": "url('/hero-background-block.svg')",
       },
       screens: {
+        mobile: "375px",
         base: "832px",
         lg: "992px",
         "2xl": "1440px",

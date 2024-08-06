@@ -17,7 +17,7 @@ const HeroCard = ({
   description,
 }: HeroCardProps) => {
   return (
-    <Card className="px-10 py-8.75 w-82 flex flex-col gap-5 rounded-none">
+    <Card className="max-w-xs sm:max-w-82 px-10 py-8.75  flex flex-col gap-5 rounded-none">
       <CardHeader className="flex flex-col gap-5 items-start p-0">
         <div
           className={`text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-${iconBackgroundColor}`}

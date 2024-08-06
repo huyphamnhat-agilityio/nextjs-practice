@@ -44,7 +44,7 @@ export const Pagination = ({ total, initialPage }: PaginationProps) => {
       total={total}
       initialPage={initialPage}
       onChange={createPageUrl}
-      className="flex justify-center"
+      className="flex justify-center m-0"
     />
   );
 };

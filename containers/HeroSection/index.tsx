@@ -17,8 +17,8 @@ const HeroSection = () => (
         priority
       />
       <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 mx-auto pt-26 flex flex-col gap-20">
-        <div className="md:max-w-xl flex flex-col gap-8.75 mx-auto text-center px-4 2xl:px-0 2xl:text-left 2xl:mx-0">
-          <h5 className="max text-base font-bold text-primary">
+        <div className="max-w-xs md:max-w-xl flex flex-col gap-8.75 mx-auto text-center mobile:px-4 2xl:px-0 2xl:text-left 2xl:mx-0">
+          <h5 className="text-base font-bold text-primary">
             For Better Future
           </h5>
           <h1 className="text-6xl/20 font-bold uppercase text-foreground">

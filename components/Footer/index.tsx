@@ -112,9 +112,15 @@ const Footer = () => {
             Made With Love By Figmaland All Right Reserved
           </p>
           <div className="flex gap-5 m-auto sm:m-0">
-            <FacebookLogoIcon />
-            <InstagramLogoIcon />
-            <TwitterLogoIcon />
+            <Link href="#">
+              <FacebookLogoIcon />
+            </Link>
+            <Link href="#">
+              <InstagramLogoIcon />
+            </Link>
+            <Link href="#">
+              <TwitterLogoIcon />
+            </Link>
           </div>
         </div>
       </div>

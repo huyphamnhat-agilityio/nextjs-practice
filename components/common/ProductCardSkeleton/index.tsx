@@ -29,7 +29,7 @@ const ProductCardSkeleton = ({
   title,
   sales,
 }: Product) => (
-  <Card className="w-82 flex flex-col rounded-none">
+  <Card className="max-w-82 flex flex-col rounded-none">
     <CardHeader className="relative p-0">
       <Skeleton>
         <NextUIImage width={328} height={300} radius="none" />

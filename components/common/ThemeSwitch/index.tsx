@@ -17,6 +17,7 @@ const ThemeSwitch = ({ className = "" }: ThemeSwitchProps) => {
     setTheme(isLightMode ? "light" : "dark");
   };
 
+  // reference: https://github.com/pacocoursey/next-themes?tab=readme-ov-file#avoid-hydration-mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
