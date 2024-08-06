@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Navbar,
@@ -14,7 +14,7 @@ import {
 import { useTheme } from "next-themes";
 
 // Components
-import { Button } from "../common";
+import { Button, ThemeSwitch } from "../common";
 import { DarkModeIcon, LightModeIcon, RightArrowIcon } from "../common/Icons";
 
 // Constants
@@ -22,14 +22,6 @@ import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(true);
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme(isLightMode ? "light" : "dark");
-  }, [isLightMode, setTheme]);
-
-  const onChangeTheme = () => setIsLightMode((prev) => !prev);
 
   return (
     <Navbar
@@ -64,22 +56,7 @@ const NavBar = () => {
 
       <NavbarContent justify="end" className=" gap-2 base:gap-4">
         <NavbarItem>
-          <Switch
-            isSelected={isLightMode}
-            size="lg"
-            color="primary"
-            thumbIcon={({ isSelected }) =>
-              isSelected ? <LightModeIcon /> : <DarkModeIcon />
-            }
-            className="hidden md:flex"
-            classNames={{
-              wrapper: "bg-foreground-100",
-            }}
-            aria-label=""
-            onValueChange={onChangeTheme}
-          >
-            <span className="sr-only">switch theme button</span>
-          </Switch>
+          <ThemeSwitch className="hidden md:flex" />
         </NavbarItem>
 
         <NavbarItem>
@@ -119,21 +96,7 @@ const NavBar = () => {
           </NavbarMenuItem>
         ))}
         <NavbarMenuItem>
-          <Switch
-            isSelected={isLightMode}
-            size="lg"
-            color="primary"
-            thumbIcon={({ isSelected }) =>
-              isSelected ? <LightModeIcon /> : <DarkModeIcon />
-            }
-            className="md:hidden"
-            classNames={{
-              wrapper: "bg-foreground-100",
-            }}
-            onValueChange={onChangeTheme}
-          >
-            <span className="sr-only">switch theme button</span>
-          </Switch>
+          <ThemeSwitch className="md:hidden" />
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>

@@ -5,3 +5,4 @@ export { default as PaymentCard } from "./PaymentCard";
 export * from "./Pagination";
 export * from "./FeedbackCard";
 export { default as ProductCardSkeleton } from "./ProductCardSkeleton";
+export { default as ThemeSwitch } from "./ThemeSwitch";
