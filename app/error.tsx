@@ -34,10 +34,9 @@ export default function Error({
               <h2 className="text-white text-5xl/12.5 font-bold">
                 Our Popular Courses
               </h2>
-              <p className="text-white text-sm">
-                Problems trying to resolve the conflict between
-                <br />
-                the two major realms of Classical physics: Newtonian mechanics
+              <p className="text-white text-sm whitespace-pre-line">
+                {`Problems trying to resolve the conflict between
+                the two major realms of Classical physics: Newtonian mechanics`}
               </p>
             </div>
 

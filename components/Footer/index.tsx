@@ -89,11 +89,10 @@ const Footer = () => {
               <TelephoneIcon />
               <Link href="tel:+480550103">(480) 555-0103</Link>
             </li>
-            <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold ">
+            <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold whitespace-pre-line">
               <LocationIcon />
-              4517 Washington Ave. Manchester,
-              <br />
-              Kentucky 39495
+              {`4517 Washington Ave. Manchester,
+              Kentucky 39495`}
             </li>
             <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold hover:text-primary">
               <EmailIcon />

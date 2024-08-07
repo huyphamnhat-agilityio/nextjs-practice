@@ -55,10 +55,9 @@ const FeedbackSection = () => {
             <h2 className="text-foreground text-5xl/12.5 font-bold">
               Approdable Packages
             </h2>
-            <p className="text-foreground-100 text-sm">
-              Problems trying to resolve the conflict between
-              <br />
-              the two major realms of Classical physics: Newtonian mechanics
+            <p className="text-foreground-100 text-sm whitespace-pre-line">
+              {`Problems trying to resolve the conflict between
+              the two major realms of Classical physics: Newtonian mechanics`}
             </p>
           </div>
           <div className="flex flex-wrap gap-7.5 justify-evenly">

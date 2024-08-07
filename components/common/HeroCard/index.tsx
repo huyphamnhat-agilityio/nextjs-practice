@@ -24,7 +24,7 @@ const HeroCard = ({
         >
           {icon}
         </div>
-        <p className="text-2xl font-bold text-foreground">{title}</p>
+        <h3 className="text-2xl font-bold text-foreground">{title}</h3>
       </CardHeader>
 
       <Divider className="w-12.5 h-0.5 bg-primary" />
