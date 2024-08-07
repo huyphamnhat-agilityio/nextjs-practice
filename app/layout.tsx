@@ -12,6 +12,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "School Course App",
   description: "A simple course web app for schools",
+  metadataBase: new URL("https://nextjs-practice-eosin-beta.vercel.app/"),
 };
 
 export default function RootLayout({

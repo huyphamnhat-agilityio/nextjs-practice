@@ -8,7 +8,6 @@ import { LIMIT } from "@/constants";
 
 // Services
 import { getProducts } from "@/lib";
-import { notFound } from "next/navigation";
 
 const PopularCoursesSection = async ({
   currentPage,
@@ -16,10 +15,6 @@ const PopularCoursesSection = async ({
   currentPage: number;
 }) => {
   const products = await getProducts(currentPage, LIMIT);
-
-  // if (!products) {
-  //   notFound();
-  // }
 
   return (
     <section>
