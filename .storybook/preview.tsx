@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
-import "@/styles/globals.css";
 import React from "react";
+import "@/styles/globals.css";
+import { withThemeByClassName } from "@storybook/addon-themes";
+
 import { Providers } from "../app/providers";
 
 const preview: Preview = {
@@ -17,11 +19,13 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <Providers>
-        <Story />
-      </Providers>
-    ),
+    withThemeByClassName({
+      themes: {
+        light: "",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
   ],
   tags: ["autodocs"],
 };
