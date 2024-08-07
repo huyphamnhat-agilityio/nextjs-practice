@@ -12,10 +12,9 @@ const SubscribeSection = () => {
           <h3 className="text-foreground text-2xl font-bold">
             Most Popular Courses
           </h3>
-          <p className="text-foreground-100 text-sm">
-            Problems trying to resolve the conflict between
-            <br />
-            the two major realms of Classical physics: Newtonian mechanics
+          <p className="text-foreground-100 text-sm whitespace-pre-line">
+            {`Problems trying to resolve the conflict between
+            the two major realms of Classical physics: Newtonian mechanics`}
           </p>
         </div>
         <form className="flex flex-col gap-2 items-center">

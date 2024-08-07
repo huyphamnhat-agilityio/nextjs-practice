@@ -11,10 +11,9 @@ const PaymentSection = () => (
           <h3 className="text-foreground text-2xl font-bold">
             Watch our Courses
           </h3>
-          <p className="text-foreground-100 text-sm">
-            Problems trying to resolve the conflict between
-            <br />
-            the two major realms of Classical physics: Newtonian mechanics
+          <p className="text-foreground-100 text-sm whitespace-pre-line">
+            {`Problems trying to resolve the conflict between
+            the two major realms of Classical physics: Newtonian mechanics`}
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-10 2xl:gap-8">
