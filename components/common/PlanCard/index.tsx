@@ -3,6 +3,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 // Components
 import { CheckMarkIcon, HeartIcon } from "../Icons";
 import { Button } from "../Button";
+import { MOCK_PLAN } from "@/mocks/plan";
 
 export type PlanCardProps = {
   isNew?: boolean;
@@ -54,16 +55,24 @@ const PlanCard = ({
       </Button>
     </CardBody>
     <CardFooter className="flex flex-col items-start gap-3.75 p-0">
-      {features.map(({ feature, isSupported }, index) => (
-        <div key={index} className="flex items-center gap-2.5">
-          <div
-            className={`rounded-full bg-${isSupported ? "success" : "foreground-50"} px-2 py-2.5`}
-          >
-            <CheckMarkIcon />
+      {features.map(
+        (
+          {
+            feature = MOCK_PLAN.features[0].feature,
+            isSupported = MOCK_PLAN.features[0].isSupported,
+          },
+          index,
+        ) => (
+          <div key={index} className="flex items-center gap-2.5">
+            <div
+              className={`rounded-full bg-${isSupported ? "success" : "foreground-50"} px-2 py-2.5`}
+            >
+              <CheckMarkIcon />
+            </div>
+            <p className="text-foreground text-sm/6 font-bold">{feature}</p>
           </div>
-          <p className="text-foreground text-sm/6 font-bold">{feature}</p>
-        </div>
-      ))}
+        ),
+      )}
     </CardFooter>
   </Card>
 );

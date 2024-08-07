@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
 
 // Components
 import { Pagination, ProductList, ProductListSkeleton } from "@/components";
@@ -8,7 +7,8 @@ import { Pagination, ProductList, ProductListSkeleton } from "@/components";
 import { LIMIT } from "@/constants";
 
 // Services
-import { getProducts } from "@/services";
+import { getProducts } from "@/lib";
+import { notFound } from "next/navigation";
 
 const PopularCoursesSection = async ({
   currentPage,
@@ -16,6 +16,10 @@ const PopularCoursesSection = async ({
   currentPage: number;
 }) => {
   const products = await getProducts(currentPage, LIMIT);
+
+  // if (!products) {
+  //   notFound();
+  // }
 
   return (
     <section>

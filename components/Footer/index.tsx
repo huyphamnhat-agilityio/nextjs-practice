@@ -112,13 +112,13 @@ const Footer = () => {
             Made With Love By Figmaland All Right Reserved
           </p>
           <div className="flex gap-5 m-auto sm:m-0">
-            <Link href="#">
+            <Link href="#" aria-label="Go to Facebook page of the company">
               <FacebookLogoIcon />
             </Link>
-            <Link href="#">
+            <Link href="#" aria-label="Go to Instagram page of the company">
               <InstagramLogoIcon />
             </Link>
-            <Link href="#">
+            <Link href="#" aria-label="Go to Twitter page of the company">
               <TwitterLogoIcon />
             </Link>
           </div>

@@ -14,6 +14,7 @@ export const getProducts = async (page: number, limit: number) => {
   };
 
   try {
+    // throw new Error();
     const products = await fetchApi<Pagination<Product>>(
       process.env.PAGINATION_API,
       {
@@ -24,18 +25,6 @@ export const getProducts = async (page: number, limit: number) => {
 
     return products;
   } catch (error) {
-    console.error("Fetch Error:", error);
-    throw new Error("Failed to fetch product data.");
+    throw new Error("There was an error when fetching product data");
   }
-
-  // try {
-  //   const products = await fetchApi<Array<Product>>(
-  //     `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`
-  //   );
-
-  //   console.log(products);
-  // } catch (error) {
-  //   console.error("Fetch Error:", error);
-  //   throw new Error("Failed to fetch product data.");
-  // }
 };

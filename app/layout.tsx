@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
+
+// components
 import { Footer, Header } from "@/components";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -23,7 +25,9 @@ export default function RootLayout({
         <Providers>
           <div className="max-w-8xl mx-auto my-0 2xl:bg-hero-block bg-no-repeat">
             <Header />
+
             {children}
+
             <Footer />
           </div>
         </Providers>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Card,
   CardBody,
@@ -104,8 +105,11 @@ const ProductCard = ({
             color="primary"
             variant="bordered"
             size="xs"
-            endContent={<NextArrowIcon />}
             className="font-bold"
+            as={Link}
+            href="#"
+            aria-label="Go to learn more page"
+            endContent={<NextArrowIcon />}
           >
             Learn More
           </Button>

@@ -2,7 +2,7 @@
 import { LIMIT } from "@/constants";
 
 // Services
-import { getProducts } from "@/services";
+import { getProducts } from "@/lib";
 
 // Components
 import { ProductCard } from "../common";

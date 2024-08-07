@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // Components
 import { Button, HeroCard } from "@/components";
@@ -28,10 +29,23 @@ const HeroSection = () => (
             Every day brings with it a fresh set of learning possibilities.
           </p>
           <div className="flex gap-2.5 justify-center 2xl:justify-start flex-wrap">
-            <Button size="lg" className="text-white w-full sm:w-fit ">
+            <Button
+              size="lg"
+              as={Link}
+              href="#"
+              aria-label="Go to get quote page"
+              className="text-white w-full sm:w-fit "
+            >
               Get Quote Now
             </Button>
-            <Button size="lg" variant="bordered" className="w-full sm:w-fit">
+            <Button
+              size="lg"
+              as={Link}
+              href="#"
+              aria-label="Go to learn more page"
+              variant="bordered"
+              className="w-full sm:w-fit"
+            >
               Learn More
             </Button>
           </div>
