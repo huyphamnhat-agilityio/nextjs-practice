@@ -20,6 +20,9 @@ export const getProducts = async (page: number, limit: number) => {
       {
         method: "POST",
         body: JSON.stringify(options),
+        next: {
+          revalidate: 300,
+        },
       },
     );
 
