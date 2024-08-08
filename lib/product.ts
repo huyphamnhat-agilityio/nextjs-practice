@@ -8,7 +8,7 @@ import { LIMIT, RESOURCES } from "@/constants";
 
 export const getProducts = async (page: number, limit: number) => {
   const options = {
-    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/ádad`,
+    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
     page,
     limit,
   };
