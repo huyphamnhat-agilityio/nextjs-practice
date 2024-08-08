@@ -1,14 +1,26 @@
-// Sections
-import {
-  FeedbackSection,
-  GetQualitySection,
-  HeroSection,
-  PaymentSection,
-  PopularCoursesSection,
-  SponsorSection,
-  SubscribeSection,
-} from "@/containers";
+import dynamic from "next/dynamic";
 
+import { PopularCoursesSection, SponsorSection } from "@/containers";
+
+const HeroSection = dynamic(() =>
+  import("@/containers").then((module) => module.HeroSection),
+);
+
+const GetQualitySection = dynamic(() =>
+  import("@/containers").then((module) => module.GetQualitySection),
+);
+
+const PaymentSection = dynamic(() =>
+  import("@/containers").then((module) => module.PaymentSection),
+);
+
+const FeedbackSection = dynamic(() =>
+  import("@/containers").then((module) => module.FeedbackSection),
+);
+
+const SubscribeSection = dynamic(() =>
+  import("@/containers").then((module) => module.SubscribeSection),
+);
 export default function Home({
   searchParams,
 }: {
@@ -17,6 +29,7 @@ export default function Home({
   };
 }) {
   const currentPage = Number(searchParams?.page) || 1;
+
   return (
     <main>
       <HeroSection />

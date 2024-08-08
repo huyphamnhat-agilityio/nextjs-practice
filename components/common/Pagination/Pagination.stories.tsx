@@ -17,13 +17,9 @@ const meta: Meta<typeof Pagination> = {
     total: {
       description: "Total number of pages",
     },
-    initialPage: {
-      description: "Initial page number",
-    },
   },
   args: {
     total: 10,
-    initialPage: 1,
   },
   parameters: {
     controls: {

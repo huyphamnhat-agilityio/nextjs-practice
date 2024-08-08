@@ -1,26 +1,20 @@
-import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
-// Services
-import { getAllPages } from "@/lib";
-
 // Components
-import { Pagination, ProductListSkeleton } from "@/components";
+import { Pagination, ProductList, ProductListSkeleton } from "@/components";
 
-const ProductList = dynamic(
-  () => import("@/components").then((mod) => mod.ProductList),
-  {
-    ssr: false,
-    loading: () => <ProductListSkeleton />,
-  },
-);
+// Constants
+import { LIMIT } from "@/constants";
 
-const PopularCoursesSection = async ({
+// Services
+import { getProducts } from "@/lib";
+
+const PopularCoursesSectionSkeleton = async ({
   currentPage,
 }: {
   currentPage: number;
 }) => {
-  const totalPages = await getAllPages();
+  const products = await getProducts(currentPage, LIMIT);
 
   return (
     <section>
@@ -37,15 +31,13 @@ const PopularCoursesSection = async ({
             </p>
           </div>
 
-          <Suspense key={currentPage} fallback={<ProductListSkeleton />}>
-            <ProductList currentPage={currentPage} />
-          </Suspense>
+          <ProductListSkeleton />
 
-          <Pagination total={totalPages} />
+          <Pagination total={products.totalPages} />
         </div>
       </div>
     </section>
   );
 };
 
-export default PopularCoursesSection;
+export default PopularCoursesSectionSkeleton;

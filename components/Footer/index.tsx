@@ -18,16 +18,16 @@ const Footer = () => {
               Company Info
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold hover:text-primary">
-              <Link href="#">About Us</Link>
+              <a href="#">About Us</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Carrier</Link>
+              <a href="#">Carrier</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">We are hiring</Link>
+              <a href="#">We are hiring</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Blogs</Link>
+              <a href="#">Blogs</a>
             </li>
           </ul>
           <ul className="min-w-38 flex flex-col gap-2.5">
@@ -35,16 +35,16 @@ const Footer = () => {
               Legal
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold hover:text-primary">
-              <Link href="#">About Us</Link>
+              <a href="#">About Us</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Carrier</Link>
+              <a href="#">Carrier</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">We are hiring</Link>
+              <a href="#">We are hiring</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Blogs</Link>
+              <a href="#">Blogs</a>
             </li>
           </ul>
           <ul className="min-w-38 flex flex-col gap-2.5">
@@ -52,16 +52,16 @@ const Footer = () => {
               Features
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold hover:text-primary">
-              <Link href="#">Business Marketing</Link>
+              <a href="#">Business Marketing</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">User Analytic</Link>
+              <a href="#">User Analytic</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Live Chat</Link>
+              <a href="#">Live Chat</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Unlimited Support</Link>
+              <a href="#">Unlimited Support</a>
             </li>
           </ul>
           <ul className="min-w-38 flex flex-col gap-2.5">
@@ -69,16 +69,16 @@ const Footer = () => {
               Resources
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold hover:text-primary">
-              <Link href="#">IOS & Android</Link>
+              <a href="#">IOS & Android</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Watch a Demo</Link>
+              <a href="#">Watch a Demo</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">Customers</Link>
+              <a href="#">Customers</a>
             </li>
             <li className="text-foreground-100 text-sm/6 font-bold  hover:text-primary">
-              <Link href="#">API</Link>
+              <a href="#">API</a>
             </li>
           </ul>
           <ul className="min-w-38 flex flex-col gap-2.5">
@@ -87,7 +87,7 @@ const Footer = () => {
             </li>
             <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold hover:text-primary">
               <TelephoneIcon />
-              <Link href="tel:+480550103">(480) 555-0103</Link>
+              <a href="tel:+480550103">(480) 555-0103</a>
             </li>
             <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold whitespace-pre-line">
               <LocationIcon />
@@ -96,9 +96,7 @@ const Footer = () => {
             </li>
             <li className="flex gap-2.5 justify-center sm:justify-normal text-foreground-100 text-sm/6 font-bold hover:text-primary">
               <EmailIcon />
-              <Link href="mailto:debra.holt@example.com">
-                debra.holt@example.com
-              </Link>
+              <a href="mailto:debra.holt@example.com">debra.holt@example.com</a>
             </li>
           </ul>
         </div>
@@ -111,15 +109,15 @@ const Footer = () => {
             Made With Love By Figmaland All Right Reserved
           </p>
           <div className="flex gap-5 m-auto sm:m-0">
-            <Link href="#" aria-label="Go to Facebook page of the company">
+            <a href="#" aria-label="Go to Facebook page of the company">
               <FacebookLogoIcon />
-            </Link>
-            <Link href="#" aria-label="Go to Instagram page of the company">
+            </a>
+            <a href="#" aria-label="Go to Instagram page of the company">
               <InstagramLogoIcon />
-            </Link>
-            <Link href="#" aria-label="Go to Twitter page of the company">
+            </a>
+            <a href="#" aria-label="Go to Twitter page of the company">
               <TwitterLogoIcon />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -23,9 +23,9 @@ export const CustomPagination = extendVariants(NextUIPagination, {
 
 export type PaginationProps = {
   total: number;
-  initialPage: number;
 };
-export const Pagination = ({ total, initialPage }: PaginationProps) => {
+
+export const Pagination = ({ total }: PaginationProps) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -42,7 +42,7 @@ export const Pagination = ({ total, initialPage }: PaginationProps) => {
   return (
     <CustomPagination
       total={total}
-      initialPage={initialPage}
+      initialPage={Number(searchParams.get("page")) || 1}
       onChange={createPageUrl}
       className="flex justify-center m-0"
     />

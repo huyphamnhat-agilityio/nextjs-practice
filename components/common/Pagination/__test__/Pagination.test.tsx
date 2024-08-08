@@ -22,7 +22,7 @@ describe("Pagination test cases", () => {
   const setup = (props: PaginationProps) => render(<Pagination {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup({ total: 10, initialPage: 1 });
+    const { container } = setup({ total: 10 });
 
     expect(container).toMatchSnapshot();
   });
