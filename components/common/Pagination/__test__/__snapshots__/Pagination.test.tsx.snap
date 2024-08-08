@@ -4,7 +4,7 @@ exports[`Pagination test cases should render correctly 1`] = `
 <div>
   <nav
     aria-label="pagination navigation"
-    class="p-2.5 -m-2.5 overflow-x-scroll scrollbar-hide flex justify-center"
+    class="p-2.5 overflow-x-scroll scrollbar-hide flex justify-center m-0"
     data-active-page="1"
     data-dots-jump="5"
     data-slot="base"

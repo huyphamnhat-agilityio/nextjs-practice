@@ -12,10 +12,12 @@ const config: Config = {
   testEnvironment: "jsdom",
   collectCoverageFrom: [
     "<rootDir>/**/*.{jsx,tsx}",
+    "<rootDir>/lib/*.*",
     "!**/*.d.ts",
     "!<rootDir>/**/*.stories.{js,jsx,ts,tsx}",
     "!<rootDir>/node_modules/",
     "!<rootDir>/.storybook/**",
+    "!<rootDir>/app/*.*",
   ],
   // Add more setup options before each test is run
   setupFilesAfterEnv: ["./jest.setup.ts"],

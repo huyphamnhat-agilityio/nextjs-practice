@@ -2,10 +2,11 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
 // Services
-import { getAllPages } from "@/lib";
+import { getProducts } from "@/lib";
 
 // Components
 import { Pagination, ProductListSkeleton } from "@/components";
+import { LIMIT } from "@/constants";
 
 const ProductList = dynamic(
   () => import("@/components").then((mod) => mod.ProductList),
@@ -20,7 +21,7 @@ const PopularCoursesSection = async ({
 }: {
   currentPage: number;
 }) => {
-  const totalPages = await getAllPages();
+  const { totalPages } = await getProducts(currentPage, LIMIT);
 
   return (
     <section>

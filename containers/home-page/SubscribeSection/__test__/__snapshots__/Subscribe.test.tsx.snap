@@ -20,11 +20,10 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
           Most Popular Courses
         </h3>
         <p
-          class="text-foreground-100 text-sm"
+          class="text-foreground-100 text-sm whitespace-pre-line"
         >
           Problems trying to resolve the conflict between
-          <br />
-          the two major realms of Classical physics: Newtonian mechanics
+            the two major realms of Classical physics: Newtonian mechanics
         </p>
       </div>
       <form

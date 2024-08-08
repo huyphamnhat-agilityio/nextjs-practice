@@ -30,21 +30,3 @@ export const getProducts = async (page: number, limit: number) => {
     throw new Error(error);
   }
 };
-
-export const getAllPages = async () => {
-  try {
-    const products = await fetchApi<Product[]>(
-      `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
-      {
-        method: "GET",
-        next: {
-          revalidate: 300,
-        },
-      },
-    );
-
-    return Math.ceil(products.length / LIMIT);
-  } catch (error) {
-    throw new Error(error);
-  }
-};

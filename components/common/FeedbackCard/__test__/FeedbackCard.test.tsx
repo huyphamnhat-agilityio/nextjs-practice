@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 
 // Components
-import { FeedbackCard, FeedbackCardProps } from "..";
+import FeedbackCard, { FeedbackCardProps } from "..";
 
 // Mocks
 import { MOCK_AVATARS } from "@/mocks/avatar";

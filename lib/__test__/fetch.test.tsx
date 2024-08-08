@@ -1,0 +1,82 @@
+import { fetchApi } from "../fetch";
+
+// Mock the global fetch API
+global.fetch = jest.fn();
+
+describe("fetchApi", () => {
+  afterEach(() => {
+    jest.clearAllMocks(); // Clear any mocks after each test
+  });
+
+  it("should return data when the response is successful", async () => {
+    const mockData = { id: 1, name: "Test" };
+
+    // Mock a successful fetch response
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockData,
+    });
+
+    const result = await fetchApi<typeof mockData>(
+      "https://api.example.com/data",
+    );
+
+    expect(result).toEqual(mockData);
+    expect(global.fetch).toHaveBeenCalledWith("https://api.example.com/data", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  });
+
+  it("should return data with custom options", async () => {
+    const mockData = { id: 1, name: "Test" };
+    const options = {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer token",
+      },
+      body: JSON.stringify({ key: "value" }),
+    };
+
+    // Mock a successful fetch response
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockData,
+    });
+
+    const result = await fetchApi<typeof mockData>(
+      "https://api.example.com/data",
+      options,
+    );
+
+    expect(result).toEqual(mockData);
+    expect(global.fetch).toHaveBeenCalledWith(
+      "https://api.example.com/data",
+      options,
+    );
+  });
+
+  it("should throw an error when the response is not ok", async () => {
+    const mockError = "Not Found";
+
+    // Mock an unsuccessful fetch response
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      text: async () => mockError,
+    });
+
+    await expect(fetchApi("https://api.example.com/data")).rejects.toEqual(
+      "404: Not Found",
+    );
+
+    expect(global.fetch).toHaveBeenCalledWith("https://api.example.com/data", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  });
+});

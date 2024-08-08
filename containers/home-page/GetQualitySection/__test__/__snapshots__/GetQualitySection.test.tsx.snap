@@ -6,19 +6,16 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
     <div
       class="flex flex-col lg:flex-row justify-between items-center gap-10 2xl:gap-0 max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 mx-auto mt-52"
     >
-      <div>
-        <div
-          class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-large"
-          style="max-width: fit-content;"
-        >
-           
-          <img
-            alt="An image of a girl holding a pencil"
-            class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
-            src="/girl-holding-pencil-image.svg"
-          />
-        </div>
-      </div>
+      <img
+        alt="An image of a girl holding a pencil"
+        data-nimg="1"
+        decoding="async"
+        height="535"
+        loading="lazy"
+        src="/girl-holding-pencil-image.svg"
+        style="color: transparent;"
+        width="458"
+      />
       <div
         class="flex flex-col gap-8.75 sm:w-95.25 text-center lg:text-start items-center lg:items-start"
       >
@@ -32,19 +29,15 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
           Get Quality Education
         </h2>
         <p
-          class="text-foreground-100 text-sm"
+          class="text-foreground-100 text-sm whitespace-pre-line"
         >
-          Problems trying to resolve the conflict between
-          <br />
-          the two major realms of Classical physics:
-          <br />
-          Newtonian mechanics
+          Problems trying to resolve the conflict between 
+          the two major realms of Classical physics: Newtonian mechanics
         </p>
         <a
-          class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 text-sm/6 font-bold"
-          href="/"
-          role="link"
-          tabindex="0"
+          class="flex gap-2.5 text-sm/6 font-bold"
+          color="primary"
+          href="#"
         >
           Learn More
           <svg
@@ -77,7 +70,7 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
               </clippath>
             </defs>
           </svg>
-        </Link>
+        </a>
       </div>
     </div>
   </section>

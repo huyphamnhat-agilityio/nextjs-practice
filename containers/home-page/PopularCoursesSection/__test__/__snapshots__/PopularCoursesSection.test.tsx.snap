@@ -4,10 +4,10 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
 <div>
   <section>
     <div
-      class="bg-dark-blue mt-32.5"
+      class="bg-dark-blue mt-32.5 flex justify-center"
     >
       <div
-        class="max-w-lg md:max-w-4xl lg:max-w-5xl my-0 mx-auto py-40 flex flex-col gap-20"
+        class="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 py-40 flex flex-col gap-20"
       >
         <div
           class="flex flex-col gap-2.5 text-center 2xl:text-start"
@@ -23,39 +23,40 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
             Our Popular Courses
           </h2>
           <p
-            class="text-white text-sm"
+            class="text-white text-sm whitespace-pre-line"
           >
             Problems trying to resolve the conflict between
-            <br />
-            the two major realms of Classical physics: Newtonian mechanics
+              the two major realms of Classical physics: Newtonian mechanics
           </p>
         </div>
         <div
           class="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly"
         >
           <div
-            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none w-82 flex flex-col rounded-none"
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
             tabindex="-1"
           >
             <div
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <div
-                class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-                style="max-width: 328px;"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                 
                 <div
-                  class="relative overflow-hidden rounded-inherit rounded-none"
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <img
-                    alt="An image about Video in Live Action"
-                    class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-                    height="300"
-                    src="/product-cover-1.png"
-                    style="height: 300px;"
-                    width="328"
-                  />
+                  <div
+                    class="relative shadow-black/5 shadow-none rounded-none"
+                    style="max-width: 328px;"
+                  >
+                     
+                    <img
+                      class="relative z-10 opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+                      height="300"
+                      style="height: 300px;"
+                      width="328"
+                    />
+                  </div>
                 </div>
               </div>
               <div
@@ -151,96 +152,142 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               <div
                 class="flex justify-between"
               >
-                <span
-                  class="text-primary text-sm/6 font-bold"
-                >
-                  Training Courses
-                </span>
                 <div
-                  class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
                 >
-                  <svg
-                    fill="none"
-                    height="23"
-                    viewBox="0 0 23 23"
-                    width="23"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    <path
-                      d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
-                      fill="#F3CD03"
-                    />
-                  </svg>
-                  <span
-                    class="text-white text-xs"
+                    <span
+                      class="text-primary text-sm/6 font-bold"
+                    >
+                      Training Courses
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+                >
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    4.9
-                  </span>
+                    <div
+                      class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                    >
+                      <svg
+                        fill="none"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        width="23"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
+                          fill="#F3CD03"
+                        />
+                      </svg>
+                      <span
+                        class="text-white text-xs"
+                      >
+                        4.9
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h5
-                class="text-foreground text-base font-bold"
-              >
-                Video in Live Action
-              </h5>
-              <p
-                class="text-foreground-100 text-sm"
-              >
-                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
-              </p>
               <div
-                class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <svg
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 17 16"
-                  width="17"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <g
-                    clip-path="url(#clip0_2685_1042)"
+                  <h5
+                    class="text-foreground text-base font-bold"
                   >
-                    <path
-                      d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
-                      fill="#737373"
-                    />
-                    <path
-                      d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
-                      fill="#737373"
-                    />
-                  </g>
-                  <defs>
-                    <clippath
-                      id="clip0_2685_1042"
-                    >
-                      <rect
-                        fill="white"
-                        height="16"
-                        transform="translate(0.5)"
-                        width="16"
-                      />
-                    </clippath>
-                  </defs>
-                </svg>
-                15
-                 Sales
+                    Video in Live Action
+                  </h5>
+                </div>
               </div>
               <div
-                class="py-1.25 px-0.75 flex gap-1.25"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <span
-                  class="text-foreground-50 text-base font-bold"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  16.48
-                </span>
-                <span
-                  class="text-secondary text-base font-bold"
+                  <p
+                    class="text-foreground-100 text-sm"
+                  >
+                    We focus on ergonomics and meeting you where you work. It's only a keystroke away.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  6.48
-                </span>
+                  <div
+                    class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      width="17"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#clip0_2685_1042)"
+                      >
+                        <path
+                          d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
+                          fill="#737373"
+                        />
+                        <path
+                          d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
+                          fill="#737373"
+                        />
+                      </g>
+                      <defs>
+                        <clippath
+                          id="clip0_2685_1042"
+                        >
+                          <rect
+                            fill="white"
+                            height="16"
+                            transform="translate(0.5)"
+                            width="16"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                    15
+                     Sales
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
+                >
+                  <div
+                    class="py-1.25 px-0.75 flex gap-1.25"
+                  >
+                    <span
+                      class="text-foreground-50 text-base font-bold"
+                    >
+                      16.48
+                    </span>
+                    <span
+                      class="text-secondary text-base font-bold"
+                    >
+                      6.48
+                    </span>
+                  </div>
+                </div>
               </div>
               <div>
                 <button
@@ -283,28 +330,30 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
             </div>
           </div>
           <div
-            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none w-82 flex flex-col rounded-none"
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
             tabindex="-1"
           >
             <div
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <div
-                class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-                style="max-width: 328px;"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                 
                 <div
-                  class="relative overflow-hidden rounded-inherit rounded-none"
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <img
-                    alt="An image about Every Client Matters"
-                    class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-                    height="300"
-                    src="/product-cover-2.png"
-                    style="height: 300px;"
-                    width="328"
-                  />
+                  <div
+                    class="relative shadow-black/5 shadow-none rounded-none"
+                    style="max-width: 328px;"
+                  >
+                     
+                    <img
+                      class="relative z-10 opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+                      height="300"
+                      style="height: 300px;"
+                      width="328"
+                    />
+                  </div>
                 </div>
               </div>
               <div
@@ -400,96 +449,142 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               <div
                 class="flex justify-between"
               >
-                <span
-                  class="text-primary text-sm/6 font-bold"
-                >
-                  Books Library
-                </span>
                 <div
-                  class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
                 >
-                  <svg
-                    fill="none"
-                    height="23"
-                    viewBox="0 0 23 23"
-                    width="23"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    <path
-                      d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
-                      fill="#F3CD03"
-                    />
-                  </svg>
-                  <span
-                    class="text-white text-xs"
+                    <span
+                      class="text-primary text-sm/6 font-bold"
+                    >
+                      Training Courses
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+                >
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    4.9
-                  </span>
+                    <div
+                      class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                    >
+                      <svg
+                        fill="none"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        width="23"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
+                          fill="#F3CD03"
+                        />
+                      </svg>
+                      <span
+                        class="text-white text-xs"
+                      >
+                        4.9
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h5
-                class="text-foreground text-base font-bold"
-              >
-                Every Client Matters
-              </h5>
-              <p
-                class="text-foreground-100 text-sm"
-              >
-                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
-              </p>
               <div
-                class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <svg
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 17 16"
-                  width="17"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <g
-                    clip-path="url(#clip0_2685_1042)"
+                  <h5
+                    class="text-foreground text-base font-bold"
                   >
-                    <path
-                      d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
-                      fill="#737373"
-                    />
-                    <path
-                      d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
-                      fill="#737373"
-                    />
-                  </g>
-                  <defs>
-                    <clippath
-                      id="clip0_2685_1042"
-                    >
-                      <rect
-                        fill="white"
-                        height="16"
-                        transform="translate(0.5)"
-                        width="16"
-                      />
-                    </clippath>
-                  </defs>
-                </svg>
-                15
-                 Sales
+                    Video in Live Action
+                  </h5>
+                </div>
               </div>
               <div
-                class="py-1.25 px-0.75 flex gap-1.25"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <span
-                  class="text-foreground-50 text-base font-bold"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  16.48
-                </span>
-                <span
-                  class="text-secondary text-base font-bold"
+                  <p
+                    class="text-foreground-100 text-sm"
+                  >
+                    We focus on ergonomics and meeting you where you work. It's only a keystroke away.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  6.48
-                </span>
+                  <div
+                    class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      width="17"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#clip0_2685_1042)"
+                      >
+                        <path
+                          d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
+                          fill="#737373"
+                        />
+                        <path
+                          d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
+                          fill="#737373"
+                        />
+                      </g>
+                      <defs>
+                        <clippath
+                          id="clip0_2685_1042"
+                        >
+                          <rect
+                            fill="white"
+                            height="16"
+                            transform="translate(0.5)"
+                            width="16"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                    15
+                     Sales
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
+                >
+                  <div
+                    class="py-1.25 px-0.75 flex gap-1.25"
+                  >
+                    <span
+                      class="text-foreground-50 text-base font-bold"
+                    >
+                      16.48
+                    </span>
+                    <span
+                      class="text-secondary text-base font-bold"
+                    >
+                      6.48
+                    </span>
+                  </div>
+                </div>
               </div>
               <div>
                 <button
@@ -532,28 +627,30 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
             </div>
           </div>
           <div
-            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none w-82 flex flex-col rounded-none"
+            class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
             tabindex="-1"
           >
             <div
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <div
-                class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-                style="max-width: 328px;"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                 
                 <div
-                  class="relative overflow-hidden rounded-inherit rounded-none"
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <img
-                    alt="An image about Get Quality Education"
-                    class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
-                    height="300"
-                    src="/product-cover-3.png"
-                    style="height: 300px;"
-                    width="328"
-                  />
+                  <div
+                    class="relative shadow-black/5 shadow-none rounded-none"
+                    style="max-width: 328px;"
+                  >
+                     
+                    <img
+                      class="relative z-10 opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none"
+                      height="300"
+                      style="height: 300px;"
+                      width="328"
+                    />
+                  </div>
                 </div>
               </div>
               <div
@@ -649,96 +746,142 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               <div
                 class="flex justify-between"
               >
-                <span
-                  class="text-primary text-sm/6 font-bold"
-                >
-                  Certified Teachers
-                </span>
                 <div
-                  class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
                 >
-                  <svg
-                    fill="none"
-                    height="23"
-                    viewBox="0 0 23 23"
-                    width="23"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    <path
-                      d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
-                      fill="#F3CD03"
-                    />
-                  </svg>
-                  <span
-                    class="text-white text-xs"
+                    <span
+                      class="text-primary text-sm/6 font-bold"
+                    >
+                      Training Courses
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+                >
+                  <div
+                    class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                   >
-                    4.9
-                  </span>
+                    <div
+                      class="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+                    >
+                      <svg
+                        fill="none"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        width="23"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.6369 8.41964C20.5793 8.24983 20.4731 8.10061 20.3317 7.99043C20.1902 7.88024 20.0195 7.81389 19.8408 7.79959L14.6116 7.38408L12.3488 2.37506C12.2767 2.21373 12.1595 2.07671 12.0113 1.98052C11.8631 1.88434 11.6902 1.8331 11.5135 1.83301C11.3368 1.83291 11.1638 1.88395 11.0155 1.97998C10.8672 2.076 10.7498 2.2129 10.6776 2.37415L8.41477 7.38408L3.18562 7.79959C3.00993 7.8135 2.84196 7.87774 2.70183 7.98462C2.56169 8.0915 2.45531 8.23648 2.39541 8.40224C2.33552 8.56799 2.32464 8.74749 2.36409 8.91926C2.40354 9.09103 2.49164 9.2478 2.61785 9.37081L6.48216 13.1379L5.11548 19.0559C5.07398 19.235 5.08728 19.4225 5.15365 19.594C5.22003 19.7655 5.33641 19.913 5.48769 20.0175C5.63898 20.1221 5.81819 20.1787 6.00206 20.1801C6.18594 20.1815 6.36598 20.1276 6.51885 20.0254L11.5132 16.6958L16.5075 20.0254C16.6638 20.1291 16.848 20.1825 17.0355 20.1784C17.223 20.1743 17.4047 20.1129 17.5563 20.0024C17.7078 19.8919 17.8219 19.7377 17.8832 19.5604C17.9444 19.3832 17.9499 19.1914 17.899 19.0109L16.2213 13.1406L20.3819 9.39649C20.6543 9.15067 20.7543 8.76727 20.6369 8.41964Z"
+                          fill="#F3CD03"
+                        />
+                      </svg>
+                      <span
+                        class="text-white text-xs"
+                      >
+                        4.9
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h5
-                class="text-foreground text-base font-bold"
-              >
-                Get Quality Education
-              </h5>
-              <p
-                class="text-foreground-100 text-sm"
-              >
-                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
-              </p>
               <div
-                class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <svg
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 17 16"
-                  width="17"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  <g
-                    clip-path="url(#clip0_2685_1042)"
+                  <h5
+                    class="text-foreground text-base font-bold"
                   >
-                    <path
-                      d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
-                      fill="#737373"
-                    />
-                    <path
-                      d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
-                      fill="#737373"
-                    />
-                  </g>
-                  <defs>
-                    <clippath
-                      id="clip0_2685_1042"
-                    >
-                      <rect
-                        fill="white"
-                        height="16"
-                        transform="translate(0.5)"
-                        width="16"
-                      />
-                    </clippath>
-                  </defs>
-                </svg>
-                15
-                 Sales
+                    Video in Live Action
+                  </h5>
+                </div>
               </div>
               <div
-                class="py-1.25 px-0.75 flex gap-1.25"
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
               >
-                <span
-                  class="text-foreground-50 text-base font-bold"
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  16.48
-                </span>
-                <span
-                  class="text-secondary text-base font-bold"
+                  <p
+                    class="text-foreground-100 text-sm"
+                  >
+                    We focus on ergonomics and meeting you where you work. It's only a keystroke away.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
                 >
-                  $
-                  6.48
-                </span>
+                  <div
+                    class="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      width="17"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#clip0_2685_1042)"
+                      >
+                        <path
+                          d="M1 9.90039C1.13261 9.90039 1.25979 9.95307 1.35355 10.0468C1.44732 10.1406 1.5 10.2678 1.5 10.4004V12.9004C1.5 13.1656 1.60536 13.42 1.79289 13.6075C1.98043 13.795 2.23478 13.9004 2.5 13.9004H14.5C14.7652 13.9004 15.0196 13.795 15.2071 13.6075C15.3946 13.42 15.5 13.1656 15.5 12.9004V10.4004C15.5 10.2678 15.5527 10.1406 15.6464 10.0468C15.7402 9.95307 15.8674 9.90039 16 9.90039C16.1326 9.90039 16.2598 9.95307 16.3536 10.0468C16.4473 10.1406 16.5 10.2678 16.5 10.4004V12.9004C16.5 13.4308 16.2893 13.9395 15.9142 14.3146C15.5391 14.6897 15.0304 14.9004 14.5 14.9004H2.5C1.96957 14.9004 1.46086 14.6897 1.08579 14.3146C0.710714 13.9395 0.5 13.4308 0.5 12.9004V10.4004C0.5 10.2678 0.552678 10.1406 0.646447 10.0468C0.740215 9.95307 0.867392 9.90039 1 9.90039Z"
+                          fill="#737373"
+                        />
+                        <path
+                          d="M8.14566 11.854C8.1921 11.9006 8.24728 11.9375 8.30802 11.9627C8.36877 11.9879 8.43389 12.0009 8.49966 12.0009C8.56542 12.0009 8.63054 11.9879 8.69129 11.9627C8.75203 11.9375 8.80721 11.9006 8.85366 11.854L11.8537 8.854C11.9475 8.76011 12.0003 8.63278 12.0003 8.5C12.0003 8.36722 11.9475 8.23989 11.8537 8.146C11.7598 8.05211 11.6324 7.99937 11.4997 7.99937C11.3669 7.99937 11.2395 8.05211 11.1457 8.146L8.99966 10.293V1.5C8.99966 1.36739 8.94698 1.24021 8.85321 1.14645C8.75944 1.05268 8.63226 1 8.49966 1C8.36705 1 8.23987 1.05268 8.1461 1.14645C8.05233 1.24021 7.99966 1.36739 7.99966 1.5V10.293L5.85366 8.146C5.75977 8.05211 5.63243 7.99937 5.49966 7.99937C5.36688 7.99937 5.23954 8.05211 5.14566 8.146C5.05177 8.23989 4.99902 8.36722 4.99902 8.5C4.99902 8.63278 5.05177 8.76011 5.14566 8.854L8.14566 11.854Z"
+                          fill="#737373"
+                        />
+                      </g>
+                      <defs>
+                        <clippath
+                          id="clip0_2685_1042"
+                        >
+                          <rect
+                            fill="white"
+                            height="16"
+                            transform="translate(0.5)"
+                            width="16"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                    15
+                     Sales
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative overflow-hidden bg-content3 dark:bg-content2 pointer-events-none before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 data-[loaded=true]:pointer-events-auto data-[loaded=true]:overflow-visible data-[loaded=true]:!bg-transparent data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none data-[loaded=true]:after:opacity-0 transition-background !duration-300 before:transition-opacity before:!duration-300"
+              >
+                <div
+                  class="opacity-0 group-data-[loaded=true]:opacity-100 transition-opacity motion-reduce:transition-none !duration-300"
+                >
+                  <div
+                    class="py-1.25 px-0.75 flex gap-1.25"
+                  >
+                    <span
+                      class="text-foreground-50 text-base font-bold"
+                    >
+                      16.48
+                    </span>
+                    <span
+                      class="text-secondary text-base font-bold"
+                    >
+                      6.48
+                    </span>
+                  </div>
+                </div>
               </div>
               <div>
                 <button
@@ -783,7 +926,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
         </div>
         <nav
           aria-label="pagination navigation"
-          class="p-2.5 -m-2.5 overflow-x-scroll scrollbar-hide flex justify-center"
+          class="p-2.5 overflow-x-scroll scrollbar-hide flex justify-center m-0"
           data-active-page="1"
           data-dots-jump="5"
           data-slot="base"

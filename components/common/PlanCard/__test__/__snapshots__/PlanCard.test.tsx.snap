@@ -28,7 +28,7 @@ exports[`PlanCard test cases should render correctly 1`] = `
       <h3
         class="uppercase text-foreground text-2xl font-bold"
       >
-        Free
+        free
       </h3>
     </div>
     <div
@@ -45,12 +45,18 @@ exports[`PlanCard test cases should render correctly 1`] = `
         <p
           class="text-primary text-5xl/12.5 font-bold"
         >
-          19$
+          19
+          $
         </p>
         <p
           class="text-secondary-50 text-sm/6 font-bold"
         >
-          Per Month
+          Per 
+          <span
+            class="capitalize"
+          >
+            month
+          </span>
         </p>
       </div>
       <p
@@ -316,7 +322,7 @@ exports[`PlanCard test cases should render correctly with new badge 1`] = `
       <h3
         class="uppercase text-foreground text-2xl font-bold"
       >
-        Free
+        free
       </h3>
     </div>
     <div
@@ -333,12 +339,18 @@ exports[`PlanCard test cases should render correctly with new badge 1`] = `
         <p
           class="text-primary text-5xl/12.5 font-bold"
         >
-          19$
+          19
+          $
         </p>
         <p
           class="text-secondary-50 text-sm/6 font-bold"
         >
-          Per Month
+          Per 
+          <span
+            class="capitalize"
+          >
+            month
+          </span>
         </p>
       </div>
       <p
