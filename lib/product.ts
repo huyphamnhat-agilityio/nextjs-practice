@@ -8,7 +8,7 @@ import { LIMIT, RESOURCES } from "@/constants";
 
 export const getProducts = async (page: number, limit: number) => {
   const options = {
-    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
+    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/ádad`,
     page,
     limit,
   };
@@ -27,7 +27,7 @@ export const getProducts = async (page: number, limit: number) => {
 
     return products;
   } catch (error) {
-    throw new Error("There was an error when fetching product data");
+    throw new Error(error);
   }
 };
 
@@ -45,6 +45,6 @@ export const getAllPages = async () => {
 
     return Math.ceil(products.length / LIMIT);
   } catch (error) {
-    throw new Error("There was an error when fetching product total pages");
+    throw new Error(error);
   }
 };

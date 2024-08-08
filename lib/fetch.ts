@@ -10,5 +10,7 @@ export const fetchApi = async <T>(url: string, options?: RequestInit) => {
 
   if (response.ok) return response.json() as T;
 
-  throw new Error(`Failed to fetch ${url}: ${response.status}`);
+  const errorMessage = `${response.status}: ${await response.text()}`;
+
+  throw errorMessage;
 };

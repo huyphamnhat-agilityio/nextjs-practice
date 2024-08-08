@@ -77,7 +77,7 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
               </clippath>
             </defs>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   </section>

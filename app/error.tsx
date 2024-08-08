@@ -40,7 +40,7 @@ export default function Error({
               </p>
             </div>
 
-            <p className="text-danger text-center text-2xl font-bold w-[1004px]">
+            <p className="text-danger text-center text-2xl font-bold max-w-[1004px]">
               {error.message}
             </p>
 

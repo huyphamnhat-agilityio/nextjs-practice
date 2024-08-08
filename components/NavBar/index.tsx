@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import {
   Navbar,
   NavbarContent,
@@ -30,20 +31,20 @@ const NavBar = () => {
         <NavbarItem>
           <div className="flex gap-3 base:gap-11 lg:gap-22 items-center">
             <NavbarBrand as="div">
-              <a href="#" className="text-foreground text-2xl font-bold">
+              <Link href="#" className="text-foreground text-2xl font-bold">
                 Brandname
-              </a>
+              </Link>
             </NavbarBrand>
 
             <NavbarContent className="hidden md:flex gap-2 base:gap-4">
               {NAV_LIST_DESKTOP.map((item) => (
                 <NavbarItem key={item.id}>
-                  <a
+                  <Link
                     href={item.destination}
                     className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </NavbarItem>
               ))}
             </NavbarContent>
@@ -84,12 +85,12 @@ const NavBar = () => {
       <NavbarMenu className="pl-9">
         {NAV_LIST_MOBILE.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <a
+            <Link
               href={item.destination}
               className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
             >
               {item.label}
-            </a>
+            </Link>
           </NavbarMenuItem>
         ))}
         <NavbarMenuItem>

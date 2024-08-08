@@ -24,7 +24,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
               href="/"
             >
               Brandname
-            </a>
+            </Link>
           </div>
           <ul
             class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
@@ -38,7 +38,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -48,7 +48,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -58,7 +58,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -68,7 +68,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -219,7 +219,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
               href="/"
             >
               Brandname
-            </a>
+            </Link>
           </div>
           <ul
             class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
@@ -233,7 +233,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -243,7 +243,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -253,7 +253,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -263,7 +263,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
                 href="/"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -413,7 +413,7 @@ exports[`NavBar test cases should render correctly 1`] = `
               href="/"
             >
               Brandname
-            </a>
+            </Link>
           </div>
           <ul
             class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
@@ -427,7 +427,7 @@ exports[`NavBar test cases should render correctly 1`] = `
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -437,7 +437,7 @@ exports[`NavBar test cases should render correctly 1`] = `
                 href="/"
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -447,7 +447,7 @@ exports[`NavBar test cases should render correctly 1`] = `
                 href="/"
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -457,7 +457,7 @@ exports[`NavBar test cases should render correctly 1`] = `
                 href="/"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -611,7 +611,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
               href="/"
             >
               Brandname
-            </a>
+            </Link>
           </div>
           <ul
             class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden md:flex gap-2 base:gap-4"
@@ -625,7 +625,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -635,7 +635,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
                 href="/"
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -645,7 +645,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
                 href="/"
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li
               class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"
@@ -655,7 +655,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
                 href="/"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
