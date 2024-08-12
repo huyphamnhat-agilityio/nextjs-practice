@@ -9,17 +9,17 @@ export const NAV_LIST_DESKTOP: Array<NavItem> = [
   {
     id: "2",
     label: "Product",
-    destination: "/",
+    destination: "/product",
   },
   {
     id: "3",
     label: "Pricing",
-    destination: "/",
+    destination: "/#",
   },
   {
     id: "4",
     label: "Contact",
-    destination: "/",
+    destination: "/#",
   },
 ];
 
@@ -28,7 +28,7 @@ export const NAV_LIST_MOBILE: Array<NavItem> = [
   {
     id: "5",
     label: "LOGIN",
-    destination: "/",
+    destination: "/#",
   },
-  { id: "6", label: "JOIN US", destination: "/" },
+  { id: "6", label: "JOIN US", destination: "/#" },
 ];

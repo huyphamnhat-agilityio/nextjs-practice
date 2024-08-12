@@ -21,7 +21,7 @@ const FeedbackSection = dynamic(() =>
 const SubscribeSection = dynamic(() =>
   import("@/containers").then((module) => module.SubscribeSection),
 );
-export default function Home({
+export default async function Home({
   searchParams,
 }: {
   searchParams?: {

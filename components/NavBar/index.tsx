@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Navbar,
   NavbarContent,
@@ -20,6 +21,8 @@ import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const pathName = usePathname();
 
   return (
     <Navbar
@@ -41,7 +44,7 @@ const NavBar = () => {
                 <NavbarItem key={item.id}>
                   <Link
                     href={item.destination}
-                    className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+                    className={`${pathName === item.destination ? "text-primary" : "text-foreground-100"} text-sm/6 font-bold hover:text-primary`}
                   >
                     {item.label}
                   </Link>
@@ -87,7 +90,7 @@ const NavBar = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               href={item.destination}
-              className="text-foreground-100 text-sm/6 font-bold hover:text-primary"
+              className={`${pathName === item.destination ? "text-primary" : "text-foreground-100"} text-sm/6 font-bold hover:text-primary`}
             >
               {item.label}
             </Link>
