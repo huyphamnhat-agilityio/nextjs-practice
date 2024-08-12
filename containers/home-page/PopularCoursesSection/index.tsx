@@ -42,7 +42,9 @@ const PopularCoursesSection = async ({
             <ProductList currentPage={currentPage} />
           </Suspense>
 
-          <Pagination total={totalPages} />
+          <Suspense>
+            <Pagination total={totalPages} />
+          </Suspense>
         </div>
       </div>
     </section>
