@@ -4,7 +4,7 @@ import { fetchApi } from "./fetch";
 import { Pagination, Product } from "@/types";
 
 // Constants
-import { LIMIT, RESOURCES } from "@/constants";
+import { RESOURCES } from "@/constants";
 
 export const getProducts = async (page: number, limit: number) => {
   const options = {

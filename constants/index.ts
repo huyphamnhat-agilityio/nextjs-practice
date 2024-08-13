@@ -3,4 +3,4 @@ export * from "./cards";
 export * from "./resources";
 export * from "./pagination";
 export * from "./images";
-export * from "./error";
+export * from "./message";

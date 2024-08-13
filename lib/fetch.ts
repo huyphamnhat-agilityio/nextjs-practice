@@ -1,4 +1,4 @@
-import { ERROR_MESSAGES } from "@/constants";
+import { FETCH_ERROR_MESSAGES } from "@/constants";
 
 export const fetchApi = async <T>(url: string, options?: RequestInit) => {
   const response = await fetch(url, {
@@ -12,16 +12,7 @@ export const fetchApi = async <T>(url: string, options?: RequestInit) => {
 
   if (response.ok) return response.json() as T;
 
-  const errorMessage = `${response.status}: ${ERROR_MESSAGES[`${response.status}`]}`;
-
-  // switch (response.status) {
-  //   case 400:
-  //     errorMessage += ERROR_MESSAGES[400];
-  //     break;
-
-  //   default:
-  //     break;
-  // }
+  const errorMessage = `${response.status}: ${FETCH_ERROR_MESSAGES[`${response.status}`]}`;
 
   throw errorMessage;
 };

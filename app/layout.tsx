@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 
 // components
 import { Footer, Header } from "@/components";
+import { Toaster } from "react-hot-toast";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -27,6 +28,24 @@ export default function RootLayout({
           <div className="max-w-8xl mx-auto my-0 2xl:bg-hero-block bg-no-repeat">
             <Header />
 
+            <Toaster
+              position="bottom-center"
+              toastOptions={{
+                success: {
+                  style: {
+                    background: "#15803d",
+                  },
+                },
+                error: {
+                  style: {
+                    background: "#b91c1c",
+                  },
+                },
+                style: {
+                  color: "white",
+                },
+              }}
+            />
             {children}
 
             <Footer />
