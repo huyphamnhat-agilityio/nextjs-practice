@@ -1,3 +1,4 @@
+"use server";
 import { fetchApi } from "./fetch";
 
 // Types
@@ -29,4 +30,8 @@ export const getProducts = async (page: number, limit: number) => {
   } catch (error) {
     throw new Error(error);
   }
+};
+
+export const markProduct = async (data: Product) => {
+  console.log("data", data);
 };

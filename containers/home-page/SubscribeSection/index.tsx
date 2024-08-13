@@ -1,7 +1,7 @@
 "use client";
 import { Input } from "@nextui-org/react";
 import { useFormState, useFormStatus } from "react-dom";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 // Components
@@ -12,9 +12,6 @@ import { subscribe } from "@/lib";
 
 // Types
 import { FormState, Subscription } from "@/types";
-
-// Constants
-import { SUBSCRIBE_MESSAGES } from "@/constants";
 
 const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
   const { pending } = useFormStatus();

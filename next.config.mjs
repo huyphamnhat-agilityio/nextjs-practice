@@ -5,11 +5,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cloudflare-ipfs.com",
+        hostname: "i.ibb.co",
       },
       {
         protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: "fastly.picsum.photos",
       },
     ],
   },

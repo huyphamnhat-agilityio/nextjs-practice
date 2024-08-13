@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -22,6 +23,8 @@ import {
 } from "../Icons";
 
 const ProductCard = ({
+  id,
+  categoryId,
   category,
   coverImageUrl,
   description,
@@ -30,6 +33,7 @@ const ProductCard = ({
   salePrice,
   title,
   sales,
+  isFavorited,
 }: Product) => {
   return (
     <Card className="max-w-82 flex flex-col rounded-none">
@@ -50,11 +54,26 @@ const ProductCard = ({
         </div>
         <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
           <Button
-            className="bg-white"
+            className={`${isFavorited ? "bg-red-500" : "bg-white"} text-yellow-50`}
             variant="action"
             size="tiny"
             aria-label="favorite button"
             isIconOnly
+            onClick={() =>
+              console.log({
+                id,
+                categoryId,
+                category,
+                coverImageUrl,
+                description,
+                rate,
+                originalPrice,
+                salePrice,
+                title,
+                sales,
+                isFavorited,
+              })
+            }
           >
             <FavoriteIcon />
           </Button>

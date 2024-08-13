@@ -9,4 +9,5 @@ export type Product = {
   salePrice: number;
   rate: number;
   coverImageUrl: string;
+  isFavorited: boolean;
 };

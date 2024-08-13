@@ -1,3 +1,3 @@
 export * from "./fetch";
-export * from "./product";
-export * from "./subscribe";
+export { getProducts, markProduct } from "./product";
+export { subscribe } from "./subscribe";
