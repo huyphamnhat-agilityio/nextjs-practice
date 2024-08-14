@@ -14,5 +14,8 @@ export const fetchApi = async <T>(url: string, options?: RequestInit) => {
 
   const errorMessage = `${response.status}: ${FETCH_ERROR_MESSAGES[`${response.status}`]}`;
 
-  throw errorMessage;
+  throw {
+    status: response.status,
+    message: errorMessage,
+  };
 };

@@ -29,6 +29,7 @@ export const Pagination = ({ total }: PaginationProps) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   const createPageUrl = useCallback(
     (page: number) => {
@@ -42,7 +43,7 @@ export const Pagination = ({ total }: PaginationProps) => {
   return (
     <CustomPagination
       total={total}
-      initialPage={Number(searchParams.get("page")) || 1}
+      page={currentPage}
       onChange={createPageUrl}
       className="flex justify-center m-0"
     />

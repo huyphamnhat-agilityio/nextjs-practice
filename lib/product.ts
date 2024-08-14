@@ -5,11 +5,21 @@ import { fetchApi } from "./fetch";
 import { Pagination, Product } from "@/types";
 
 // Constants
-import { RESOURCES } from "@/constants";
+import { FETCH_ERROR_MESSAGES, RESOURCES } from "@/constants";
+import { notFound } from "next/navigation";
 
-export const getProducts = async (page: number, limit: number) => {
+export type GetProductProps = {
+  page: number;
+  limit: number;
+  query?: string;
+};
+export const getProducts = async ({
+  page,
+  limit,
+  query = "",
+}: GetProductProps) => {
   const options = {
-    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
+    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}?title=${query}`,
     page,
     limit,
   };
@@ -28,7 +38,8 @@ export const getProducts = async (page: number, limit: number) => {
 
     return products;
   } catch (error) {
-    throw new Error(error);
+    if (error.status === 404 || error.status === 400) return undefined;
+    throw new Error(error.message);
   }
 };
 

@@ -1,15 +1,16 @@
 import { NavItem } from "@/types/navbar";
+import { DESTINATION } from "./destination";
 
 export const NAV_LIST_DESKTOP: Array<NavItem> = [
   {
     id: "1",
     label: "Home",
-    destination: "/",
+    destination: DESTINATION.HOME,
   },
   {
     id: "2",
     label: "Product",
-    destination: "/product",
+    destination: DESTINATION.PRODUCT,
   },
   {
     id: "3",

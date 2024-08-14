@@ -1,5 +1,5 @@
 // Constants
-import { LIMIT } from "@/constants";
+import { HOME_LIMIT } from "@/constants";
 
 // Services
 import { getProducts } from "@/lib";
@@ -7,11 +7,19 @@ import { getProducts } from "@/lib";
 // Components
 import { ProductCard } from "../common";
 
-const ProductList = async ({ currentPage }: { currentPage: number }) => {
-  const products = await getProducts(currentPage, LIMIT);
+const ProductList = async ({
+  currentPage,
+  limit = HOME_LIMIT,
+  query = "",
+}: {
+  currentPage: number;
+  limit?: number;
+  query?: string;
+}) => {
+  const products = await getProducts({ page: currentPage, limit, query });
 
   return (
-    <div className="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly">
+    <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly">
       {products.data.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}

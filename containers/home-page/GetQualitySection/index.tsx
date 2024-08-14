@@ -26,14 +26,14 @@ const GetQualitySection = () => (
           {`Problems trying to resolve the conflict between 
           the two major realms of Classical physics: Newtonian mechanics`}
         </p>
-        <a
+        <Link
           href="#"
           color="primary"
           className="flex gap-2.5 text-sm/6 font-bold"
         >
           Learn More
           <NextArrowIcon />
-        </a>
+        </Link>
       </div>
     </div>
   </section>

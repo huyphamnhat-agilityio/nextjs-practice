@@ -105,8 +105,12 @@ const ProductCard = ({
             <span className="text-white text-xs">{rate}</span>
           </div>
         </div>
-        <p className="text-foreground text-base font-bold">{title}</p>
-        <p className="text-foreground-100 text-sm">{description}</p>
+        <p className="text-foreground text-base font-bold line-clamp-1">
+          {title}
+        </p>
+        <p className="text-foreground-100 text-sm line-clamp-2">
+          {description}
+        </p>
         <div className="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold">
           <DownloadIcon />
           {sales} Sales

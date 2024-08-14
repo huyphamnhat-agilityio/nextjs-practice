@@ -1,15 +1,18 @@
 // Mocks
 import { MOCK_PRODUCTS } from "@/mocks";
 
-// components
+// Components
 import { ProductCardSkeleton } from "../common";
 
-const ProductListSkeleton = () => {
+// Constants
+import { HOME_LIMIT } from "@/constants";
+
+const ProductListSkeleton = ({ limit = HOME_LIMIT }: { limit?: number }) => {
   return (
-    <div className="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly">
-      <ProductCardSkeleton {...MOCK_PRODUCTS[0]} />
-      <ProductCardSkeleton {...MOCK_PRODUCTS[0]} />
-      <ProductCardSkeleton {...MOCK_PRODUCTS[0]} />
+    <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly">
+      {new Array(limit).fill(0).map((_, index) => (
+        <ProductCardSkeleton key={index} {...MOCK_PRODUCTS[0]} />
+      ))}
     </div>
   );
 };

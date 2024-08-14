@@ -26,3 +26,4 @@ export * from "./InstagramLogoIcon";
 export * from "./TwitterLogoIcon";
 export * from "./DarkModeIcon";
 export * from "./LightModeIcon";
+export * from "./SearchIcon";

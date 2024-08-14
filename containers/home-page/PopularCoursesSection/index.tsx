@@ -1,12 +1,14 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-
-// Services
-import { getProducts } from "@/lib";
+import { Link as NextUILink } from "@nextui-org/react";
+import Link from "next/link";
 
 // Components
-import { Pagination, ProductListSkeleton } from "@/components";
-import { LIMIT } from "@/constants";
+import { ProductListSkeleton } from "@/components";
+import { NextArrowIcon } from "@/components/common/Icons";
+
+// Constants
+import { DESTINATION } from "@/constants";
 
 const ProductList = dynamic(
   () => import("@/components").then((mod) => mod.ProductList),
@@ -21,8 +23,6 @@ const PopularCoursesSection = async ({
 }: {
   currentPage: number;
 }) => {
-  const { totalPages } = await getProducts(currentPage, LIMIT);
-
   return (
     <section>
       <div className="bg-dark-blue mt-32.5 flex justify-center">
@@ -42,9 +42,15 @@ const PopularCoursesSection = async ({
             <ProductList currentPage={currentPage} />
           </Suspense>
 
-          <Suspense>
-            <Pagination total={totalPages} />
-          </Suspense>
+          <NextUILink
+            as={Link}
+            href={DESTINATION.PRODUCT}
+            color="primary"
+            className="flex gap-2.5 font-bold self-center"
+          >
+            See more courses
+            <NextArrowIcon />
+          </NextUILink>
         </div>
       </div>
     </section>
