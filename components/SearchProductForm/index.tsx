@@ -34,7 +34,7 @@ const SearchProductForm = () => {
       startContent={<SearchIcon />}
       classNames={{
         inputWrapper:
-          "max-w-[80%] sm:max-w-172 self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto",
+          "max-w-full self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto",
         input: "text-foreground-100 text-sm/7 h-auto",
       }}
       onChange={handleSearch}

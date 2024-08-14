@@ -5,6 +5,7 @@ import { INITIAL_PAGE, PRODUCT_LIMIT } from "@/constants";
 
 // Components
 import {
+  Button,
   Pagination,
   ProductList,
   ProductListSkeleton,
@@ -39,7 +40,12 @@ export default async function Product({
             Course List
           </p>
 
-          <SearchProductForm />
+          <div className="flex gap-10 flex-col md:flex-row">
+            <SearchProductForm />
+            <Button size="lg" className="text-white">
+              Add course
+            </Button>
+          </div>
           {data ? (
             <>
               <Suspense
