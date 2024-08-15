@@ -5,8 +5,8 @@ import { fetchApi } from "./fetch";
 import { Pagination, Product } from "@/types";
 
 // Constants
-import { FETCH_ERROR_MESSAGES, RESOURCES } from "@/constants";
-import { notFound } from "next/navigation";
+import { RESOURCES } from "@/constants";
+import { revalidatePath } from "next/cache";
 
 export type GetProductProps = {
   page: number;
@@ -44,5 +44,18 @@ export const getProducts = async ({
 };
 
 export const markProduct = async (data: Product) => {
-  console.log("data", data);
+  try {
+    const response = await fetchApi<Product>(
+      `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${data.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ ...data, isFavorited: !data.isFavorited }),
+      },
+    );
+    revalidatePath("/", "layout");
+
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };

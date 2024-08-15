@@ -14,3 +14,14 @@ export const SUBSCRIBE_MESSAGES = {
   },
   SUCCESS: "You have successfully subscribed to our newsletter!",
 };
+
+export const MARK_FAVORITE_MESSAGES = {
+  SUCCESS: {
+    MARKED: "Product has been marked as favorite.",
+    UNMARKED: "Product has been unmarked as favorite.",
+  },
+  ERROR: {
+    MARKED: "Failed to mark product as favorite.",
+    UNMARKED: "Failed to unmark product as favorite.",
+  },
+};

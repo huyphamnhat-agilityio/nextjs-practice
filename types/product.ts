@@ -10,4 +10,5 @@ export type Product = {
   rate: number;
   coverImageUrl: string;
   isFavorited: boolean;
+  createdAt: string;
 };

@@ -7,6 +7,7 @@ import {
   CardHeader,
   Image as NextUIImage,
 } from "@nextui-org/react";
+import toast from "react-hot-toast";
 
 // Types
 import { Product } from "@/types";
@@ -22,21 +23,53 @@ import {
   SolidStarIcon,
 } from "../Icons";
 
-const ProductCard = ({
-  id,
-  categoryId,
-  category,
-  coverImageUrl,
-  description,
-  rate,
-  originalPrice,
-  salePrice,
-  title,
-  sales,
-  isFavorited,
-}: Product) => {
+// Services
+import { markProduct } from "@/lib";
+
+// Constants
+import { MARK_FAVORITE_MESSAGES } from "@/constants";
+import { useState } from "react";
+
+const ProductCard = (props: Product) => {
+  const {
+    category,
+    coverImageUrl,
+    description,
+    rate,
+    originalPrice,
+    salePrice,
+    title,
+    sales,
+    isFavorited,
+  } = props;
+
+  const [isPending, setIsPending] = useState(false);
+
+  const handleMarkFavorite = async (data: Product) => {
+    try {
+      setIsPending(true);
+      const response = await markProduct(data);
+      toast.success(
+        response.isFavorited
+          ? MARK_FAVORITE_MESSAGES.SUCCESS.MARKED
+          : MARK_FAVORITE_MESSAGES.SUCCESS.UNMARKED,
+      );
+    } catch (error) {
+      toast.error(
+        props.isFavorited
+          ? MARK_FAVORITE_MESSAGES.ERROR.UNMARKED
+          : MARK_FAVORITE_MESSAGES.ERROR.MARKED,
+      );
+    } finally {
+      setIsPending(false);
+    }
+  };
+
   return (
-    <Card className="max-w-82 flex flex-col rounded-none">
+    <Card
+      className="max-w-82 flex flex-col rounded-none"
+      isDisabled={isPending}
+    >
       <CardHeader className="relative p-0">
         <NextUIImage
           as={Image}
@@ -54,26 +87,12 @@ const ProductCard = ({
         </div>
         <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
           <Button
-            className={`${isFavorited ? "bg-red-500" : "bg-white"} text-yellow-50`}
+            className={`${isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}
             variant="action"
             size="tiny"
             aria-label="favorite button"
             isIconOnly
-            onClick={() =>
-              console.log({
-                id,
-                categoryId,
-                category,
-                coverImageUrl,
-                description,
-                rate,
-                originalPrice,
-                salePrice,
-                title,
-                sales,
-                isFavorited,
-              })
-            }
+            onClick={() => handleMarkFavorite(props)}
           >
             <FavoriteIcon />
           </Button>
