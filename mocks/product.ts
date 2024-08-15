@@ -17,6 +17,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     salePrice: 6.48,
     coverImageUrl: "/product-cover-1.webp",
     isFavorited: false,
+    createdAt: "2021-09-01T00:00:00.000Z",
   },
   {
     id: "2",
@@ -30,6 +31,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     salePrice: 6.48,
     coverImageUrl: "/product-cover-2.webp",
     isFavorited: false,
+    createdAt: "2021-09-01T00:00:00.000Z",
   },
   {
     id: "3",
@@ -43,5 +45,6 @@ export const MOCK_PRODUCTS: Array<Product> = [
     salePrice: 6.48,
     coverImageUrl: "/product-cover-3.webp",
     isFavorited: false,
+    createdAt: "2021-09-01T00:00:00.000Z",
   },
 ];
