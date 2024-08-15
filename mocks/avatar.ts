@@ -14,3 +14,5 @@ export const MOCK_AVATARS: Array<Avatar> = [
     alt: "An avatar of a user",
   },
 ];
+
+export const PLACEHOLDER_AVATAR_URL = "/course-placeholder.png";

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 // Constants
-import { INITIAL_PAGE, PRODUCT_LIMIT } from "@/constants";
+import { PRODUCT_LIMIT } from "@/constants";
 
 // Components
 import {
@@ -14,6 +14,9 @@ import {
 
 // Services
 import { getProducts } from "@/lib";
+
+// Sections
+import { AddCourseSection } from "@/containers";
 
 export default async function Product({
   searchParams,
@@ -42,9 +45,7 @@ export default async function Product({
 
           <div className="flex gap-10 flex-col md:flex-row">
             <SearchProductForm />
-            <Button size="lg" className="text-white">
-              Add course
-            </Button>
+            <AddCourseSection />
           </div>
           {data ? (
             <>

@@ -6,7 +6,7 @@ import { Button } from "../Button";
 
 export type HeroCardProps = {
   icon: JSX.Element;
-  iconBackgroundColor: "primary" | "secondary" | "default";
+  iconBackgroundColor: "primary" | "secondary" | "secondary-100";
   title: string;
   description: string;
 };

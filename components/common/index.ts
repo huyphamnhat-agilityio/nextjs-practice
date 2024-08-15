@@ -7,3 +7,6 @@ export * from "./Pagination";
 export { default as FeedbackCard } from "./FeedbackCard";
 export { default as ProductCardSkeleton } from "./ProductCardSkeleton";
 export { default as ThemeSwitch } from "./ThemeSwitch";
+export * from "./Input";
+export * from "./Textarea";
+export * from "./Select";

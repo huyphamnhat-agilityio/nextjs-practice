@@ -1,11 +1,11 @@
 "use client";
 import { ChangeEvent } from "react";
-import { Input } from "@nextui-org/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 
 // Components
 import { SearchIcon } from "@/components/common/Icons";
-import { useDebouncedCallback } from "use-debounce";
+import { Input } from "../common";
 
 const SearchProductForm = () => {
   const searchParams = useSearchParams();
@@ -33,9 +33,7 @@ const SearchProductForm = () => {
       placeholder="Search courses..."
       startContent={<SearchIcon />}
       classNames={{
-        inputWrapper:
-          "max-w-full self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto",
-        input: "text-foreground-100 text-sm/7 h-auto",
+        inputWrapper: "max-w-full self-center py-3.75 px-4 ",
       }}
       onChange={handleSearch}
     />

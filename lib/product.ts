@@ -59,3 +59,7 @@ export const markProduct = async (data: Product) => {
     throw error;
   }
 };
+
+export const createProduct = async (data: FormData) => {
+  console.log(data.get("description"));
+};

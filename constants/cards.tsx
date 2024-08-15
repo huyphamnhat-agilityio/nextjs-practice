@@ -23,7 +23,7 @@ export const HERO_CARD_LIST: Array<HeroCardProps> = [
   },
   {
     icon: <MortarboardIcon />,
-    iconBackgroundColor: "default",
+    iconBackgroundColor: "secondary-100",
     title: "Lifetime access",
     description:
       "The gradual accumulation of information about atomic and small-scale behaviour...",

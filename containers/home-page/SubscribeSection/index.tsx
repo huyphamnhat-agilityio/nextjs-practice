@@ -55,10 +55,10 @@ const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
 
 const SubscribeSection = () => {
   const initialState: FormState<Subscription> = {};
-  const [state, formAction, pending] = useFormState<
-    FormState<Subscription>,
-    FormData
-  >(subscribe, initialState);
+  const [state, formAction] = useFormState<FormState<Subscription>, FormData>(
+    subscribe,
+    initialState,
+  );
 
   useEffect(() => {
     if (state.message && !state.errors && state.resetKey) {
