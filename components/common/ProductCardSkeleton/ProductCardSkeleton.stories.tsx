@@ -13,9 +13,6 @@ const meta: Meta<typeof ProductCardSkeleton> = {
     id: {
       description: "Product ID",
     },
-    categoryId: {
-      description: "Product category ID",
-    },
     category: {
       description: "Product category",
     },
