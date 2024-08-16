@@ -51,7 +51,7 @@ const HeroSection = () => (
         <div className="flex flex-wrap gap-7.5 justify-center">
           {HERO_CARD_LIST.map((card, index) => (
             <HeroCard
-              key={index}
+              key={card.title + index}
               icon={card.icon}
               iconBackgroundColor={card.iconBackgroundColor}
               title={card.title}

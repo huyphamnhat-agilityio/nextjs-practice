@@ -1,12 +1,9 @@
 import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import React from "react";
 
-// Components
-import { Button } from "../Button";
-
 export type HeroCardProps = {
   icon: JSX.Element;
-  iconBackgroundColor: "primary" | "secondary" | "secondary-100";
+  iconBackgroundColor: "primary" | "secondary" | "mango";
   title: string;
   description: string;
 };
@@ -16,11 +13,16 @@ const HeroCard = ({
   title,
   description,
 }: HeroCardProps) => {
+  const backgroundColor = {
+    primary: "bg-primary",
+    secondary: "bg-secondary",
+    mango: "bg-mango",
+  };
   return (
     <Card className="max-w-xs sm:max-w-82 px-10 py-8.75  flex flex-col gap-5 rounded-none">
       <CardHeader className="flex flex-col gap-5 items-start p-0">
         <div
-          className={`text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-${iconBackgroundColor}`}
+          className={`text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 ${backgroundColor[iconBackgroundColor]}`}
         >
           {icon}
         </div>

@@ -7,7 +7,6 @@ export const MOCK_PRODUCT_DESCRIPTION =
 export const MOCK_PRODUCTS: Array<Product> = [
   {
     id: "1",
-    categoryId: MOCK_CATEGORIES[0].id,
     category: MOCK_CATEGORIES[0].name,
     rate: 4.9,
     title: "Video in Live Action",
@@ -21,7 +20,6 @@ export const MOCK_PRODUCTS: Array<Product> = [
   },
   {
     id: "2",
-    categoryId: MOCK_CATEGORIES[1].id,
     category: MOCK_CATEGORIES[1].name,
     rate: 4.9,
     title: "Every Client Matters",
@@ -35,7 +33,6 @@ export const MOCK_PRODUCTS: Array<Product> = [
   },
   {
     id: "3",
-    categoryId: MOCK_CATEGORIES[2].id,
     category: MOCK_CATEGORIES[2].name,
     rate: 4.9,
     title: "Get Quality Education",

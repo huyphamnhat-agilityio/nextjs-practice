@@ -1,11 +1,10 @@
 "use client";
-import { Input } from "@nextui-org/react";
 import { useFormState, useFormStatus } from "react-dom";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 // Components
-import { Button } from "@/components";
+import { Button, Input } from "@/components";
 
 // Services
 import { subscribe } from "@/lib";

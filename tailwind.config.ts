@@ -89,9 +89,9 @@ export default {
         "6xl": "58px",
       },
       backgroundColor: {
-        "dark-blue": "#26335d",
         "dull-orange": "#e77c40",
         danger: "#e74040",
+        mango: "#ffc652",
       },
     },
   },
@@ -106,9 +106,7 @@ export default {
             secondary: {
               DEFAULT: "#2435a1",
               50: "#0d4172",
-              100: "#ffc652",
             },
-
             foreground: {
               DEFAULT: "#252b42",
               50: "#bdbdbd",
@@ -126,9 +124,7 @@ export default {
             secondary: {
               DEFAULT: "#2435a1",
               50: "#8ec2f2",
-              100: "#ffc652",
             },
-
             foreground: {
               DEFAULT: "#Adb5d1",
               50: "#bdbdbd",

@@ -1,1 +1,1 @@
-export { default as AddCourseSection } from "./AddCourseSection";
+export { default as AddCourseSection } from "./AddProductSection";

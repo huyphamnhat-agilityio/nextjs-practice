@@ -1,6 +1,5 @@
 export type Product = {
   id: string;
-  categoryId: string;
   category: string;
   title: string;
   description: string;
@@ -11,4 +10,8 @@ export type Product = {
   coverImageUrl: string;
   isFavorited: boolean;
   createdAt: string;
+};
+
+export type ProductForm = Product & {
+  coverImage: File;
 };

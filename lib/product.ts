@@ -61,5 +61,5 @@ export const markProduct = async (data: Product) => {
 };
 
 export const createProduct = async (data: FormData) => {
-  console.log(data.get("description"));
+  console.log(data.get("coverImage") as File);
 };

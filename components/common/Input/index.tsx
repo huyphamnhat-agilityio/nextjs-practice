@@ -14,6 +14,7 @@ export const Input = extendVariants(NextUIInput, {
       md: {
         inputWrapper: "h-auto py-2",
         input: "h-auto text-sm/7",
+        errorMessage: "text-md",
       },
     },
     radius: {
