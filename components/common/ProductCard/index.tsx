@@ -29,6 +29,7 @@ import { markProduct } from "@/lib";
 // Constants
 import { MARK_FAVORITE_MESSAGES } from "@/constants";
 import { useState } from "react";
+import { PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 
 const ProductCard = (props: Product) => {
   const {
@@ -73,7 +74,7 @@ const ProductCard = (props: Product) => {
       <CardHeader className="relative p-0">
         <NextUIImage
           as={Image}
-          src={coverImageUrl}
+          src={coverImageUrl || PLACEHOLDER_COURSE_IMAGE}
           alt={`An image about ${title}`}
           width={328}
           height={300}
@@ -87,7 +88,7 @@ const ProductCard = (props: Product) => {
         </div>
         <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
           <Button
-            className={`${isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}
+            className={`${!!isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}
             variant="action"
             size="tiny"
             aria-label="favorite button"

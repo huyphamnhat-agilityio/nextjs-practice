@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
           <div className="max-w-8xl mx-auto my-0 2xl:bg-hero-block bg-no-repeat">

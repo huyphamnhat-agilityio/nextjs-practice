@@ -2,11 +2,12 @@
 import { fetchApi } from "./fetch";
 
 // Types
-import { Pagination, Product } from "@/types";
+import { ImgBBResponse, Pagination, Product } from "@/types";
 
 // Constants
 import { RESOURCES } from "@/constants";
 import { revalidatePath } from "next/cache";
+import { uploadAndGetImageUrl } from "./image";
 
 export type GetProductProps = {
   page: number;
@@ -60,6 +61,23 @@ export const markProduct = async (data: Product) => {
   }
 };
 
-export const createProduct = async (data: FormData) => {
-  console.log(data.get("coverImage") as File);
+export const mutateProduct = async (data: FormData) => {
+  const productRawData: Product = {
+    id: data.get("id") as string,
+    category: data.get("category") as string,
+    title: data.get("title") as string,
+    description: data.get("description") as string,
+    sales: Number(data.get("sales")),
+    originalPrice: Number(data.get("originalPrice")),
+    salePrice: Number(data.get("salePrice")),
+    rate: Number(data.get("rate")),
+    isFavorited: Number(data.get("isFavorited")),
+    createdAt: Number(data.get("createdAt")) ?? Date.now(),
+    coverImageUrl: data.get("coverImageUrl") as string,
+  };
+  const productImageUrl = await uploadAndGetImageUrl(
+    data.get("coverImage") as File,
+  );
+
+  console.log("productImageUrl", productImageUrl);
 };

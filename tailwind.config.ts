@@ -89,6 +89,7 @@ export default {
         "6xl": "58px",
       },
       backgroundColor: {
+        "dark-blue": "#26335d",
         "dull-orange": "#e77c40",
         danger: "#e74040",
         mango: "#ffc652",

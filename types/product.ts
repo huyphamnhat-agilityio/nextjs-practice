@@ -8,8 +8,8 @@ export type Product = {
   salePrice: number;
   rate: number;
   coverImageUrl: string;
-  isFavorited: boolean;
-  createdAt: string;
+  isFavorited: number;
+  createdAt: number;
 };
 
 export type ProductForm = Product & {

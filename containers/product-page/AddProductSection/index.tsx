@@ -17,10 +17,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Select, Textarea } from "@/components";
 
 // Services
-import { createProduct } from "@/lib/product";
+import { mutateProduct } from "@/lib/product";
 
 // Mocks
-import { MOCK_CATEGORIES, PLACEHOLDER_AVATAR_URL } from "@/mocks";
+import { MOCK_CATEGORIES, PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 
 // Types
 import { ProductForm } from "@/types";
@@ -35,10 +35,9 @@ const AddProductSection = () => {
 
   const {
     control,
-    formState: { errors },
-    getValues,
+    formState: { errors, isValid },
   } = useForm<ProductForm>({
-    mode: "onBlur",
+    mode: "all",
     defaultValues: {
       id: "",
       category: "",
@@ -48,9 +47,10 @@ const AddProductSection = () => {
       originalPrice: -1,
       salePrice: -1,
       rate: -1,
+      coverImageUrl: "",
       coverImage: undefined,
-      isFavorited: false,
-      createdAt: "",
+      isFavorited: 0,
+      createdAt: undefined,
     },
     resolver: zodResolver(ProductFormSchema),
   });
@@ -64,13 +64,12 @@ const AddProductSection = () => {
     [],
   );
 
-  useEffect(() => {
-    if (errors) {
-      console.log(errors.title);
-    }
-  }, [errors]);
+  // useEffect(() => {
+  //   if (errors) {
+  //     console.log(errors);
+  //   }
+  // }, [errors]);
 
-  console.log(getValues());
   return (
     <>
       <Button size="lg" className="text-white" onClick={onOpen}>
@@ -79,7 +78,7 @@ const AddProductSection = () => {
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="center">
         <ModalContent>
           {(onClose) => (
-            <form action={createProduct}>
+            <form action={mutateProduct}>
               <ModalHeader className="text-2xl">Add course</ModalHeader>
               <ModalBody className="flex flex-col gap-6">
                 <label
@@ -92,7 +91,7 @@ const AddProductSection = () => {
                     src={
                       selectedImage
                         ? URL.createObjectURL(selectedImage)
-                        : PLACEHOLDER_AVATAR_URL
+                        : PLACEHOLDER_COURSE_IMAGE
                     }
                     className="object-cover"
                     alt=""
@@ -100,14 +99,16 @@ const AddProductSection = () => {
                   <Controller
                     control={control}
                     name="coverImage"
-                    render={({ field: { onChange } }) => (
+                    render={({ field: { onChange, onBlur } }) => (
                       <Input
+                        name="coverImage"
                         type="file"
+                        className="hidden"
+                        onBlur={onBlur}
                         onChange={(e) => {
                           handleSelectImage(e);
                           onChange(e.target.files[0]);
                         }}
-                        className="hidden"
                       />
                     )}
                   />
@@ -124,6 +125,7 @@ const AddProductSection = () => {
                     <Select
                       {...rest}
                       label="Category"
+                      name="category"
                       labelPlacement="outside"
                       placeholder="Choose category..."
                       isInvalid={!!errors?.category}
@@ -147,6 +149,7 @@ const AddProductSection = () => {
                       <Input
                         {...field}
                         label="Title"
+                        name="title"
                         labelPlacement="outside"
                         placeholder="Enter course title..."
                         isInvalid={!!errors?.title}
@@ -163,6 +166,7 @@ const AddProductSection = () => {
                     <Textarea
                       {...field}
                       label="Description"
+                      name="description"
                       labelPlacement="outside"
                       placeholder="Enter course description..."
                     />
@@ -175,59 +179,101 @@ const AddProductSection = () => {
                   render={({ field: { onChange, onBlur } }) => (
                     <Input
                       label="Sales"
+                      name="sales"
                       labelPlacement="outside"
                       placeholder="Enter sale amount..."
                       type="number"
-                      onChange={(e) => onChange(e.target.valueAsNumber)}
                       onBlur={onBlur}
+                      onChange={(e) => {
+                        onChange(
+                          !isNaN(e.target.valueAsNumber)
+                            ? e.target.valueAsNumber
+                            : -1,
+                        );
+                      }}
                       isInvalid={!!errors?.sales}
                       errorMessage={errors?.sales?.message}
                     />
                   )}
                 />
 
-                <Input
-                  label="Original Price"
+                <Controller
+                  control={control}
                   name="originalPrice"
-                  labelPlacement="outside"
-                  placeholder="Enter original price..."
-                  type="number"
+                  render={({ field: { onChange, onBlur } }) => (
+                    <Input
+                      label="Original Price"
+                      name="originalPrice"
+                      labelPlacement="outside"
+                      placeholder="Enter original price..."
+                      type="number"
+                      onBlur={onBlur}
+                      onChange={(e) => {
+                        onChange(
+                          !isNaN(e.target.valueAsNumber)
+                            ? e.target.valueAsNumber
+                            : -1,
+                        );
+                      }}
+                      isInvalid={!!errors?.originalPrice}
+                      errorMessage={errors?.originalPrice?.message}
+                    />
+                  )}
                 />
 
-                <Input
-                  label="Sale Price"
+                <Controller
+                  control={control}
                   name="salePrice"
-                  labelPlacement="outside"
-                  placeholder="Enter sale price..."
-                  type="number"
+                  render={({ field: { onChange, onBlur } }) => (
+                    <Input
+                      label="Sale Price"
+                      name="salePrice"
+                      labelPlacement="outside"
+                      placeholder="Enter sale price..."
+                      type="number"
+                      onBlur={onBlur}
+                      onChange={(e) => {
+                        onChange(
+                          !isNaN(e.target.valueAsNumber)
+                            ? e.target.valueAsNumber
+                            : -1,
+                        );
+                      }}
+                      isInvalid={!!errors?.salePrice}
+                      errorMessage={errors?.salePrice?.message}
+                    />
+                  )}
                 />
 
-                <Input
-                  label="Rate"
+                <Controller
+                  control={control}
                   name="rate"
-                  labelPlacement="outside"
-                  placeholder="Enter rate..."
-                  type="number"
+                  render={({ field: { onChange, onBlur } }) => (
+                    <Input
+                      label="Rate"
+                      name="rate"
+                      labelPlacement="outside"
+                      placeholder="Enter rate..."
+                      type="number"
+                      onBlur={onBlur}
+                      onChange={(e) => {
+                        onChange(
+                          !isNaN(e.target.valueAsNumber)
+                            ? e.target.valueAsNumber
+                            : -1,
+                        );
+                      }}
+                      isInvalid={!!errors?.rate}
+                      errorMessage={errors?.rate?.message}
+                    />
+                  )}
                 />
-                {/* <Input
-                  name="isFavorited"
-                  placeholder="Enter rate..."
-                  defaultValue="false"
-                  className="hidden"
-                />
-                <Input name="categoryId" defaultValue="1" className="hidden" />
 
-                <Input
-                  name="category"
-                  defaultValue="Certified teacher"
-                  className="hidden"
-                />
+                {/* <Input name="isFavorited" className="hidden" />
 
-                <Input
-                  name="createdAt"
-                  defaultValue="2024-08-01T12:00:00Z"
-                  className="hidden"
-                /> */}
+                <Input name="id" className="hidden" />
+
+                <Input name="createdAt" className="hidden" /> */}
               </ModalBody>
               <ModalFooter>
                 <Button
@@ -237,7 +283,12 @@ const AddProductSection = () => {
                 >
                   Test
                 </Button>
-                <Button color="primary" className="text-white" type="submit">
+                <Button
+                  color="primary"
+                  className="text-white"
+                  type="submit"
+                  isDisabled={!isValid}
+                >
                   Sign in
                 </Button>
               </ModalFooter>

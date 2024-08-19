@@ -31,6 +31,7 @@ const SearchProductForm = () => {
   return (
     <Input
       placeholder="Search courses..."
+      defaultValue={searchParams.get("query")}
       startContent={<SearchIcon />}
       classNames={{
         inputWrapper: "max-w-full self-center py-3.75 px-4 ",

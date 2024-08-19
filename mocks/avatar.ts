@@ -15,4 +15,4 @@ export const MOCK_AVATARS: Array<Avatar> = [
   },
 ];
 
-export const PLACEHOLDER_AVATAR_URL = "/course-placeholder.png";
+export const PLACEHOLDER_COURSE_IMAGE = "/course-placeholder.png";
