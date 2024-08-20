@@ -25,3 +25,13 @@ export const MARK_FAVORITE_MESSAGES = {
     UNMARKED: "Failed to unmark product as favorite.",
   },
 };
+
+export const PRODUCT_MESSAGES = {
+  SUCCESS: {
+    CREATED: "Product has been created successfully.",
+  },
+  ERROR: {
+    UPLOAD_IMAGE: "An error has occurred when uploading the product image.",
+    SALE_PRICE: "Sale price cannot be higher than the original price.",
+  },
+};

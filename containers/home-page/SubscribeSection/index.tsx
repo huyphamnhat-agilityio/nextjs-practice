@@ -35,8 +35,8 @@ const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
             Subscribe
           </Button>
         }
-        isInvalid={!!state.errors}
-        errorMessage={state.errors?.email[0]}
+        isInvalid={!!state?.errors}
+        errorMessage={state?.errors?.email[0]}
         isDisabled={pending}
       />
 
@@ -60,7 +60,7 @@ const SubscribeSection = () => {
   );
 
   useEffect(() => {
-    if (state.message && !state.errors && state.resetKey) {
+    if (state.message && state.resetKey) {
       toast.success(state.message);
     }
 

@@ -1,7 +1,7 @@
 export type FormState<T extends object> = {
   message?: string | null;
   errors?: {
-    [K in keyof T]?: string[];
+    [K in keyof T]?: Array<string>;
   };
   resetKey?: string;
 };

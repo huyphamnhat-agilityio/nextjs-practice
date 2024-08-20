@@ -45,3 +45,18 @@ export const MOCK_PRODUCTS: Array<Product> = [
     createdAt: 0,
   },
 ];
+
+export const PLACEHOLDER_PRODUCT_FORM_DATA = {
+  id: "",
+  category: "",
+  title: "",
+  description: "",
+  sales: -1,
+  originalPrice: -1,
+  salePrice: -1,
+  rate: -1,
+  coverImageUrl: "",
+  coverImage: undefined,
+  isFavorited: 0,
+  createdAt: 0,
+};
