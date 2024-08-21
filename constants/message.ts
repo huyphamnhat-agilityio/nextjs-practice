@@ -28,11 +28,13 @@ export const MARK_FAVORITE_MESSAGES = {
 
 export const PRODUCT_MESSAGES = {
   SUCCESS: {
-    CREATED: "Product has been created successfully.",
+    CREATE: "Product has been created successfully.",
+    DELETE: "Product has been deleted successfully.",
   },
   ERROR: {
-    CREATED: "An error has occurred while creating the product.",
+    CREATE: "An error has occurred while creating the product.",
     UPLOAD_IMAGE: "An error has occurred when uploading the product image.",
     SALE_PRICE: "Sale price cannot be higher than the original price.",
+    DELETE: "An error has occurred while deleting the product.",
   },
 };

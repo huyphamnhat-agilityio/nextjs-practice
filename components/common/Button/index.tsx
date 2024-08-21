@@ -17,6 +17,7 @@ export const Button = extendVariants(NextUIButton, {
       light: "hover:bg-opacity-25",
       bordered: "hover:bg-primary hover:bg-opacity-25",
       action: "hover:opacity-60",
+      flat: "bg-danger/30",
     },
   },
   defaultVariants: {

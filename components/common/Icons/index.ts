@@ -27,3 +27,5 @@ export * from "./TwitterLogoIcon";
 export * from "./DarkModeIcon";
 export * from "./LightModeIcon";
 export * from "./SearchIcon";
+export * from "./EditIcon";
+export * from "./DeleteIcon";

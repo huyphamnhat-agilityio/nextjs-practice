@@ -1,16 +1,22 @@
 "use server";
 import { revalidatePath, revalidateTag } from "next/cache";
-import { redirect } from "next/navigation";
+import { redirect, RedirectType } from "next/navigation";
 
 // Types
 import { FormState, Pagination, Product, ToastType } from "@/types";
 
 // Constants
-import { PRODUCT_MESSAGES, QUERY_DELIMITER, RESOURCES } from "@/constants";
+import {
+  PRODUCT_MESSAGES,
+  QUERY_DELIMITER,
+  RESOURCES,
+  TAGS,
+} from "@/constants";
 
 // Services
 import { fetchApi } from "./fetch";
 import { uploadAndGetImageUrl } from "./image";
+import { buildRedirectPath } from "./redirect";
 
 export type GetProductProps = {
   page: number;
@@ -36,7 +42,7 @@ export const getProducts = async ({
         body: JSON.stringify(options),
         next: {
           revalidate: 300,
-          tags: ["products"],
+          tags: [TAGS.PRODUCTS],
         },
       },
     );
@@ -60,7 +66,7 @@ export const markProduct = async (data: Product) => {
         }),
       },
     );
-    revalidateTag("products");
+    revalidateTag(TAGS.PRODUCTS);
 
     return response;
   } catch (error) {
@@ -123,18 +129,50 @@ export const mutateProduct = async <T extends object>(
         body: JSON.stringify(productData),
       });
 
-      revalidatePath("/", "layout");
+      revalidateTag(TAGS.PRODUCTS);
 
-      if (pathname[pathname.length - 1] === QUERY_DELIMITER)
-        redirectPath += `toastType=${ToastType.SUCCESS}&message=${PRODUCT_MESSAGES.SUCCESS.CREATED}`;
-      else
-        redirectPath += `&toastType=${ToastType.SUCCESS}&message=${PRODUCT_MESSAGES.SUCCESS.CREATED}`;
+      redirectPath = buildRedirectPath(
+        pathname,
+        ToastType.SUCCESS,
+        PRODUCT_MESSAGES.SUCCESS.CREATE,
+      );
     } catch (error) {
-      return {
-        message: PRODUCT_MESSAGES.ERROR.CREATED,
-      };
+      redirectPath = buildRedirectPath(
+        pathname,
+        ToastType.ERROR,
+        PRODUCT_MESSAGES.ERROR.CREATE,
+      );
     }
 
     redirect(redirectPath);
   }
+};
+
+export const deleteProduct = async (pathname: string, data: FormData) => {
+  const id = data.get("id") as string;
+
+  let redirectPath = pathname;
+  try {
+    await new Promise((r) => setTimeout(r, 2000));
+
+    throw Error();
+    // const response = await fetchApi<Product>(
+    //   `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${id}`,
+    //   { method: "DELETE" }
+    // );
+    // revalidateTag(TAGS.PRODUCTS);
+    redirectPath = buildRedirectPath(
+      pathname,
+      ToastType.SUCCESS,
+      PRODUCT_MESSAGES.SUCCESS.DELETE,
+    );
+  } catch (error) {
+    redirectPath = buildRedirectPath(
+      pathname,
+      ToastType.ERROR,
+      PRODUCT_MESSAGES.ERROR.DELETE,
+    );
+  }
+
+  redirect(`${redirectPath}&id=${id}`);
 };

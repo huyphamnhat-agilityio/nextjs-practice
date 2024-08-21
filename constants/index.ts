@@ -6,3 +6,4 @@ export * from "./images";
 export * from "./message";
 export * from "./destination";
 export * from "./query-params";
+export * from "./tags";

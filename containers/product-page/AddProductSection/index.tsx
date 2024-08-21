@@ -36,24 +36,28 @@ import {
 } from "@/mocks";
 
 // Types
-import { FormState, ProductForm } from "@/types";
+import { FormState, ProductForm, ToastType } from "@/types";
 
 // Schemas
 import { ProductFormSchema } from "@/schemas";
+import { PRODUCT_MESSAGES } from "@/constants";
 
-export type AddProductSectionProps = {
-  toastType?: string;
-  message?: string;
-};
-
-const AddProductSection = ({ toastType, message }: AddProductSectionProps) => {
+const AddProductSection = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
 
+  const toastType = searchParams.get("toastType");
+  const message = searchParams.get("message");
+
   useEffect(() => {
-    if (toastType && message) {
+    if (
+      toastType === ToastType.SUCCESS &&
+      message === PRODUCT_MESSAGES.SUCCESS.CREATE
+    ) {
+      onClose();
       toast.success(message);
 
       const params = new URLSearchParams(searchParams.toString());
@@ -61,9 +65,9 @@ const AddProductSection = ({ toastType, message }: AddProductSectionProps) => {
       params.delete("toastType");
       params.delete("message");
 
-      router.push(`${pathname}?${params.toString()}`);
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
-  }, [message, pathname, router, searchParams, toastType]);
+  }, [message, pathname, router, searchParams, toastType, onClose]);
 
   return (
     <>

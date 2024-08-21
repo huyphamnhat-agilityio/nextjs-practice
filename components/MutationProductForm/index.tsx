@@ -37,6 +37,7 @@ export type ProductFormBodyProps = {
   errors: FieldErrors<ProductForm>;
   isValid: boolean;
   state: FormState<ProductForm>;
+  onClose: () => void;
 };
 const ProductFormBody = ({
   selectedImage,
@@ -45,6 +46,7 @@ const ProductFormBody = ({
   errors,
   isValid,
   state,
+  onClose,
 }: ProductFormBodyProps) => {
   const { pending } = useFormStatus();
   return (
@@ -93,9 +95,8 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="category"
-          render={({ field: { onChange, ...rest } }) => (
+          render={({ field: { onChange, onBlur } }) => (
             <Select
-              {...rest}
               label="Category"
               name="category"
               labelPlacement="outside"
@@ -104,6 +105,7 @@ const ProductFormBody = ({
               isInvalid={!!errors?.category}
               errorMessage={errors?.category?.message}
               onChange={(e) => onChange(e.target.value)}
+              onBlur={onBlur}
             >
               {MOCK_CATEGORIES.map((category) => (
                 <SelectItem key={category.name}>{category.name}</SelectItem>
@@ -115,17 +117,18 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="title"
-          render={({ field }) => (
+          render={({ field: { onChange, onBlur } }) => (
             <>
               <Input
-                {...field}
                 label="Title"
                 name="title"
                 labelPlacement="outside"
-                isDisabled={pending}
                 placeholder="Enter course title..."
+                isDisabled={pending}
                 isInvalid={!!errors?.title}
                 errorMessage={errors?.title?.message}
+                onChange={onChange}
+                onBlur={onBlur}
               />
             </>
           )}
@@ -286,8 +289,13 @@ const ProductFormBody = ({
         />
       </ModalBody>
       <ModalFooter>
-        <Button color="danger" variant="flat" isDisabled={pending}>
-          Test
+        <Button
+          color="danger"
+          variant="flat"
+          isDisabled={pending}
+          onPress={onClose}
+        >
+          Cancel
         </Button>
         <Button
           color="primary"
@@ -295,7 +303,7 @@ const ProductFormBody = ({
           type="submit"
           isDisabled={!isValid || pending}
         >
-          Sign in
+          Create
         </Button>
       </ModalFooter>
     </>
@@ -319,7 +327,7 @@ const MutationProductForm = ({
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const currentPath = `${pathname}?${new URLSearchParams(searchParams)}`;
+  const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
 
   const [state, formAction] = useFormState<FormState<ProductForm>, FormData>(
     mutateProduct.bind(null, currentPath),
@@ -360,11 +368,11 @@ const MutationProductForm = ({
     [],
   );
 
-  useEffect(() => {
-    if (state.message) {
-      toast.error(state.message);
-    }
-  }, [reset, state.message]);
+  // useEffect(() => {
+  //   if (state.message) {
+  //     toast.error(state.message);
+  //   }
+  // }, [reset, state?.message]);
 
   return (
     <Modal
@@ -374,19 +382,18 @@ const MutationProductForm = ({
       hideCloseButton
     >
       <ModalContent>
-        {(_) => (
-          <form action={formAction} key={state?.resetKey}>
-            <ModalHeader className="text-2xl">Add course</ModalHeader>
-            <ProductFormBody
-              control={control}
-              errors={errors}
-              handleSelectImage={handleSelectImage}
-              isValid={isValid}
-              selectedImage={selectedImage}
-              state={state}
-            />
-          </form>
-        )}
+        <ModalHeader className="text-2xl">Add course</ModalHeader>
+        <form action={formAction} key={state?.resetKey}>
+          <ProductFormBody
+            control={control}
+            errors={errors}
+            handleSelectImage={handleSelectImage}
+            isValid={isValid}
+            selectedImage={selectedImage}
+            state={state}
+            onClose={onClose}
+          />
+        </form>
       </ModalContent>
     </Modal>
   );

@@ -31,9 +31,6 @@ export default async function Product({
   const currentPage = Number(searchParams?.page) || 1;
   const query = searchParams?.query || "";
 
-  const toastType = searchParams.toastType;
-  const message = searchParams.message;
-
   const data = await getProducts({
     page: currentPage,
     limit: PRODUCT_LIMIT,
@@ -50,7 +47,7 @@ export default async function Product({
 
           <div className="flex gap-10 flex-col md:flex-row">
             <SearchProductForm />
-            <AddCourseSection toastType={toastType} message={message} />
+            <AddCourseSection />
           </div>
           {data ? (
             <>
