@@ -31,6 +31,7 @@ export const PRODUCT_MESSAGES = {
     CREATED: "Product has been created successfully.",
   },
   ERROR: {
+    CREATED: "An error has occurred while creating the product.",
     UPLOAD_IMAGE: "An error has occurred when uploading the product image.",
     SALE_PRICE: "Sale price cannot be higher than the original price.",
   },

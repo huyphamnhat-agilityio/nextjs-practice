@@ -240,6 +240,10 @@ const ProductFormBody = ({
           )}
         />
 
+        {state?.message && (
+          <p className="text-base text-danger">{state.message}</p>
+        )}
+
         <Controller
           control={control}
           name="isFavorited"
@@ -347,8 +351,6 @@ const MutationProductForm = ({
 
   const [selectedImage, setSelectedImage] = useState<File>();
 
-  const router = useRouter();
-
   const handleSelectImage = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.files) {
@@ -359,19 +361,10 @@ const MutationProductForm = ({
   );
 
   useEffect(() => {
-    // if (state.errors) console.log(state.errors);
-    // if (state.message && state.resetKey) {
-    //   console.log(state.message);
-
-    //   setSelectedImage(undefined);
-
-    //   reset();
-
-    //   onClose();
-
-    // }
-    console.log();
-  }, [searchParams]);
+    if (state.message) {
+      toast.error(state.message);
+    }
+  }, [reset, state.message]);
 
   return (
     <Modal

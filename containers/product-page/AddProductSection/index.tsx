@@ -9,11 +9,12 @@ import {
   useDisclosure,
   SelectItem,
 } from "@nextui-org/react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 // Components
 import {
@@ -40,8 +41,29 @@ import { FormState, ProductForm } from "@/types";
 // Schemas
 import { ProductFormSchema } from "@/schemas";
 
-const AddProductSection = () => {
+export type AddProductSectionProps = {
+  toastType?: string;
+  message?: string;
+};
+
+const AddProductSection = ({ toastType, message }: AddProductSectionProps) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (toastType && message) {
+      toast.success(message);
+
+      const params = new URLSearchParams(searchParams.toString());
+
+      params.delete("toastType");
+      params.delete("message");
+
+      router.push(`${pathname}?${params.toString()}`);
+    }
+  }, [message, pathname, router, searchParams, toastType]);
 
   return (
     <>

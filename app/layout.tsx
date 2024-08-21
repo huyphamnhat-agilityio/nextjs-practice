@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 // components
 import { Footer, Header } from "@/components";
 import { Toaster } from "react-hot-toast";
+import Template from "./template";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -46,7 +47,8 @@ export default function RootLayout({
                 },
               }}
             />
-            {children}
+
+            <Template>{children}</Template>
 
             <Footer />
           </div>

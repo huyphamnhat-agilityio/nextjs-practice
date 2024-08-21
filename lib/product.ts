@@ -1,14 +1,16 @@
 "use server";
-import { fetchApi } from "./fetch";
+import { revalidatePath, revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 
 // Types
-import { FormState, Pagination, Product } from "@/types";
+import { FormState, Pagination, Product, ToastType } from "@/types";
 
 // Constants
-import { PRODUCT_MESSAGES, RESOURCES } from "@/constants";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { PRODUCT_MESSAGES, QUERY_DELIMITER, RESOURCES } from "@/constants";
+
+// Services
+import { fetchApi } from "./fetch";
 import { uploadAndGetImageUrl } from "./image";
-import { redirect } from "next/navigation";
 
 export type GetProductProps = {
   page: number;
@@ -71,8 +73,6 @@ export const mutateProduct = async <T extends object>(
   _: FormState<T>,
   data: FormData,
 ) => {
-  console.log(data);
-  console.log("pathname", pathname);
   const productBaseData: Product = {
     id: data.get("id") as string,
     category: data.get("category") as string,
@@ -92,6 +92,8 @@ export const mutateProduct = async <T extends object>(
   const coverImage = data.get("coverImage") as File;
 
   let productImageUrl = "";
+
+  let redirectPath = pathname;
 
   if (coverImage.size !== 0)
     try {
@@ -116,18 +118,23 @@ export const mutateProduct = async <T extends object>(
     // TODO
   } else {
     try {
-      // await fetchApi<Product>(`${process.env.MOCK_API}/${RESOURCES.PRODUCT}`, {
-      //   method: "POST",
-      //   body: JSON.stringify(productData),
-      // });
-      // revalidatePath("/", "page");
-      // return {
-      //   message: PRODUCT_MESSAGES.SUCCESS.CREATED,
-      //   resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
-      // };
+      await fetchApi<Product>(`${process.env.MOCK_API}/${RESOURCES.PRODUCT}`, {
+        method: "POST",
+        body: JSON.stringify(productData),
+      });
+
+      revalidatePath("/", "layout");
+
+      if (pathname[pathname.length - 1] === QUERY_DELIMITER)
+        redirectPath += `toastType=${ToastType.SUCCESS}&message=${PRODUCT_MESSAGES.SUCCESS.CREATED}`;
+      else
+        redirectPath += `&toastType=${ToastType.SUCCESS}&message=${PRODUCT_MESSAGES.SUCCESS.CREATED}`;
     } catch (error) {
-    } finally {
-      redirect(`${pathname}`);
+      return {
+        message: PRODUCT_MESSAGES.ERROR.CREATED,
+      };
     }
+
+    redirect(redirectPath);
   }
 };
