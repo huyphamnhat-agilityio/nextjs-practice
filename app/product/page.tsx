@@ -16,7 +16,7 @@ import {
 import { getProducts } from "@/lib";
 
 // Sections
-import { AddCourseSection } from "@/containers";
+import { AddCourseSection, ProductListSection } from "@/containers";
 
 export default async function Product({
   searchParams,
@@ -51,16 +51,18 @@ export default async function Product({
           </div>
           {data ? (
             <>
-              <Suspense
-                key={currentPage + query}
-                fallback={<ProductListSkeleton limit={PRODUCT_LIMIT} />}
-              >
-                <ProductList
-                  currentPage={currentPage}
-                  limit={PRODUCT_LIMIT}
-                  query={query}
-                />
-              </Suspense>
+              <ProductListSection>
+                <Suspense
+                  key={currentPage + query}
+                  fallback={<ProductListSkeleton limit={PRODUCT_LIMIT} />}
+                >
+                  <ProductList
+                    currentPage={currentPage}
+                    limit={PRODUCT_LIMIT}
+                    query={query}
+                  />
+                </Suspense>
+              </ProductListSection>
 
               <Suspense>
                 <Pagination total={data.totalPages} />

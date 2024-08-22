@@ -11,7 +11,11 @@ import { useFormState, useFormStatus } from "react-dom";
 // Component
 import { Button, Input } from "../common";
 import { deleteProduct } from "@/lib";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { ToastType } from "@/types";
+import { PRODUCT_MESSAGES } from "@/constants";
+import toast from "react-hot-toast";
 
 export type ConfirmProductFormBodyProps = {
   onClose: () => void;
@@ -69,7 +73,11 @@ const ConfirmProductForm = ({
 }: ConfirmProductFormProps) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+
   const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
+
+  const toastType = searchParams.get("toastType");
+  const message = searchParams.get("message");
 
   return (
     <Modal

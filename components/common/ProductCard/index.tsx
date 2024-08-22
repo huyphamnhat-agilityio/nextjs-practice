@@ -229,13 +229,15 @@ const ProductCard = (props: Product) => {
         </CardBody>
       </Card>
 
-      <ConfirmProductForm
-        id={id}
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onClose={onClose}
-        onOpenChange={onOpenChange}
-      />
+      {isOpen && (
+        <ConfirmProductForm
+          id={id}
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+          onOpenChange={onOpenChange}
+        />
+      )}
     </>
   );
 };
