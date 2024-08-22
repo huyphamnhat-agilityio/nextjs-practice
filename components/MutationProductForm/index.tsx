@@ -36,8 +36,10 @@ export type ProductFormBodyProps = {
   handleSelectImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
   errors: FieldErrors<ProductForm>;
   isValid: boolean;
+  isDirty: boolean;
   state: FormState<ProductForm>;
   onClose: () => void;
+  coverImageUrl: string;
 };
 const ProductFormBody = ({
   selectedImage,
@@ -45,8 +47,10 @@ const ProductFormBody = ({
   handleSelectImage,
   errors,
   isValid,
+  isDirty,
   state,
   onClose,
+  coverImageUrl,
 }: ProductFormBodyProps) => {
   const { pending } = useFormStatus();
   return (
@@ -63,7 +67,9 @@ const ProductFormBody = ({
             src={
               selectedImage
                 ? URL.createObjectURL(selectedImage)
-                : PLACEHOLDER_COURSE_IMAGE
+                : coverImageUrl
+                  ? coverImageUrl
+                  : PLACEHOLDER_COURSE_IMAGE
             }
             className="object-cover"
             alt=""
@@ -95,12 +101,14 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="category"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Select
               label="Category"
               name="category"
               labelPlacement="outside"
               placeholder="Choose category..."
+              value={value}
+              selectedKeys={[`${value}`]}
               isDisabled={pending}
               isInvalid={!!errors?.category}
               errorMessage={errors?.category?.message}
@@ -117,7 +125,7 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="title"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <>
               <Input
                 label="Title"
@@ -127,6 +135,7 @@ const ProductFormBody = ({
                 isDisabled={pending}
                 isInvalid={!!errors?.title}
                 errorMessage={errors?.title?.message}
+                value={value}
                 onChange={onChange}
                 onBlur={onBlur}
               />
@@ -152,20 +161,21 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="sales"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label="Sales"
               name="sales"
               labelPlacement="outside"
               placeholder="Enter sale amount..."
               type="number"
+              value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.sales}
               errorMessage={errors?.sales?.message}
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : -1,
+                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
                 );
               }}
             />
@@ -175,20 +185,21 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="originalPrice"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label="Original Price"
               name="originalPrice"
               labelPlacement="outside"
               placeholder="Enter original price..."
               type="number"
+              value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.originalPrice}
               errorMessage={errors?.originalPrice?.message}
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : -1,
+                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
                 );
               }}
             />
@@ -198,13 +209,14 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="salePrice"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label="Sale Price"
               name="salePrice"
               labelPlacement="outside"
               placeholder="Enter sale price..."
               type="number"
+              value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.salePrice || !!state?.errors?.salePrice}
               errorMessage={
@@ -213,7 +225,7 @@ const ProductFormBody = ({
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : -1,
+                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
                 );
               }}
             />
@@ -223,20 +235,21 @@ const ProductFormBody = ({
         <Controller
           control={control}
           name="rate"
-          render={({ field: { onChange, onBlur } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label="Rate"
               name="rate"
               labelPlacement="outside"
               placeholder="Enter rate..."
               type="number"
+              value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.rate}
               errorMessage={errors?.rate?.message}
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : -1,
+                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
                 );
               }}
             />
@@ -301,7 +314,7 @@ const ProductFormBody = ({
           color="primary"
           className="text-white"
           type="submit"
-          isDisabled={!isValid || pending}
+          isDisabled={!isValid || pending || !isDirty}
         >
           Create
         </Button>
@@ -320,8 +333,8 @@ export type MutationProductFormProps = {
 
 const MutationProductForm = ({
   isOpen,
-  onOpenChange,
   onClose,
+  data,
 }: MutationProductFormProps) => {
   const initialState: FormState<ProductForm> = {};
 
@@ -336,23 +349,24 @@ const MutationProductForm = ({
 
   const {
     control,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty },
     reset,
+    getValues,
   } = useForm<ProductForm>({
     mode: "all",
     defaultValues: {
-      id: "",
-      category: "",
-      title: "",
-      description: "",
-      sales: undefined,
-      originalPrice: undefined,
-      salePrice: undefined,
-      rate: undefined,
-      coverImageUrl: "",
+      id: data?.id ?? "",
+      category: data?.category ?? "",
+      title: data?.title ?? "",
+      description: data?.description ?? "",
+      sales: data?.sales ?? 0,
+      originalPrice: data?.originalPrice ?? 0,
+      salePrice: data?.salePrice ?? 0,
+      rate: data?.rate ?? 0,
+      coverImageUrl: data?.coverImageUrl ?? "",
       coverImage: undefined,
-      isFavorited: 0,
-      createdAt: 0,
+      isFavorited: data?.isFavorited ?? 0,
+      createdAt: data?.createdAt ?? 0,
     },
     resolver: zodResolver(ProductFormSchema),
   });
@@ -368,6 +382,23 @@ const MutationProductForm = ({
     [],
   );
 
+  const handleCloseModal = useCallback(() => {
+    reset();
+    setSelectedImage(undefined);
+    onClose();
+  }, [onClose, reset]);
+
+  const handleOnOpenChange = useCallback(
+    (isOpen: boolean) => {
+      if (!isOpen) handleCloseModal();
+    },
+    [handleCloseModal],
+  );
+
+  useEffect(() => {
+    // console.log(isDirty);
+    // console.log(getValues());
+  }, [getValues, isDirty]);
   // useEffect(() => {
   //   if (state.message) {
   //     toast.error(state.message);
@@ -377,21 +408,25 @@ const MutationProductForm = ({
   return (
     <Modal
       isOpen={isOpen}
-      onOpenChange={onOpenChange}
+      onOpenChange={handleOnOpenChange}
       placement="center"
       hideCloseButton
     >
       <ModalContent>
-        <ModalHeader className="text-2xl">Add course</ModalHeader>
+        <ModalHeader className="text-2xl">
+          {data?.id ? "Edit course" : "Add course"}
+        </ModalHeader>
         <form action={formAction} key={state?.resetKey}>
           <ProductFormBody
             control={control}
             errors={errors}
             handleSelectImage={handleSelectImage}
             isValid={isValid}
+            isDirty={isDirty}
             selectedImage={selectedImage}
+            coverImageUrl={data?.coverImageUrl}
             state={state}
-            onClose={onClose}
+            onClose={handleCloseModal}
           />
         </form>
       </ModalContent>

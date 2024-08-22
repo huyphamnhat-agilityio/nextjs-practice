@@ -32,13 +32,13 @@ import {
 import { markProduct } from "@/lib";
 
 // Constants
-import { MARK_FAVORITE_MESSAGES, PRODUCT_MESSAGES } from "@/constants";
+import { MARK_FAVORITE_MESSAGES, TOAST_SECTION, TOAST_TYPE } from "@/constants";
 
 // Models
 import { PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 
 // Components
-import { ConfirmProductForm } from "@/components";
+import { ConfirmProductForm, MutationProductForm } from "@/components";
 
 const ProductCard = (props: Product) => {
   const {
@@ -56,7 +56,21 @@ const ProductCard = (props: Product) => {
 
   const [isPending, setIsPending] = useState(false);
 
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure({
+  const {
+    isOpen: isConfirmModalOpen,
+    onOpen: onConfirmModalOpen,
+    onOpenChange: onCofirmModalOpenChange,
+    onClose: onConfirmModalClose,
+  } = useDisclosure({
+    defaultOpen: false,
+  });
+
+  const {
+    isOpen: isMutationModalOpen,
+    onOpen: onMutationModalOpen,
+    onOpenChange: onMutationModalOpenChange,
+    onClose: onMutationModalClose,
+  } = useDisclosure({
     defaultOpen: false,
   });
 
@@ -64,9 +78,10 @@ const ProductCard = (props: Product) => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const toastType = searchParams.get("toastType") ?? ToastType.SUCCESS;
-  const message = searchParams.get("message") ?? "";
-  const productId = searchParams.get("id") ?? "";
+  const productId = searchParams.get("productId");
+  const toastSection = searchParams.get("toastSection");
+  const toastType = searchParams.get("toastType");
+  const message = searchParams.get("message");
 
   const handleMarkFavorite = async (data: Product) => {
     try {
@@ -88,50 +103,36 @@ const ProductCard = (props: Product) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (
-  //     toastType === ToastType.SUCCESS &&
-  //     message === PRODUCT_MESSAGES.SUCCESS.DELETE &&
-  //     productId === id
-  //   ) {
-  //     onClose();
-  //     toast.success(message);
+  useEffect(() => {
+    if (productId === id && toastSection === TOAST_SECTION.PRODUCT_CARD) {
+      onMutationModalClose();
+      onConfirmModalClose();
 
-  //     const params = new URLSearchParams(searchParams.toString());
+      toastType === TOAST_TYPE.SUCCESS
+        ? toast.success(message)
+        : toast.error(message);
 
-  //     params.delete("toastType");
-  //     params.delete("message");
-  //     params.delete("id");
+      const params = new URLSearchParams(searchParams.toString());
 
-  //     router.push(`${pathname}?${params.toString()}`, { scroll: false });
-  //   }
+      params.delete("toastType");
+      params.delete("message");
+      params.delete("productId");
+      params.delete("toastSection");
 
-  //   if (
-  //     toastType === ToastType.ERROR &&
-  //     message === PRODUCT_MESSAGES.ERROR.DELETE &&
-  //     productId === id
-  //   ) {
-  //     onClose();
-  //     toast.error(message);
-
-  //     const params = new URLSearchParams(searchParams.toString());
-
-  //     params.delete("toastType");
-  //     params.delete("message");
-  //     params.delete("id");
-
-  //     router.push(`${pathname}?${params.toString()}`, { scroll: false });
-  //   }
-  // }, [
-  //   message,
-  //   pathname,
-  //   router,
-  //   searchParams,
-  //   toastType,
-  //   id,
-  //   productId,
-  //   onClose,
-  // ]);
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+  }, [
+    id,
+    message,
+    onConfirmModalClose,
+    onMutationModalClose,
+    pathname,
+    productId,
+    router,
+    searchParams,
+    toastSection,
+    toastType,
+  ]);
 
   return (
     <>
@@ -161,7 +162,7 @@ const ProductCard = (props: Product) => {
               size="tiny"
               aria-label="favorite button"
               isIconOnly
-              onClick={() => handleMarkFavorite(props)}
+              onPress={() => handleMarkFavorite(props)}
             >
               <FavoriteIcon />
             </Button>
@@ -171,6 +172,7 @@ const ProductCard = (props: Product) => {
               size="tiny"
               aria-label="cart button"
               isIconOnly
+              onPress={onMutationModalOpen}
             >
               <EditIcon />
             </Button>
@@ -180,7 +182,7 @@ const ProductCard = (props: Product) => {
               size="tiny"
               aria-label="watch later button"
               isIconOnly
-              onPress={onOpen}
+              onPress={onConfirmModalOpen}
             >
               <DeleteIcon />
             </Button>
@@ -229,13 +231,24 @@ const ProductCard = (props: Product) => {
         </CardBody>
       </Card>
 
-      {isOpen && (
+      {isConfirmModalOpen && (
         <ConfirmProductForm
+          key={id}
           id={id}
-          isOpen={isOpen}
-          onOpen={onOpen}
-          onClose={onClose}
-          onOpenChange={onOpenChange}
+          isOpen={isConfirmModalOpen}
+          onOpen={onConfirmModalOpen}
+          onClose={onConfirmModalClose}
+          onOpenChange={onCofirmModalOpenChange}
+        />
+      )}
+
+      {isMutationModalOpen && (
+        <MutationProductForm
+          isOpen={isMutationModalOpen}
+          onOpen={onMutationModalOpen}
+          onOpenChange={onMutationModalOpenChange}
+          onClose={onMutationModalClose}
+          data={props}
         />
       )}
     </>

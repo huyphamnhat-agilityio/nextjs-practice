@@ -40,7 +40,7 @@ import { FormState, ProductForm, ToastType } from "@/types";
 
 // Schemas
 import { ProductFormSchema } from "@/schemas";
-import { PRODUCT_MESSAGES } from "@/constants";
+import { PRODUCT_MESSAGES, TOAST_SECTION, TOAST_TYPE } from "@/constants";
 
 const AddProductSection = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -50,24 +50,33 @@ const AddProductSection = () => {
   const router = useRouter();
 
   const toastType = searchParams.get("toastType");
+  const toastSection = searchParams.get("toastSection");
   const message = searchParams.get("message");
 
   useEffect(() => {
-    if (
-      toastType === ToastType.SUCCESS &&
-      message === PRODUCT_MESSAGES.SUCCESS.CREATE
-    ) {
+    if (toastSection === TOAST_SECTION.ADD_PRODUCT_SECTION) {
       onClose();
-      toast.success(message);
+      toastType === TOAST_TYPE.SUCCESS
+        ? toast.success(message)
+        : toast.error(message);
 
       const params = new URLSearchParams(searchParams.toString());
 
       params.delete("toastType");
+      params.delete("toastSection");
       params.delete("message");
 
       router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
-  }, [message, pathname, router, searchParams, toastType, onClose]);
+  }, [
+    message,
+    onClose,
+    pathname,
+    router,
+    searchParams,
+    toastSection,
+    toastType,
+  ]);
 
   return (
     <>
@@ -80,7 +89,6 @@ const AddProductSection = () => {
         onClose={onClose}
         onOpen={onOpen}
         onOpenChange={onOpenChange}
-        data={PLACEHOLDER_PRODUCT_FORM_DATA}
       />
     </>
   );

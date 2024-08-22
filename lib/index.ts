@@ -1,4 +1,4 @@
-export * from "./fetch";
+export { fetchApi } from "./fetch";
 export {
   getProducts,
   markProduct,
@@ -7,3 +7,4 @@ export {
 } from "./product";
 export { subscribe } from "./subscribe";
 export { buildRedirectPath } from "./redirect";
+export { uploadAndGetImageUrl } from "./image";

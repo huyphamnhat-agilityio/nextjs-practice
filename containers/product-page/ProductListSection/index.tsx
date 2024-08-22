@@ -1,5 +1,5 @@
 "use client";
-import { PRODUCT_MESSAGES } from "@/constants";
+import { PRODUCT_MESSAGES, TOAST_SECTION, TOAST_TYPE } from "@/constants";
 import { ToastType } from "@/types";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ReactNode, useEffect } from "react";
@@ -11,38 +11,25 @@ const ProductListSection = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   const toastType = searchParams.get("toastType");
+  const toastSection = searchParams.get("toastSection");
   const message = searchParams.get("message");
 
   useEffect(() => {
-    if (
-      toastType === ToastType.SUCCESS &&
-      message === PRODUCT_MESSAGES.SUCCESS.DELETE
-    ) {
-      toast.success(message);
+    if (toastSection === TOAST_SECTION.PRODUCT_LIST_SECTION) {
+      toastType === TOAST_TYPE.SUCCESS
+        ? toast.success(message)
+        : toast.error(message);
 
       const params = new URLSearchParams(searchParams.toString());
 
       params.delete("toastType");
       params.delete("message");
+      params.delete("toastSection");
 
       router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
+  }, [message, pathname, router, searchParams, toastSection, toastType]);
 
-    if (
-      toastType === ToastType.ERROR &&
-      message === PRODUCT_MESSAGES.ERROR.DELETE
-    ) {
-      toast.error(message);
-
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.delete("toastType");
-      params.delete("message");
-      params.delete("id");
-
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    }
-  }, [message, pathname, router, searchParams, toastType]);
   return <div>{children}</div>;
 };
 

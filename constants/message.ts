@@ -30,11 +30,13 @@ export const PRODUCT_MESSAGES = {
   SUCCESS: {
     CREATE: "Product has been created successfully.",
     DELETE: "Product has been deleted successfully.",
+    UPDATE: "Product has been updated successfully.",
   },
   ERROR: {
     CREATE: "An error has occurred while creating the product.",
     UPLOAD_IMAGE: "An error has occurred when uploading the product image.",
     SALE_PRICE: "Sale price cannot be higher than the original price.",
     DELETE: "An error has occurred while deleting the product.",
+    UPDATE: "An error has occurred while updating the product.",
   },
 };

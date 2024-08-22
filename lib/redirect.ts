@@ -1,12 +1,17 @@
-import { QUERY_DELIMITER } from "@/constants";
-import { ToastType } from "react-hot-toast";
+import { ToastSection, ToastType } from "@/types";
 
-export const buildRedirectPath = (
-  pathname: string,
-  type: ToastType,
-  message: string,
-) => {
-  const delimiter =
-    pathname[pathname.length - 1] === QUERY_DELIMITER ? "" : "&";
-  return `${pathname}${delimiter}toastType=${type}&message=${message}`;
+export type BuildRedirectPathProps = {
+  pathname: string;
+  type: ToastType;
+  section: ToastSection;
+  message: string;
+};
+export const buildRedirectPath = ({
+  pathname,
+  type,
+  section,
+  message,
+}: BuildRedirectPathProps) => {
+  const delimiter = pathname[pathname.length - 1] === "?" ? "" : "&";
+  return `${pathname}${delimiter}toastType=${type}&toastSection=${section}&message=${message}`;
 };
