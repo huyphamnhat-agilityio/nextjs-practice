@@ -153,14 +153,13 @@ export const deleteProduct = async (pathname: string, data: FormData) => {
 
   let redirectPath = pathname;
   try {
-    await new Promise((r) => setTimeout(r, 2000));
+    await fetchApi<Product>(
+      `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${id}`,
+      { method: "DELETE" },
+    );
 
-    throw Error();
-    // const response = await fetchApi<Product>(
-    //   `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${id}`,
-    //   { method: "DELETE" }
-    // );
-    // revalidateTag(TAGS.PRODUCTS);
+    revalidateTag(TAGS.PRODUCTS);
+
     redirectPath = buildRedirectPath(
       pathname,
       ToastType.SUCCESS,
@@ -172,7 +171,7 @@ export const deleteProduct = async (pathname: string, data: FormData) => {
       ToastType.ERROR,
       PRODUCT_MESSAGES.ERROR.DELETE,
     );
+  } finally {
+    redirect(`${redirectPath}`);
   }
-
-  redirect(`${redirectPath}&id=${id}`);
 };

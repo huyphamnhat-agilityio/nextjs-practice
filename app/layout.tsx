@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { Footer, Header } from "@/components";
 import { Toaster } from "react-hot-toast";
 import Template from "./template";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -48,7 +49,9 @@ export default function RootLayout({
               }}
             />
 
-            <Template>{children}</Template>
+            <Suspense>
+              <Template>{children}</Template>
+            </Suspense>
 
             <Footer />
           </div>

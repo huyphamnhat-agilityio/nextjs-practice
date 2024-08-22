@@ -88,50 +88,50 @@ const ProductCard = (props: Product) => {
     }
   };
 
-  useEffect(() => {
-    if (
-      toastType === ToastType.SUCCESS &&
-      message === PRODUCT_MESSAGES.SUCCESS.DELETE &&
-      productId === id
-    ) {
-      onClose();
-      toast.success(message);
+  // useEffect(() => {
+  //   if (
+  //     toastType === ToastType.SUCCESS &&
+  //     message === PRODUCT_MESSAGES.SUCCESS.DELETE &&
+  //     productId === id
+  //   ) {
+  //     onClose();
+  //     toast.success(message);
 
-      const params = new URLSearchParams(searchParams.toString());
+  //     const params = new URLSearchParams(searchParams.toString());
 
-      params.delete("toastType");
-      params.delete("message");
-      params.delete("id");
+  //     params.delete("toastType");
+  //     params.delete("message");
+  //     params.delete("id");
 
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    }
+  //     router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  //   }
 
-    if (
-      toastType === ToastType.ERROR &&
-      message === PRODUCT_MESSAGES.ERROR.DELETE &&
-      productId === id
-    ) {
-      onClose();
-      toast.error(message);
+  //   if (
+  //     toastType === ToastType.ERROR &&
+  //     message === PRODUCT_MESSAGES.ERROR.DELETE &&
+  //     productId === id
+  //   ) {
+  //     onClose();
+  //     toast.error(message);
 
-      const params = new URLSearchParams(searchParams.toString());
+  //     const params = new URLSearchParams(searchParams.toString());
 
-      params.delete("toastType");
-      params.delete("message");
-      params.delete("id");
+  //     params.delete("toastType");
+  //     params.delete("message");
+  //     params.delete("id");
 
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    }
-  }, [
-    message,
-    pathname,
-    router,
-    searchParams,
-    toastType,
-    id,
-    productId,
-    onClose,
-  ]);
+  //     router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  //   }
+  // }, [
+  //   message,
+  //   pathname,
+  //   router,
+  //   searchParams,
+  //   toastType,
+  //   id,
+  //   productId,
+  //   onClose,
+  // ]);
 
   return (
     <>

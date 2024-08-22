@@ -6,26 +6,31 @@ import toast from "react-hot-toast";
 
 // Types
 import { ToastType } from "@/types";
+import { PRODUCT_MESSAGES } from "@/constants";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  // const searchParams = useSearchParams();
-  // const pathname = usePathname();
-  // const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  // const toastType = searchParams.get("toastType");
-  // const message = searchParams.get("message");
+  const toastType = searchParams.get("toastType");
+  const message = searchParams.get("message");
 
-  // useEffect(() => {
-  //   if (toastType === ToastType.SUCCESS && message) {
-  //     toast.success(message);
-  //     const params = new URLSearchParams(searchParams);
+  useEffect(() => {
+    if (
+      toastType === ToastType.SUCCESS &&
+      message === PRODUCT_MESSAGES.SUCCESS.DELETE
+    ) {
+      toast.success(message);
 
-  //     params.delete("toastType");
-  //     params.delete("message");
+      const params = new URLSearchParams(searchParams.toString());
 
-  //     router.push(`${pathname}?${params.toString()}`);
-  //   }
-  // }, [message, pathname, router, searchParams, toastType]);
+      params.delete("toastType");
+      params.delete("message");
+
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+  }, [message, pathname, router, searchParams, toastType]);
 
   return <div>{children}</div>;
 }
