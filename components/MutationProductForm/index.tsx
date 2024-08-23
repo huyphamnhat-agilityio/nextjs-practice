@@ -395,22 +395,13 @@ const MutationProductForm = ({
     [handleCloseModal],
   );
 
-  useEffect(() => {
-    // console.log(isDirty);
-    // console.log(getValues());
-  }, [getValues, isDirty]);
-  // useEffect(() => {
-  //   if (state.message) {
-  //     toast.error(state.message);
-  //   }
-  // }, [reset, state?.message]);
-
   return (
     <Modal
       isOpen={isOpen}
       onOpenChange={handleOnOpenChange}
       placement="center"
       hideCloseButton
+      scrollBehavior="outside"
     >
       <ModalContent>
         <ModalHeader className="text-2xl">

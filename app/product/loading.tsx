@@ -4,6 +4,9 @@ import { PRODUCT_LIMIT } from "@/constants";
 // Components
 import { ProductListSkeleton, SearchProductForm } from "@/components";
 
+// Sections
+import { AddCourseSection } from "@/containers";
+
 export default async function Loading() {
   return (
     <main>
@@ -13,7 +16,11 @@ export default async function Loading() {
             Course List
           </p>
 
-          <SearchProductForm />
+          <div className="flex gap-10 flex-col md:flex-row">
+            <SearchProductForm />
+            <AddCourseSection />
+          </div>
+
           <ProductListSkeleton limit={PRODUCT_LIMIT} />
         </div>
       </div>

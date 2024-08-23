@@ -1,14 +1,11 @@
 import "@/styles/globals.css";
-
+import { Toaster } from "react-hot-toast";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
 
 // components
 import { Footer, Header } from "@/components";
-import { Toaster } from "react-hot-toast";
-import Template from "./template";
-import { Suspense } from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -49,9 +46,7 @@ export default function RootLayout({
               }}
             />
 
-            <Suspense>
-              <Template>{children}</Template>
-            </Suspense>
+            {children}
 
             <Footer />
           </div>

@@ -1,46 +1,24 @@
 "use client";
-import {
-  Image as NextUIImage,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure,
-  SelectItem,
-} from "@nextui-org/react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useFormState } from "react-dom";
+import { useDisclosure } from "@nextui-org/react";
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
 
 // Components
+import { Button } from "@/components";
+
+// Constants
 import {
-  Button,
-  Input,
-  MutationProductForm,
-  Select,
-  Textarea,
-} from "@/components";
+  TOAST_ACTION,
+  TOAST_QUERY_PARAMS,
+  TOAST_SECTION,
+  TOAST_TYPE,
+} from "@/constants";
 
-// Services
-import { mutateProduct } from "@/lib/product";
-
-// Mocks
-import {
-  MOCK_CATEGORIES,
-  PLACEHOLDER_COURSE_IMAGE,
-  PLACEHOLDER_PRODUCT_FORM_DATA,
-} from "@/mocks";
-
-// Types
-import { FormState, ProductForm, ToastType } from "@/types";
-
-// Schemas
-import { ProductFormSchema } from "@/schemas";
-import { PRODUCT_MESSAGES, TOAST_SECTION, TOAST_TYPE } from "@/constants";
+const MutationProductForm = dynamic(() =>
+  import("@/components").then((module) => module.MutationProductForm),
+);
 
 const AddProductSection = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -49,12 +27,16 @@ const AddProductSection = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const toastType = searchParams.get("toastType");
-  const toastSection = searchParams.get("toastSection");
-  const message = searchParams.get("message");
+  const toastType = searchParams.get(TOAST_QUERY_PARAMS.TOAST_TYPE);
+  const toastSection = searchParams.get(TOAST_QUERY_PARAMS.TOAST_SECTION);
+  const toastAction = searchParams.get(TOAST_QUERY_PARAMS.TOAST_ACTION);
+  const message = searchParams.get(TOAST_QUERY_PARAMS.MESSAGE);
 
   useEffect(() => {
-    if (toastSection === TOAST_SECTION.ADD_PRODUCT_SECTION) {
+    if (
+      toastSection === TOAST_SECTION.ADD_PRODUCT_SECTION &&
+      toastAction === TOAST_ACTION.MUTATE
+    ) {
       onClose();
       toastType === TOAST_TYPE.SUCCESS
         ? toast.success(message)
@@ -62,13 +44,15 @@ const AddProductSection = () => {
 
       const params = new URLSearchParams(searchParams.toString());
 
-      params.delete("toastType");
-      params.delete("toastSection");
-      params.delete("message");
+      params.delete(TOAST_QUERY_PARAMS.TOAST_TYPE);
+      params.delete(TOAST_QUERY_PARAMS.TOAST_SECTION);
+      params.delete(TOAST_QUERY_PARAMS.TOAST_ACTION);
+      params.delete(TOAST_QUERY_PARAMS.MESSAGE);
 
       router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
   }, [
+    toastAction,
     message,
     onClose,
     pathname,

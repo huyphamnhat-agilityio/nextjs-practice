@@ -85,6 +85,7 @@ const ConfirmProductForm = ({
       onOpenChange={onOpenChange}
       placement="center"
       hideCloseButton
+      scrollBehavior="outside"
     >
       <ModalContent>
         <ModalHeader className="text-2xl">

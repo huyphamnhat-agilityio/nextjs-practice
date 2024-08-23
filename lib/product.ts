@@ -10,18 +10,24 @@ import {
   PRODUCT_MESSAGES,
   RESOURCES,
   TAGS,
+  TOAST_ACTION,
   TOAST_SECTION,
   TOAST_TYPE,
 } from "@/constants";
 
 // Services
-import { buildRedirectPath, fetchApi, uploadAndGetImageUrl } from "@/lib";
+import {
+  buildRedirectPathWithToast,
+  fetchApi,
+  uploadAndGetImageUrl,
+} from "@/lib";
 
 export type GetProductProps = {
   page: number;
   limit: number;
   query?: string;
 };
+
 export const getProducts = async ({
   page,
   limit,
@@ -53,6 +59,18 @@ export const getProducts = async ({
   }
 };
 
+export const getProductById = async (productId: string) => {
+  try {
+    const response = await fetchApi<Product>(
+      `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productId}`,
+    );
+
+    return response;
+  } catch (error) {
+    if (error.status === 404) return undefined;
+    throw new Error(error.message);
+  }
+};
 export const markProduct = async (data: Product) => {
   try {
     const response = await fetchApi<Product>(
@@ -120,11 +138,7 @@ export const mutateProduct = async <T extends object>(
     };
 
   if (productBaseData.id) {
-    // TODO
-    // console.log(productData);
-
     try {
-      // throw Error();
       await fetchApi<Product>(
         `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productBaseData.id}`,
         {
@@ -135,21 +149,18 @@ export const mutateProduct = async <T extends object>(
 
       revalidateTag(TAGS.PRODUCTS);
 
-      redirectPath = buildRedirectPath({
+      redirectPath = buildRedirectPathWithToast({
         pathname,
         type: TOAST_TYPE.SUCCESS,
         section: TOAST_SECTION.PRODUCT_CARD,
+        action: TOAST_ACTION.MUTATE,
         message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
+        queryId: productBaseData.id,
       });
-
-      redirectPath += `&productId=${productBaseData.id}`;
     } catch (error) {
-      // redirectPath = buildRedirectPath({
-      //   pathname,
-      //   type: TOAST_TYPE.ERROR,
-      //   section: TOAST_SECTION.PRODUCT_CARD,
-      //   message: PRODUCT_MESSAGES.ERROR.UPDATE,
-      // });
+      return {
+        message: PRODUCT_MESSAGES.ERROR.UPDATE,
+      };
     }
   } else {
     try {
@@ -160,22 +171,17 @@ export const mutateProduct = async <T extends object>(
 
       revalidateTag(TAGS.PRODUCTS);
 
-      redirectPath = buildRedirectPath({
+      redirectPath = buildRedirectPathWithToast({
         pathname,
         type: TOAST_TYPE.SUCCESS,
         section: TOAST_SECTION.ADD_PRODUCT_SECTION,
+        action: TOAST_ACTION.MUTATE,
         message: PRODUCT_MESSAGES.SUCCESS.CREATE,
       });
     } catch (error) {
       return {
         message: PRODUCT_MESSAGES.ERROR.CREATE,
       };
-      // redirectPath = buildRedirectPath({
-      //   pathname,
-      //   type: TOAST_TYPE.ERROR,
-      //   section: TOAST_SECTION.ADD_PRODUCT_SECTION,
-      //   message: PRODUCT_MESSAGES.ERROR.CREATE,
-      // });
     }
   }
   redirect(redirectPath);
@@ -193,20 +199,22 @@ export const deleteProduct = async (pathname: string, data: FormData) => {
 
     revalidateTag(TAGS.PRODUCTS);
 
-    redirectPath = buildRedirectPath({
+    redirectPath = buildRedirectPathWithToast({
       pathname,
       type: TOAST_TYPE.SUCCESS,
       section: TOAST_SECTION.PRODUCT_LIST_SECTION,
+      action: TOAST_ACTION.CONFIRM,
       message: PRODUCT_MESSAGES.SUCCESS.DELETE,
     });
   } catch (error) {
-    redirectPath = buildRedirectPath({
+    redirectPath = buildRedirectPathWithToast({
       pathname,
       type: TOAST_TYPE.ERROR,
       section: TOAST_SECTION.PRODUCT_CARD,
+      action: TOAST_ACTION.CONFIRM,
       message: PRODUCT_MESSAGES.ERROR.DELETE,
+      queryId: id,
     });
-    redirectPath += `&productId=${id}`;
   } finally {
     redirect(`${redirectPath}`);
   }

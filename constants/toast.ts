@@ -8,3 +8,8 @@ export const TOAST_SECTION = {
   PRODUCT_LIST_SECTION: "product-list-section",
   PRODUCT_CARD: "product-card",
 } as const;
+
+export const TOAST_ACTION = {
+  MUTATE: "mutate",
+  CONFIRM: "confirm",
+} as const;

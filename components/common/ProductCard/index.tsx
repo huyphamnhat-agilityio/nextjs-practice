@@ -13,16 +13,14 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 // Types
-import { Product, ToastType } from "@/types";
+import { Product } from "@/types";
 
 // Components
 import { Button } from "../Button";
 import {
-  CartIcon,
   DeleteIcon,
   DownloadIcon,
   EditIcon,
-  EyeIcon,
   FavoriteIcon,
   NextArrowIcon,
   SolidStarIcon,
@@ -32,13 +30,27 @@ import {
 import { markProduct } from "@/lib";
 
 // Constants
-import { MARK_FAVORITE_MESSAGES, TOAST_SECTION, TOAST_TYPE } from "@/constants";
+import {
+  DESTINATION,
+  MARK_FAVORITE_MESSAGES,
+  TOAST_ACTION,
+  TOAST_QUERY_PARAMS,
+  TOAST_SECTION,
+  TOAST_TYPE,
+} from "@/constants";
 
 // Models
 import { PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
+import dynamic from "next/dynamic";
 
 // Components
-import { ConfirmProductForm, MutationProductForm } from "@/components";
+const ConfirmProductForm = dynamic(() =>
+  import("@/components").then((module) => module.ConfirmProductForm),
+);
+
+const MutationProductForm = dynamic(() =>
+  import("@/components").then((module) => module.MutationProductForm),
+);
 
 const ProductCard = (props: Product) => {
   const {
@@ -78,20 +90,26 @@ const ProductCard = (props: Product) => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const productId = searchParams.get("productId");
-  const toastSection = searchParams.get("toastSection");
-  const toastType = searchParams.get("toastType");
-  const message = searchParams.get("message");
+  console.log(pathname);
+
+  const toastType = searchParams.get(TOAST_QUERY_PARAMS.TOAST_TYPE);
+  const toastSection = searchParams.get(TOAST_QUERY_PARAMS.TOAST_SECTION);
+  const toastAction = searchParams.get(TOAST_QUERY_PARAMS.TOAST_ACTION);
+  const message = searchParams.get(TOAST_QUERY_PARAMS.MESSAGE);
+  const queryId = searchParams.get(TOAST_QUERY_PARAMS.QUERY_ID);
 
   const handleMarkFavorite = async (data: Product) => {
     try {
       setIsPending(true);
+
       const response = await markProduct(data);
-      toast.success(
-        response.isFavorited
-          ? MARK_FAVORITE_MESSAGES.SUCCESS.MARKED
-          : MARK_FAVORITE_MESSAGES.SUCCESS.UNMARKED,
-      );
+
+      if (response)
+        toast.success(
+          response.isFavorited
+            ? MARK_FAVORITE_MESSAGES.SUCCESS.MARKED
+            : MARK_FAVORITE_MESSAGES.SUCCESS.UNMARKED,
+        );
     } catch (error) {
       toast.error(
         props.isFavorited
@@ -104,9 +122,9 @@ const ProductCard = (props: Product) => {
   };
 
   useEffect(() => {
-    if (productId === id && toastSection === TOAST_SECTION.PRODUCT_CARD) {
-      onMutationModalClose();
-      onConfirmModalClose();
+    if (queryId === id && toastSection === TOAST_SECTION.PRODUCT_CARD) {
+      if (toastAction === TOAST_ACTION.MUTATE) onMutationModalClose();
+      else onConfirmModalClose();
 
       toastType === TOAST_TYPE.SUCCESS
         ? toast.success(message)
@@ -114,10 +132,11 @@ const ProductCard = (props: Product) => {
 
       const params = new URLSearchParams(searchParams.toString());
 
-      params.delete("toastType");
-      params.delete("message");
-      params.delete("productId");
-      params.delete("toastSection");
+      params.delete(TOAST_QUERY_PARAMS.TOAST_TYPE);
+      params.delete(TOAST_QUERY_PARAMS.TOAST_SECTION);
+      params.delete(TOAST_QUERY_PARAMS.TOAST_ACTION);
+      params.delete(TOAST_QUERY_PARAMS.MESSAGE);
+      params.delete(TOAST_QUERY_PARAMS.QUERY_ID);
 
       router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
@@ -127,9 +146,10 @@ const ProductCard = (props: Product) => {
     onConfirmModalClose,
     onMutationModalClose,
     pathname,
-    productId,
+    queryId,
     router,
     searchParams,
+    toastAction,
     toastSection,
     toastType,
   ]);
@@ -221,11 +241,11 @@ const ProductCard = (props: Product) => {
               size="xs"
               className="font-bold"
               as={Link}
-              href="#"
-              aria-label="Go to learn more page"
+              href={`${DESTINATION.PRODUCT}/${id}`}
+              aria-label="Go to detail page"
               endContent={<NextArrowIcon />}
             >
-              Learn More
+              Course Detail
             </Button>
           </div>
         </CardBody>

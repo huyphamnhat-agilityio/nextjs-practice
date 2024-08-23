@@ -5,7 +5,8 @@ export const fetchApi = async <T>(url: string, options?: RequestInit) => {
     "Content-Type": "application/json",
   };
 
-  if (options.hasOwnProperty("headers")) headerOption = options.headers;
+  if (options)
+    if (options.hasOwnProperty("headers")) headerOption = options.headers;
 
   const response = await fetch(url, {
     method: options?.method || "GET",

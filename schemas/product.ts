@@ -27,7 +27,15 @@ export const ProductFormSchema = z
     rate: z
       .number({ required_error: "Rate is required" })
       .min(0, "Rate must be equal or greater than 0")
-      .max(5, "Rate must be no more than 5"),
+      .max(5, "Rate must be no more than 5")
+      .refine(
+        (val) => {
+          return /^\d+(\.\d)?$/.test(val.toString());
+        },
+        {
+          message: "Rate must have only one digit after the decimal point.",
+        },
+      ),
     coverImage: z
       .any()
       .optional()
