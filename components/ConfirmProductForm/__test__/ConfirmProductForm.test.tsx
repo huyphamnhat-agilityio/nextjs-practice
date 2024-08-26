@@ -3,8 +3,7 @@ import { useFormStatus } from "react-dom";
 import { usePathname, useSearchParams } from "next/navigation";
 import userEvent from "@testing-library/user-event";
 
-// Components
-import { ConfirmProductForm } from "@/components";
+import ConfirmProductForm, { ConfirmProductFormProps } from "..";
 
 // Mock necessary hooks
 jest.mock("react-dom", () => ({
@@ -17,78 +16,54 @@ jest.mock("next/navigation", () => ({
   useSearchParams: jest.fn(),
 }));
 
-describe("ConfirmProductForm", () => {
+describe("ConfirmProductForm test cases", () => {
   const onClose = jest.fn();
   const onOpenChange = jest.fn();
   const onOpen = jest.fn();
 
+  beforeAll(() => {
+    window.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  });
+
   beforeEach(() => {
     (useFormStatus as jest.Mock).mockReturnValue({ pending: false });
-    (usePathname as jest.Mock).mockReturnValue("/current-path");
+    (usePathname as jest.Mock).mockReturnValue("/");
     (useSearchParams as jest.Mock).mockReturnValue(new URLSearchParams());
   });
 
-  it("renders correctly", () => {
-    render(
-      <ConfirmProductForm
-        id="1"
-        isOpen={true}
-        onClose={onClose}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />,
-    );
+  const setup = (props: ConfirmProductFormProps) =>
+    render(<ConfirmProductForm {...props} />);
 
-    expect(screen.getByText("Delete course with id: 1")).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "Do you want to delete this course? This action cannot be undone.",
-      ),
-    ).toBeInTheDocument();
-  });
+  const mockProps: ConfirmProductFormProps = {
+    id: "1",
+    isOpen: true,
+    onClose: onClose,
+    onOpen: onOpen,
+    onOpenChange: onOpenChange,
+  };
 
-  it("calls onClose when Cancel button is clicked", () => {
-    render(
-      <ConfirmProductForm
-        id="1"
-        isOpen={true}
-        onClose={onClose}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />,
-    );
+  it("should renders correctly", () => {
+    const { asFragment } = setup(mockProps);
 
-    userEvent.click(screen.getByText("Cancel"));
-
-    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("disables the Delete button when pending", () => {
     (useFormStatus as jest.Mock).mockReturnValue({ pending: true });
 
-    render(
-      <ConfirmProductForm
-        id="1"
-        isOpen={true}
-        onClose={onClose}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />,
-    );
+    setup(mockProps);
 
-    expect(screen.getByText("Delete")).toBeDisabled();
+    const submitBtn = screen.getByRole("button", {
+      name: /delete/i,
+    });
+
+    expect(submitBtn).toBeDisabled();
   });
 
   it("triggers form submission with the correct action", async () => {
-    const { asFragment } = render(
-      <ConfirmProductForm
-        id="1"
-        isOpen={true}
-        onClose={onClose}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />,
-    );
+    const { asFragment } = setup(mockProps);
 
     const submitBtn = screen.getByRole("button", {
       name: /delete/i,

@@ -64,7 +64,6 @@ const ConfirmProductForm = ({
   id,
   isOpen,
   onClose,
-  onOpen,
   onOpenChange,
 }: ConfirmProductFormProps) => {
   const searchParams = useSearchParams();

@@ -131,13 +131,6 @@ export const mutateProduct = async <T extends object>(
       };
     }
 
-  if (productBaseData.originalPrice < productBaseData.salePrice)
-    return {
-      errors: {
-        salePrice: [PRODUCT_MESSAGES.ERROR.SALE_PRICE],
-      },
-    };
-
   if (productBaseData.id) {
     try {
       await fetchApi<Product>(

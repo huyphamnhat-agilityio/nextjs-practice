@@ -1,39 +1,45 @@
 import { z } from "zod";
 
 // Constants
-import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_FILE_SIZE } from "@/constants";
+import {
+  ACCEPTED_IMAGE_TYPES,
+  FORM_MESSAGES,
+  MAX_IMAGE_FILE_SIZE,
+} from "@/constants";
 
 export const ProductFormSchema = z
   .object({
     id: z.string(),
-    category: z.string({ required_error: "Category is required" }),
+    category: z.string({
+      required_error: FORM_MESSAGES.PRODUCT.CATEGORY.REQUIRED,
+    }),
     title: z
-      .string({ required_error: "Title is required" })
-      .min(2, "Title must be at least 2 characters")
-      .max(100, "Title must be no more than 100 characters"),
+      .string({ required_error: FORM_MESSAGES.PRODUCT.TITLE.REQUIRED })
+      .min(2, FORM_MESSAGES.PRODUCT.TITLE.MIN)
+      .max(100, FORM_MESSAGES.PRODUCT.TITLE.MAX),
     description: z
       .string()
-      .max(200, "Description must be no more than 200 characters")
+      .max(200, FORM_MESSAGES.PRODUCT.DESCRIPTION.MAX)
       .optional(),
     sales: z
-      .number({ required_error: "Sale amount is required" })
-      .min(0, "Sales must be equal or greater than 0"),
+      .number({ required_error: FORM_MESSAGES.PRODUCT.SALES.REQUIRED })
+      .min(0, FORM_MESSAGES.PRODUCT.SALES.MIN),
     originalPrice: z
-      .number({ required_error: "Original price is required" })
-      .min(0, "Original price must be equal or greater than 0"),
+      .number({ required_error: FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.REQUIRED })
+      .min(0, FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MIN),
     salePrice: z
-      .number({ required_error: "Sale price is required" })
-      .min(0, "Sale price must be equal or greater than 0"),
+      .number({ required_error: FORM_MESSAGES.PRODUCT.SALE_PRICE.REQUIRED })
+      .min(0, FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN),
     rate: z
-      .number({ required_error: "Rate is required" })
-      .min(0, "Rate must be equal or greater than 0")
-      .max(5, "Rate must be no more than 5")
+      .number({ required_error: FORM_MESSAGES.PRODUCT.RATE.REQUIRED })
+      .min(0, FORM_MESSAGES.PRODUCT.RATE.MIN)
+      .max(5, FORM_MESSAGES.PRODUCT.RATE.MAX)
       .refine(
         (val) => {
           return /^\d+(\.\d)?$/.test(val.toString());
         },
         {
-          message: "Rate must have only one digit after the decimal point.",
+          message: FORM_MESSAGES.PRODUCT.RATE.DECIMAL,
         },
       ),
     coverImage: z
@@ -41,14 +47,14 @@ export const ProductFormSchema = z
       .optional()
       .refine(
         (file) => !file || file?.size <= MAX_IMAGE_FILE_SIZE,
-        `Max image size is ${MAX_IMAGE_FILE_SIZE / 1000000}MB.`,
+        FORM_MESSAGES.PRODUCT.COVER_IMAGE.MAX_SIZE,
       )
       .refine(
         (file) => !file || ACCEPTED_IMAGE_TYPES.includes(file?.type),
-        "Only .jpg, .jpeg, .png and .webp formats are supported.",
+        FORM_MESSAGES.PRODUCT.COVER_IMAGE.ACCEPTED_FORMATS,
       ),
   })
   .refine((schema) => schema.originalPrice >= schema.salePrice, {
-    message: "Sale price must be equal or lower than original price",
+    message: FORM_MESSAGES.PRODUCT.SALE_PRICE.MAX,
     path: ["salePrice"],
   });

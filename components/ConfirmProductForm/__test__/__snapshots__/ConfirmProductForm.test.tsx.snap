@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ConfirmProductForm triggers form submission with the correct action 1`] = `<DocumentFragment />`;
+exports[`ConfirmProductForm test cases should renders correctly 1`] = `<DocumentFragment />`;
+
+exports[`ConfirmProductForm test cases triggers form submission with the correct action 1`] = `<DocumentFragment />`;

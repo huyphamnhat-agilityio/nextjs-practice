@@ -79,6 +79,7 @@ const ProductFormBody = ({
             name="coverImage"
             render={({ field: { onChange, onBlur } }) => (
               <Input
+                data-testid="cover-image"
                 name="coverImage"
                 type="file"
                 className="hidden"
@@ -110,8 +111,6 @@ const ProductFormBody = ({
               value={value}
               selectedKeys={[`${value}`]}
               isDisabled={pending}
-              isInvalid={!!errors?.category}
-              errorMessage={errors?.category?.message}
               onChange={(e) => onChange(e.target.value)}
               onBlur={onBlur}
             >
@@ -316,7 +315,7 @@ const ProductFormBody = ({
           type="submit"
           isDisabled={!isValid || pending || !isDirty}
         >
-          Create
+          Submit
         </Button>
       </ModalFooter>
     </>
@@ -329,7 +328,6 @@ export type MutationProductFormProps = {
   onOpenChange: () => void;
   onClose: () => void;
   data?: Product;
-  submitAction?: string | ((formData: FormData) => void);
 };
 
 const MutationProductForm = ({
@@ -352,7 +350,6 @@ const MutationProductForm = ({
     control,
     formState: { errors, isValid, isDirty },
     reset,
-    getValues,
   } = useForm<ProductForm>({
     mode: "all",
     defaultValues: {

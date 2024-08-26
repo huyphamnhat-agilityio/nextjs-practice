@@ -1,3 +1,5 @@
+import { MAX_IMAGE_FILE_SIZE } from "./images";
+
 export const FETCH_ERROR_MESSAGES = {
   400: "The request could not be understood by the server due to malformed syntax. Please check your input and try again.",
   401: "You are not authorized to access this resource. Please log in with valid credentials and try again.",
@@ -40,3 +42,43 @@ export const PRODUCT_MESSAGES = {
     UPDATE: "An error has occurred while updating the product.",
   },
 };
+
+export const FORM_MESSAGES = {
+  PRODUCT: {
+    TITLE: {
+      REQUIRED: "Title is required",
+      MIN: "Title must be at least 2 characters",
+      MAX: "Title must be no more than 100 characters",
+    },
+    CATEGORY: {
+      REQUIRED: "Category is required",
+    },
+    DESCRIPTION: {
+      MAX: "Description must be no more than 200 characters",
+    },
+    SALES: {
+      REQUIRED: "Sale amount is required",
+      MIN: "Sales must be equal or greater than 0",
+    },
+    ORIGINAL_PRICE: {
+      REQUIRED: "Original price is required",
+      MIN: "Original price must be equal or greater than 0",
+    },
+    SALE_PRICE: {
+      REQUIRED: "Sale price is required",
+      MIN: "Sale price must be equal or greater than 0",
+      MAX: "Sale price must be equal or lower than original price",
+    },
+    RATE: {
+      REQUIRED: "Rate is required",
+      MIN: "Rate must be equal or greater than 0",
+      MAX: "Rate must be no more than 5",
+      DECIMAL: "Rate must have only one digit after the decimal point.",
+    },
+    COVER_IMAGE: {
+      MAX_SIZE: `Max image size is ${MAX_IMAGE_FILE_SIZE / 1000000}MB.`,
+      ACCEPTED_FORMATS:
+        "Only .jpg, .jpeg, .png and .webp formats are supported.",
+    },
+  },
+} as const;
