@@ -329,6 +329,7 @@ export type MutationProductFormProps = {
   onOpenChange: () => void;
   onClose: () => void;
   data?: Product;
+  submitAction?: string | ((formData: FormData) => void);
 };
 
 const MutationProductForm = ({

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopularCoursesSection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="bg-dark-blue mt-32.5 flex justify-center"
@@ -30,7 +30,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
           </p>
         </div>
         <div
-          class="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly"
+          class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly"
         >
           <div
             class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -76,18 +76,35 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="none"
+                    fill="currentColor"
                     height="20"
-                    viewBox="0 0 21 20"
+                    id="Capa_1"
+                    version="1.1"
+                    viewBox="0 0 471.701 471.701"
                     width="21"
+                    xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <path
-                      d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                      fill="#BDBDBD"
-                      stroke="#252B42"
-                      stroke-width="0.625"
+                    <g
+                      id="SVGRepo_bgCarrier"
+                      stroke-width="0"
                     />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <g
+                      id="SVGRepo_iconCarrier"
+                    >
+                      <g>
+                        <path
+                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                        />
+                         
+                      </g>
+                    </g>
                   </svg>
                 </button>
                 <button
@@ -262,8 +279,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15
-                     Sales
+                    15 Sales
                   </div>
                 </div>
               </div>
@@ -373,18 +389,35 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="none"
+                    fill="currentColor"
                     height="20"
-                    viewBox="0 0 21 20"
+                    id="Capa_1"
+                    version="1.1"
+                    viewBox="0 0 471.701 471.701"
                     width="21"
+                    xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <path
-                      d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                      fill="#BDBDBD"
-                      stroke="#252B42"
-                      stroke-width="0.625"
+                    <g
+                      id="SVGRepo_bgCarrier"
+                      stroke-width="0"
                     />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <g
+                      id="SVGRepo_iconCarrier"
+                    >
+                      <g>
+                        <path
+                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                        />
+                         
+                      </g>
+                    </g>
                   </svg>
                 </button>
                 <button
@@ -559,8 +592,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15
-                     Sales
+                    15 Sales
                   </div>
                 </div>
               </div>
@@ -670,18 +702,35 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   type="button"
                 >
                   <svg
-                    fill="none"
+                    fill="currentColor"
                     height="20"
-                    viewBox="0 0 21 20"
+                    id="Capa_1"
+                    version="1.1"
+                    viewBox="0 0 471.701 471.701"
                     width="21"
+                    xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <path
-                      d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                      fill="#BDBDBD"
-                      stroke="#252B42"
-                      stroke-width="0.625"
+                    <g
+                      id="SVGRepo_bgCarrier"
+                      stroke-width="0"
                     />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <g
+                      id="SVGRepo_iconCarrier"
+                    >
+                      <g>
+                        <path
+                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                        />
+                         
+                      </g>
+                    </g>
                   </svg>
                 </button>
                 <button
@@ -856,8 +905,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15
-                     Sales
+                    15 Sales
                   </div>
                 </div>
               </div>
@@ -924,43 +972,46 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
             </div>
           </div>
         </div>
-        <nav
-          aria-label="pagination navigation"
-          class="p-2.5 overflow-x-scroll scrollbar-hide flex justify-center m-0"
-          data-active-page="1"
-          data-dots-jump="5"
-          data-slot="base"
-          data-total="1"
-          role="navigation"
+        <a
+          class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 font-bold self-center"
+          href="/product"
+          role="link"
+          tabindex="0"
         >
-          <ul
-            class="flex flex-nowrap h-fit max-w-fit relative gap-1 items-center overflow-visible rounded-medium text-white"
-            data-slot="wrapper"
+          See more courses
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span
-              aria-hidden="true"
-              class="absolute flex overflow-visible items-center justify-center origin-center left-0 select-none touch-none pointer-events-none z-20 bg-primary text-primary-foreground data-[moving=true]:transition-transform !data-[moving=true]:duration-300 opacity-0 data-[moving]:opacity-100 min-w-9 w-9 h-9 text-small rounded-medium"
-              data-moving="false"
-              data-slot="cursor"
-              style="transform: translateX(0px) scale(1);"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              1
-            </span>
-            <li
-              aria-current="true"
-              aria-label="pagination item 1 active"
-              class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-white hover:bg-primary hover:bg-opacity-25"
-              data-active="true"
-              data-slot="item"
-              role="button"
-              tabindex="0"
-            >
-              1
-            </li>
-          </ul>
-        </nav>
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
+              >
+                <rect
+                  fill="currentColor"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;

@@ -6,16 +6,12 @@ import {
   ModalFooter,
   ModalHeader,
 } from "@nextui-org/react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 
 // Component
 import { Button, Input } from "../common";
 import { deleteProduct } from "@/lib";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { ToastType } from "@/types";
-import { PRODUCT_MESSAGES } from "@/constants";
-import toast from "react-hot-toast";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export type ConfirmProductFormBodyProps = {
   onClose: () => void;
@@ -76,15 +72,11 @@ const ConfirmProductForm = ({
 
   const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
 
-  const toastType = searchParams.get("toastType");
-  const message = searchParams.get("message");
-
   return (
     <Modal
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       placement="center"
-      hideCloseButton
       scrollBehavior="outside"
     >
       <ModalContent>

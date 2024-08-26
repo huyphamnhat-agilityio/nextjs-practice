@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <footer>
     <div
       class="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 mx-auto flex flex-col"
@@ -367,5 +367,5 @@ exports[`Footer test cases should render correctly 1`] = `
       </div>
     </div>
   </footer>
-</div>
+</DocumentFragment>
 `;

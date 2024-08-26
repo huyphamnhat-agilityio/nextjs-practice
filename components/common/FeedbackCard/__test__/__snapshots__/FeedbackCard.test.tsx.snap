@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeedbackCard test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="flex flex-col relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-none transition-transform-background motion-reduce:transition-none p-6.25 max-w-87 border-none rounded-none"
     tabindex="-1"
@@ -113,5 +113,5 @@ exports[`FeedbackCard test cases should render correctly 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

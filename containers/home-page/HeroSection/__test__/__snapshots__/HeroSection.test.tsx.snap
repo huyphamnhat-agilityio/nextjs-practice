@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeroSection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="relative"
@@ -23,16 +23,16 @@ exports[`HeroSection test cases should render correctly 1`] = `
         <div
           class="max-w-xs md:max-w-xl flex flex-col gap-8.75 mx-auto text-center mobile:px-4 2xl:px-0 2xl:text-left 2xl:mx-0"
         >
-          <h5
+          <p
             class="text-base font-bold text-primary"
           >
             For Better Future
-          </h5>
-          <h1
+          </p>
+          <h3
             class="text-6xl/20 font-bold uppercase text-foreground"
           >
             High Quality Course
-          </h1>
+          </h3>
           <p
             class="text-xl/7.5 text-foreground-100 max-w-84.5 mx-auto my-0 2xl:m-0 2xl:max-w-84.5 font-normal"
           >
@@ -216,7 +216,7 @@ exports[`HeroSection test cases should render correctly 1`] = `
               class="z-10 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large flex flex-col gap-5 items-start p-0"
             >
               <div
-                class="text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-default"
+                class="text-white flex justify-center items-center px-4.75 py-5.5 w-auto h-auto rounded-2.5 bg-mango"
               >
                 <svg
                   fill="none"
@@ -330,5 +330,5 @@ exports[`HeroSection test cases should render correctly 1`] = `
       </div>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;

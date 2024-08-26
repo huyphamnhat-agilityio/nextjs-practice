@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlanCard test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 px-10 py-12.5 rounded-none flex flex-col gap-8.75 relative overflow-visible"
     tabindex="-1"
@@ -45,8 +45,7 @@ exports[`PlanCard test cases should render correctly 1`] = `
         <p
           class="text-primary text-5xl/12.5 font-bold"
         >
-          19
-          $
+          19$
         </p>
         <p
           class="text-secondary-50 text-sm/6 font-bold"
@@ -286,11 +285,11 @@ exports[`PlanCard test cases should render correctly 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`PlanCard test cases should render correctly with new badge 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 px-10 py-12.5 rounded-none flex flex-col gap-8.75 relative overflow-visible"
     tabindex="-1"
@@ -339,8 +338,7 @@ exports[`PlanCard test cases should render correctly with new badge 1`] = `
         <p
           class="text-primary text-5xl/12.5 font-bold"
         >
-          19
-          $
+          19$
         </p>
         <p
           class="text-secondary-50 text-sm/6 font-bold"
@@ -580,5 +578,5 @@ exports[`PlanCard test cases should render correctly with new badge 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

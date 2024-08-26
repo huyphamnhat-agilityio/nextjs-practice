@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PaymentSection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="flex justify-center overflow-hidden"
@@ -75,8 +75,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                 <p
                   class="text-primary text-5xl/12.5 font-bold"
                 >
-                  19
-                  $
+                  19$
                 </p>
                 <p
                   class="text-secondary-50 text-sm/6 font-bold"
@@ -364,8 +363,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                 <p
                   class="text-primary text-5xl/12.5 font-bold"
                 >
-                  19
-                  $
+                  19$
                 </p>
                 <p
                   class="text-secondary-50 text-sm/6 font-bold"
@@ -648,8 +646,7 @@ exports[`PaymentSection test cases should render correctly 1`] = `
                 <p
                   class="text-primary text-5xl/12.5 font-bold"
                 >
-                  19
-                  $
+                  19$
                 </p>
                 <p
                   class="text-secondary-50 text-sm/6 font-bold"
@@ -893,5 +890,5 @@ exports[`PaymentSection test cases should render correctly 1`] = `
       </div>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;

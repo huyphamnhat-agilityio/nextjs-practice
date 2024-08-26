@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GetQualitySection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="flex flex-col lg:flex-row justify-between items-center gap-10 2xl:gap-0 max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 mx-auto mt-52"
@@ -35,9 +35,10 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
           the two major realms of Classical physics: Newtonian mechanics
         </p>
         <a
-          class="flex gap-2.5 text-sm/6 font-bold"
-          color="primary"
+          class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 text-sm/6 font-bold"
           href="#"
+          role="link"
+          tabindex="0"
         >
           Learn More
           <svg
@@ -74,5 +75,5 @@ exports[`GetQualitySection test cases should render correctly 1`] = `
       </div>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;

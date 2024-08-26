@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeedbackSection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="flex justify-center"
@@ -369,5 +369,5 @@ exports[`FeedbackSection test cases should render correctly 1`] = `
       </div>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;
