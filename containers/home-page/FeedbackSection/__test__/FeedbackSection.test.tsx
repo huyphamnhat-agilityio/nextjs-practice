@@ -7,8 +7,8 @@ describe("FeedbackSection test cases", () => {
   const setup = () => render(<FeedbackSection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

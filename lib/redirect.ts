@@ -12,6 +12,7 @@ export type BuildRedirectPathWithToastProps = {
   message: string;
   queryId?: string;
 };
+
 export const buildRedirectPathWithToast = ({
   pathname,
   type,

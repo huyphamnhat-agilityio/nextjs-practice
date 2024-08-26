@@ -9,9 +9,9 @@ describe("NavBar test cases", () => {
   const setup = () => render(<NavBar />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly on mobile screen", async () => {
@@ -23,7 +23,7 @@ describe("NavBar test cases", () => {
       removeListener: jest.fn(),
     }));
 
-    const { container } = setup();
+    const { asFragment } = setup();
 
     const menuBtn = screen.getByRole("button", {
       name: /open menu/i,
@@ -37,17 +37,17 @@ describe("NavBar test cases", () => {
 
     await userEvent.click(await closeBtn);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should be able to switch the theme when clicking on switch button", async () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
     const switchBtn = screen.getByRole("switch");
 
     await userEvent.click(switchBtn);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     const menuBtn = screen.getByRole("button", {
       name: /open menu/i,
@@ -55,6 +55,6 @@ describe("NavBar test cases", () => {
 
     await userEvent.click(menuBtn);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

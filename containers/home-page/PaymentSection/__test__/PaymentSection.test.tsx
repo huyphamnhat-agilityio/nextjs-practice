@@ -7,8 +7,8 @@ describe("PaymentSection test cases", () => {
   const setup = () => render(<PaymentSection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

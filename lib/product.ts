@@ -71,6 +71,7 @@ export const getProductById = async (productId: string) => {
     throw new Error(error.message);
   }
 };
+
 export const markProduct = async (data: Product) => {
   try {
     const response = await fetchApi<Product>(

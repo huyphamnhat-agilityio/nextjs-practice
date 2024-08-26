@@ -13,8 +13,8 @@ describe("ProductCard test cases", () => {
   const setup = (props: Product) => render(<ProductCard {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup(MOCK_PRODUCTS[0]);
+    const { asFragment } = setup(MOCK_PRODUCTS[0]);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

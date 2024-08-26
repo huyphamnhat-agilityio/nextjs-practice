@@ -7,8 +7,8 @@ describe("GetQualitySection test cases", () => {
   const setup = () => render(<GetQualitySection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

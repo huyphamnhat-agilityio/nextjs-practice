@@ -7,8 +7,8 @@ describe("SubscribeSection test cases", () => {
   const setup = () => render(<SubscribeSection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

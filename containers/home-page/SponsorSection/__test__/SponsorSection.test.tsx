@@ -7,8 +7,8 @@ describe("SponsorSection test cases", () => {
   const setup = () => render(<SponsorSection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

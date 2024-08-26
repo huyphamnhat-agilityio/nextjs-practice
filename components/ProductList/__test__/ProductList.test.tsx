@@ -22,8 +22,8 @@ describe("ProductList test cases", () => {
       currentPage: 1,
     });
 
-    const { container } = render(<ProductListResolved />);
+    const { asFragment } = render(<ProductListResolved />);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

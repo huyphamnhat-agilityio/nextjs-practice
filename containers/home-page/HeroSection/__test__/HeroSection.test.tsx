@@ -7,8 +7,8 @@ describe("HeroSection test cases", () => {
   const setup = () => render(<HeroSection />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

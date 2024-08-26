@@ -35,8 +35,8 @@ describe("PopularCoursesSection test cases", () => {
       currentPage: 1,
     });
 
-    const { container } = render(<PopularCoursesSectionResolved />);
+    const { asFragment } = render(<PopularCoursesSectionResolved />);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

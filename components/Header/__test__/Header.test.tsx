@@ -7,8 +7,8 @@ describe("Header test cases", () => {
   const setup = () => render(<Header />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

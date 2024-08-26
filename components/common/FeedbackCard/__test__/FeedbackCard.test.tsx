@@ -11,7 +11,7 @@ describe("FeedbackCard test cases", () => {
     render(<FeedbackCard {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup({
+    const { asFragment } = setup({
       avatar: MOCK_AVATARS[0],
       comment:
         "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
@@ -23,6 +23,6 @@ describe("FeedbackCard test cases", () => {
       },
     });
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

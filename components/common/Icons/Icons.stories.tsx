@@ -2,34 +2,38 @@ import { Meta, StoryObj } from "@storybook/react/*";
 import { cloneElement, ReactElement } from "react";
 
 // Components
-import { AmazonLogo } from "./AmazonLogo";
-import { BlackBoardIcon } from "./BlackBoardIcon";
-import { CartIcon } from "./CartIcon";
-import { CheckMarkIcon } from "./CheckMarkIcon";
-import { DarkModeIcon } from "./DarkModeIcon";
-import { DownloadIcon } from "./DownloadIcon";
-import { EmailIcon } from "./EmailIcon";
-import { EyeIcon } from "./EyeIcon";
-import { FacebookLogoIcon } from "./FacebookLogoIcon";
-import { FavoriteIcon } from "./FavoriteIcon";
-import { HamburgerIcon } from "./HamburgerIcon";
-import { HeartIcon } from "./HeartIcon";
-import { HooliLogo } from "./HooliLogo";
-import { InstagramLogoIcon } from "./InstagramLogoIcon";
-import { LightModeIcon } from "./LightModeIcon";
-import { LocationIcon } from "./LocationIcon";
-import { LyftLogo } from "./LyftLogo";
-import { MortarboardIcon } from "./MortarboardIcon";
-import { NextArrowIcon } from "./NextArrowIcon";
-import { OutlinedStarIcon } from "./OutlinedStarIcon";
-import { PieldPiperLogo } from "./PieldPiperLogo";
-import { RedditLogo } from "./RedditLogo";
-import { RightArrowIcon } from "./RightArrowIcon";
-import { SolidStarIcon } from "./SolidStarIcon";
-import { StripeLogo } from "./StripeLogo";
-import { TelephoneIcon } from "./TelephoneIcon";
-import { TelescopeIcon } from "./TelescopeIcon";
-import { TwitterLogoIcon } from "./TwitterLogoIcon";
+import {
+  AmazonLogo,
+  BlackBoardIcon,
+  CartIcon,
+  CheckMarkIcon,
+  DarkModeIcon,
+  DeleteIcon,
+  DownloadIcon,
+  EditIcon,
+  EmailIcon,
+  EyeIcon,
+  FacebookLogoIcon,
+  FavoriteIcon,
+  HamburgerIcon,
+  HeartIcon,
+  HooliLogo,
+  InstagramLogoIcon,
+  LightModeIcon,
+  LocationIcon,
+  LyftLogo,
+  MortarboardIcon,
+  NextArrowIcon,
+  OutlinedStarIcon,
+  PieldPiperLogo,
+  RedditLogo,
+  RightArrowIcon,
+  SolidStarIcon,
+  StripeLogo,
+  TelephoneIcon,
+  TelescopeIcon,
+  TwitterLogoIcon,
+} from "@/components/common/Icons";
 
 const StoryWrapper = ({ children }: { children: ReactElement }) => {
   return children;
@@ -256,5 +260,19 @@ export const twitterLogoIconStory: Story = {
   ...template,
   args: {
     children: <TwitterLogoIcon />,
+  },
+};
+
+export const editIconStory: Story = {
+  ...template,
+  args: {
+    children: <EditIcon />,
+  },
+};
+
+export const deleteIconStory: Story = {
+  ...template,
+  args: {
+    children: <DeleteIcon />,
   },
 };

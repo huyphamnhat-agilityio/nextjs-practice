@@ -7,8 +7,8 @@ describe("ProductListSkeleton test cases", () => {
   const setup = () => render(<ProductListSkeleton />);
 
   it("should render correctly", () => {
-    const { container } = setup();
+    const { asFragment } = setup();
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

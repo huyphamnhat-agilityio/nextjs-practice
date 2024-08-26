@@ -8,14 +8,14 @@ describe("PlanCard test cases", () => {
   const setup = (props?: PlanCardProps) => render(<PlanCard {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup(MOCK_PLAN);
+    const { asFragment } = setup(MOCK_PLAN);
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly with new badge", () => {
-    const { container } = setup({ ...MOCK_PLAN, isNew: true });
+    const { asFragment } = setup({ ...MOCK_PLAN, isNew: true });
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

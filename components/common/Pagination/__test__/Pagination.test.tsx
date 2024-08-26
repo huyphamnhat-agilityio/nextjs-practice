@@ -22,8 +22,8 @@ describe("Pagination test cases", () => {
   const setup = (props: PaginationProps) => render(<Pagination {...props} />);
 
   it("should render correctly", () => {
-    const { container } = setup({ total: 10 });
+    const { asFragment } = setup({ total: 10 });
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
