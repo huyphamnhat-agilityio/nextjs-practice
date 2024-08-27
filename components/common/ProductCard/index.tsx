@@ -17,6 +17,7 @@ import { Product } from "@/types";
 
 // Components
 import { Button } from "../Button";
+
 import {
   DeleteIcon,
   DownloadIcon,
@@ -89,8 +90,6 @@ const ProductCard = (props: Product) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-
-  console.log(pathname);
 
   const toastType = searchParams.get(TOAST_QUERY_PARAMS.TOAST_TYPE);
   const toastSection = searchParams.get(TOAST_QUERY_PARAMS.TOAST_SECTION);
@@ -181,6 +180,7 @@ const ProductCard = (props: Product) => {
               variant="action"
               size="tiny"
               aria-label="favorite button"
+              data-testid="mark-favorite"
               isIconOnly
               onPress={() => handleMarkFavorite(props)}
             >
@@ -191,6 +191,7 @@ const ProductCard = (props: Product) => {
               variant="action"
               size="tiny"
               aria-label="cart button"
+              data-testid="update"
               isIconOnly
               onPress={onMutationModalOpen}
             >
@@ -201,6 +202,7 @@ const ProductCard = (props: Product) => {
               variant="action"
               size="tiny"
               aria-label="watch later button"
+              data-testid="delete"
               isIconOnly
               onPress={onConfirmModalOpen}
             >

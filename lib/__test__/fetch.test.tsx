@@ -1,18 +1,17 @@
 import { fetchApi } from "../fetch";
 
-// Mock the global fetch API
 global.fetch = jest.fn();
 
 describe("fetchApi", () => {
   afterEach(() => {
-    jest.clearAllMocks(); // Clear any mocks after each test
+    jest.clearAllMocks();
   });
 
+  const mockFetch = global.fetch as jest.Mock;
   it("should return data when the response is successful", async () => {
     const mockData = { id: 1, name: "Test" };
 
-    // Mock a successful fetch response
-    (global.fetch as jest.Mock).mockResolvedValueOnce({
+    mockFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => mockData,
     });
@@ -40,8 +39,7 @@ describe("fetchApi", () => {
       body: JSON.stringify({ key: "value" }),
     };
 
-    // Mock a successful fetch response
-    (global.fetch as jest.Mock).mockResolvedValueOnce({
+    mockFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => mockData,
     });
@@ -61,8 +59,7 @@ describe("fetchApi", () => {
   it("should throw an error when the response is not ok", async () => {
     const mockError = "Not Found";
 
-    // Mock an unsuccessful fetch response
-    (global.fetch as jest.Mock).mockResolvedValueOnce({
+    mockFetch.mockResolvedValueOnce({
       ok: false,
       status: 404,
       text: async () => mockError,

@@ -13,10 +13,12 @@ import { MOCK_PRODUCTS } from "@/mocks";
 // Mock the fetchApi function
 jest.mock("../fetch.ts");
 
-describe("getProducts", () => {
+describe("getProducts test cases", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
+
+  const mockFetchApi = fetchApi as jest.Mock;
 
   it("should return products data when fetchApi is successful", async () => {
     const mockProducts: Pagination<Product> = {
@@ -31,7 +33,7 @@ describe("getProducts", () => {
       nextPage: null,
     };
 
-    (fetchApi as jest.Mock).mockResolvedValueOnce(mockProducts);
+    mockFetchApi.mockResolvedValueOnce(mockProducts);
 
     const result = await getProducts({
       page: 1,
@@ -39,6 +41,7 @@ describe("getProducts", () => {
     });
 
     expect(result).toEqual(mockProducts);
+
     expect(fetchApi).toHaveBeenCalledWith(process.env.PAGINATION_API, {
       method: "POST",
       body: JSON.stringify({
@@ -55,7 +58,7 @@ describe("getProducts", () => {
   it("should throw an error when fetchApi fails", async () => {
     const mockError = "Error fetching products";
 
-    (fetchApi as jest.Mock).mockRejectedValueOnce(mockError);
+    mockFetchApi.mockRejectedValueOnce(mockError);
 
     await expect(
       getProducts({

@@ -17,9 +17,3 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
   <div />
 </DocumentFragment>
 `;
-
-exports[`ProductListSection test cases shoulde able to show toast corresponding to the query params 1`] = `
-<DocumentFragment>
-  <div />
-</DocumentFragment>
-`;

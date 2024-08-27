@@ -28,7 +28,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     originalPrice: 16.48,
     salePrice: 6.48,
     coverImageUrl: "/product-cover-2.webp",
-    isFavorited: 0,
+    isFavorited: 1,
     createdAt: 0,
   },
   {
