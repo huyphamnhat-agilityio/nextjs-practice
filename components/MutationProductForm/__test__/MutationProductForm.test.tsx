@@ -75,7 +75,7 @@ describe("MutationProductForm test cases", () => {
     expect(submitBtn).toBeDisabled();
   });
 
-  it("should be able to submit when entering valid data", async () => {
+  it("should be able to submit when entering valid data and clear data when close form", async () => {
     setup(mockProps);
 
     const titleInput = screen.getByRole("textbox", {
@@ -89,6 +89,66 @@ describe("MutationProductForm test cases", () => {
     });
 
     expect(submitBtn).not.toBeDisabled();
+
+    const closeBtn = screen.getByRole("button", {
+      name: /cancel/i,
+    });
+
+    await userEvent.click(closeBtn);
+  });
+
+  it("should be able to prevent entering invalid data", async () => {
+    setup(mockProps);
+
+    const titleInput = screen.getByRole("textbox", {
+      name: /title title/i,
+    });
+
+    await userEvent.type(titleInput, "Updated Title");
+
+    const salesInput = screen.getByRole("spinbutton", {
+      name: /sales sales/i,
+    });
+
+    await userEvent.type(salesInput, "-1");
+
+    const originalPriceInput = screen.getByRole("spinbutton", {
+      name: /original price original price/i,
+    });
+
+    await userEvent.type(originalPriceInput, "-1");
+
+    const salePriceInput = screen.getByRole("spinbutton", {
+      name: /sale price sale price/i,
+    });
+
+    await userEvent.type(salePriceInput, "-1");
+
+    const rateInput = screen.getByRole("spinbutton", {
+      name: /rate rate/i,
+    });
+
+    await userEvent.type(rateInput, "-1");
+
+    const categorySelectList = screen.getByRole("button", {
+      name: /training courses category/i,
+      hidden: true,
+    });
+
+    await userEvent.click(categorySelectList);
+
+    const categoryOption = screen.getByRole("option", {
+      name: /books library/i,
+    });
+
+    await userEvent.click(categoryOption);
+
+    expect(titleInput).toHaveValue(`${mockProps.data.title}Updated Title`);
+    expect(categorySelectList).toHaveValue("Books Library");
+    expect(salesInput).toHaveValue(1);
+    expect(salePriceInput).toHaveValue(1);
+    expect(originalPriceInput).toHaveValue(1);
+    expect(rateInput).toHaveValue(1);
   });
 
   it("should display error message when typing invalid data", async () => {
@@ -98,7 +158,11 @@ describe("MutationProductForm test cases", () => {
       ...mockProps,
       data: {
         ...PLACEHOLDER_PRODUCT_FORM_DATA,
+        title: "a",
         sales: -1,
+        originalPrice: -1,
+        salePrice: -1,
+        rate: -1,
       },
     });
 
@@ -112,36 +176,58 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.tab();
 
-    const titleInput = screen.getByRole("textbox", {
-      name: /title title/i,
-    });
+    await userEvent.tab();
 
-    await userEvent.type(titleInput, "a");
+    await userEvent.tab();
 
     await userEvent.tab();
 
     await userEvent.tab();
 
-    const salesInput = screen.getByRole("spinbutton", {
-      name: /sales sales/i,
-    }) as HTMLInputElement;
+    await userEvent.tab();
 
     await userEvent.tab();
 
-    // const titleError = screen.getByText(
-    //   new RegExp(FORM_MESSAGES.PRODUCT.TITLE.MIN, "i")
-    // );
+    const imgError = screen.getByText(
+      new RegExp(FORM_MESSAGES.PRODUCT.COVER_IMAGE.ACCEPTED_FORMATS, "i"),
+    );
 
-    // const imgError = screen.getByText(
-    //   new RegExp(FORM_MESSAGES.PRODUCT.COVER_IMAGE.ACCEPTED_FORMATS, "i")
-    // );
+    const titleError = screen.getByText(
+      new RegExp(FORM_MESSAGES.PRODUCT.TITLE.MIN, "i"),
+    );
 
     const salesError = screen.getByText(
       new RegExp(FORM_MESSAGES.PRODUCT.SALES.MIN, "i"),
     );
 
-    console.log(salesError);
+    const originalPriceError = screen.getByText(
+      new RegExp(FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MIN, "i"),
+    );
 
-    expect(asFragment()).toMatchSnapshot();
+    const salePriceError = screen.getByText(
+      new RegExp(FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN, "i"),
+    );
+
+    const rateError = screen.getByText(
+      new RegExp(FORM_MESSAGES.PRODUCT.RATE.MIN, "i"),
+    );
+
+    expect(imgError.textContent).toEqual(
+      FORM_MESSAGES.PRODUCT.COVER_IMAGE.ACCEPTED_FORMATS,
+    );
+
+    expect(titleError.textContent).toEqual(FORM_MESSAGES.PRODUCT.TITLE.MIN);
+
+    expect(salesError.textContent).toEqual(FORM_MESSAGES.PRODUCT.SALES.MIN);
+
+    expect(originalPriceError.textContent).toEqual(
+      FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MIN,
+    );
+
+    expect(salePriceError.textContent).toEqual(
+      FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN,
+    );
+
+    expect(rateError.textContent).toEqual(FORM_MESSAGES.PRODUCT.RATE.MIN);
   });
 });
