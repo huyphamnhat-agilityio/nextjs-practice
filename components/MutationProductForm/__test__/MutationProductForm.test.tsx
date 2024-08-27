@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { useFormStatus } from "react-dom";
 import { usePathname, useSearchParams } from "next/navigation";
 import userEvent from "@testing-library/user-event";
@@ -8,7 +8,6 @@ import MutationProductForm, { MutationProductFormProps } from "..";
 import { MOCK_PRODUCTS, PLACEHOLDER_PRODUCT_FORM_DATA } from "@/mocks";
 import { FORM_MESSAGES } from "@/constants";
 
-// Mock necessary hooks
 jest.mock("react-dom", () => ({
   ...jest.requireActual("react-dom"),
   useFormStatus: jest.fn(),
@@ -21,10 +20,6 @@ jest.mock("next/navigation", () => ({
 }));
 
 describe("MutationProductForm test cases", () => {
-  const onClose = jest.fn();
-  const onOpenChange = jest.fn();
-  const onOpen = jest.fn();
-
   beforeAll(() => {
     window.addEventListener("submit", (e) => {
       e.preventDefault();

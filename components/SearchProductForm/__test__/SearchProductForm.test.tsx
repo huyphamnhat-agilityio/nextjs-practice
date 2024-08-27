@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import SearchProductForm from "@/components/SearchProductForm";
 
-// Mock the necessary Next.js navigation hooks
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
   usePathname: jest.fn(),
@@ -20,7 +19,6 @@ describe("SearchProductForm", () => {
     mockUseRouter.mockReturnValue({ replace: mockReplace });
     mockUsePathname.mockReturnValue("/");
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
-    jest.clearAllMocks();
   });
 
   it("should render correctly", () => {

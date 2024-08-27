@@ -33,7 +33,10 @@ describe("getProducts", () => {
 
     (fetchApi as jest.Mock).mockResolvedValueOnce(mockProducts);
 
-    const result = await getProducts(1, 10);
+    const result = await getProducts({
+      page: 1,
+      limit: 10,
+    });
 
     expect(result).toEqual(mockProducts);
     expect(fetchApi).toHaveBeenCalledWith(process.env.PAGINATION_API, {
@@ -54,7 +57,12 @@ describe("getProducts", () => {
 
     (fetchApi as jest.Mock).mockRejectedValueOnce(mockError);
 
-    await expect(getProducts(1, 10)).rejects.toThrow(mockError);
+    await expect(
+      getProducts({
+        page: 1,
+        limit: 10,
+      }),
+    ).rejects.toThrow(mockError);
 
     expect(fetchApi).toHaveBeenCalledWith(process.env.PAGINATION_API, {
       method: "POST",

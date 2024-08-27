@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductListSection test cases should render correctly 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`ProductListSection test cases shoulde able to show error toast corresponding to the query params 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`ProductListSection test cases shoulde able to show success toast corresponding to the query params 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`ProductListSection test cases shoulde able to show toast corresponding to the query params 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
