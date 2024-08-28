@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductList test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <div
-    class="flex flex-wrap gap-10 2xl:gap-2.5 justify-evenly"
+    class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly"
   >
     <div
       class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -48,78 +48,81 @@ exports[`ProductList test cases should render correctly 1`] = `
         >
           <button
             aria-label="favorite button"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
+            data-testid="mark-favorite"
             type="button"
           >
             <svg
-              fill="none"
+              fill="currentColor"
               height="20"
-              viewBox="0 0 21 20"
+              id="Capa_1"
+              version="1.1"
+              viewBox="0 0 471.701 471.701"
               width="21"
+              xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                fill="#BDBDBD"
-                stroke="#252B42"
-                stroke-width="0.625"
+              <g
+                id="SVGRepo_bgCarrier"
+                stroke-width="0"
               />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <g
+                id="SVGRepo_iconCarrier"
+              >
+                <g>
+                  <path
+                    d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                  />
+                   
+                </g>
+              </g>
             </svg>
           </button>
           <button
             aria-label="cart button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="update"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                clip-path="url(#clip0_2685_1023)"
-              >
-                <path
-                  d="M0.5 1.63333C0.5 1.46536 0.566728 1.30427 0.685505 1.1855C0.804281 1.06673 0.965377 1 1.13335 1H3.03341C3.17469 1.00004 3.3119 1.04731 3.42322 1.1343C3.53454 1.22129 3.61357 1.34299 3.64776 1.48007L4.16078 3.53333H18.8672C18.9602 3.53342 19.0521 3.55398 19.1362 3.59356C19.2204 3.63315 19.2948 3.69077 19.3541 3.76235C19.4135 3.83393 19.4564 3.9177 19.4797 4.00772C19.5031 4.09774 19.5063 4.19179 19.4892 4.2832L17.5891 14.4165C17.562 14.5617 17.4849 14.6927 17.3714 14.7871C17.2578 14.8815 17.1148 14.9332 16.9672 14.9333H5.56682C5.41917 14.9332 5.2762 14.8815 5.16263 14.7871C5.04907 14.6927 4.97204 14.5617 4.94487 14.4165L3.04608 4.3022L2.5394 2.26667H1.13335C0.965377 2.26667 0.804281 2.19994 0.685505 2.08117C0.566728 1.96239 0.5 1.8013 0.5 1.63333ZM4.42932 4.8L6.09251 13.6667H16.4415L18.1047 4.8H4.42932ZM6.83353 14.9333C6.16163 14.9333 5.51724 15.2002 5.04214 15.6753C4.56703 16.1504 4.30012 16.7948 4.30012 17.4667C4.30012 18.1385 4.56703 18.7829 5.04214 19.258C5.51724 19.7331 6.16163 20 6.83353 20C7.50543 20 8.14982 19.7331 8.62492 19.258C9.10003 18.7829 9.36694 18.1385 9.36694 17.4667C9.36694 16.7948 9.10003 16.1504 8.62492 15.6753C8.14982 15.2002 7.50543 14.9333 6.83353 14.9333ZM15.7005 14.9333C15.0286 14.9333 14.3842 15.2002 13.9091 15.6753C13.434 16.1504 13.1671 16.7948 13.1671 17.4667C13.1671 18.1385 13.434 18.7829 13.9091 19.258C14.3842 19.7331 15.0286 20 15.7005 20C16.3724 20 17.0168 19.7331 17.4919 19.258C17.967 18.7829 18.2339 18.1385 18.2339 17.4667C18.2339 16.7948 17.967 16.1504 17.4919 15.6753C17.0168 15.2002 16.3724 14.9333 15.7005 14.9333ZM6.83353 16.2C7.16948 16.2 7.49167 16.3335 7.72923 16.571C7.96678 16.8085 8.10023 17.1307 8.10023 17.4667C8.10023 17.8026 7.96678 18.1248 7.72923 18.3623C7.49167 18.5999 7.16948 18.7333 6.83353 18.7333C6.49758 18.7333 6.17539 18.5999 5.93783 18.3623C5.70028 18.1248 5.56682 17.8026 5.56682 17.4667C5.56682 17.1307 5.70028 16.8085 5.93783 16.571C6.17539 16.3335 6.49758 16.2 6.83353 16.2ZM15.7005 16.2C16.0364 16.2 16.3586 16.3335 16.5962 16.571C16.8337 16.8085 16.9672 17.1307 16.9672 17.4667C16.9672 17.8026 16.8337 18.1248 16.5962 18.3623C16.3586 18.5999 16.0364 18.7333 15.7005 18.7333C15.3645 18.7333 15.0423 18.5999 14.8048 18.3623C14.5672 18.1248 14.4338 17.8026 14.4338 17.4667C14.4338 17.1307 14.5672 16.8085 14.8048 16.571C15.0423 16.3335 15.3645 16.2 15.7005 16.2Z"
-                  fill="#252B42"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_1023"
-                >
-                  <rect
-                    fill="white"
-                    height="20"
-                    transform="translate(0.5)"
-                    width="20"
-                  />
-                </clippath>
-              </defs>
+              <path
+                d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
+              />
             </svg>
           </button>
           <button
             aria-label="watch later button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="delete"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
+              version="1.1"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M13 10C13 10.663 12.7366 11.2989 12.2678 11.7678C11.7989 12.2366 11.163 12.5 10.5 12.5C9.83696 12.5 9.20107 12.2366 8.73223 11.7678C8.26339 11.2989 8 10.663 8 10C8 9.33696 8.26339 8.70107 8.73223 8.23223C9.20107 7.76339 9.83696 7.5 10.5 7.5C11.163 7.5 11.7989 7.76339 12.2678 8.23223C12.7366 8.70107 13 9.33696 13 10Z"
-                fill="black"
-              />
-              <path
-                d="M2.5 10C2.5 10 5.5 4.5 10.5 4.5C15.5 4.5 18.5 10 18.5 10C18.5 10 15.5 15.5 10.5 15.5C5.5 15.5 2.5 10 2.5 10ZM10.5 13.5C11.4283 13.5 12.3185 13.1313 12.9749 12.4749C13.6313 11.8185 14 10.9283 14 10C14 9.07174 13.6313 8.1815 12.9749 7.52513C12.3185 6.86875 11.4283 6.5 10.5 6.5C9.57174 6.5 8.6815 6.86875 8.02513 7.52513C7.36875 8.1815 7 9.07174 7 10C7 10.9283 7.36875 11.8185 8.02513 12.4749C8.6815 13.1313 9.57174 13.5 10.5 13.5Z"
-                fill="black"
-              />
+              <g
+                id="surface1"
+              >
+                <path
+                  d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
+                  fill="#000"
+                />
+              </g>
             </svg>
           </button>
         </div>
@@ -158,12 +161,12 @@ exports[`ProductList test cases should render correctly 1`] = `
           </div>
         </div>
         <p
-          class="text-foreground text-base font-bold"
+          class="text-foreground text-base font-bold line-clamp-1"
         >
           Video in Live Action
         </p>
         <p
-          class="text-foreground-100 text-sm"
+          class="text-foreground-100 text-sm line-clamp-2"
         >
           We focus on ergonomics and meeting you where you work. It's only a keystroke away.
         </p>
@@ -202,8 +205,7 @@ exports[`ProductList test cases should render correctly 1`] = `
               </clippath>
             </defs>
           </svg>
-          15
-           Sales
+          15 Sales
         </div>
         <div
           class="py-1.25 px-0.75 flex gap-1.25"
@@ -211,27 +213,25 @@ exports[`ProductList test cases should render correctly 1`] = `
           <span
             class="text-foreground-50 text-base font-bold"
           >
-            $
-            16.48
+            $16.48
           </span>
           <span
             class="text-secondary text-base font-bold"
           >
-            $
-            6.48
+            $6.48
           </span>
         </div>
         <div
           class="mt-auto"
         >
           <a
-            aria-label="Go to learn more page"
+            aria-label="Go to detail page"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            href="#"
+            href="/product/1"
             role="button"
             tabindex="0"
           >
-            Learn More
+            Course Detail
             <svg
               fill="none"
               height="17"
@@ -309,78 +309,81 @@ exports[`ProductList test cases should render correctly 1`] = `
         >
           <button
             aria-label="favorite button"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-red-500 text-white"
+            data-testid="mark-favorite"
             type="button"
           >
             <svg
-              fill="none"
+              fill="currentColor"
               height="20"
-              viewBox="0 0 21 20"
+              id="Capa_1"
+              version="1.1"
+              viewBox="0 0 471.701 471.701"
               width="21"
+              xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                fill="#BDBDBD"
-                stroke="#252B42"
-                stroke-width="0.625"
+              <g
+                id="SVGRepo_bgCarrier"
+                stroke-width="0"
               />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <g
+                id="SVGRepo_iconCarrier"
+              >
+                <g>
+                  <path
+                    d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                  />
+                   
+                </g>
+              </g>
             </svg>
           </button>
           <button
             aria-label="cart button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="update"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                clip-path="url(#clip0_2685_1023)"
-              >
-                <path
-                  d="M0.5 1.63333C0.5 1.46536 0.566728 1.30427 0.685505 1.1855C0.804281 1.06673 0.965377 1 1.13335 1H3.03341C3.17469 1.00004 3.3119 1.04731 3.42322 1.1343C3.53454 1.22129 3.61357 1.34299 3.64776 1.48007L4.16078 3.53333H18.8672C18.9602 3.53342 19.0521 3.55398 19.1362 3.59356C19.2204 3.63315 19.2948 3.69077 19.3541 3.76235C19.4135 3.83393 19.4564 3.9177 19.4797 4.00772C19.5031 4.09774 19.5063 4.19179 19.4892 4.2832L17.5891 14.4165C17.562 14.5617 17.4849 14.6927 17.3714 14.7871C17.2578 14.8815 17.1148 14.9332 16.9672 14.9333H5.56682C5.41917 14.9332 5.2762 14.8815 5.16263 14.7871C5.04907 14.6927 4.97204 14.5617 4.94487 14.4165L3.04608 4.3022L2.5394 2.26667H1.13335C0.965377 2.26667 0.804281 2.19994 0.685505 2.08117C0.566728 1.96239 0.5 1.8013 0.5 1.63333ZM4.42932 4.8L6.09251 13.6667H16.4415L18.1047 4.8H4.42932ZM6.83353 14.9333C6.16163 14.9333 5.51724 15.2002 5.04214 15.6753C4.56703 16.1504 4.30012 16.7948 4.30012 17.4667C4.30012 18.1385 4.56703 18.7829 5.04214 19.258C5.51724 19.7331 6.16163 20 6.83353 20C7.50543 20 8.14982 19.7331 8.62492 19.258C9.10003 18.7829 9.36694 18.1385 9.36694 17.4667C9.36694 16.7948 9.10003 16.1504 8.62492 15.6753C8.14982 15.2002 7.50543 14.9333 6.83353 14.9333ZM15.7005 14.9333C15.0286 14.9333 14.3842 15.2002 13.9091 15.6753C13.434 16.1504 13.1671 16.7948 13.1671 17.4667C13.1671 18.1385 13.434 18.7829 13.9091 19.258C14.3842 19.7331 15.0286 20 15.7005 20C16.3724 20 17.0168 19.7331 17.4919 19.258C17.967 18.7829 18.2339 18.1385 18.2339 17.4667C18.2339 16.7948 17.967 16.1504 17.4919 15.6753C17.0168 15.2002 16.3724 14.9333 15.7005 14.9333ZM6.83353 16.2C7.16948 16.2 7.49167 16.3335 7.72923 16.571C7.96678 16.8085 8.10023 17.1307 8.10023 17.4667C8.10023 17.8026 7.96678 18.1248 7.72923 18.3623C7.49167 18.5999 7.16948 18.7333 6.83353 18.7333C6.49758 18.7333 6.17539 18.5999 5.93783 18.3623C5.70028 18.1248 5.56682 17.8026 5.56682 17.4667C5.56682 17.1307 5.70028 16.8085 5.93783 16.571C6.17539 16.3335 6.49758 16.2 6.83353 16.2ZM15.7005 16.2C16.0364 16.2 16.3586 16.3335 16.5962 16.571C16.8337 16.8085 16.9672 17.1307 16.9672 17.4667C16.9672 17.8026 16.8337 18.1248 16.5962 18.3623C16.3586 18.5999 16.0364 18.7333 15.7005 18.7333C15.3645 18.7333 15.0423 18.5999 14.8048 18.3623C14.5672 18.1248 14.4338 17.8026 14.4338 17.4667C14.4338 17.1307 14.5672 16.8085 14.8048 16.571C15.0423 16.3335 15.3645 16.2 15.7005 16.2Z"
-                  fill="#252B42"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_1023"
-                >
-                  <rect
-                    fill="white"
-                    height="20"
-                    transform="translate(0.5)"
-                    width="20"
-                  />
-                </clippath>
-              </defs>
+              <path
+                d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
+              />
             </svg>
           </button>
           <button
             aria-label="watch later button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="delete"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
+              version="1.1"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M13 10C13 10.663 12.7366 11.2989 12.2678 11.7678C11.7989 12.2366 11.163 12.5 10.5 12.5C9.83696 12.5 9.20107 12.2366 8.73223 11.7678C8.26339 11.2989 8 10.663 8 10C8 9.33696 8.26339 8.70107 8.73223 8.23223C9.20107 7.76339 9.83696 7.5 10.5 7.5C11.163 7.5 11.7989 7.76339 12.2678 8.23223C12.7366 8.70107 13 9.33696 13 10Z"
-                fill="black"
-              />
-              <path
-                d="M2.5 10C2.5 10 5.5 4.5 10.5 4.5C15.5 4.5 18.5 10 18.5 10C18.5 10 15.5 15.5 10.5 15.5C5.5 15.5 2.5 10 2.5 10ZM10.5 13.5C11.4283 13.5 12.3185 13.1313 12.9749 12.4749C13.6313 11.8185 14 10.9283 14 10C14 9.07174 13.6313 8.1815 12.9749 7.52513C12.3185 6.86875 11.4283 6.5 10.5 6.5C9.57174 6.5 8.6815 6.86875 8.02513 7.52513C7.36875 8.1815 7 9.07174 7 10C7 10.9283 7.36875 11.8185 8.02513 12.4749C8.6815 13.1313 9.57174 13.5 10.5 13.5Z"
-                fill="black"
-              />
+              <g
+                id="surface1"
+              >
+                <path
+                  d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
+                  fill="#000"
+                />
+              </g>
             </svg>
           </button>
         </div>
@@ -419,12 +422,12 @@ exports[`ProductList test cases should render correctly 1`] = `
           </div>
         </div>
         <p
-          class="text-foreground text-base font-bold"
+          class="text-foreground text-base font-bold line-clamp-1"
         >
           Every Client Matters
         </p>
         <p
-          class="text-foreground-100 text-sm"
+          class="text-foreground-100 text-sm line-clamp-2"
         >
           We focus on ergonomics and meeting you where you work. It's only a keystroke away.
         </p>
@@ -463,8 +466,7 @@ exports[`ProductList test cases should render correctly 1`] = `
               </clippath>
             </defs>
           </svg>
-          15
-           Sales
+          15 Sales
         </div>
         <div
           class="py-1.25 px-0.75 flex gap-1.25"
@@ -472,27 +474,25 @@ exports[`ProductList test cases should render correctly 1`] = `
           <span
             class="text-foreground-50 text-base font-bold"
           >
-            $
-            16.48
+            $16.48
           </span>
           <span
             class="text-secondary text-base font-bold"
           >
-            $
-            6.48
+            $6.48
           </span>
         </div>
         <div
           class="mt-auto"
         >
           <a
-            aria-label="Go to learn more page"
+            aria-label="Go to detail page"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            href="#"
+            href="/product/2"
             role="button"
             tabindex="0"
           >
-            Learn More
+            Course Detail
             <svg
               fill="none"
               height="17"
@@ -570,78 +570,81 @@ exports[`ProductList test cases should render correctly 1`] = `
         >
           <button
             aria-label="favorite button"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
+            data-testid="mark-favorite"
             type="button"
           >
             <svg
-              fill="none"
+              fill="currentColor"
               height="20"
-              viewBox="0 0 21 20"
+              id="Capa_1"
+              version="1.1"
+              viewBox="0 0 471.701 471.701"
               width="21"
+              xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M10.5011 5.95324L9.13675 4.55662L9.13618 4.55605C8.78829 4.20177 8.37329 3.92037 7.91542 3.72827C7.45755 3.53617 6.966 3.43723 6.46946 3.43723C5.97293 3.43723 5.48138 3.53617 5.02351 3.72827C4.56572 3.92033 4.15078 4.20167 3.80293 4.55586C3.08892 5.2808 2.68871 6.25748 2.68871 7.275C2.68871 8.29259 3.08898 9.26935 3.80308 9.9943L3.80337 9.99459L10.2784 16.5508L10.5007 16.776L10.7231 16.5508L17.1981 9.99459L17.1983 9.9943C17.9124 9.26935 18.3127 8.29259 18.3127 7.275C18.3127 6.25752 17.9125 5.28088 17.1986 4.55595C16.8509 4.20148 16.4359 3.91997 15.9781 3.72791C15.5203 3.53591 15.0288 3.43718 14.5324 3.4375C14.5322 3.4375 14.5319 3.4375 14.5317 3.4375L14.532 3.75M10.5011 5.95324L11.8581 4.56949L11.8588 4.5687L12.082 4.7875M10.5011 5.95324L11.8572 4.57036M10.5011 5.95324L11.8572 4.57036M14.532 3.75C14.0748 3.74935 13.6222 3.84089 13.2013 4.01915C12.7803 4.19741 12.3996 4.45874 12.082 4.7875M14.532 3.75C14.987 3.74962 15.4376 3.84008 15.8572 4.01609C16.2768 4.1921 16.6571 4.45011 16.9757 4.775L14.532 3.75ZM12.082 4.7875L11.8572 4.57036M12.082 4.7875L11.8572 4.57036M14.5317 2.8125L14.5319 2.8125C15.1118 2.81266 15.6858 2.92827 16.2206 3.15259C16.7554 3.37691 17.2401 3.70544 17.6466 4.11904C18.4755 4.96287 18.9399 6.09841 18.9399 7.28125C18.9399 8.46391 18.4756 9.59929 17.647 10.4431C17.6468 10.4432 17.6467 10.4434 17.6465 10.4435L10.5007 17.6802L3.3549 10.4435C3.35479 10.4434 3.35468 10.4433 3.35458 10.4432C2.52585 9.59939 2.06152 8.46396 2.06152 7.28125C2.06152 6.09846 2.52592 4.96295 3.35476 4.11913C3.76134 3.70575 4.24613 3.37744 4.78088 3.15333C5.31563 2.92923 5.88965 2.81381 6.46946 2.81381C7.04928 2.81381 7.62329 2.92923 8.15805 3.15333C8.6928 3.37744 9.17759 3.70575 9.58417 4.11913L9.585 4.11998L10.2788 4.81998L10.5007 5.04394L10.7227 4.81998L11.4164 4.11998L11.4176 4.11879C11.8236 3.70475 12.3082 3.37593 12.8429 3.15161C13.3777 2.9273 13.9518 2.81201 14.5317 2.8125Z"
-                fill="#BDBDBD"
-                stroke="#252B42"
-                stroke-width="0.625"
+              <g
+                id="SVGRepo_bgCarrier"
+                stroke-width="0"
               />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <g
+                id="SVGRepo_iconCarrier"
+              >
+                <g>
+                  <path
+                    d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
+                  />
+                   
+                </g>
+              </g>
             </svg>
           </button>
           <button
             aria-label="cart button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="update"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                clip-path="url(#clip0_2685_1023)"
-              >
-                <path
-                  d="M0.5 1.63333C0.5 1.46536 0.566728 1.30427 0.685505 1.1855C0.804281 1.06673 0.965377 1 1.13335 1H3.03341C3.17469 1.00004 3.3119 1.04731 3.42322 1.1343C3.53454 1.22129 3.61357 1.34299 3.64776 1.48007L4.16078 3.53333H18.8672C18.9602 3.53342 19.0521 3.55398 19.1362 3.59356C19.2204 3.63315 19.2948 3.69077 19.3541 3.76235C19.4135 3.83393 19.4564 3.9177 19.4797 4.00772C19.5031 4.09774 19.5063 4.19179 19.4892 4.2832L17.5891 14.4165C17.562 14.5617 17.4849 14.6927 17.3714 14.7871C17.2578 14.8815 17.1148 14.9332 16.9672 14.9333H5.56682C5.41917 14.9332 5.2762 14.8815 5.16263 14.7871C5.04907 14.6927 4.97204 14.5617 4.94487 14.4165L3.04608 4.3022L2.5394 2.26667H1.13335C0.965377 2.26667 0.804281 2.19994 0.685505 2.08117C0.566728 1.96239 0.5 1.8013 0.5 1.63333ZM4.42932 4.8L6.09251 13.6667H16.4415L18.1047 4.8H4.42932ZM6.83353 14.9333C6.16163 14.9333 5.51724 15.2002 5.04214 15.6753C4.56703 16.1504 4.30012 16.7948 4.30012 17.4667C4.30012 18.1385 4.56703 18.7829 5.04214 19.258C5.51724 19.7331 6.16163 20 6.83353 20C7.50543 20 8.14982 19.7331 8.62492 19.258C9.10003 18.7829 9.36694 18.1385 9.36694 17.4667C9.36694 16.7948 9.10003 16.1504 8.62492 15.6753C8.14982 15.2002 7.50543 14.9333 6.83353 14.9333ZM15.7005 14.9333C15.0286 14.9333 14.3842 15.2002 13.9091 15.6753C13.434 16.1504 13.1671 16.7948 13.1671 17.4667C13.1671 18.1385 13.434 18.7829 13.9091 19.258C14.3842 19.7331 15.0286 20 15.7005 20C16.3724 20 17.0168 19.7331 17.4919 19.258C17.967 18.7829 18.2339 18.1385 18.2339 17.4667C18.2339 16.7948 17.967 16.1504 17.4919 15.6753C17.0168 15.2002 16.3724 14.9333 15.7005 14.9333ZM6.83353 16.2C7.16948 16.2 7.49167 16.3335 7.72923 16.571C7.96678 16.8085 8.10023 17.1307 8.10023 17.4667C8.10023 17.8026 7.96678 18.1248 7.72923 18.3623C7.49167 18.5999 7.16948 18.7333 6.83353 18.7333C6.49758 18.7333 6.17539 18.5999 5.93783 18.3623C5.70028 18.1248 5.56682 17.8026 5.56682 17.4667C5.56682 17.1307 5.70028 16.8085 5.93783 16.571C6.17539 16.3335 6.49758 16.2 6.83353 16.2ZM15.7005 16.2C16.0364 16.2 16.3586 16.3335 16.5962 16.571C16.8337 16.8085 16.9672 17.1307 16.9672 17.4667C16.9672 17.8026 16.8337 18.1248 16.5962 18.3623C16.3586 18.5999 16.0364 18.7333 15.7005 18.7333C15.3645 18.7333 15.0423 18.5999 14.8048 18.3623C14.5672 18.1248 14.4338 17.8026 14.4338 17.4667C14.4338 17.1307 14.5672 16.8085 14.8048 16.571C15.0423 16.3335 15.3645 16.2 15.7005 16.2Z"
-                  fill="#252B42"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_1023"
-                >
-                  <rect
-                    fill="white"
-                    height="20"
-                    transform="translate(0.5)"
-                    width="20"
-                  />
-                </clippath>
-              </defs>
+              <path
+                d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
+              />
             </svg>
           </button>
           <button
             aria-label="watch later button"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
+            data-testid="delete"
             type="button"
           >
             <svg
-              fill="none"
-              height="20"
+              height="20px"
+              version="1.1"
               viewBox="0 0 21 20"
-              width="21"
+              width="21px"
               xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M13 10C13 10.663 12.7366 11.2989 12.2678 11.7678C11.7989 12.2366 11.163 12.5 10.5 12.5C9.83696 12.5 9.20107 12.2366 8.73223 11.7678C8.26339 11.2989 8 10.663 8 10C8 9.33696 8.26339 8.70107 8.73223 8.23223C9.20107 7.76339 9.83696 7.5 10.5 7.5C11.163 7.5 11.7989 7.76339 12.2678 8.23223C12.7366 8.70107 13 9.33696 13 10Z"
-                fill="black"
-              />
-              <path
-                d="M2.5 10C2.5 10 5.5 4.5 10.5 4.5C15.5 4.5 18.5 10 18.5 10C18.5 10 15.5 15.5 10.5 15.5C5.5 15.5 2.5 10 2.5 10ZM10.5 13.5C11.4283 13.5 12.3185 13.1313 12.9749 12.4749C13.6313 11.8185 14 10.9283 14 10C14 9.07174 13.6313 8.1815 12.9749 7.52513C12.3185 6.86875 11.4283 6.5 10.5 6.5C9.57174 6.5 8.6815 6.86875 8.02513 7.52513C7.36875 8.1815 7 9.07174 7 10C7 10.9283 7.36875 11.8185 8.02513 12.4749C8.6815 13.1313 9.57174 13.5 10.5 13.5Z"
-                fill="black"
-              />
+              <g
+                id="surface1"
+              >
+                <path
+                  d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
+                  fill="#000"
+                />
+              </g>
             </svg>
           </button>
         </div>
@@ -680,12 +683,12 @@ exports[`ProductList test cases should render correctly 1`] = `
           </div>
         </div>
         <p
-          class="text-foreground text-base font-bold"
+          class="text-foreground text-base font-bold line-clamp-1"
         >
           Get Quality Education
         </p>
         <p
-          class="text-foreground-100 text-sm"
+          class="text-foreground-100 text-sm line-clamp-2"
         >
           We focus on ergonomics and meeting you where you work. It's only a keystroke away.
         </p>
@@ -724,8 +727,7 @@ exports[`ProductList test cases should render correctly 1`] = `
               </clippath>
             </defs>
           </svg>
-          15
-           Sales
+          15 Sales
         </div>
         <div
           class="py-1.25 px-0.75 flex gap-1.25"
@@ -733,27 +735,25 @@ exports[`ProductList test cases should render correctly 1`] = `
           <span
             class="text-foreground-50 text-base font-bold"
           >
-            $
-            16.48
+            $16.48
           </span>
           <span
             class="text-secondary text-base font-bold"
           >
-            $
-            6.48
+            $6.48
           </span>
         </div>
         <div
           class="mt-auto"
         >
           <a
-            aria-label="Go to learn more page"
+            aria-label="Go to detail page"
             class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            href="#"
+            href="/product/3"
             role="button"
             tabindex="0"
           >
-            Learn More
+            Course Detail
             <svg
               fill="none"
               height="17"
@@ -789,5 +789,5 @@ exports[`ProductList test cases should render correctly 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

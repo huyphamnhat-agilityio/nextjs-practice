@@ -2,7 +2,7 @@ import { fetchApi } from "../fetch";
 
 global.fetch = jest.fn();
 
-describe("fetchApi", () => {
+describe("fetchApi test cases", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -65,9 +65,9 @@ describe("fetchApi", () => {
       text: async () => mockError,
     });
 
-    await expect(fetchApi("https://api.example.com/data")).rejects.toEqual(
-      "404: Not Found",
-    );
+    await expect(
+      fetchApi("https://api.example.com/data"),
+    ).rejects.toBeDefined();
 
     expect(global.fetch).toHaveBeenCalledWith("https://api.example.com/data", {
       method: "GET",

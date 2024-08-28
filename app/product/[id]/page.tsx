@@ -14,6 +14,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   const product = await getProductById(id);
 
   if (!product) notFound();
+
   const {
     category,
     title,

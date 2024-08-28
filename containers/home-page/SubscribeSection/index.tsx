@@ -31,6 +31,7 @@ const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
             type="submit"
             className="hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
             isDisabled={pending}
+            data-testid="subscribe-button"
           >
             Subscribe
           </Button>

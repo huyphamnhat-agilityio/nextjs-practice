@@ -29,7 +29,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     salePrice: 6.48,
     coverImageUrl: "/product-cover-2.webp",
     isFavorited: 1,
-    createdAt: 0,
+    createdAt: 10,
   },
   {
     id: "3",

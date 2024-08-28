@@ -21,6 +21,10 @@ describe("SearchProductForm", () => {
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render correctly", () => {
     const { asFragment } = render(<SearchProductForm />);
 

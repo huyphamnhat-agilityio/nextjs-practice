@@ -7,7 +7,7 @@ const PaymentSection = () => (
     <div className="flex justify-center overflow-hidden">
       <div className="flex flex-col gap-20 py-40 max-w-xs lg:max-w-4xl xl:max-w-5xl my-0">
         <div className="flex flex-col gap-2.5 items-center text-center 2xl:text-start 2xl:items-start">
-          <p className="text-primary text-sm/6 font-bold">Practice Advice</p>
+          <h3 className="text-primary text-sm/6 font-bold">Practice Advice</h3>
           <h3 className="text-foreground text-2xl font-bold">
             Watch our Courses
           </h3>

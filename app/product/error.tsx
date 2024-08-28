@@ -19,7 +19,7 @@ export default function Error({
 
           <div className="flex gap-10 flex-col">
             <p className="text-danger text-center text-2xl font-bold max-w-[1004px]">
-              {error.message}
+              {error.name}
             </p>
 
             <Button

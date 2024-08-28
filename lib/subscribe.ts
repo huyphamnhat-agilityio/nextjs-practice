@@ -1,5 +1,4 @@
 "use server";
-import { z } from "zod";
 
 // Constants
 import { SUBSCRIBE_MESSAGES } from "@/constants";
@@ -10,17 +9,8 @@ import { FormState, Subscription } from "@/types";
 // Services
 import { fetchApi } from "./fetch";
 
-const SubscribeSchema = z.object({
-  email: z
-    .string()
-    .min(1, { message: SUBSCRIBE_MESSAGES.ERROR.REQUIRED })
-    .refine(
-      (value) => value === "" || z.string().email().safeParse(value).success,
-      {
-        message: SUBSCRIBE_MESSAGES.ERROR.EMAIL,
-      },
-    ),
-});
+// Schemas
+import { SubscribeSchema } from "@/schemas";
 
 export const subscribe = async <T extends object>(
   _: FormState<T>,

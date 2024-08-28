@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SubscribeSection test cases should render correctly 1`] = `
-<div>
+<DocumentFragment>
   <section>
     <div
       class="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto my-0 py-40 flex flex-col gap-20 justify-center"
@@ -40,7 +40,7 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
             data-slot="main-wrapper"
           >
             <div
-              class="w-full inline-flex tap-highlight-transparent flex-row items-center shadow-sm gap-3 data-[hover=true]:bg-default-200 group-data-[focus=true]:bg-default-100 min-h-10 rounded-medium transition-background motion-reduce:transition-none !duration-150 outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background max-w-[80%] sm:max-w-172 self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto relative"
+              class="w-full inline-flex tap-highlight-transparent flex-row items-center shadow-sm gap-3 data-[hover=true]:bg-default-200 group-data-[focus=true]:bg-default-100 min-h-10 rounded-small transition-background motion-reduce:transition-none !duration-150 outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background rounded-1.25 max-w-[80%] sm:max-w-172 self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto relative"
               data-slot="input-wrapper"
               style="cursor: text;"
             >
@@ -54,13 +54,15 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
                   data-has-end-content="true"
                   data-slot="input"
                   id="react-aria-:r0:"
+                  name="email"
                   placeholder="Your Email"
-                  type="email"
+                  type="text"
                   value=""
                 />
                 <button
                   class="z-0 group items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 w-auto h-auto rounded-1.25 hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
-                  type="button"
+                  data-testid="subscribe-button"
+                  type="submit"
                 >
                   Subscribe
                 </button>
@@ -70,12 +72,12 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
         </div>
         <button
           class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 h-auto rounded-1.25 sm:hidden px-5.625 text-white text-sm/7 w-full max-w-[80%]"
-          type="button"
+          type="submit"
         >
           Subscribe
         </button>
       </form>
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;

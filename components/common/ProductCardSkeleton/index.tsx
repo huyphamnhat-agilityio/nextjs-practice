@@ -9,9 +9,9 @@ import {
 // Components
 import { Button } from "../Button";
 import {
-  CartIcon,
+  DeleteIcon,
   DownloadIcon,
-  EyeIcon,
+  EditIcon,
   FavoriteIcon,
   NextArrowIcon,
   SolidStarIcon,
@@ -42,10 +42,10 @@ const ProductCardSkeleton = ({
           <FavoriteIcon />
         </Button>
         <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-          <CartIcon />
+          <EditIcon />
         </Button>
         <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-          <EyeIcon />
+          <DeleteIcon />
         </Button>
       </div>
     </CardHeader>
