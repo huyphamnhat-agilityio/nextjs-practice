@@ -1,12 +1,14 @@
 import Link from "next/link";
+
+// Components
 import {
+  EmailIcon,
   FacebookLogoIcon,
   InstagramLogoIcon,
   LocationIcon,
   TelephoneIcon,
   TwitterLogoIcon,
-} from "../common/Icons";
-import { EmailIcon } from "../common/Icons/EmailIcon";
+} from "@/components";
 
 const Footer = () => {
   return (

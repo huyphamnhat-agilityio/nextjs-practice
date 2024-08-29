@@ -182,6 +182,7 @@ const ProductCard = (props: Product) => {
               aria-label="favorite button"
               data-testid="mark-favorite"
               isIconOnly
+              isDisabled={isPending}
               onPress={() => handleMarkFavorite(props)}
             >
               <FavoriteIcon />
@@ -193,6 +194,7 @@ const ProductCard = (props: Product) => {
               aria-label="cart button"
               data-testid="update"
               isIconOnly
+              isDisabled={isPending}
               onPress={onMutationModalOpen}
             >
               <EditIcon />
@@ -204,6 +206,7 @@ const ProductCard = (props: Product) => {
               aria-label="watch later button"
               data-testid="delete"
               isIconOnly
+              isDisabled={isPending}
               onPress={onConfirmModalOpen}
             >
               <DeleteIcon />

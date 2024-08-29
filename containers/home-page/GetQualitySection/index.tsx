@@ -2,7 +2,7 @@ import { Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 
 // Components
-import { NextArrowIcon } from "@/components/common/Icons";
+import { NextArrowIcon } from "@/components";
 
 // Constants
 import { IMAGES } from "@/constants";

@@ -4,8 +4,7 @@ import { Link as NextUILink } from "@nextui-org/react";
 import Link from "next/link";
 
 // Components
-import { ProductListSkeleton } from "@/components";
-import { NextArrowIcon } from "@/components/common/Icons";
+import { NextArrowIcon, ProductListSkeleton } from "@/components";
 
 // Constants
 import { DESTINATION } from "@/constants";

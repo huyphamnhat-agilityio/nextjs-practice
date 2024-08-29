@@ -6,6 +6,7 @@ import { ProductListSkeleton, SearchProductForm } from "@/components";
 
 // Sections
 import { AddCourseSection } from "@/containers";
+import { Suspense } from "react";
 
 export default async function Loading() {
   return (
@@ -17,8 +18,13 @@ export default async function Loading() {
           </p>
 
           <div className="flex gap-10 flex-col md:flex-row">
-            <SearchProductForm />
-            <AddCourseSection />
+            <Suspense>
+              <SearchProductForm />
+            </Suspense>
+
+            <Suspense>
+              <AddCourseSection />
+            </Suspense>
           </div>
 
           <ProductListSkeleton limit={PRODUCT_LIMIT} />

@@ -1,6 +1,6 @@
 "use client";
 import { useDisclosure } from "@nextui-org/react";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import toast from "react-hot-toast";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
@@ -68,12 +68,16 @@ const AddProductSection = () => {
         Add course
       </Button>
 
-      <MutationProductForm
-        isOpen={isOpen}
-        onClose={onClose}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />
+      {isOpen && (
+        <Suspense>
+          <MutationProductForm
+            isOpen={isOpen}
+            onClose={onClose}
+            onOpen={onOpen}
+            onOpenChange={onOpenChange}
+          />
+        </Suspense>
+      )}
     </>
   );
 };

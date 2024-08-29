@@ -91,7 +91,7 @@ const ProductCardSkeleton = ({
           endContent={<NextArrowIcon />}
           className="font-bold"
         >
-          Learn More
+          Course Detail
         </Button>
       </div>
     </CardBody>

@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Toaster } from "react-hot-toast";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Providers } from "./providers";
+import { Providers } from "../providers";
 
 // components
 import { Footer, Header } from "@/components";

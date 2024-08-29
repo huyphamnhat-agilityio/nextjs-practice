@@ -13,11 +13,10 @@ import {
 } from "@nextui-org/react";
 
 // Components
-import { Button, ThemeSwitch } from "../common";
-import { RightArrowIcon } from "../common/Icons";
+import { Button, RightArrowIcon, ThemeSwitch } from "../common";
 
 // Constants
-import { NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
+import { DESTINATION, NAV_LIST_DESKTOP, NAV_LIST_MOBILE } from "@/constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +33,10 @@ const NavBar = () => {
         <NavbarItem>
           <div className="flex gap-3 base:gap-11 lg:gap-22 items-center">
             <NavbarBrand as="div">
-              <Link href="#" className="text-foreground text-2xl font-bold">
+              <Link
+                href={DESTINATION.HOME}
+                className="text-foreground text-2xl font-bold"
+              >
                 Brandname
               </Link>
             </NavbarBrand>

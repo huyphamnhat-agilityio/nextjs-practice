@@ -4,8 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 
 // Components
-import { SearchIcon } from "@/components/common/Icons";
-import { Input } from "../common";
+import { Input, SearchIcon } from "@/components";
 
 const SearchProductForm = () => {
   const searchParams = useSearchParams();

@@ -7,7 +7,7 @@ import {
   PieldPiperLogo,
   RedditLogo,
   StripeLogo,
-} from "@/components/common/Icons";
+} from "@/components";
 
 const SponsorSection = () => (
   <section>

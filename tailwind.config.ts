@@ -41,6 +41,7 @@ export default {
       width: {
         12.5: "3.125rem",
         23.5: "5.875rem",
+        70: "17.5rem",
         82: "20.5rem",
         95.25: "23.8125rem",
       },
@@ -71,6 +72,7 @@ export default {
       },
       backgroundImage: {
         "hero-block": "url('/hero-background-block.svg')",
+        "mini-hero-block": "url('/hero-background-mini-block.svg')",
       },
       screens: {
         mobile: "375px",

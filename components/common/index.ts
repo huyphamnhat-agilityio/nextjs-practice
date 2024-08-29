@@ -1,4 +1,3 @@
-import { FeedbackCard } from "@/components";
 export * from "./Button";
 export { default as ProductCard } from "./ProductCard";
 export { default as HeroCard } from "./HeroCard";
@@ -10,3 +9,4 @@ export { default as ThemeSwitch } from "./ThemeSwitch";
 export * from "./Input";
 export * from "./Textarea";
 export * from "./Select";
+export * from "./Icons";
