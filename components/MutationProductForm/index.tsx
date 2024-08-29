@@ -398,7 +398,6 @@ const MutationProductForm = ({
       isOpen={isOpen}
       onOpenChange={handleOnOpenChange}
       placement="center"
-      hideCloseButton
       scrollBehavior="outside"
     >
       <ModalContent>

@@ -79,9 +79,7 @@ const ConfirmProductForm = ({
       scrollBehavior="outside"
     >
       <ModalContent>
-        <ModalHeader className="text-2xl">
-          Delete course with id: {id}
-        </ModalHeader>
+        <ModalHeader className="text-2xl">Delete course</ModalHeader>
         <form action={deleteProduct.bind(null, currentPath)}>
           <ConfirmProductFormBody id={id} onClose={onClose} />
         </form>
