@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
 
 // Components
-import ConfirmProductForm from ".";
+import { ConfirmProductForm } from "..";
 
 const meta: Meta<typeof ConfirmProductForm> = {
   title: "Components/ConfirmProductForm",

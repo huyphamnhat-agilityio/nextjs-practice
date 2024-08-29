@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ErrorIcon } from "@/components";
 import { DESTINATION } from "@/constants";
 
-export type ErrorProps = {
+export type ErrorFallbackProps = {
   message?: string;
 };
 
-const Error = ({ message = "" }: ErrorProps) => {
+const ErrorFallback = ({ message = "" }: ErrorFallbackProps) => {
   return (
     <div className="flex flex-col items-center gap-6">
       <ErrorIcon />
@@ -20,11 +20,13 @@ const Error = ({ message = "" }: ErrorProps) => {
         to reach out to our support team.`}
       </p>
 
-      <p className="text-foreground-100 text-lg text-center whitespace-pre-line">
-        Detail error:
-        <br />
-        <span className="text-danger">{message}</span>
-      </p>
+      {message && (
+        <p className="text-foreground-100 text-lg text-center whitespace-pre-line">
+          Detail error:
+          <br />
+          <span className="text-danger">{message}</span>
+        </p>
+      )}
 
       <p className="text-foreground text-xl text-center">
         Please refresh the page or{" "}
@@ -36,4 +38,4 @@ const Error = ({ message = "" }: ErrorProps) => {
   );
 };
 
-export default Error;
+export default ErrorFallback;
