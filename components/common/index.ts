@@ -10,3 +10,4 @@ export * from "./Input";
 export * from "./Textarea";
 export * from "./Select";
 export * from "./Icons";
+export { default as ErrorFallback } from "./Error";

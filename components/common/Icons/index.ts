@@ -30,3 +30,4 @@ export * from "./SearchIcon";
 export * from "./EditIcon";
 export * from "./DeleteIcon";
 export * from "./EmailIcon";
+export * from "./ErrorIcon";

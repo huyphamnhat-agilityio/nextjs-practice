@@ -1,6 +1,6 @@
 "use client";
 // Components
-import { Button } from "@/components";
+import { ErrorFallback } from "@/components";
 
 // Sections
 import {
@@ -14,7 +14,6 @@ import {
 
 export default function Error({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
@@ -40,16 +39,7 @@ export default function Error({
               </p>
             </div>
 
-            <p className="text-danger text-center text-2xl font-bold max-w-[1004px]">
-              {error.message}
-            </p>
-
-            <Button
-              onClick={() => reset()}
-              className="text-white w-fit mx-auto"
-            >
-              Reset page
-            </Button>
+            <ErrorFallback message={error.message} />
           </div>
         </div>
       </section>
