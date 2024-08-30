@@ -58,7 +58,7 @@ describe("ProductCard test cases", () => {
 
   beforeEach(() => {
     mockUseRouter.mockReturnValue({ push: mockPush });
-    mockUsePathname.mockReturnValue("/");
+    mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
     mockUseFormStatus.mockReturnValue({ pending: false });
   });
@@ -154,7 +154,7 @@ describe("ProductCard test cases", () => {
     await userEvent.click(editBtn);
 
     const deleteForm = await screen.findByRole("dialog", {
-      name: new RegExp(`delete course with id: ${MOCK_PRODUCTS[0].id}`, "i"),
+      name: new RegExp("delete course", "i"),
     });
 
     expect(deleteForm).toBeInTheDocument();

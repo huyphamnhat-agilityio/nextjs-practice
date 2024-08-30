@@ -24,7 +24,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
             >
               <a
                 class="text-foreground text-2xl font-bold"
-                href="#"
+                href="/"
               >
                 Brandname
               </a>
@@ -232,7 +232,7 @@ exports[`NavBar test cases should be able to switch the theme when clicking on s
             >
               <a
                 class="text-foreground text-2xl font-bold"
-                href="#"
+                href="/"
               >
                 Brandname
               </a>
@@ -439,7 +439,7 @@ exports[`NavBar test cases should render correctly 1`] = `
             >
               <a
                 class="text-foreground text-2xl font-bold"
-                href="#"
+                href="/"
               >
                 Brandname
               </a>
@@ -643,7 +643,7 @@ exports[`NavBar test cases should render correctly on mobile screen 1`] = `
             >
               <a
                 class="text-foreground text-2xl font-bold"
-                href="#"
+                href="/"
               >
                 Brandname
               </a>

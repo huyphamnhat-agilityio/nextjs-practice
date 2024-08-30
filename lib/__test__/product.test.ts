@@ -189,7 +189,14 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", expectedPayload.createdAt.toString());
     mockFormData.append("coverImageUrl", "");
 
-    await mutateProduct(mockPathname, mockFormState, mockFormData);
+    await mutateProduct(
+      {
+        redirectPathWhenAddSuccess: mockPathname,
+        redirectPathWhenUpdateSuccess: mockPathname,
+      },
+      mockFormState,
+      mockFormData,
+    );
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
@@ -225,7 +232,10 @@ describe("Product services test cases", () => {
     mockFormData.append("coverImageUrl", "");
 
     const result = await mutateProduct(
-      mockPathname,
+      {
+        redirectPathWhenAddSuccess: mockPathname,
+        redirectPathWhenUpdateSuccess: mockPathname,
+      },
       mockFormState,
       mockFormData,
     );
@@ -255,7 +265,14 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", mockProduct.createdAt.toString());
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
-    await mutateProduct(mockPathname, mockFormState, mockFormData);
+    await mutateProduct(
+      {
+        redirectPathWhenAddSuccess: mockPathname,
+        redirectPathWhenUpdateSuccess: mockPathname,
+      },
+      mockFormState,
+      mockFormData,
+    );
 
     const expectedPayload: Product = {
       id: mockProduct.id,
@@ -301,7 +318,10 @@ describe("Product services test cases", () => {
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
     const result = await mutateProduct(
-      mockPathname,
+      {
+        redirectPathWhenAddSuccess: mockPathname,
+        redirectPathWhenUpdateSuccess: mockPathname,
+      },
       mockFormState,
       mockFormData,
     );
@@ -332,7 +352,10 @@ describe("Product services test cases", () => {
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
     const result = await mutateProduct(
-      mockPathname,
+      {
+        redirectPathWhenAddSuccess: mockPathname,
+        redirectPathWhenUpdateSuccess: mockPathname,
+      },
       mockFormState,
       mockFormData,
     );
@@ -349,7 +372,13 @@ describe("Product services test cases", () => {
 
     mockFormData.append("id", mockProduct.id);
 
-    await deleteProduct(mockPathname, mockFormData);
+    await deleteProduct(
+      {
+        redirectPathWhenSuccess: mockPathname,
+        redirectPathWhenError: mockPathname,
+      },
+      mockFormData,
+    );
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,
@@ -366,7 +395,13 @@ describe("Product services test cases", () => {
 
     mockFormData.append("id", mockProduct.id);
 
-    await deleteProduct(mockPathname, mockFormData);
+    await deleteProduct(
+      {
+        redirectPathWhenSuccess: mockPathname,
+        redirectPathWhenError: mockPathname,
+      },
+      mockFormData,
+    );
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,

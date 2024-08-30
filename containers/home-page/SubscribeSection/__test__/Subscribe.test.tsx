@@ -1,13 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 // Components
 import SubscribeSection from "..";
 
+// Constants
+import { SUBSCRIBE_MESSAGES } from "@/constants";
+
 jest.mock("react-dom", () => ({
   ...jest.requireActual("react-dom"),
   useFormStatus: jest.fn(),
-  useFormState: () => [{}, () => {}],
+  useFormState: jest.fn(),
 }));
 
 describe("SubscribeSection test cases", () => {
@@ -16,19 +19,25 @@ describe("SubscribeSection test cases", () => {
   });
 
   const mockUseFormStatus = useFormStatus as jest.Mock;
+  const mockUseFormState = useFormState as jest.Mock;
 
   const setup = () => render(<SubscribeSection />);
 
   it("should render correctly", () => {
+    mockUseFormState.mockReturnValue([{}, () => {}]);
+
     mockUseFormStatus.mockReturnValue({
       pending: false,
     });
+
     const { asFragment } = setup();
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly when the form is pending", () => {
+    mockUseFormState.mockReturnValue([{}, () => {}]);
+
     mockUseFormStatus.mockReturnValue({
       pending: true,
     });
@@ -42,5 +51,61 @@ describe("SubscribeSection test cases", () => {
 
     expect(emailInput).toBeDisabled();
     expect(submitButton).toBeDisabled();
+  });
+
+  it("should show success toast when subscribing is successful", () => {
+    mockUseFormState.mockReturnValue([
+      {
+        message: SUBSCRIBE_MESSAGES.SUCCESS,
+        resetKey: Date.now().toString(),
+      },
+      () => {},
+    ]);
+
+    mockUseFormStatus.mockReturnValue({
+      pending: false,
+    });
+
+    const { asFragment } = setup();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should show error toast when subscribing fails", () => {
+    mockUseFormState.mockReturnValue([
+      {
+        message: SUBSCRIBE_MESSAGES.ERROR,
+      },
+      () => {},
+    ]);
+
+    mockUseFormStatus.mockReturnValue({
+      pending: false,
+    });
+
+    const { asFragment } = setup();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should show error message when subscribing email is invalid", () => {
+    mockUseFormState.mockReturnValue([
+      {
+        errors: {
+          email: [SUBSCRIBE_MESSAGES.ERROR.REQUIRED],
+        },
+      },
+      () => {},
+    ]);
+
+    mockUseFormStatus.mockReturnValue({
+      pending: false,
+    });
+
+    setup();
+
+    const errorMessage = screen.getByText(SUBSCRIBE_MESSAGES.ERROR.REQUIRED);
+
+    expect(errorMessage).toBeInTheDocument();
   });
 });

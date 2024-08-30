@@ -149,7 +149,7 @@ describe("MutationProductForm test cases", () => {
   it("should display error message when typing invalid data", async () => {
     window.URL.createObjectURL = jest.fn();
 
-    const { asFragment } = setup({
+    setup({
       ...mockProps,
       data: {
         ...PLACEHOLDER_PRODUCT_FORM_DATA,

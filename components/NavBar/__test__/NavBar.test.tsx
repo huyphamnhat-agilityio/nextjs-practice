@@ -31,11 +31,11 @@ describe("NavBar test cases", () => {
 
     await userEvent.click(menuBtn);
 
-    const closeBtn = screen.findByRole("button", {
+    const closeBtn = await screen.findByRole("button", {
       name: /close menu/i,
     });
 
-    await userEvent.click(await closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(asFragment()).toMatchSnapshot();
   });

@@ -6,14 +6,21 @@ import { Providers } from "../providers";
 
 // components
 import { Footer, Header } from "@/components";
-import { Suspense } from "react";
+
+// Constants
+import { DESTINATION, TOAST_COLORS } from "@/constants";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "School Course App",
-  description: "A simple course web app for schools",
-  metadataBase: new URL("https://nextjs-practice-eosin-beta.vercel.app/"),
+  title: {
+    template: "%s - School Course App",
+    default: "Course List - School Course App ",
+  },
+  description: "The collection page of all available courses",
+  metadataBase: new URL(
+    `https://nextjs-practice-eosin-beta.vercel.app/${DESTINATION.PRODUCT}`,
+  ),
 };
 
 export default function RootLayout({
@@ -33,12 +40,12 @@ export default function RootLayout({
               toastOptions={{
                 success: {
                   style: {
-                    background: "#15803d",
+                    background: TOAST_COLORS.SUCCESS,
                   },
                 },
                 error: {
                   style: {
-                    background: "#b91c1c",
+                    background: TOAST_COLORS.ERROR,
                   },
                 },
                 style: {

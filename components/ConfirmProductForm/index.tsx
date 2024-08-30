@@ -7,11 +7,21 @@ import {
   ModalHeader,
 } from "@nextui-org/react";
 import { useFormStatus } from "react-dom";
+import { usePathname, useSearchParams } from "next/navigation";
 
 // Component
 import { Button, Input } from "../common";
-import { deleteProduct } from "@/lib";
-import { usePathname, useSearchParams } from "next/navigation";
+
+// Services
+import { buildRedirectPathWithToast, deleteProduct } from "@/lib";
+
+// Constants
+import {
+  PRODUCT_MESSAGES,
+  TOAST_ACTION,
+  TOAST_SECTION,
+  TOAST_TYPE,
+} from "@/constants";
 
 export type ConfirmProductFormBodyProps = {
   onClose: () => void;
@@ -71,6 +81,23 @@ const ConfirmProductForm = ({
 
   const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
 
+  const redirectPathWhenSuccess = buildRedirectPathWithToast({
+    pathname: currentPath,
+    type: TOAST_TYPE.SUCCESS,
+    section: TOAST_SECTION.PRODUCT_LIST_SECTION,
+    action: TOAST_ACTION.CONFIRM,
+    message: PRODUCT_MESSAGES.SUCCESS.DELETE,
+  });
+
+  const redirectPathWhenError = buildRedirectPathWithToast({
+    pathname: currentPath,
+    type: TOAST_TYPE.ERROR,
+    section: TOAST_SECTION.PRODUCT_CARD,
+    action: TOAST_ACTION.CONFIRM,
+    message: PRODUCT_MESSAGES.ERROR.DELETE,
+    queryId: id,
+  });
+
   return (
     <Modal
       isOpen={isOpen}
@@ -80,7 +107,12 @@ const ConfirmProductForm = ({
     >
       <ModalContent>
         <ModalHeader className="text-2xl">Delete course</ModalHeader>
-        <form action={deleteProduct.bind(null, currentPath)}>
+        <form
+          action={deleteProduct.bind(null, {
+            redirectPathWhenSuccess,
+            redirectPathWhenError,
+          })}
+        >
           <ConfirmProductFormBody id={id} onClose={onClose} />
         </form>
       </ModalContent>

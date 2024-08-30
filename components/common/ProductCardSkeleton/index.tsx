@@ -37,17 +37,6 @@ const ProductCardSkeleton = ({
       <div className="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10">
         <p className="text-white text-sm/6 font-bold">Sale</p>
       </div>
-      <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
-        <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-          <FavoriteIcon />
-        </Button>
-        <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-          <EditIcon />
-        </Button>
-        <Button className="bg-white" variant="action" size="tiny" isIconOnly>
-          <DeleteIcon />
-        </Button>
-      </div>
     </CardHeader>
     <CardBody className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
       <div className="flex justify-between">

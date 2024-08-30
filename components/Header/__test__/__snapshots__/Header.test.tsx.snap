@@ -27,7 +27,7 @@ exports[`Header test cases should render correctly 1`] = `
               >
                 <a
                   class="text-foreground text-2xl font-bold"
-                  href="#"
+                  href="/"
                 >
                   Brandname
                 </a>

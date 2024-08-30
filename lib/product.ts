@@ -1,26 +1,15 @@
 "use server";
-import { revalidatePath, revalidateTag } from "next/cache";
-import { redirect, RedirectType } from "next/navigation";
+import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 
 // Types
-import { FormState, Pagination, Product, ToastSection } from "@/types";
+import { FormState, Pagination, Product } from "@/types";
 
 // Constants
-import {
-  PRODUCT_MESSAGES,
-  RESOURCES,
-  TAGS,
-  TOAST_ACTION,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { PRODUCT_MESSAGES, RESOURCES, TAGS } from "@/constants";
 
 // Services
-import {
-  buildRedirectPathWithToast,
-  fetchApi,
-  uploadAndGetImageUrl,
-} from "@/lib";
+import { fetchApi, uploadAndGetImageUrl } from "@/lib";
 
 export type GetProductProps = {
   page: number;
@@ -93,7 +82,13 @@ export const markProduct = async (data: Product) => {
 };
 
 export const mutateProduct = async <T extends object>(
-  pathname: string,
+  {
+    redirectPathWhenAddSuccess,
+    redirectPathWhenUpdateSuccess,
+  }: {
+    redirectPathWhenAddSuccess: string;
+    redirectPathWhenUpdateSuccess: string;
+  },
   _: FormState<T>,
   data: FormData,
 ) => {
@@ -117,7 +112,7 @@ export const mutateProduct = async <T extends object>(
 
   let productImageUrl = "";
 
-  let redirectPath = pathname;
+  let redirectPath = "";
 
   if (coverImage.size !== 0)
     try {
@@ -143,14 +138,7 @@ export const mutateProduct = async <T extends object>(
 
       revalidateTag(TAGS.PRODUCTS);
 
-      redirectPath = buildRedirectPathWithToast({
-        pathname,
-        type: TOAST_TYPE.SUCCESS,
-        section: TOAST_SECTION.PRODUCT_CARD,
-        action: TOAST_ACTION.MUTATE,
-        message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
-        queryId: productBaseData.id,
-      });
+      redirectPath = redirectPathWhenUpdateSuccess;
     } catch (error) {
       return {
         message: PRODUCT_MESSAGES.ERROR.UPDATE,
@@ -165,13 +153,7 @@ export const mutateProduct = async <T extends object>(
 
       revalidateTag(TAGS.PRODUCTS);
 
-      redirectPath = buildRedirectPathWithToast({
-        pathname,
-        type: TOAST_TYPE.SUCCESS,
-        section: TOAST_SECTION.ADD_PRODUCT_SECTION,
-        action: TOAST_ACTION.MUTATE,
-        message: PRODUCT_MESSAGES.SUCCESS.CREATE,
-      });
+      redirectPath = redirectPathWhenAddSuccess;
     } catch (error) {
       return {
         message: PRODUCT_MESSAGES.ERROR.CREATE,
@@ -181,10 +163,19 @@ export const mutateProduct = async <T extends object>(
   redirect(redirectPath);
 };
 
-export const deleteProduct = async (pathname: string, data: FormData) => {
+export const deleteProduct = async (
+  {
+    redirectPathWhenSuccess,
+    redirectPathWhenError,
+  }: {
+    redirectPathWhenSuccess: string;
+    redirectPathWhenError: string;
+  },
+  data: FormData,
+) => {
   const id = data.get("id") as string;
 
-  let redirectPath = pathname;
+  let redirectPath = redirectPathWhenSuccess;
   try {
     await fetchApi<Product>(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${id}`,
@@ -192,24 +183,9 @@ export const deleteProduct = async (pathname: string, data: FormData) => {
     );
 
     revalidateTag(TAGS.PRODUCTS);
-
-    redirectPath = buildRedirectPathWithToast({
-      pathname,
-      type: TOAST_TYPE.SUCCESS,
-      section: TOAST_SECTION.PRODUCT_LIST_SECTION,
-      action: TOAST_ACTION.CONFIRM,
-      message: PRODUCT_MESSAGES.SUCCESS.DELETE,
-    });
   } catch (error) {
-    redirectPath = buildRedirectPathWithToast({
-      pathname,
-      type: TOAST_TYPE.ERROR,
-      section: TOAST_SECTION.PRODUCT_CARD,
-      action: TOAST_ACTION.CONFIRM,
-      message: PRODUCT_MESSAGES.ERROR.DELETE,
-      queryId: id,
-    });
+    redirectPath = redirectPathWhenError;
   } finally {
-    redirect(`${redirectPath}`);
+    redirect(redirectPath);
   }
 };

@@ -72,7 +72,7 @@ const ProductCard = (props: Product) => {
   const {
     isOpen: isConfirmModalOpen,
     onOpen: onConfirmModalOpen,
-    onOpenChange: onCofirmModalOpenChange,
+    onOpenChange: onConfirmModalOpenChange,
     onClose: onConfirmModalClose,
   } = useDisclosure({
     defaultOpen: false,
@@ -175,42 +175,46 @@ const ProductCard = (props: Product) => {
             <p className="text-white text-sm/6 font-bold">Sale</p>
           </div>
           <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
-            <Button
-              className={`${!!isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}
-              variant="action"
-              size="tiny"
-              aria-label="favorite button"
-              data-testid="mark-favorite"
-              isIconOnly
-              isDisabled={isPending}
-              onPress={() => handleMarkFavorite(props)}
-            >
-              <FavoriteIcon />
-            </Button>
-            <Button
-              className="bg-white"
-              variant="action"
-              size="tiny"
-              aria-label="cart button"
-              data-testid="update"
-              isIconOnly
-              isDisabled={isPending}
-              onPress={onMutationModalOpen}
-            >
-              <EditIcon />
-            </Button>
-            <Button
-              className="bg-white"
-              variant="action"
-              size="tiny"
-              aria-label="watch later button"
-              data-testid="delete"
-              isIconOnly
-              isDisabled={isPending}
-              onPress={onConfirmModalOpen}
-            >
-              <DeleteIcon />
-            </Button>
+            {!(pathname === DESTINATION.HOME) && (
+              <>
+                <Button
+                  className={`${!!isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}
+                  variant="action"
+                  size="tiny"
+                  aria-label="favorite button"
+                  data-testid="mark-favorite"
+                  isIconOnly
+                  isDisabled={isPending}
+                  onPress={() => handleMarkFavorite(props)}
+                >
+                  <FavoriteIcon />
+                </Button>
+                <Button
+                  className="bg-white"
+                  variant="action"
+                  size="tiny"
+                  aria-label="cart button"
+                  data-testid="update"
+                  isIconOnly
+                  isDisabled={isPending}
+                  onPress={onMutationModalOpen}
+                >
+                  <EditIcon />
+                </Button>
+                <Button
+                  className="bg-white"
+                  variant="action"
+                  size="tiny"
+                  aria-label="watch later button"
+                  data-testid="delete"
+                  isIconOnly
+                  isDisabled={isPending}
+                  onPress={onConfirmModalOpen}
+                >
+                  <DeleteIcon />
+                </Button>
+              </>
+            )}
           </div>
         </CardHeader>
         <CardBody className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
@@ -263,7 +267,7 @@ const ProductCard = (props: Product) => {
           isOpen={isConfirmModalOpen}
           onOpen={onConfirmModalOpen}
           onClose={onConfirmModalClose}
-          onOpenChange={onCofirmModalOpenChange}
+          onOpenChange={onConfirmModalOpenChange}
         />
       )}
 

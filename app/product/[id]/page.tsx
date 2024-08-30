@@ -1,15 +1,28 @@
 import { Image as NextUIImage } from "@nextui-org/react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 // Services
 import { getProductById } from "@/lib";
 
 // Constants
-import { PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
+import { MOCK_PRODUCTS, PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 
 // Components
 import { DownloadIcon, SolidStarIcon } from "@/components";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const id = params.id;
+
+  return {
+    title: `Course ${id} Detail`,
+  };
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
@@ -19,14 +32,14 @@ export default async function Page({ params }: { params: { id: string } }) {
   if (!product) notFound();
 
   const {
-    category,
-    title,
-    description,
-    rate,
-    sales,
-    originalPrice,
-    salePrice,
-    coverImageUrl,
+    category = MOCK_PRODUCTS[0].category,
+    title = MOCK_PRODUCTS[0].title,
+    description = MOCK_PRODUCTS[0].description,
+    rate = MOCK_PRODUCTS[0].rate,
+    sales = MOCK_PRODUCTS[0].sales,
+    originalPrice = MOCK_PRODUCTS[0].originalPrice,
+    salePrice = MOCK_PRODUCTS[0].salePrice,
+    coverImageUrl = MOCK_PRODUCTS[0].coverImageUrl,
   } = product;
   return (
     <main>

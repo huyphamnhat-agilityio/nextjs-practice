@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Control, Controller, FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -11,9 +11,8 @@ import {
   SelectItem,
   ModalFooter,
 } from "@nextui-org/react";
-import toast from "react-hot-toast";
 import { useFormState, useFormStatus } from "react-dom";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 // Types
 import { FormState, Product, ProductForm } from "@/types";
@@ -28,7 +27,13 @@ import { MOCK_CATEGORIES, PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 import { Button, Input, Select, Textarea } from "../common";
 
 // Services
-import { mutateProduct } from "@/lib/product";
+import { buildRedirectPathWithToast, mutateProduct } from "@/lib";
+import {
+  PRODUCT_MESSAGES,
+  TOAST_ACTION,
+  TOAST_SECTION,
+  TOAST_TYPE,
+} from "@/constants";
 
 export type ProductFormBodyProps = {
   selectedImage: File;
@@ -341,8 +346,28 @@ const MutationProductForm = ({
   const pathname = usePathname();
   const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
 
+  const redirectPathWhenAddSuccess = buildRedirectPathWithToast({
+    pathname: currentPath,
+    type: TOAST_TYPE.SUCCESS,
+    section: TOAST_SECTION.ADD_PRODUCT_SECTION,
+    action: TOAST_ACTION.MUTATE,
+    message: PRODUCT_MESSAGES.SUCCESS.CREATE,
+  });
+
+  const redirectPathWhenUpdateSuccess = buildRedirectPathWithToast({
+    pathname: currentPath,
+    type: TOAST_TYPE.SUCCESS,
+    section: TOAST_SECTION.PRODUCT_CARD,
+    action: TOAST_ACTION.MUTATE,
+    message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
+    queryId: data?.id,
+  });
+
   const [state, formAction] = useFormState<FormState<ProductForm>, FormData>(
-    mutateProduct.bind(null, currentPath),
+    mutateProduct.bind(null, {
+      redirectPathWhenAddSuccess,
+      redirectPathWhenUpdateSuccess,
+    }),
     initialState,
   );
 

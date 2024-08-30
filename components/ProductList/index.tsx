@@ -1,5 +1,5 @@
 // Constants
-import { HOME_LIMIT } from "@/constants";
+import { HOME_LIMIT, INITIAL_PAGE } from "@/constants";
 
 // Services
 import { getProducts } from "@/lib";
@@ -8,7 +8,7 @@ import { getProducts } from "@/lib";
 import { ProductCard } from "../common";
 
 const ProductList = async ({
-  currentPage,
+  currentPage = INITIAL_PAGE,
   limit = HOME_LIMIT,
   query = "",
 }: {
