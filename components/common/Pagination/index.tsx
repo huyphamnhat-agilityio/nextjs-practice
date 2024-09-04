@@ -4,8 +4,7 @@ import {
   Pagination as NextUIPagination,
 } from "@nextui-org/react";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 
 export const CustomPagination = extendVariants(NextUIPagination, {
   variants: {
@@ -23,28 +22,19 @@ export const CustomPagination = extendVariants(NextUIPagination, {
 
 export type PaginationProps = {
   total: number;
+  handlePageChange: (page: number) => void;
 };
 
-export const Pagination = ({ total }: PaginationProps) => {
+export const Pagination = ({ total, handlePageChange }: PaginationProps) => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-  const currentPage = Number(searchParams.get("page")) || 1;
 
-  const createPageUrl = useCallback(
-    (page: number) => {
-      const params = new URLSearchParams(searchParams);
-      params.set("page", page.toString());
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    },
-    [pathname, router, searchParams],
-  );
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   return (
     <CustomPagination
       total={total}
       page={currentPage}
-      onChange={createPageUrl}
+      onChange={handlePageChange}
       className="flex justify-center m-0"
     />
   );

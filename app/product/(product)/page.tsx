@@ -1,16 +1,8 @@
-import { Suspense } from "react";
-
 // Constants
 import { PRODUCT_LIMIT } from "@/constants";
 
 // Components
-import {
-  Button,
-  Pagination,
-  ProductList,
-  ProductListSkeleton,
-  SearchProductForm,
-} from "@/components";
+import { SearchProductForm } from "@/components";
 
 // Services
 import { getProducts } from "@/lib";
@@ -51,22 +43,7 @@ export default async function Product({
           </div>
           {data ? (
             <>
-              <ProductListSection>
-                <Suspense
-                  key={currentPage + query}
-                  fallback={<ProductListSkeleton limit={PRODUCT_LIMIT} />}
-                >
-                  <ProductList
-                    currentPage={currentPage}
-                    limit={PRODUCT_LIMIT}
-                    query={query}
-                  />
-                </Suspense>
-              </ProductListSection>
-
-              <Suspense>
-                <Pagination total={data.totalPages} />
-              </Suspense>
+              <ProductListSection products={data} />
             </>
           ) : (
             <h2 className="text-center text-foreground ">

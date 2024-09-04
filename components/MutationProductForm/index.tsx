@@ -67,7 +67,7 @@ const ProductFormBody = ({
           aria-disabled={pending}
         >
           <NextUIImage
-            width={300}
+            width={448}
             height={256}
             src={
               selectedImage

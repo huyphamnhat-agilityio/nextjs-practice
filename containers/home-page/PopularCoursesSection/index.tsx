@@ -7,7 +7,10 @@ import Link from "next/link";
 import { NextArrowIcon, ProductListSkeleton } from "@/components";
 
 // Constants
-import { DESTINATION } from "@/constants";
+import { DESTINATION, HOME_LIMIT } from "@/constants";
+
+// Services
+import { getProducts } from "@/lib";
 
 const ProductList = dynamic(
   () => import("@/components").then((mod) => mod.ProductList),
@@ -22,6 +25,8 @@ const PopularCoursesSection = async ({
 }: {
   currentPage: number;
 }) => {
+  const products = await getProducts({ page: currentPage, limit: HOME_LIMIT });
+
   return (
     <section>
       <div className="bg-dark-blue mt-32.5 flex justify-center">
@@ -40,7 +45,7 @@ const PopularCoursesSection = async ({
           </div>
 
           <Suspense key={currentPage} fallback={<ProductListSkeleton />}>
-            <ProductList currentPage={currentPage} />
+            <ProductList products={products} />
           </Suspense>
 
           <NextUILink
