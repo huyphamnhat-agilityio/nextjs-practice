@@ -182,6 +182,9 @@ const ProductFormBody = ({
                   !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
                 );
               }}
+              onKeyDown={(e: React.KeyboardEvent) =>
+                ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()
+              }
             />
           )}
         />

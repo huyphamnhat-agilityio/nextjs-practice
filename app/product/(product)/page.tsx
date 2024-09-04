@@ -42,9 +42,7 @@ export default async function Product({
             <AddCourseSection />
           </div>
           {data ? (
-            <>
-              <ProductListSection products={data} />
-            </>
+            <ProductListSection products={data} />
           ) : (
             <h2 className="text-center text-foreground ">
               Oops! No courses match your keyword.
