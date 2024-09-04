@@ -160,16 +160,18 @@ const ProductCard = (props: Product) => {
         isDisabled={isPending}
       >
         <CardHeader className="relative p-0">
-          <NextUIImage
-            as={Image}
-            src={coverImageUrl || PLACEHOLDER_COURSE_IMAGE}
-            alt={`An image about ${title}`}
-            width={328}
-            height={300}
-            className="max-w-full max-h-75"
-            isZoomed
-            radius="none"
-          />
+          <Link href={`${DESTINATION.PRODUCT}/${id}`}>
+            <NextUIImage
+              as={Image}
+              src={coverImageUrl || PLACEHOLDER_COURSE_IMAGE}
+              alt={`An image about ${title}`}
+              width={328}
+              height={300}
+              className="max-w-full max-h-75"
+              isZoomed
+              radius="none"
+            />
+          </Link>
 
           <div className="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10">
             <p className="text-white text-sm/6 font-bold">Sale</p>
@@ -217,7 +219,11 @@ const ProductCard = (props: Product) => {
             )}
           </div>
         </CardHeader>
-        <CardBody className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
+        <CardBody
+          as={Link}
+          href={`${DESTINATION.PRODUCT}/${id}`}
+          className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+        >
           <div className="flex justify-between">
             <span className="text-primary text-sm/6 font-bold">{category}</span>
             <div className="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]">
@@ -249,8 +255,6 @@ const ProductCard = (props: Product) => {
               variant="bordered"
               size="xs"
               className="font-bold"
-              as={Link}
-              href={`${DESTINATION.PRODUCT}/${id}`}
               aria-label="Go to detail page"
               endContent={<NextArrowIcon />}
             >
