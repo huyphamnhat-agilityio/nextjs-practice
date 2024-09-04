@@ -82,3 +82,9 @@ export const FORM_MESSAGES = {
     },
   },
 } as const;
+
+export const NOT_FOUND_PAGE_MESSAGES = {
+  HOME: "The page you are looking for does not exist. Please check the URL and try again.",
+  PRODUCT:
+    "The product you are looking for does not exist. Please check the URL and try again.",
+};

@@ -1,14 +1,15 @@
 import { render } from "@testing-library/react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
-// Utils
-import { resolvedComponent } from "@/utils";
 
 // Mocks
-import { MOCK_PRODUCTS, mockFetch } from "@/mocks";
+import { MOCK_PRODUCTS } from "@/mocks";
 
 // Components
 import ProductList from "..";
+
+// Types
+import { Pagination, Product } from "@/types";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { DESTINATION } from "@/constants";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
@@ -17,31 +18,40 @@ jest.mock("next/navigation", () => ({
 }));
 
 describe("ProductList test cases", () => {
-  const mockReplace = jest.fn();
+  const mockPush = jest.fn();
   const mockUseRouter = useRouter as jest.Mock;
   const mockUsePathname = usePathname as jest.Mock;
   const mockUseSearchParams = useSearchParams as jest.Mock;
 
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ replace: mockReplace });
-    mockUsePathname.mockReturnValue("/");
+    mockUseRouter.mockReturnValue({ push: mockPush });
+    mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+  const setup = (props?: Pagination<Product>) =>
+    render(<ProductList products={props} />);
 
   it("should render correctly", async () => {
-    window.fetch = mockFetch({ data: MOCK_PRODUCTS });
+    const { asFragment } = setup();
 
-    const ProductListResolved = await resolvedComponent<{
-      currentPage: number;
-    }>(ProductList, {
-      currentPage: 1,
-    });
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-    const { asFragment } = render(<ProductListResolved />);
+  it("should render correctly with provided data", async () => {
+    const mockProducts: Pagination<Product> = {
+      data: MOCK_PRODUCTS,
+      hasNextPage: true,
+      hasPrevPage: false,
+      limit: 3,
+      page: 1,
+      totalItems: MOCK_PRODUCTS.length,
+      totalPages: 2,
+      nextPage: 2,
+      prevPage: null,
+    };
+
+    const { asFragment } = setup(mockProducts);
 
     expect(asFragment()).toMatchSnapshot();
   });

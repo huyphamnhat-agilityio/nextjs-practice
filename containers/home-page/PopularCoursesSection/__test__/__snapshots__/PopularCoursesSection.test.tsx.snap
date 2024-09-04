@@ -185,7 +185,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15 Sales
+                    0 Sales
                   </div>
                 </div>
               </div>
@@ -404,7 +404,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15 Sales
+                    0 Sales
                   </div>
                 </div>
               </div>
@@ -623,7 +623,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                         </clippath>
                       </defs>
                     </svg>
-                    15 Sales
+                    0 Sales
                   </div>
                 </div>
               </div>

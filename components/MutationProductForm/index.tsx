@@ -157,6 +157,8 @@ const ProductFormBody = ({
               name="description"
               labelPlacement="outside"
               placeholder="Enter course description..."
+              isInvalid={!!errors?.description}
+              errorMessage={errors?.description?.message}
               isDisabled={pending}
             />
           )}
@@ -402,7 +404,7 @@ const MutationProductForm = ({
 
   const handleSelectImage = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (e.target.files) {
+      if (e.target.files.length) {
         setSelectedImage(e.target.files[0]);
       }
     },

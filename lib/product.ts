@@ -6,7 +6,12 @@ import { redirect } from "next/navigation";
 import { FormState, Pagination, Product } from "@/types";
 
 // Constants
-import { PRODUCT_MESSAGES, RESOURCES, TAGS } from "@/constants";
+import {
+  DEFAULT_SORTING_OPTIONS,
+  PRODUCT_MESSAGES,
+  RESOURCES,
+  TAGS,
+} from "@/constants";
 
 // Services
 import { fetchApi, uploadAndGetImageUrl } from "@/lib";
@@ -23,7 +28,7 @@ export const getProducts = async ({
   query = "",
 }: GetProductProps) => {
   const options = {
-    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}?title=${query}`,
+    publicDataUrl: `${process.env.MOCK_API}/${RESOURCES.PRODUCT}?sortBy=${DEFAULT_SORTING_OPTIONS.SORT_BY}&order=${DEFAULT_SORTING_OPTIONS.ORDER}&title=${query}`,
     page,
     limit,
   };

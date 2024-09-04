@@ -5,3 +5,8 @@ export const TOAST_QUERY_PARAMS = {
   MESSAGE: "message",
   QUERY_ID: "queryId",
 } as const;
+
+export const DEFAULT_SORTING_OPTIONS = {
+  SORT_BY: "createdAt",
+  ORDER: "desc",
+};

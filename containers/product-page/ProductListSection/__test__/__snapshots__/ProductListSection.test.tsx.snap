@@ -15,28 +15,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/1"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -130,8 +134,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/1"
         >
           <div
             class="flex justify-between"
@@ -208,7 +213,7 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                 </clippath>
               </defs>
             </svg>
-            15 Sales
+            0 Sales
           </div>
           <div
             class="py-1.25 px-0.75 flex gap-1.25"
@@ -227,12 +232,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/1"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -265,9 +268,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -276,28 +279,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/2"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -391,8 +398,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/2"
         >
           <div
             class="flex justify-between"
@@ -488,12 +496,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/2"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -526,9 +532,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -537,28 +543,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/3"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -652,8 +662,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/3"
         >
           <div
             class="flex justify-between"
@@ -749,12 +760,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/3"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -787,9 +796,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -798,28 +807,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/4"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -913,8 +926,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/4"
         >
           <div
             class="flex justify-between"
@@ -1010,12 +1024,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/4"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -1048,9 +1060,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -1059,28 +1071,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/5"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -1174,8 +1190,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/5"
         >
           <div
             class="flex justify-between"
@@ -1271,12 +1288,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/5"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -1309,9 +1324,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -1320,28 +1335,32 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/6"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -1435,8 +1454,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/6"
         >
           <div
             class="flex justify-between"
@@ -1532,12 +1552,10 @@ exports[`ProductListSection test cases should render correctly 1`] = `
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/6"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -1570,9 +1588,9 @@ exports[`ProductListSection test cases should render correctly 1`] = `
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <nav
@@ -1600,7 +1618,7 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         <li
           aria-current="true"
           aria-label="pagination item 1 active"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-active="true"
           data-slot="item"
           role="button"
@@ -1610,7 +1628,7 @@ exports[`ProductListSection test cases should render correctly 1`] = `
         </li>
         <li
           aria-label="pagination item 2"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-slot="item"
           role="button"
           tabindex="0"
@@ -1638,28 +1656,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/1"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -1753,8 +1775,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/1"
         >
           <div
             class="flex justify-between"
@@ -1831,7 +1854,7 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                 </clippath>
               </defs>
             </svg>
-            15 Sales
+            0 Sales
           </div>
           <div
             class="py-1.25 px-0.75 flex gap-1.25"
@@ -1850,12 +1873,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/1"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -1888,9 +1909,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -1899,28 +1920,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/2"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -2014,8 +2039,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/2"
         >
           <div
             class="flex justify-between"
@@ -2111,12 +2137,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/2"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -2149,9 +2173,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -2160,28 +2184,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/3"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -2275,8 +2303,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/3"
         >
           <div
             class="flex justify-between"
@@ -2372,12 +2401,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/3"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -2410,9 +2437,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -2421,28 +2448,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/4"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -2536,8 +2567,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/4"
         >
           <div
             class="flex justify-between"
@@ -2633,12 +2665,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/4"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -2671,9 +2701,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -2682,28 +2712,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/5"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -2797,8 +2831,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/5"
         >
           <div
             class="flex justify-between"
@@ -2894,12 +2929,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/5"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -2932,9 +2965,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -2943,28 +2976,32 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/6"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -3058,8 +3095,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/6"
         >
           <div
             class="flex justify-between"
@@ -3155,12 +3193,10 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/6"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -3193,9 +3229,9 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <nav
@@ -3223,7 +3259,7 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         <li
           aria-current="true"
           aria-label="pagination item 1 active"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-active="true"
           data-slot="item"
           role="button"
@@ -3233,7 +3269,7 @@ exports[`ProductListSection test cases shoulde able to show error toast correspo
         </li>
         <li
           aria-label="pagination item 2"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-slot="item"
           role="button"
           tabindex="0"
@@ -3261,28 +3297,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/1"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -3376,8 +3416,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/1"
         >
           <div
             class="flex justify-between"
@@ -3454,7 +3495,7 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                 </clippath>
               </defs>
             </svg>
-            15 Sales
+            0 Sales
           </div>
           <div
             class="py-1.25 px-0.75 flex gap-1.25"
@@ -3473,12 +3514,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/1"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -3511,9 +3550,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -3522,28 +3561,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/2"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -3637,8 +3680,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/2"
         >
           <div
             class="flex justify-between"
@@ -3734,12 +3778,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/2"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -3772,9 +3814,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -3783,28 +3825,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/3"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -3898,8 +3944,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/3"
         >
           <div
             class="flex justify-between"
@@ -3995,12 +4042,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/3"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -4033,9 +4078,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -4044,28 +4089,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/4"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Video in Live Action"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Video in Live Action"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -4159,8 +4208,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/4"
         >
           <div
             class="flex justify-between"
@@ -4256,12 +4306,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/4"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -4294,9 +4342,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -4305,28 +4353,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/5"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Every Client Matters"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Every Client Matters"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -4420,8 +4472,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/5"
         >
           <div
             class="flex justify-between"
@@ -4517,12 +4570,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/5"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -4555,9 +4606,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -4566,28 +4617,32 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <div
           class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
         >
-          <div
-            class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
-            style="max-width: 328px;"
+          <a
+            href="/product/6"
           >
-             
             <div
-              class="relative overflow-hidden rounded-inherit rounded-none"
+              class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
+              style="max-width: 328px;"
             >
-              <img
-                alt="An image about Get Quality Education"
-                class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
-                srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
-                style="color: transparent; height: 300px;"
-                width="328"
-              />
+               
+              <div
+                class="relative overflow-hidden rounded-inherit rounded-none"
+              >
+                <img
+                  alt="An image about Get Quality Education"
+                  class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
+                  data-nimg="1"
+                  decoding="async"
+                  height="300"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
+                  srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
+                  style="color: transparent; height: 300px;"
+                  width="328"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div
             class="px-2.5 bg-danger absolute rounded-0.75 top-5 left-5 z-10"
           >
@@ -4681,8 +4736,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
             </button>
           </div>
         </div>
-        <div
+        <a
           class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
+          href="/product/6"
         >
           <div
             class="flex justify-between"
@@ -4778,12 +4834,10 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
           <div
             class="mt-auto"
           >
-            <a
+            <button
               aria-label="Go to detail page"
               class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-              href="/product/6"
-              role="button"
-              tabindex="0"
+              type="button"
             >
               Course Detail
               <svg
@@ -4816,9 +4870,9 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
                   </clippath>
                 </defs>
               </svg>
-            </a>
+            </button>
           </div>
-        </div>
+        </a>
       </div>
     </div>
     <nav
@@ -4846,7 +4900,7 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         <li
           aria-current="true"
           aria-label="pagination item 1 active"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-active="true"
           data-slot="item"
           role="button"
@@ -4856,7 +4910,7 @@ exports[`ProductListSection test cases shoulde able to show success toast corres
         </li>
         <li
           aria-label="pagination item 2"
-          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-primary hover:bg-opacity-25"
+          class="tap-highlight-transparent select-none touch-none data-[pressed=true]:scale-[0.97] transition-transform-background flex flex-wrap truncate box-border items-center justify-center outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 data-[disabled=true]:text-default-300 data-[disabled=true]:pointer-events-none shadow-sm bg-default-100 [&[data-hover=true]:not([data-active=true])]:bg-default-200 active:bg-default-300 min-w-9 w-9 h-9 text-small rounded-medium text-foreground hover:bg-opacity-25"
           data-slot="item"
           role="button"
           tabindex="0"

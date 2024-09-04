@@ -1,9 +1,10 @@
 import { MOCK_CATEGORIES } from "./category";
 
-import { Product } from "@/types";
+import { Pagination, Product } from "@/types";
 
 export const MOCK_PRODUCT_DESCRIPTION =
   "We focus on ergonomics and meeting you where you work. It's only a keystroke away.";
+
 export const MOCK_PRODUCTS: Array<Product> = [
   {
     id: "1",
@@ -11,7 +12,7 @@ export const MOCK_PRODUCTS: Array<Product> = [
     rate: 4.9,
     title: "Video in Live Action",
     description: MOCK_PRODUCT_DESCRIPTION,
-    sales: 15,
+    sales: 0,
     originalPrice: 16.48,
     salePrice: 6.48,
     coverImageUrl: "/product-cover-1.webp",
