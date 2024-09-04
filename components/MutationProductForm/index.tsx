@@ -307,8 +307,9 @@ const ProductFormBody = ({
       </ModalBody>
       <ModalFooter>
         <Button
-          color="danger"
+          color="default"
           variant="flat"
+          className="bg-foreground-100 text-white"
           isDisabled={pending}
           onPress={onClose}
         >

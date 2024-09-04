@@ -10,7 +10,7 @@ export const CustomPagination = extendVariants(NextUIPagination, {
   variants: {
     color: {
       primary: {
-        item: "text-foreground hover:bg-primary hover:bg-opacity-25",
+        item: "text-foreground hover:bg-opacity-25",
         wrapper: "text-white",
       },
     },

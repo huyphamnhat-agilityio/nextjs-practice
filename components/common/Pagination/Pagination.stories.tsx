@@ -11,9 +11,13 @@ const meta: Meta<typeof Pagination> = {
     total: {
       description: "Total number of pages",
     },
+    handlePageChange: {
+      description: "Function to handle page change",
+    },
   },
   args: {
     total: 10,
+    handlePageChange: () => {},
   },
   parameters: {
     controls: {
