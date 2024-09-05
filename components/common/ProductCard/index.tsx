@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -41,8 +42,10 @@ import {
 } from "@/constants";
 
 // Models
-import { PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
-import dynamic from "next/dynamic";
+import {
+  PLACEHOLDER_COURSE_IMAGE,
+  PLACEHOLDER_PRODUCT_DESCRIPTION,
+} from "@/mocks";
 
 // Components
 const ConfirmProductForm = dynamic(() =>
@@ -235,7 +238,7 @@ const ProductCard = (props: Product) => {
             {title}
           </p>
           <p className="text-foreground-100 text-sm line-clamp-2">
-            {description}
+            {description || PLACEHOLDER_PRODUCT_DESCRIPTION}
           </p>
           <div className="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold">
             <DownloadIcon />

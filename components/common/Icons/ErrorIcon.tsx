@@ -1,8 +1,8 @@
 export const ErrorIcon = () => {
   return (
     <svg
-      width="365"
-      height="258"
+      width="300"
+      height="200"
       viewBox="0 0 365 258"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

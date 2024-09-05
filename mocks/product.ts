@@ -100,3 +100,5 @@ export const PLACEHOLDER_PRODUCT_FORM_DATA = {
   isFavorited: 0,
   createdAt: 0,
 };
+
+export const PLACEHOLDER_PRODUCT_DESCRIPTION = "This course has no description";

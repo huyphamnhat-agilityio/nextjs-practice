@@ -7,6 +7,9 @@ import { Providers } from "../providers";
 // components
 import { Footer, Header } from "@/components";
 
+// Constants
+import { TOAST_COLORS } from "@/constants";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
-          <div className="max-w-8xl mx-auto my-0 2xl:bg-hero-block bg-no-repeat">
+          <div className="max-w-8xl mx-auto my-0 2xl:bg-mini-hero-block bg-no-repeat">
             <Header />
 
             <Toaster
@@ -32,12 +35,12 @@ export default function RootLayout({
               toastOptions={{
                 success: {
                   style: {
-                    background: "#15803d",
+                    background: TOAST_COLORS.SUCCESS,
                   },
                 },
                 error: {
                   style: {
-                    background: "#b91c1c",
+                    background: TOAST_COLORS.ERROR,
                   },
                 },
                 style: {

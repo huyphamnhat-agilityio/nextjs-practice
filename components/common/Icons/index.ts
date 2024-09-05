@@ -31,3 +31,8 @@ export * from "./EditIcon";
 export * from "./DeleteIcon";
 export * from "./EmailIcon";
 export * from "./ErrorIcon";
+export * from "./MediaIcon";
+export * from "./GoalIcon";
+export * from "./CommunityIcon";
+export * from "./FeedbackIcon";
+export * from "./PlayIcon";

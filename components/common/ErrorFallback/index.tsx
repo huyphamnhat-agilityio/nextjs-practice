@@ -10,7 +10,7 @@ export type ErrorFallbackProps = {
 
 const ErrorFallback = ({ message = "" }: ErrorFallbackProps) => {
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-6 max-w-xs sm:max-w-full lg:min-h-[66vh]">
       <ErrorIcon />
       <h4 className="text-foreground text-4xl text-center">
         Oops! There is something wrong

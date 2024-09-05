@@ -7,6 +7,7 @@ import {
   BlackBoardIcon,
   CartIcon,
   CheckMarkIcon,
+  CommunityIcon,
   DarkModeIcon,
   DeleteIcon,
   DownloadIcon,
@@ -15,6 +16,8 @@ import {
   EyeIcon,
   FacebookLogoIcon,
   FavoriteIcon,
+  FeedbackIcon,
+  GoalIcon,
   HamburgerIcon,
   HeartIcon,
   HooliLogo,
@@ -22,10 +25,12 @@ import {
   LightModeIcon,
   LocationIcon,
   LyftLogo,
+  MediaIcon,
   MortarboardIcon,
   NextArrowIcon,
   OutlinedStarIcon,
   PieldPiperLogo,
+  PlayIcon,
   RedditLogo,
   RightArrowIcon,
   SolidStarIcon,
@@ -274,5 +279,40 @@ export const deleteIconStory: Story = {
   ...template,
   args: {
     children: <DeleteIcon />,
+  },
+};
+
+export const communityIconStory: Story = {
+  ...template,
+  args: {
+    children: <CommunityIcon />,
+  },
+};
+
+export const feedbackIconStory: Story = {
+  ...template,
+  args: {
+    children: <FeedbackIcon />,
+  },
+};
+
+export const goalIconStory: Story = {
+  ...template,
+  args: {
+    children: <GoalIcon />,
+  },
+};
+
+export const mediaIconStory: Story = {
+  ...template,
+  args: {
+    children: <MediaIcon />,
+  },
+};
+
+export const PlayIconStory: Story = {
+  ...template,
+  args: {
+    children: <PlayIcon />,
   },
 };
