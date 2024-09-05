@@ -30,13 +30,13 @@ jest.mock("react-dom", () => ({
 }));
 
 describe("AddProductionSection test cases", () => {
-  const mockPush = jest.fn();
+  const mockReplace = jest.fn();
   const mockUseRouter = useRouter as jest.Mock;
   const mockUsePathname = usePathname as jest.Mock;
   const mockUseSearchParams = useSearchParams as jest.Mock;
 
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ push: mockPush });
+    mockUseRouter.mockReturnValue({ replace: mockReplace });
     mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
   });

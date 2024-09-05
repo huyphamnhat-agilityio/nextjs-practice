@@ -36,6 +36,7 @@ jest.mock("react-dom", () => ({
 
 describe("ProductListSection test cases", () => {
   const mockPush = jest.fn();
+  const mockReplace = jest.fn();
   const mockUseRouter = useRouter as jest.Mock;
   const mockUsePathname = usePathname as jest.Mock;
   const mockUseSearchParams = useSearchParams as jest.Mock;
@@ -52,7 +53,7 @@ describe("ProductListSection test cases", () => {
   };
 
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ push: mockPush });
+    mockUseRouter.mockReturnValue({ replace: mockReplace, push: mockPush });
     mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
   });
@@ -106,6 +107,6 @@ describe("ProductListSection test cases", () => {
 
     await userEvent.click(paginationBtn);
 
-    expect(mockPush).toHaveBeenCalled();
+    expect(mockReplace).toHaveBeenCalled();
   });
 });
