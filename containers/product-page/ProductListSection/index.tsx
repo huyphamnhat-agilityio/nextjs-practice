@@ -65,7 +65,7 @@ const ProductListSection = ({
       params.delete(TOAST_QUERY_PARAMS.TOAST_ACTION);
       params.delete(TOAST_QUERY_PARAMS.MESSAGE);
 
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
   }, [
     toastAction,

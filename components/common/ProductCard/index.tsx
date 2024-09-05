@@ -140,7 +140,7 @@ const ProductCard = (props: Product) => {
       params.delete(TOAST_QUERY_PARAMS.MESSAGE);
       params.delete(TOAST_QUERY_PARAMS.QUERY_ID);
 
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
   }, [
     id,

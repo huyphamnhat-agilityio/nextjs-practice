@@ -57,6 +57,12 @@ export const getProductById = async (productId: string) => {
   try {
     const response = await fetchApi<Product>(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productId}`,
+      {
+        next: {
+          revalidate: 300,
+          tags: [TAGS.PRODUCT_DETAIL],
+        },
+      },
     );
 
     return response;
@@ -78,7 +84,9 @@ export const markProduct = async (data: Product) => {
         }),
       },
     );
+
     revalidateTag(TAGS.PRODUCTS);
+    revalidateTag(TAGS.PRODUCT_DETAIL);
 
     return response;
   } catch (error) {
@@ -142,6 +150,7 @@ export const mutateProduct = async <T extends object>(
       );
 
       revalidateTag(TAGS.PRODUCTS);
+      revalidateTag(TAGS.PRODUCT_DETAIL);
 
       redirectPath = redirectPathWhenUpdateSuccess;
     } catch (error) {
@@ -157,6 +166,7 @@ export const mutateProduct = async <T extends object>(
       });
 
       revalidateTag(TAGS.PRODUCTS);
+      revalidateTag(TAGS.PRODUCT_DETAIL);
 
       redirectPath = redirectPathWhenAddSuccess;
     } catch (error) {
@@ -188,6 +198,7 @@ export const deleteProduct = async (
     );
 
     revalidateTag(TAGS.PRODUCTS);
+    revalidateTag(TAGS.PRODUCT_DETAIL);
   } catch (error) {
     redirectPath = redirectPathWhenError;
   } finally {
