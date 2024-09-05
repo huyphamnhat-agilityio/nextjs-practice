@@ -7,7 +7,7 @@ import {
   Image,
 } from "@nextui-org/react";
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 
 // Services
 import { getProductById } from "@/lib";
@@ -33,15 +33,27 @@ import {
   SolidStarIcon,
 } from "@/components";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  {
+    params,
+  }: {
+    params: { id: string };
+  },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const id = params.id;
+
+  const product = await getProductById(id);
+
+  const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: `Course ${id} Detail`,
+    openGraph: {
+      images: {
+        url: product.coverImageUrl,
+      },
+    },
   };
 }
 
