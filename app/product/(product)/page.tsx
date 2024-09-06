@@ -16,8 +16,6 @@ export default async function Product({
   searchParams?: {
     page?: string;
     query?: string;
-    toastType?: string;
-    message?: string;
   };
 }) {
   const currentPage = Number(searchParams?.page) || 1;

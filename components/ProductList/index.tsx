@@ -7,7 +7,7 @@ import { Pagination, Product } from "@/types";
 
 const ProductList = ({ products }: { products?: Pagination<Product> }) => {
   return (
-    <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly">
+    <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly justify-items-center">
       {products &&
         products.data.map((product) => (
           <ProductCard key={product.id} {...product} />

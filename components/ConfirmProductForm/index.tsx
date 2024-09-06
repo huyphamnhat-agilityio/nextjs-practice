@@ -6,22 +6,14 @@ import {
   ModalFooter,
   ModalHeader,
 } from "@nextui-org/react";
+import toast from "react-hot-toast";
 import { useFormStatus } from "react-dom";
-import { usePathname, useSearchParams } from "next/navigation";
 
 // Component
 import { Button, Input } from "../common";
 
 // Services
-import { buildRedirectPathWithToast, deleteProduct } from "@/lib";
-
-// Constants
-import {
-  PRODUCT_MESSAGES,
-  TOAST_ACTION,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { deleteProduct } from "@/lib";
 
 export type ConfirmProductFormBodyProps = {
   onClose: () => void;
@@ -76,43 +68,22 @@ const ConfirmProductForm = ({
   onClose,
   onOpenChange,
 }: ConfirmProductFormProps) => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const deleteAction = async (payload: FormData) => {
+    try {
+      const result = await deleteProduct(payload);
 
-  const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
+      if (result.message) toast.success(result.message);
+    } catch (error) {
+      if (error instanceof Error) toast.error(error.message);
+    }
 
-  const redirectPathWhenSuccess = buildRedirectPathWithToast({
-    pathname: currentPath,
-    type: TOAST_TYPE.SUCCESS,
-    section: TOAST_SECTION.PRODUCT_LIST_SECTION,
-    action: TOAST_ACTION.CONFIRM,
-    message: PRODUCT_MESSAGES.SUCCESS.DELETE,
-  });
-
-  const redirectPathWhenError = buildRedirectPathWithToast({
-    pathname: currentPath,
-    type: TOAST_TYPE.ERROR,
-    section: TOAST_SECTION.PRODUCT_CARD,
-    action: TOAST_ACTION.CONFIRM,
-    message: PRODUCT_MESSAGES.ERROR.DELETE,
-    queryId: id,
-  });
-
+    onClose();
+  };
   return (
-    <Modal
-      isOpen={isOpen}
-      onOpenChange={onOpenChange}
-      placement="center"
-      scrollBehavior="outside"
-    >
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="outside">
       <ModalContent>
         <ModalHeader className="text-2xl">Delete course</ModalHeader>
-        <form
-          action={deleteProduct.bind(null, {
-            redirectPathWhenSuccess,
-            redirectPathWhenError,
-          })}
-        >
+        <form action={deleteAction}>
           <ConfirmProductFormBody id={id} onClose={onClose} />
         </form>
       </ModalContent>

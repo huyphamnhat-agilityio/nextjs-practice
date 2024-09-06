@@ -12,20 +12,8 @@ import { Product } from "@/types";
 import { MOCK_PRODUCTS } from "@/mocks/product";
 
 // Services
-import {
-  buildRedirectPathWithToast,
-  deleteProduct,
-  fetchApi,
-  markProduct,
-  mutateProduct,
-} from "@/lib";
-import {
-  DESTINATION,
-  PRODUCT_MESSAGES,
-  TOAST_ACTION,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { deleteProduct, fetchApi, markProduct, mutateProduct } from "@/lib";
+import { DESTINATION, PRODUCT_MESSAGES } from "@/constants";
 import { act } from "react";
 import { useFormStatus } from "react-dom";
 
@@ -37,9 +25,7 @@ jest.mock("../../../../lib/product.ts", () => ({
 }));
 
 jest.mock("next/navigation", () => ({
-  useRouter: jest.fn(),
   usePathname: jest.fn(),
-  useSearchParams: jest.fn(),
 }));
 
 jest.mock("react-dom", () => ({
@@ -49,24 +35,23 @@ jest.mock("react-dom", () => ({
 }));
 
 describe("ProductCard test cases", () => {
-  const mockReplace = jest.fn();
-  const mockUseRouter = useRouter as jest.Mock;
   const mockUsePathname = usePathname as jest.Mock;
-  const mockUseSearchParams = useSearchParams as jest.Mock;
   const mockMarkProduct = markProduct as jest.Mock;
   const mockUseFormStatus = useFormStatus as jest.Mock;
 
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ replace: mockReplace });
     mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
-    mockUseSearchParams.mockReturnValue(new URLSearchParams());
     mockUseFormStatus.mockReturnValue({ pending: false });
   });
 
   const setup = (props: Product) => render(<ProductCard {...props} />);
 
   it("should render correctly", () => {
-    const { asFragment } = setup(MOCK_PRODUCTS[0]);
+    const { asFragment } = setup({
+      ...MOCK_PRODUCTS[0],
+      description: undefined,
+      coverImageUrl: undefined,
+    });
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -158,22 +143,5 @@ describe("ProductCard test cases", () => {
     });
 
     expect(deleteForm).toBeInTheDocument();
-  });
-
-  it("should be able to show toast when updating successfully", async () => {
-    let mockParams = buildRedirectPathWithToast({
-      pathname: DESTINATION.PRODUCT,
-      type: TOAST_TYPE.SUCCESS,
-      section: TOAST_SECTION.PRODUCT_CARD,
-      action: TOAST_ACTION.MUTATE,
-      message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
-      queryId: MOCK_PRODUCTS[0].id,
-    });
-
-    mockUseSearchParams.mockReturnValue(new URLSearchParams(mockParams));
-
-    const { asFragment } = await act(() => setup(MOCK_PRODUCTS[0]));
-
-    expect(asFragment()).toMatchSnapshot();
   });
 });

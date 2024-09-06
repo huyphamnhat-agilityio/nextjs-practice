@@ -5,17 +5,8 @@ import { act } from "react";
 // Components
 import ProductListSection from "..";
 
-// Services
-import { buildRedirectPathWithToast } from "@/lib";
-
 // Constants
-import {
-  DESTINATION,
-  PRODUCT_MESSAGES,
-  TOAST_ACTION,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { DESTINATION, PRODUCT_MESSAGES } from "@/constants";
 
 // Types
 import { Pagination, Product } from "@/types";
@@ -36,7 +27,6 @@ jest.mock("react-dom", () => ({
 
 describe("ProductListSection test cases", () => {
   const mockPush = jest.fn();
-  const mockReplace = jest.fn();
   const mockUseRouter = useRouter as jest.Mock;
   const mockUsePathname = usePathname as jest.Mock;
   const mockUseSearchParams = useSearchParams as jest.Mock;
@@ -53,7 +43,7 @@ describe("ProductListSection test cases", () => {
   };
 
   beforeEach(() => {
-    mockUseRouter.mockReturnValue({ replace: mockReplace, push: mockPush });
+    mockUseRouter.mockReturnValue({ push: mockPush });
     mockUsePathname.mockReturnValue(DESTINATION.PRODUCT);
     mockUseSearchParams.mockReturnValue(new URLSearchParams());
   });
@@ -61,38 +51,6 @@ describe("ProductListSection test cases", () => {
   const setup = ({ products }: { products: Pagination<Product> }) =>
     render(<ProductListSection products={products} />);
   it("should render correctly", async () => {
-    const { asFragment } = await act(() => setup({ products: mockProducts }));
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it("shoulde able to show success toast corresponding to the query params", async () => {
-    let mockParams = buildRedirectPathWithToast({
-      pathname: DESTINATION.PRODUCT,
-      type: TOAST_TYPE.SUCCESS,
-      section: TOAST_SECTION.PRODUCT_LIST_SECTION,
-      action: TOAST_ACTION.CONFIRM,
-      message: PRODUCT_MESSAGES.SUCCESS.DELETE,
-    });
-
-    mockUseSearchParams.mockReturnValue(new URLSearchParams(mockParams));
-
-    const { asFragment } = await act(() => setup({ products: mockProducts }));
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it("shoulde able to show error toast corresponding to the query params", async () => {
-    let mockParams = buildRedirectPathWithToast({
-      pathname: DESTINATION.PRODUCT,
-      type: TOAST_TYPE.ERROR,
-      section: TOAST_SECTION.PRODUCT_LIST_SECTION,
-      action: TOAST_ACTION.CONFIRM,
-      message: PRODUCT_MESSAGES.ERROR.DELETE,
-    });
-
-    mockUseSearchParams.mockReturnValue(new URLSearchParams(mockParams));
-
     const { asFragment } = await act(() => setup({ products: mockProducts }));
 
     expect(asFragment()).toMatchSnapshot();
@@ -107,6 +65,6 @@ describe("ProductListSection test cases", () => {
 
     await userEvent.click(paginationBtn);
 
-    expect(mockReplace).toHaveBeenCalled();
+    expect(mockPush).toHaveBeenCalled();
   });
 });

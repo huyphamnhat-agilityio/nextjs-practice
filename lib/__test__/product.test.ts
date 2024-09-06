@@ -22,10 +22,6 @@ jest.mock("next/cache", () => ({
   revalidateTag: jest.fn(),
 }));
 
-jest.mock("next/navigation", () => ({
-  redirect: jest.fn(),
-}));
-
 jest.mock("../image.ts");
 
 describe("Product services test cases", () => {
@@ -65,8 +61,6 @@ describe("Product services test cases", () => {
     status: 404,
     message: "mock",
   };
-
-  const mockPathname = "/";
 
   const mockFormState: FormState<ProductForm> = {};
 
@@ -189,14 +183,7 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", expectedPayload.createdAt.toString());
     mockFormData.append("coverImageUrl", "");
 
-    await mutateProduct(
-      {
-        redirectPathWhenAddSuccess: mockPathname,
-        redirectPathWhenUpdateSuccess: mockPathname,
-      },
-      mockFormState,
-      mockFormData,
-    );
+    await mutateProduct(mockFormState, mockFormData);
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
@@ -231,14 +218,7 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", mockProduct.createdAt.toString());
     mockFormData.append("coverImageUrl", "");
 
-    const result = await mutateProduct(
-      {
-        redirectPathWhenAddSuccess: mockPathname,
-        redirectPathWhenUpdateSuccess: mockPathname,
-      },
-      mockFormState,
-      mockFormData,
-    );
+    const result = await mutateProduct(mockFormState, mockFormData);
 
     expect(result.message).toEqual(PRODUCT_MESSAGES.ERROR.CREATE);
   });
@@ -265,14 +245,7 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", mockProduct.createdAt.toString());
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
-    await mutateProduct(
-      {
-        redirectPathWhenAddSuccess: mockPathname,
-        redirectPathWhenUpdateSuccess: mockPathname,
-      },
-      mockFormState,
-      mockFormData,
-    );
+    await mutateProduct(mockFormState, mockFormData);
 
     const expectedPayload: Product = {
       id: mockProduct.id,
@@ -317,14 +290,7 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", mockProduct.createdAt.toString());
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
-    const result = await mutateProduct(
-      {
-        redirectPathWhenAddSuccess: mockPathname,
-        redirectPathWhenUpdateSuccess: mockPathname,
-      },
-      mockFormState,
-      mockFormData,
-    );
+    const result = await mutateProduct(mockFormState, mockFormData);
 
     expect(result.message).toEqual(PRODUCT_MESSAGES.ERROR.UPDATE);
   });
@@ -351,14 +317,7 @@ describe("Product services test cases", () => {
     mockFormData.append("createdAt", mockProduct.createdAt.toString());
     mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
 
-    const result = await mutateProduct(
-      {
-        redirectPathWhenAddSuccess: mockPathname,
-        redirectPathWhenUpdateSuccess: mockPathname,
-      },
-      mockFormState,
-      mockFormData,
-    );
+    const result = await mutateProduct(mockFormState, mockFormData);
 
     expect(result.errors.coverImage[0]).toEqual(
       PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE,
@@ -372,13 +331,7 @@ describe("Product services test cases", () => {
 
     mockFormData.append("id", mockProduct.id);
 
-    await deleteProduct(
-      {
-        redirectPathWhenSuccess: mockPathname,
-        redirectPathWhenError: mockPathname,
-      },
-      mockFormData,
-    );
+    await deleteProduct(mockFormData);
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,
@@ -395,13 +348,7 @@ describe("Product services test cases", () => {
 
     mockFormData.append("id", mockProduct.id);
 
-    await deleteProduct(
-      {
-        redirectPathWhenSuccess: mockPathname,
-        redirectPathWhenError: mockPathname,
-      },
-      mockFormData,
-    );
+    await deleteProduct(mockFormData);
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,

@@ -7,5 +7,4 @@ export {
   deleteProduct,
 } from "./product";
 export { subscribe } from "./subscribe";
-export { buildRedirectPathWithToast } from "./redirect";
 export { uploadAndGetImageUrl } from "./image";

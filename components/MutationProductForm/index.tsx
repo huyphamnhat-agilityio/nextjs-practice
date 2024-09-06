@@ -1,5 +1,6 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Control, Controller, FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -27,13 +28,7 @@ import { MOCK_CATEGORIES, PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 import { Button, Input, Select, Textarea } from "../common";
 
 // Services
-import { buildRedirectPathWithToast, mutateProduct } from "@/lib";
-import {
-  PRODUCT_MESSAGES,
-  TOAST_ACTION,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { mutateProduct } from "@/lib";
 
 export type ProductFormBodyProps = {
   selectedImage: File;
@@ -348,32 +343,8 @@ const MutationProductForm = ({
 }: MutationProductFormProps) => {
   const initialState: FormState<ProductForm> = {};
 
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const currentPath = `${pathname}?${new URLSearchParams(searchParams).toString()}`;
-
-  const redirectPathWhenAddSuccess = buildRedirectPathWithToast({
-    pathname: currentPath,
-    type: TOAST_TYPE.SUCCESS,
-    section: TOAST_SECTION.ADD_PRODUCT_SECTION,
-    action: TOAST_ACTION.MUTATE,
-    message: PRODUCT_MESSAGES.SUCCESS.CREATE,
-  });
-
-  const redirectPathWhenUpdateSuccess = buildRedirectPathWithToast({
-    pathname: currentPath,
-    type: TOAST_TYPE.SUCCESS,
-    section: TOAST_SECTION.PRODUCT_CARD,
-    action: TOAST_ACTION.MUTATE,
-    message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
-    queryId: data?.id,
-  });
-
   const [state, formAction] = useFormState<FormState<ProductForm>, FormData>(
-    mutateProduct.bind(null, {
-      redirectPathWhenAddSuccess,
-      redirectPathWhenUpdateSuccess,
-    }),
+    mutateProduct.bind(null),
     initialState,
   );
 
@@ -424,11 +395,17 @@ const MutationProductForm = ({
     [handleCloseModal],
   );
 
+  useEffect(() => {
+    if (state?.message && state?.resetKey) {
+      toast.success(state.message);
+      handleCloseModal();
+    }
+  }, [handleCloseModal, state?.message, state?.resetKey]);
+
   return (
     <Modal
       isOpen={isOpen}
       onOpenChange={handleOnOpenChange}
-      placement="center"
       scrollBehavior="outside"
     >
       <ModalContent>

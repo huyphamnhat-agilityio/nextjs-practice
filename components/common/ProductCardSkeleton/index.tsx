@@ -40,38 +40,18 @@ const ProductCardSkeleton = ({
     </CardHeader>
     <CardBody className="light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5">
       <div className="flex justify-between">
-        <Skeleton>
-          <span className="text-primary text-sm/6 font-bold">{category}</span>
-        </Skeleton>
-        <Skeleton>
-          <div className="p-1.25 flex items-center gap-1.25 bg-dark-blue rounded-[20px]">
-            <SolidStarIcon />
-            <span className="text-white text-xs">{rate}</span>
-          </div>
-        </Skeleton>
+        <Skeleton className="h-8.25 w-[50%]" />
+        <Skeleton className="h-8.25 w-[30%]" />
       </div>
-      <Skeleton>
-        <h5 className="text-foreground text-base font-bold">{title}</h5>
-      </Skeleton>
-      <Skeleton>
-        <p className="text-foreground-100 text-sm">{description}</p>
-      </Skeleton>
-      <Skeleton>
-        <div className="flex items-center gap-2.5 text-foreground-100 text-sm/6 font-bold">
-          <DownloadIcon />
-          {sales} Sales
-        </div>
-      </Skeleton>
-      <Skeleton>
-        <div className="py-1.25 px-0.75 flex gap-1.25">
-          <span className="text-foreground-50 text-base font-bold">
-            {originalPrice}
-          </span>
-          <span className="text-secondary text-base font-bold">
-            {salePrice}
-          </span>
-        </div>
-      </Skeleton>
+
+      <Skeleton className="h-6" />
+
+      <Skeleton className="h-5" />
+
+      <Skeleton className="h-6" />
+
+      <Skeleton className="h-8.5" />
+
       <div>
         <Button
           color="primary"

@@ -10,8 +10,8 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 // Types
 import { Product } from "@/types";
@@ -32,14 +32,7 @@ import {
 import { markProduct } from "@/lib";
 
 // Constants
-import {
-  DESTINATION,
-  MARK_FAVORITE_MESSAGES,
-  TOAST_ACTION,
-  TOAST_QUERY_PARAMS,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { DESTINATION, MARK_FAVORITE_MESSAGES } from "@/constants";
 
 // Models
 import {
@@ -90,15 +83,7 @@ const ProductCard = (props: Product) => {
     defaultOpen: false,
   });
 
-  const searchParams = useSearchParams();
   const pathname = usePathname();
-  const router = useRouter();
-
-  const toastType = searchParams.get(TOAST_QUERY_PARAMS.TOAST_TYPE);
-  const toastSection = searchParams.get(TOAST_QUERY_PARAMS.TOAST_SECTION);
-  const toastAction = searchParams.get(TOAST_QUERY_PARAMS.TOAST_ACTION);
-  const message = searchParams.get(TOAST_QUERY_PARAMS.MESSAGE);
-  const queryId = searchParams.get(TOAST_QUERY_PARAMS.QUERY_ID);
 
   const handleMarkFavorite = async (data: Product) => {
     try {
@@ -123,39 +108,6 @@ const ProductCard = (props: Product) => {
     }
   };
 
-  useEffect(() => {
-    if (queryId === id && toastSection === TOAST_SECTION.PRODUCT_CARD) {
-      if (toastAction === TOAST_ACTION.MUTATE) onMutationModalClose();
-      else onConfirmModalClose();
-
-      toastType === TOAST_TYPE.SUCCESS
-        ? toast.success(message)
-        : toast.error(message);
-
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.delete(TOAST_QUERY_PARAMS.TOAST_TYPE);
-      params.delete(TOAST_QUERY_PARAMS.TOAST_SECTION);
-      params.delete(TOAST_QUERY_PARAMS.TOAST_ACTION);
-      params.delete(TOAST_QUERY_PARAMS.MESSAGE);
-      params.delete(TOAST_QUERY_PARAMS.QUERY_ID);
-
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    }
-  }, [
-    id,
-    message,
-    onConfirmModalClose,
-    onMutationModalClose,
-    pathname,
-    queryId,
-    router,
-    searchParams,
-    toastAction,
-    toastSection,
-    toastType,
-  ]);
-
   return (
     <>
       <Card
@@ -173,6 +125,7 @@ const ProductCard = (props: Product) => {
               className="max-w-full max-h-75"
               isZoomed
               radius="none"
+              priority
             />
           </Link>
 

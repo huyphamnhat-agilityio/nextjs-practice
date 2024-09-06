@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { Metadata, ResolvingMetadata } from "next";
 
 // Services
-import { getProductById } from "@/lib";
+import { getProductById, getProducts } from "@/lib";
 
 // Constants
 import {

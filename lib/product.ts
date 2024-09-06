@@ -1,5 +1,5 @@
 "use server";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 // Types
@@ -95,13 +95,6 @@ export const markProduct = async (data: Product) => {
 };
 
 export const mutateProduct = async <T extends object>(
-  {
-    redirectPathWhenAddSuccess,
-    redirectPathWhenUpdateSuccess,
-  }: {
-    redirectPathWhenAddSuccess: string;
-    redirectPathWhenUpdateSuccess: string;
-  },
   _: FormState<T>,
   data: FormData,
 ) => {
@@ -152,7 +145,11 @@ export const mutateProduct = async <T extends object>(
       revalidateTag(TAGS.PRODUCTS);
       revalidateTag(TAGS.PRODUCT_DETAIL);
 
-      redirectPath = redirectPathWhenUpdateSuccess;
+      return {
+        message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
+        // reference: https://github.com/facebook/react/issues/27876#issuecomment-1958913875
+        resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
+      };
     } catch (error) {
       return {
         message: PRODUCT_MESSAGES.ERROR.UPDATE,
@@ -168,29 +165,22 @@ export const mutateProduct = async <T extends object>(
       revalidateTag(TAGS.PRODUCTS);
       revalidateTag(TAGS.PRODUCT_DETAIL);
 
-      redirectPath = redirectPathWhenAddSuccess;
+      return {
+        message: PRODUCT_MESSAGES.SUCCESS.CREATE,
+        // reference: https://github.com/facebook/react/issues/27876#issuecomment-1958913875
+        resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
+      };
     } catch (error) {
       return {
         message: PRODUCT_MESSAGES.ERROR.CREATE,
       };
     }
   }
-  redirect(redirectPath);
 };
 
-export const deleteProduct = async (
-  {
-    redirectPathWhenSuccess,
-    redirectPathWhenError,
-  }: {
-    redirectPathWhenSuccess: string;
-    redirectPathWhenError: string;
-  },
-  data: FormData,
-) => {
+export const deleteProduct = async (data: FormData) => {
   const id = data.get("id") as string;
 
-  let redirectPath = redirectPathWhenSuccess;
   try {
     await fetchApi<Product>(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${id}`,
@@ -199,9 +189,11 @@ export const deleteProduct = async (
 
     revalidateTag(TAGS.PRODUCTS);
     revalidateTag(TAGS.PRODUCT_DETAIL);
+
+    return {
+      message: PRODUCT_MESSAGES.SUCCESS.DELETE,
+    };
   } catch (error) {
-    redirectPath = redirectPathWhenError;
-  } finally {
-    redirect(redirectPath);
+    throw new Error(PRODUCT_MESSAGES.ERROR.DELETE);
   }
 };

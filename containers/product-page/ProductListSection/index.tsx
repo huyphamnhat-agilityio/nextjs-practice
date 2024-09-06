@@ -1,7 +1,6 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useTransition } from "react";
-import toast from "react-hot-toast";
+import { Suspense, useCallback, useTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 // Components
@@ -12,13 +11,7 @@ import {
 } from "@/components";
 
 // Constants
-import {
-  PRODUCT_LIMIT,
-  TOAST_ACTION,
-  TOAST_QUERY_PARAMS,
-  TOAST_SECTION,
-  TOAST_TYPE,
-} from "@/constants";
+import { PRODUCT_LIMIT } from "@/constants";
 
 // Types
 import { Pagination, Product } from "@/types";
@@ -31,12 +24,8 @@ const ProductListSection = ({
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
 
-  const toastType = searchParams.get(TOAST_QUERY_PARAMS.TOAST_TYPE);
-  const toastSection = searchParams.get(TOAST_QUERY_PARAMS.TOAST_SECTION);
-  const toastAction = searchParams.get(TOAST_QUERY_PARAMS.TOAST_ACTION);
-  const message = searchParams.get(TOAST_QUERY_PARAMS.MESSAGE);
+  const [isPending, startTransition] = useTransition();
 
   const createPageUrl = useCallback(
     (page: number) => {
@@ -48,34 +37,6 @@ const ProductListSection = ({
     },
     [pathname, router, searchParams],
   );
-
-  useEffect(() => {
-    if (
-      toastSection === TOAST_SECTION.PRODUCT_LIST_SECTION &&
-      toastAction === TOAST_ACTION.CONFIRM
-    ) {
-      toastType === TOAST_TYPE.SUCCESS
-        ? toast.success(message)
-        : toast.error(message);
-
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.delete(TOAST_QUERY_PARAMS.TOAST_TYPE);
-      params.delete(TOAST_QUERY_PARAMS.TOAST_SECTION);
-      params.delete(TOAST_QUERY_PARAMS.TOAST_ACTION);
-      params.delete(TOAST_QUERY_PARAMS.MESSAGE);
-
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    }
-  }, [
-    toastAction,
-    message,
-    pathname,
-    router,
-    searchParams,
-    toastSection,
-    toastType,
-  ]);
 
   return (
     <div className="flex flex-col gap-20">

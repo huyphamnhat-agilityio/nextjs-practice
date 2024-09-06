@@ -3,7 +3,7 @@
 exports[`ProductList test cases should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly"
+    class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly justify-items-center"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`ProductList test cases should render correctly 1`] = `
 exports[`ProductList test cases should render correctly with provided data 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly"
+    class="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-2.5 justify-evenly justify-items-center"
   >
     <div
       class="relative overflow-hidden h-auto text-foreground box-border bg-content1 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium transition-transform-background motion-reduce:transition-none max-w-82 flex flex-col rounded-none"
@@ -36,8 +36,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"
@@ -300,8 +300,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"
@@ -564,8 +564,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"
@@ -828,8 +828,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-1.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-1.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"
@@ -1092,8 +1092,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-2.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-2.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"
@@ -1356,8 +1356,8 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
                 class="relative z-10 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none object-cover transform hover:scale-125 opacity-0 transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-none max-w-full max-h-75"
                 data-nimg="1"
                 decoding="async"
+                fetchpriority="high"
                 height="300"
-                loading="lazy"
                 src="/_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75"
                 srcset="/_next/image?url=%2Fproduct-cover-3.webp&w=384&q=75 1x, /_next/image?url=%2Fproduct-cover-3.webp&w=750&q=75 2x"
                 style="color: transparent; height: 300px;"

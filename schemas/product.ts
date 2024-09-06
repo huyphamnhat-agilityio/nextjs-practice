@@ -57,4 +57,8 @@ export const ProductFormSchema = z
   .refine((schema) => schema.originalPrice >= schema.salePrice, {
     message: FORM_MESSAGES.PRODUCT.SALE_PRICE.MAX,
     path: ["salePrice"],
+  })
+  .refine((schema) => schema.originalPrice >= schema.salePrice, {
+    message: FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.CONSTRAINT,
+    path: ["originalPrice"],
   });
