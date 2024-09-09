@@ -1,7 +1,7 @@
 "use server";
 
 // Constants
-import { SUBSCRIBE_MESSAGES } from "@/constants";
+import { FORM_STATUS, SUBSCRIBE_MESSAGES } from "@/constants";
 
 // Types
 import { FormState, Subscription } from "@/types";
@@ -9,25 +9,12 @@ import { FormState, Subscription } from "@/types";
 // Services
 import { fetchApi } from "./fetch";
 
-// Schemas
-import { SubscribeSchema } from "@/schemas";
-
 export const subscribe = async <T extends object>(
   _: FormState<T>,
   formData: FormData,
 ) => {
-  const validateFormData = SubscribeSchema.safeParse({
-    email: formData.get("email"),
-  });
-
-  if (!validateFormData.success) {
-    return {
-      errors: validateFormData.error.flatten().fieldErrors,
-    };
-  }
-
   const data: Omit<Subscription, "id"> = {
-    email: validateFormData.data.email,
+    email: formData.get("email") as string,
   };
 
   try {
@@ -38,12 +25,14 @@ export const subscribe = async <T extends object>(
 
     return {
       message: SUBSCRIBE_MESSAGES.SUCCESS,
-      // reference: https://github.com/facebook/react/issues/27876#issuecomment-1958913875
-      resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
+      status: FORM_STATUS.SUCCESS,
     };
   } catch ({ message }) {
     return {
-      message,
+      errors: {
+        email: [message],
+      },
+      status: FORM_STATUS.ERROR,
     };
   }
 };

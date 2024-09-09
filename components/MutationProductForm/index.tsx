@@ -13,7 +13,6 @@ import {
   ModalFooter,
 } from "@nextui-org/react";
 import { useFormState, useFormStatus } from "react-dom";
-import { usePathname, useSearchParams } from "next/navigation";
 
 // Types
 import { FormState, Product, ProductForm } from "@/types";
@@ -29,6 +28,9 @@ import { Button, Input, Select, Textarea } from "../common";
 
 // Services
 import { mutateProduct } from "@/lib";
+
+// Constants
+import { FORM_STATUS } from "@/constants";
 
 export type ProductFormBodyProps = {
   selectedImage: File;
@@ -196,6 +198,8 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter original price..."
               type="number"
+              inputMode="decimal"
+              step="any"
               value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.originalPrice}
@@ -220,6 +224,8 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter sale price..."
               type="number"
+              inputMode="decimal"
+              step="any"
               value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.salePrice || !!state?.errors?.salePrice}
@@ -260,7 +266,7 @@ const ProductFormBody = ({
           )}
         />
 
-        {state?.message && (
+        {state?.status === FORM_STATUS.ERROR && state?.message && (
           <p className="text-base text-danger">{state.message}</p>
         )}
 
@@ -396,11 +402,11 @@ const MutationProductForm = ({
   );
 
   useEffect(() => {
-    if (state?.message && state?.resetKey) {
+    if (state?.message && state?.status === FORM_STATUS.SUCCESS) {
       toast.success(state.message);
       handleCloseModal();
     }
-  }, [handleCloseModal, state?.message, state?.resetKey]);
+  }, [handleCloseModal, state?.message, state?.status]);
 
   return (
     <Modal
@@ -412,7 +418,7 @@ const MutationProductForm = ({
         <ModalHeader className="text-2xl">
           {data?.id ? "Edit course" : "Add course"}
         </ModalHeader>
-        <form action={formAction} key={state?.resetKey}>
+        <form action={formAction}>
           <ProductFormBody
             control={control}
             errors={errors}

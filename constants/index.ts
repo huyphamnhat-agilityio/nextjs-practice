@@ -9,3 +9,4 @@ export * from "./tags";
 export * from "./toast";
 export * from "./query-params";
 export * from "./regex";
+export * from "./form";

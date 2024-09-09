@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import { act } from "react";
 
 // Components
 import PopularCoursesSection from "..";
@@ -35,7 +36,9 @@ describe("PopularCoursesSection test cases", () => {
       currentPage: 1,
     });
 
-    const { asFragment } = render(<PopularCoursesSectionResolved />);
+    const { asFragment } = await act(() =>
+      render(<PopularCoursesSectionResolved />),
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });

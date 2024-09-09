@@ -2,6 +2,8 @@
 import { useFormState, useFormStatus } from "react-dom";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { Control, Controller, FieldErrors, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 // Components
 import { Button, Input } from "@/components";
@@ -10,42 +12,78 @@ import { Button, Input } from "@/components";
 import { subscribe } from "@/lib";
 
 // Types
-import { FormState, Subscription } from "@/types";
+import { FormState, Subscription, SubscriptionForm } from "@/types";
 
-const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
+// Constants
+import { FORM_STATUS } from "@/constants";
+
+// Schemas
+import { SubscribeSchema } from "@/schemas";
+
+export type SubscribeFormProps = {
+  state: FormState<Subscription>;
+  control: Control<SubscriptionForm, any>;
+  isValid: boolean;
+  errors: FieldErrors<SubscriptionForm>;
+};
+const SubscribeForm = ({
+  state,
+  control,
+  isValid,
+  errors,
+}: SubscribeFormProps) => {
   const { pending } = useFormStatus();
   return (
     <>
-      <Input
+      <Controller
+        control={control}
         name="email"
-        placeholder="Your Email"
-        classNames={{
-          inputWrapper:
-            "max-w-[80%] sm:max-w-172 self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto relative",
-          input: "text-foreground-100 text-sm/7 h-auto",
-          errorMessage: "text-center text-md",
-        }}
-        endContent={
-          <Button
-            size="md"
-            type="submit"
-            className="hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
-            isDisabled={pending}
-            data-testid="subscribe-button"
-          >
-            Subscribe
-          </Button>
-        }
-        isInvalid={!!state?.errors}
-        errorMessage={state?.errors?.email[0]}
-        isDisabled={pending}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <>
+            <Input
+              name="email"
+              placeholder="Your Email"
+              classNames={{
+                inputWrapper:
+                  "max-w-[80%] sm:max-w-172 self-center bg-foreground-200 py-3.75 px-4 !rounded-1.25 border border-foreground-300 h-auto relative",
+                input: "text-foreground-100 text-sm/7 h-auto",
+                errorMessage: "text-center text-md",
+              }}
+              endContent={
+                <Button
+                  size="md"
+                  type="submit"
+                  className="hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
+                  isDisabled={!isValid || pending}
+                  data-testid="subscribe-button"
+                >
+                  Subscribe
+                </Button>
+              }
+              value={value}
+              onChange={onChange}
+              onBlur={onBlur}
+              isInvalid={!!errors?.email || !!state?.errors?.email.length}
+              errorMessage={errors?.email?.message}
+              isDisabled={pending}
+            />
+
+            {state?.errors?.email &&
+              state?.errors?.email?.length > 0 &&
+              state.errors.email.map((error, index) => (
+                <p key={index} className="text-md text-danger text-center">
+                  {error}
+                </p>
+              ))}
+          </>
+        )}
       />
 
       <Button
         size="md"
         type="submit"
         className="sm:hidden px-5.625 text-white text-sm/7 w-full max-w-[80%]"
-        isDisabled={pending}
+        isDisabled={!isValid || pending}
       >
         Subscribe
       </Button>
@@ -55,20 +93,31 @@ const SubscribeForm = ({ state }: { state: FormState<Subscription> }) => {
 
 const SubscribeSection = () => {
   const initialState: FormState<Subscription> = {};
+
   const [state, formAction] = useFormState<FormState<Subscription>, FormData>(
     subscribe,
     initialState,
   );
 
-  useEffect(() => {
-    if (state.message && state.resetKey) {
-      toast.success(state.message);
-    }
+  const {
+    control,
+    formState: { isValid, errors },
+    reset,
+  } = useForm<SubscriptionForm>({
+    mode: "onChange",
+    defaultValues: {
+      email: "",
+    },
+    resolver: zodResolver(SubscribeSchema),
+  });
 
-    if (state.message && !state.errors && !state.resetKey) {
-      toast.error(state.message);
+  useEffect(() => {
+    if (state?.message && state?.status === FORM_STATUS.SUCCESS) {
+      toast.success(state?.message);
+
+      reset();
     }
-  }, [state.errors, state.message, state.resetKey]);
+  }, [reset, state.message, state?.status]);
 
   return (
     <section>
@@ -83,12 +132,13 @@ const SubscribeSection = () => {
             the two major realms of Classical physics: Newtonian mechanics`}
           </p>
         </div>
-        <form
-          action={formAction}
-          key={state?.resetKey}
-          className="flex flex-col gap-2 items-center"
-        >
-          <SubscribeForm state={state} />
+        <form action={formAction} className="flex flex-col gap-2 items-center">
+          <SubscribeForm
+            control={control}
+            errors={errors}
+            isValid={isValid}
+            state={state}
+          />
         </form>
       </div>
     </section>

@@ -3,7 +3,7 @@
 exports[`ErrorFallback test cases should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col items-center gap-6 max-w-xs sm:max-w-full lg:min-h-[66vh]"
+    class="flex flex-col items-center gap-6 max-w-xs sm:max-w-full"
   >
     <svg
       fill="none"

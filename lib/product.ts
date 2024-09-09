@@ -1,6 +1,5 @@
 "use server";
-import { revalidatePath, revalidateTag } from "next/cache";
-import { redirect } from "next/navigation";
+import { revalidateTag } from "next/cache";
 
 // Types
 import { FormState, Pagination, Product } from "@/types";
@@ -8,6 +7,7 @@ import { FormState, Pagination, Product } from "@/types";
 // Constants
 import {
   DEFAULT_SORTING_OPTIONS,
+  FORM_STATUS,
   PRODUCT_MESSAGES,
   RESOURCES,
   TAGS,
@@ -98,7 +98,7 @@ export const mutateProduct = async <T extends object>(
   _: FormState<T>,
   data: FormData,
 ) => {
-  const productBaseData: Product = {
+  const productData: Product = {
     id: data.get("id") as string,
     category: data.get("category") as string,
     title: data.get("title") as string,
@@ -112,18 +112,11 @@ export const mutateProduct = async <T extends object>(
     coverImageUrl: data.get("coverImageUrl") as string,
   };
 
-  let productData: Product = { ...productBaseData };
-
   const coverImage = data.get("coverImage") as File;
-
-  let productImageUrl = "";
-
-  let redirectPath = "";
 
   if (coverImage.size !== 0)
     try {
-      productImageUrl = await uploadAndGetImageUrl(coverImage);
-      productData = { ...productBaseData, coverImageUrl: productImageUrl };
+      productData.coverImageUrl = await uploadAndGetImageUrl(coverImage);
     } catch (_) {
       return {
         errors: {
@@ -132,49 +125,34 @@ export const mutateProduct = async <T extends object>(
       };
     }
 
-  if (productBaseData.id) {
-    try {
-      await fetchApi<Product>(
-        `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productBaseData.id}`,
-        {
-          method: "PUT",
-          body: JSON.stringify(productData),
-        },
-      );
+  try {
+    const url = productData.id
+      ? `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productData.id}`
+      : `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`;
 
-      revalidateTag(TAGS.PRODUCTS);
-      revalidateTag(TAGS.PRODUCT_DETAIL);
+    const method = productData.id ? "PUT" : "POST";
 
-      return {
-        message: PRODUCT_MESSAGES.SUCCESS.UPDATE,
-        // reference: https://github.com/facebook/react/issues/27876#issuecomment-1958913875
-        resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
-      };
-    } catch (error) {
-      return {
-        message: PRODUCT_MESSAGES.ERROR.UPDATE,
-      };
-    }
-  } else {
-    try {
-      await fetchApi<Product>(`${process.env.MOCK_API}/${RESOURCES.PRODUCT}`, {
-        method: "POST",
-        body: JSON.stringify(productData),
-      });
+    await fetchApi<Product>(url, {
+      method,
+      body: JSON.stringify(productData),
+    });
 
-      revalidateTag(TAGS.PRODUCTS);
-      revalidateTag(TAGS.PRODUCT_DETAIL);
+    revalidateTag(TAGS.PRODUCTS);
+    revalidateTag(TAGS.PRODUCT_DETAIL);
 
-      return {
-        message: PRODUCT_MESSAGES.SUCCESS.CREATE,
-        // reference: https://github.com/facebook/react/issues/27876#issuecomment-1958913875
-        resetKey: Date.now().toString(), // Generate a new resetKey to trigger form reset
-      };
-    } catch (error) {
-      return {
-        message: PRODUCT_MESSAGES.ERROR.CREATE,
-      };
-    }
+    return {
+      message: productData.id
+        ? PRODUCT_MESSAGES.SUCCESS.UPDATE
+        : PRODUCT_MESSAGES.SUCCESS.CREATE,
+      status: FORM_STATUS.SUCCESS,
+    };
+  } catch (error) {
+    return {
+      message: productData.id
+        ? PRODUCT_MESSAGES.ERROR.UPDATE
+        : PRODUCT_MESSAGES.ERROR.CREATE,
+      status: FORM_STATUS.ERROR,
+    };
   }
 };
 

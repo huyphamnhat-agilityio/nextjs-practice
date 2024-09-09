@@ -35,6 +35,7 @@ export const Pagination = ({ total, handlePageChange }: PaginationProps) => {
       total={total}
       page={currentPage}
       onChange={handlePageChange}
+      showControls
       className="flex justify-center m-0"
     />
   );

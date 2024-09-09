@@ -21,7 +21,7 @@ export default async function Product({
   const currentPage = Number(searchParams?.page) || 1;
   const query = searchParams?.query || "";
 
-  const data = await getProducts({
+  const products = await getProducts({
     page: currentPage,
     limit: PRODUCT_LIMIT,
     query,
@@ -31,20 +31,20 @@ export default async function Product({
     <main>
       <div className="flex justify-center">
         <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 pt-20 flex flex-col gap-20 w-full">
-          <p className="text-primary text-5xl font-bold text-center">
+          <h2 className="text-primary text-5xl font-bold text-center">
             Course List
-          </p>
+          </h2>
 
           <div className="flex gap-10 flex-col md:flex-row">
             <SearchProductForm />
             <AddCourseSection />
           </div>
-          {data ? (
-            <ProductListSection products={data} />
+          {products && products.data.length ? (
+            <ProductListSection products={products} />
           ) : (
-            <h2 className="text-center text-foreground ">
-              Oops! No courses match your keyword.
-            </h2>
+            <h3 className="text-center text-foreground ">
+              Oops! No courses have been found.
+            </h3>
           )}
         </div>
       </div>
