@@ -141,7 +141,7 @@ exports[`ProductCard test cases should render correctly 1`] = `
           Training Courses
         </span>
         <div
-          class="py-1.25 px-2 flex items-center gap-1.25 bg-dark-blue rounded-[20px]"
+          class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
         >
           <svg
             fill="none"

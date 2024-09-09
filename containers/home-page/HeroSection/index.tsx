@@ -32,7 +32,7 @@ const HeroSection = () => (
               as={Link}
               href="#"
               aria-label="Go to get quote page"
-              className="text-white w-full sm:w-fit "
+              className="text-white w-full md:w-fit "
             >
               Get Quote Now
             </Button>
@@ -42,7 +42,7 @@ const HeroSection = () => (
               href="#"
               aria-label="Go to learn more page"
               variant="bordered"
-              className="w-full sm:w-fit"
+              className="w-full md:w-fit"
             >
               Learn More
             </Button>

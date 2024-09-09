@@ -1,6 +1,6 @@
 "use client";
 import { useDisclosure } from "@nextui-org/react";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 // Components

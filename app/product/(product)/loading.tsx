@@ -13,9 +13,9 @@ export default async function Loading() {
     <main>
       <div className="flex justify-center">
         <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 pt-20 flex flex-col gap-20 w-full">
-          <p className="text-primary text-5xl font-bold text-center">
+          <h3 className="text-primary text-5xl font-bold text-center">
             Course List
-          </p>
+          </h3>
 
           <div className="flex gap-10 flex-col md:flex-row">
             <Suspense>

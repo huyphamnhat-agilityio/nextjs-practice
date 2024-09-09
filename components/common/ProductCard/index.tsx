@@ -182,7 +182,7 @@ const ProductCard = (props: Product) => {
         >
           <div className="flex justify-between">
             <span className="text-primary text-sm/6 font-bold">{category}</span>
-            <div className="py-1.25 px-2 flex items-center gap-1.25 bg-dark-blue rounded-[20px]">
+            <div className="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]">
               <SolidStarIcon />
               <span className="text-white text-xs">{rate}</span>
             </div>
