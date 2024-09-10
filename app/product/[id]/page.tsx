@@ -30,6 +30,8 @@ import {
   MediaIcon,
   PlayIcon,
 } from "@/components";
+import Link from "next/link";
+import { DESTINATION } from "@/constants";
 
 export async function generateMetadata({
   params,
@@ -181,12 +183,22 @@ export default async function Page({ params }: { params: { id: string } }) {
               isZoomed
             />
 
-            <Button className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg">
-              <p>
-                Buy Now for ${salePrice}{" "}
-                <span className="text-sm line-through">${originalPrice}</span>
-              </p>
-            </Button>
+            <div className="flex flex-col lg:flex-row items-center justify-evenly gap-2 w-full">
+              <Button className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg">
+                <p>
+                  Buy Now for ${salePrice}{" "}
+                  <span className="text-sm line-through">${originalPrice}</span>
+                </p>
+              </Button>
+              <div className="text-base text-foreground-100">or</div>
+              <Button
+                as={Link}
+                href={DESTINATION.PRODUCT}
+                className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg"
+              >
+                See more courses
+              </Button>
+            </div>
           </div>
         </div>
       </div>
