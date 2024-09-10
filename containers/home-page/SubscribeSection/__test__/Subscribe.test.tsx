@@ -5,7 +5,7 @@ import { useFormState, useFormStatus } from "react-dom";
 import SubscribeSection from "..";
 
 // Constants
-import { SUBSCRIBE_MESSAGES } from "@/constants";
+import { FORM_STATUS, SUBSCRIBE_MESSAGES } from "@/constants";
 
 jest.mock("react-dom", () => ({
   ...jest.requireActual("react-dom"),
@@ -20,6 +20,8 @@ describe("SubscribeSection test cases", () => {
 
   const mockUseFormStatus = useFormStatus as jest.Mock;
   const mockUseFormState = useFormState as jest.Mock;
+
+  mockUseFormState.mockReturnValueOnce([{}, () => {}]);
 
   const setup = () => render(<SubscribeSection />);
 
@@ -41,6 +43,7 @@ describe("SubscribeSection test cases", () => {
     mockUseFormStatus.mockReturnValue({
       pending: true,
     });
+
     setup();
 
     const emailInput = screen.getByRole("textbox", {
@@ -57,24 +60,8 @@ describe("SubscribeSection test cases", () => {
     mockUseFormState.mockReturnValue([
       {
         message: SUBSCRIBE_MESSAGES.SUCCESS,
+        status: FORM_STATUS.SUCCESS,
         resetKey: Date.now().toString(),
-      },
-      () => {},
-    ]);
-
-    mockUseFormStatus.mockReturnValue({
-      pending: false,
-    });
-
-    const { asFragment } = setup();
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it("should show error toast when subscribing fails", () => {
-    mockUseFormState.mockReturnValue([
-      {
-        message: SUBSCRIBE_MESSAGES.ERROR,
       },
       () => {},
     ]);

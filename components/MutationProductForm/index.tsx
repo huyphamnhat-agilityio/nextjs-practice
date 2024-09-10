@@ -383,9 +383,7 @@ const MutationProductForm = ({
 
   const handleSelectImage = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (e.target.files.length) {
-        setSelectedImage(e.target.files[0]);
-      }
+      setSelectedImage(e.target.files[0]);
     },
     [],
   );

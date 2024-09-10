@@ -6,4 +6,5 @@ export type FormState<T extends object> = {
     [K in keyof T]?: Array<string>;
   };
   status?: (typeof FORM_STATUS)[keyof typeof FORM_STATUS];
+  resetKey?: string;
 };

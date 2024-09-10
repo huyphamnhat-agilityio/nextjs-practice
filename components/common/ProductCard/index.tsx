@@ -182,9 +182,9 @@ const ProductCard = (props: Product) => {
         >
           <div className="flex justify-between">
             <span className="text-primary text-sm/6 font-bold">{category}</span>
-            <div className="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]">
+            <div className="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]">
               <SolidStarIcon />
-              <span className="text-white text-xs">{rate}</span>
+              <span className="text-white text-xs">{rate.toFixed(1)}</span>
             </div>
           </div>
           <p className="text-foreground text-base font-bold line-clamp-1">
@@ -199,10 +199,10 @@ const ProductCard = (props: Product) => {
           </div>
           <div className="py-1.25 px-0.75 flex gap-1.25">
             <span className="text-foreground-50 text-base font-bold">
-              ${originalPrice}
+              ${originalPrice.toFixed(2)}
             </span>
             <span className="text-secondary text-base font-bold">
-              ${salePrice}
+              ${salePrice.toFixed(2)}
             </span>
           </div>
           <div className="mt-auto">

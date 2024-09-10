@@ -21,6 +21,33 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     `https://nextjs-practice-eosin-beta.vercel.app/${DESTINATION.PRODUCT}`,
   ),
+  openGraph: {
+    title: "School Course App",
+    description: "A simple course web app for schools",
+    url: "https://nextjs-practice-eosin-beta.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://nextjs-practice-eosin-beta.vercel.app/opengraph-image.jpg",
+        width: 1953,
+        height: 2253,
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "School Course App",
+    description: "A simple course web app for schools",
+    images: [
+      {
+        url: "https://nextjs-practice-eosin-beta.vercel.app/twitter-image.jpg",
+        width: 1953,
+        height: 2253,
+        type: "image/jpeg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -40,6 +40,33 @@ export async function generateMetadata({
 
   return {
     title: `Course ${id} Detail`,
+    openGraph: {
+      title: "School Course App",
+      description: "A simple course web app for schools",
+      url: "https://nextjs-practice-eosin-beta.vercel.app/",
+      type: "website",
+      images: [
+        {
+          url: "https://nextjs-practice-eosin-beta.vercel.app/opengraph-image.jpg",
+          width: 1953,
+          height: 2253,
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "School Course App",
+      description: "A simple course web app for schools",
+      images: [
+        {
+          url: "https://nextjs-practice-eosin-beta.vercel.app/twitter-image.jpg",
+          width: 1953,
+          height: 2253,
+          type: "image/jpeg",
+        },
+      ],
+    },
   };
 }
 
@@ -51,15 +78,14 @@ export default async function Page({ params }: { params: { id: string } }) {
   if (!product) notFound();
 
   const {
-    category = MOCK_PRODUCTS[0].category,
     title = MOCK_PRODUCTS[0].title,
     description = MOCK_PRODUCTS[0].description,
-    rate = MOCK_PRODUCTS[0].rate,
     sales = MOCK_PRODUCTS[0].sales,
     originalPrice = MOCK_PRODUCTS[0].originalPrice,
     salePrice = MOCK_PRODUCTS[0].salePrice,
     coverImageUrl = MOCK_PRODUCTS[0].coverImageUrl,
   } = product;
+
   return (
     <main>
       <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl min-h-[66vh] my-0 pt-20 flex flex-col gap-15 mx-auto">

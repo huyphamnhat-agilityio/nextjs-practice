@@ -171,7 +171,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Training Courses
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"
@@ -435,7 +435,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Books Library
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"
@@ -699,7 +699,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Certified Teachers
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"
@@ -963,7 +963,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Training Courses
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"
@@ -1227,7 +1227,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Books Library
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"
@@ -1491,7 +1491,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
                   Certified Teachers
                 </span>
                 <div
-                  class="py-1.25 px-2 flex items-center gap-1 bg-dark-blue rounded-[20px]"
+                  class="w-15 py-1.25 px-2 flex justify-evenly items-center gap-1 bg-dark-blue rounded-[20px]"
                 >
                   <svg
                     fill="none"

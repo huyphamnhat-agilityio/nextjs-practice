@@ -20,7 +20,7 @@ describe("Subscribe service test case", () => {
 
   const mockData = "mockmail@gmail.com";
 
-  it("should return success message if subscribe successfully", async () => {
+  it("should return success message if the form data is valid", async () => {
     const mockFormData = new FormData();
     mockFormData.append("email", mockData);
 
@@ -29,7 +29,16 @@ describe("Subscribe service test case", () => {
     expect(result.message).toBe(SUBSCRIBE_MESSAGES.SUCCESS);
   });
 
-  it("should return errors if subscribe fails", async () => {
+  it("should return error message if the form data is invalid", async () => {
+    const mockFormData = new FormData();
+    mockFormData.append("email", "invalidemail");
+
+    const result = await subscribe(mockFormState, mockFormData);
+
+    expect(result.errors.email).toBeDefined();
+  });
+
+  it("should throw error message if subscribe fails", async () => {
     const mockError = { message: "Failed to subscribe" };
 
     mockFetchApi.mockRejectedValueOnce(mockError);
@@ -40,6 +49,6 @@ describe("Subscribe service test case", () => {
 
     const result = await subscribe(mockFormState, mockFormData);
 
-    expect(result.errors.email[0]).toBe(mockError.message);
+    expect(result.message).toBe(mockError.message);
   });
 });
