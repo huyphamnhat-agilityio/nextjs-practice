@@ -65,11 +65,13 @@ export const FORM_MESSAGES = {
       REQUIRED: "Original price is required",
       MIN: "Original price must be equal or greater than 0",
       CONSTRAINT: "Original price must be greater than or equal to sale price.",
+      DECIMAL_MAX: "Must be a number with a maximum of 2 decimal places",
     },
     SALE_PRICE: {
       REQUIRED: "Sale price is required",
       MIN: "Sale price must be equal or greater than 0",
       MAX: "Sale price must be equal or lower than original price",
+      DECIMAL_MAX: "Must be a number with a maximum of 2 decimal places",
     },
     RATE: {
       REQUIRED: "Rate is required",
