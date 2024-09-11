@@ -235,45 +235,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>
@@ -499,45 +493,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>
@@ -763,45 +751,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>
@@ -1027,45 +1009,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>
@@ -1291,45 +1267,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>
@@ -1555,45 +1525,39 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           </span>
         </div>
         <div
-          class="mt-auto"
+          class="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer"
         >
-          <button
-            aria-label="Go to detail page"
-            class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-primary text-primary data-[hover=true]:opacity-hover px-5 py-2.5 min-w-0 w-auto h-auto rounded-[37px] hover:bg-primary hover:bg-opacity-25 font-bold"
-            type="button"
+          Course Detail
+          <svg
+            fill="none"
+            height="17"
+            viewBox="0 0 10 17"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Course Detail
-            <svg
-              fill="none"
-              height="17"
-              viewBox="0 0 10 17"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
+            <g
+              clip-path="url(#clip0_2685_983)"
             >
-              <g
-                clip-path="url(#clip0_2685_983)"
+              <path
+                clip-rule="evenodd"
+                d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="clip0_2685_983"
               >
-                <path
-                  clip-rule="evenodd"
-                  d="M0.680771 1.00694C0.737928 0.949641 0.805828 0.904178 0.880583 0.873159C0.955337 0.842139 1.03548 0.826172 1.11641 0.826172C1.19735 0.826172 1.27749 0.842139 1.35224 0.873159C1.427 0.904178 1.4949 0.949641 1.55205 1.00694L8.9358 8.39069C8.9931 8.44785 9.03857 8.51575 9.06959 8.5905C9.10061 8.66526 9.11657 8.7454 9.11657 8.82633C9.11657 8.90727 9.10061 8.98741 9.06959 9.06216C9.03857 9.13692 8.9931 9.20482 8.9358 9.26197L1.55205 16.6457C1.43651 16.7613 1.27981 16.8262 1.11641 16.8262C0.953015 16.8262 0.79631 16.7613 0.680771 16.6457C0.565232 16.5302 0.500322 16.3735 0.500322 16.2101C0.500322 16.0467 0.565232 15.89 0.680771 15.7744L7.63011 8.82633L0.680771 1.87823C0.623469 1.82107 0.578006 1.75317 0.546986 1.67841C0.515967 1.60366 0.5 1.52352 0.5 1.44258C0.5 1.36165 0.515967 1.28151 0.546986 1.20676C0.578006 1.132 0.623469 1.0641 0.680771 1.00694Z"
+                <rect
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  height="16"
+                  transform="translate(0.5 0.826172)"
+                  width="9"
                 />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_2685_983"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="16"
-                    transform="translate(0.5 0.826172)"
-                    width="9"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+              </clippath>
+            </defs>
+          </svg>
         </div>
       </a>
     </div>

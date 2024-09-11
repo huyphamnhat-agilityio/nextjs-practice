@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 // Constants
 import { PRODUCT_LIMIT } from "@/constants";
 
@@ -9,6 +10,10 @@ import { getProducts } from "@/lib";
 
 // Sections
 import { AddCourseSection, ProductListSection } from "@/containers";
+
+export const metadata: Metadata = {
+  title: "Course List",
+};
 
 export default async function Product({
   searchParams,

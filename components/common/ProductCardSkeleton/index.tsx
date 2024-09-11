@@ -6,29 +6,9 @@ import {
   Skeleton,
 } from "@nextui-org/react";
 
-// Components
-import { Button } from "../Button";
-import {
-  DeleteIcon,
-  DownloadIcon,
-  EditIcon,
-  FavoriteIcon,
-  NextArrowIcon,
-  SolidStarIcon,
-} from "../Icons";
+import { NextArrowIcon } from "../Icons";
 
-// types
-import { Product } from "@/types";
-
-const ProductCardSkeleton = ({
-  category,
-  description,
-  rate,
-  originalPrice,
-  salePrice,
-  title,
-  sales,
-}: Product) => (
+const ProductCardSkeleton = () => (
   <Card className="max-w-82 flex flex-col rounded-none">
     <CardHeader className="relative p-0">
       <Skeleton>
@@ -52,16 +32,9 @@ const ProductCardSkeleton = ({
 
       <Skeleton className="h-8.5" />
 
-      <div>
-        <Button
-          color="primary"
-          variant="bordered"
-          size="xs"
-          endContent={<NextArrowIcon />}
-          className="font-bold"
-        >
-          Course Detail
-        </Button>
+      <div className="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer">
+        Course Detail
+        <NextArrowIcon />
       </div>
     </CardBody>
   </Card>

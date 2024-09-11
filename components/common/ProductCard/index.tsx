@@ -205,17 +205,9 @@ const ProductCard = (props: Product) => {
               ${salePrice.toFixed(2)}
             </span>
           </div>
-          <div className="mt-auto">
-            <Button
-              color="primary"
-              variant="bordered"
-              size="xs"
-              className="font-bold"
-              aria-label="Go to detail page"
-              endContent={<NextArrowIcon />}
-            >
-              Course Detail
-            </Button>
+          <div className="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer">
+            Course Detail
+            <NextArrowIcon />
           </div>
         </CardBody>
       </Card>

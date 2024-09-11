@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Toaster } from "react-hot-toast";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Providers } from "../providers";
+import { Providers } from "./providers";
 
 // components
 import { Footer, Header } from "@/components";
@@ -13,7 +13,10 @@ import { TOAST_COLORS } from "@/constants";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "School Course App",
+  title: {
+    template: "%s - School Course App",
+    default: "School Course App",
+  },
   description: "A simple course web app for schools",
   metadataBase: new URL("https://nextjs-practice-eosin-beta.vercel.app/"),
   openGraph: {
