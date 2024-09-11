@@ -10,9 +10,11 @@ import {
 export const ProductFormSchema = z
   .object({
     id: z.string(),
-    category: z.string({
-      required_error: FORM_MESSAGES.PRODUCT.CATEGORY.REQUIRED,
-    }),
+    category: z
+      .string({
+        required_error: FORM_MESSAGES.PRODUCT.CATEGORY.REQUIRED,
+      })
+      .min(1, FORM_MESSAGES.PRODUCT.CATEGORY.REQUIRED),
     title: z
       .string({ required_error: FORM_MESSAGES.PRODUCT.TITLE.REQUIRED })
       .min(2, FORM_MESSAGES.PRODUCT.TITLE.MIN)
