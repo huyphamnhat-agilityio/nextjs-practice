@@ -41,12 +41,12 @@ import {
 } from "@/mocks";
 
 // Components
-const ConfirmProductForm = dynamic(() =>
-  import("@/components").then((module) => module.ConfirmProductForm),
+const ConfirmProductForm = dynamic(
+  () => import("@/components/ConfirmProductForm/index"),
 );
 
-const MutationProductForm = dynamic(() =>
-  import("@/components").then((module) => module.MutationProductForm),
+const MutationProductForm = dynamic(
+  () => import("@/components/MutationProductForm"),
 );
 
 const ProductCard = (props: Product) => {

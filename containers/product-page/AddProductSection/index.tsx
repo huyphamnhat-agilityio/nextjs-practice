@@ -1,13 +1,12 @@
 "use client";
 import { useDisclosure } from "@nextui-org/react";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 // Components
 import { Button } from "@/components";
 
-const MutationProductForm = dynamic(() =>
-  import("@/components").then((module) => module.MutationProductForm),
+const MutationProductForm = dynamic(
+  () => import("@/components/MutationProductForm/index"),
 );
 
 const AddProductSection = () => {
@@ -20,14 +19,12 @@ const AddProductSection = () => {
       </Button>
 
       {isOpen && (
-        <Suspense>
-          <MutationProductForm
-            isOpen={isOpen}
-            onClose={onClose}
-            onOpen={onOpen}
-            onOpenChange={onOpenChange}
-          />
-        </Suspense>
+        <MutationProductForm
+          isOpen={isOpen}
+          onClose={onClose}
+          onOpen={onOpen}
+          onOpenChange={onOpenChange}
+        />
       )}
     </>
   );
