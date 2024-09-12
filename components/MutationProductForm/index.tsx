@@ -171,6 +171,7 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter sale amount..."
               type="number"
+              step="any"
               value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.sales}
@@ -187,7 +188,6 @@ const ProductFormBody = ({
             />
           )}
         />
-
         <Controller
           control={control}
           name="originalPrice"
@@ -198,6 +198,7 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter original price..."
               type="number"
+              step="any"
               value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.originalPrice}
@@ -222,6 +223,7 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter sale price..."
               type="number"
+              step="any"
               value={value?.toString()}
               isDisabled={pending}
               isInvalid={!!errors?.salePrice || !!state?.errors?.salePrice}

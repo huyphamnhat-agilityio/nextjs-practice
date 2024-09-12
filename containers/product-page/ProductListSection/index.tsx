@@ -43,9 +43,7 @@ const ProductListSection = ({
       {isPending ? (
         <ProductListSkeleton limit={PRODUCT_LIMIT} />
       ) : (
-        <Suspense fallback={<ProductListSkeleton limit={PRODUCT_LIMIT} />}>
-          <ProductList products={products} />
-        </Suspense>
+        <ProductList products={products} />
       )}
 
       <Suspense>

@@ -25,16 +25,18 @@ export const ProductFormSchema = z
       .optional(),
     sales: z
       .number({ required_error: FORM_MESSAGES.PRODUCT.SALES.REQUIRED })
-      .min(0, FORM_MESSAGES.PRODUCT.SALES.MIN),
+      .min(0, FORM_MESSAGES.PRODUCT.SALES.MIN)
+      .max(9999999999, FORM_MESSAGES.PRODUCT.SALES.MAX),
     originalPrice: z
       .number({ required_error: FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.REQUIRED })
-      .min(0, FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MIN)
+      .min(0.1, FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MIN)
+      .max(9999999999, FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.MAX)
       .refine((value) => /^\d*\.?\d{0,2}$/.test(value.toString()), {
         message: FORM_MESSAGES.PRODUCT.ORIGINAL_PRICE.DECIMAL_MAX,
       }),
     salePrice: z
       .number({ required_error: FORM_MESSAGES.PRODUCT.SALE_PRICE.REQUIRED })
-      .min(0, FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN)
+      .min(0.1, FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN)
       .refine((value) => /^\d*\.?\d{0,2}$/.test(value.toString()), {
         message: FORM_MESSAGES.PRODUCT.SALE_PRICE.DECIMAL_MAX,
       }),
