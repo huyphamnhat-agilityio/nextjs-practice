@@ -1,4 +1,4 @@
-import { Image, Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@nextui-org/react";
 
 export default async function Loading() {
   return (

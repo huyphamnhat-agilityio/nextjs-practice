@@ -1,34 +1,11 @@
-// Constants
-import { PRODUCT_LIMIT } from "@/constants";
-
-// Components
-import { ProductListSkeleton, SearchProductForm } from "@/components";
-
-// Sections
-import { AddCourseSection } from "@/containers";
-import { Suspense } from "react";
-
 export default async function Loading() {
   return (
     <main>
-      <div className="flex justify-center">
-        <div className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl my-0 pt-20 flex flex-col gap-20 w-full">
-          <h3 className="text-primary text-5xl font-bold text-center">
-            Course List
-          </h3>
-
-          <div className="flex gap-10 flex-col md:flex-row">
-            <Suspense>
-              <SearchProductForm />
-            </Suspense>
-
-            <Suspense>
-              <AddCourseSection />
-            </Suspense>
-          </div>
-
-          <ProductListSkeleton limit={PRODUCT_LIMIT} />
-        </div>
+      <div className="flex items-center justify-center h-[100vh]">
+        <div
+          className="w-12 h-12 rounded-full animate-spin
+                    border-y-2 border-solid border-primary border-t-transparent"
+        ></div>
       </div>
     </main>
   );
