@@ -24,7 +24,7 @@ const ErrorFallback = ({ message = "" }: ErrorFallbackProps) => {
         <p className="text-foreground-100 text-lg text-center whitespace-pre-line">
           Detail error:
           <br />
-          <span className="text-danger">{message}</span>
+          <span className="text-primary">{message}</span>
         </p>
       )}
 

@@ -226,10 +226,8 @@ const ProductFormBody = ({
               step="any"
               value={value?.toString()}
               isDisabled={pending}
-              isInvalid={!!errors?.salePrice || !!state?.errors?.salePrice}
-              errorMessage={
-                errors?.salePrice?.message || state?.errors?.salePrice[0]
-              }
+              isInvalid={!!errors?.salePrice}
+              errorMessage={errors?.salePrice?.message}
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(
