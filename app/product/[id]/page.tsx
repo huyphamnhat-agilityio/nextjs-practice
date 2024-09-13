@@ -7,10 +7,10 @@ import {
   Image,
 } from "@nextui-org/react";
 import { notFound } from "next/navigation";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 // Services
-import { getProductById, getProducts } from "@/lib";
+import { getProductById } from "@/lib";
 
 // Constants
 import {
@@ -79,14 +79,8 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!product) notFound();
 
-  const {
-    title = MOCK_PRODUCTS[0].title,
-    description = MOCK_PRODUCTS[0].description,
-    sales = MOCK_PRODUCTS[0].sales,
-    originalPrice = MOCK_PRODUCTS[0].originalPrice,
-    salePrice = MOCK_PRODUCTS[0].salePrice,
-    coverImageUrl = MOCK_PRODUCTS[0].coverImageUrl,
-  } = product;
+  const { title, description, sales, originalPrice, salePrice, coverImageUrl } =
+    product;
 
   return (
     <main>

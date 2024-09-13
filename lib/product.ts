@@ -2,7 +2,7 @@
 import { revalidateTag } from "next/cache";
 
 // Types
-import { FormState, Pagination, Product } from "@/types";
+import { FormState, Pagination, Product, ProductForm } from "@/types";
 
 // Constants
 import {
@@ -94,65 +94,86 @@ export const markProduct = async (data: Product) => {
   }
 };
 
-export const mutateProduct = async <T extends object>(
-  _: FormState<T>,
-  data: FormData,
-) => {
-  const productData: Product = {
-    id: data.get("id") as string,
-    category: data.get("category") as string,
-    title: data.get("title") as string,
-    description: data.get("description") as string,
-    sales: Number(data.get("sales")),
-    originalPrice: Number(data.get("originalPrice")),
-    salePrice: Number(data.get("salePrice")),
-    rate: Number(data.get("rate")),
-    isFavorited: Number(data.get("isFavorited")),
-    createdAt: Number(data.get("createdAt")) || Date.now(),
-    coverImageUrl: data.get("coverImageUrl") as string,
-  };
+// export const mutateProduct = async <T extends object>(
+//   _: FormState<T>,
+//   data: FormData
+// ) => {
+//   const productData: Product = {
+//     id: data.get("id") as string,
+//     category: data.get("category") as string,
+//     title: data.get("title") as string,
+//     description: data.get("description") as string,
+//     sales: Number(data.get("sales")),
+//     originalPrice: Number(data.get("originalPrice")),
+//     salePrice: Number(data.get("salePrice")),
+//     rate: Number(data.get("rate")),
+//     isFavorited: Number(data.get("isFavorited")),
+//     createdAt: Number(data.get("createdAt")) || Date.now(),
+//     coverImageUrl: data.get("coverImageUrl") as string,
+//   };
 
-  const coverImage = data.get("coverImage") as File;
+//   const coverImage = data.get("coverImage") as File;
 
-  if (coverImage.size !== 0)
-    try {
-      productData.coverImageUrl = await uploadAndGetImageUrl(coverImage);
-    } catch (_) {
-      return {
-        errors: {
-          coverImage: [PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE],
-        },
-      };
-    }
+//   if (coverImage.size !== 0)
+//     try {
+//       // productData.coverImageUrl = await uploadAndGetImageUrl(coverImage);
+//     } catch (_) {
+//       return {
+//         errors: {
+//           coverImage: [PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE],
+//         },
+//       };
+//     }
 
+//   try {
+//     const url = productData.id
+//       ? `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productData.id}`
+//       : `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`;
+
+//     const method = productData.id ? "PUT" : "POST";
+
+//     await fetchApi<Product>(url, {
+//       method,
+//       body: JSON.stringify(productData),
+//     });
+
+//     revalidateTag(TAGS.PRODUCTS);
+//     revalidateTag(TAGS.PRODUCT_DETAIL);
+
+//     return {
+//       message: productData.id
+//         ? PRODUCT_MESSAGES.SUCCESS.UPDATE
+//         : PRODUCT_MESSAGES.SUCCESS.CREATE,
+//       status: FORM_STATUS.SUCCESS,
+//     };
+//   } catch (error) {
+//     return {
+//       message: productData.id
+//         ? PRODUCT_MESSAGES.ERROR.UPDATE
+//         : PRODUCT_MESSAGES.ERROR.CREATE,
+//       status: FORM_STATUS.ERROR,
+//     };
+//   }
+// };
+
+export const mutateProduct = async (data: Product) => {
   try {
-    const url = productData.id
-      ? `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${productData.id}`
+    const url = data.id
+      ? `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${data.id}`
       : `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`;
 
-    const method = productData.id ? "PUT" : "POST";
+    const method = data.id ? "PUT" : "POST";
 
-    await fetchApi<Product>(url, {
+    const response = await fetchApi<Product>(url, {
       method,
-      body: JSON.stringify(productData),
+      body: JSON.stringify(data),
     });
 
     revalidateTag(TAGS.PRODUCTS);
-    revalidateTag(TAGS.PRODUCT_DETAIL);
 
-    return {
-      message: productData.id
-        ? PRODUCT_MESSAGES.SUCCESS.UPDATE
-        : PRODUCT_MESSAGES.SUCCESS.CREATE,
-      status: FORM_STATUS.SUCCESS,
-    };
+    return response;
   } catch (error) {
-    return {
-      message: productData.id
-        ? PRODUCT_MESSAGES.ERROR.UPDATE
-        : PRODUCT_MESSAGES.ERROR.CREATE,
-      status: FORM_STATUS.ERROR,
-    };
+    throw error;
   }
 };
 

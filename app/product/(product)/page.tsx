@@ -40,17 +40,7 @@ export default async function Product({
             Course List
           </h2>
 
-          <div className="flex gap-10 flex-col md:flex-row">
-            <SearchProductForm />
-            <AddCourseSection />
-          </div>
-          {products && products.data.length ? (
-            <ProductListSection products={products} />
-          ) : (
-            <h3 className="text-center text-foreground ">
-              Oops! No courses have been found.
-            </h3>
-          )}
+          <ProductListSection products={products} />
         </div>
       </div>
     </main>

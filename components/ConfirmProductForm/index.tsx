@@ -5,6 +5,7 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
+  Spinner,
 } from "@nextui-org/react";
 import toast from "react-hot-toast";
 import { useFormStatus } from "react-dom";
@@ -45,6 +46,8 @@ const ConfirmProductFormBody = ({
           color="primary"
           className="text-white"
           type="submit"
+          spinner={<Spinner size="sm" color="white" />}
+          isLoading={pending}
           isDisabled={pending}
         >
           Delete

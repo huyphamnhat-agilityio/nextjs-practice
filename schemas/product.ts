@@ -52,6 +52,7 @@ export const ProductFormSchema = z
           message: FORM_MESSAGES.PRODUCT.RATE.DECIMAL,
         },
       ),
+    coverImageUrl: z.string().optional(),
     coverImage: z
       .any()
       .optional()
@@ -63,6 +64,8 @@ export const ProductFormSchema = z
         (file) => !file || ACCEPTED_IMAGE_TYPES.includes(file?.type),
         FORM_MESSAGES.PRODUCT.COVER_IMAGE.ACCEPTED_FORMATS,
       ),
+    createdAt: z.number().optional(),
+    isFavorited: z.number().optional(),
   })
   .refine((schema) => schema.originalPrice >= schema.salePrice, {
     message: FORM_MESSAGES.PRODUCT.SALE_PRICE.MAX,

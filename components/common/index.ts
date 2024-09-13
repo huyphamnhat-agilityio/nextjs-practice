@@ -11,3 +11,4 @@ export * from "./Textarea";
 export * from "./Select";
 export * from "./Icons";
 export { default as ErrorFallback } from "./ErrorFallback";
+export { default as Spinner } from "./Spinner";

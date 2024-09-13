@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import toast from "react-hot-toast";
 import { Control, Controller, FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,8 +11,8 @@ import {
   ModalHeader,
   SelectItem,
   ModalFooter,
+  Spinner,
 } from "@nextui-org/react";
-import { useFormState, useFormStatus } from "react-dom";
 
 // Types
 import { FormState, Product, ProductForm } from "@/types";
@@ -24,22 +24,26 @@ import { ProductFormSchema } from "@/schemas";
 import { MOCK_CATEGORIES, PLACEHOLDER_COURSE_IMAGE } from "@/mocks";
 
 // Components
-import { Button, Input, Select, Textarea } from "../common";
+import { Button, ClearIcon, Input, Select, Textarea } from "../common";
 
 // Services
-import { mutateProduct } from "@/lib";
+import { mutateProduct, uploadAndGetImageUrl } from "@/lib";
 
 // Constants
-import { FORM_STATUS } from "@/constants";
+import { PRODUCT_MESSAGES } from "@/constants";
+
+// Utils
+import { convertImageToBase64 } from "@/utils";
 
 export type ProductFormBodyProps = {
   selectedImage: File;
   control: Control<ProductForm, any>;
   handleSelectImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleClearImage: () => void;
   errors: FieldErrors<ProductForm>;
   isValid: boolean;
+  isPending: boolean;
   isDirty: boolean;
-  state: FormState<ProductForm>;
   onClose: () => void;
   coverImageUrl: string;
 };
@@ -47,21 +51,31 @@ const ProductFormBody = ({
   selectedImage,
   control,
   handleSelectImage,
+  handleClearImage,
   errors,
   isValid,
+  isPending,
   isDirty,
-  state,
   onClose,
   coverImageUrl,
 }: ProductFormBodyProps) => {
-  const { pending } = useFormStatus();
   return (
     <>
-      <ModalBody className="flex flex-col gap-6">
+      <ModalBody className="flex flex-col gap-6 relative">
+        {(!!selectedImage || !!coverImageUrl) && (
+          <Button
+            aria-label="clear-image"
+            className="absolute z-50 top-2 right-6  p-2 text-foreground-500 bg-transparent rounded-full hover:bg-default-100 active:bg-default-200 tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+            isIconOnly
+            onClick={handleClearImage}
+          >
+            <ClearIcon />
+          </Button>
+        )}
         <label
           aria-label="cover course image url"
-          className={`self-center ${pending && "opacity-50"}`}
-          aria-disabled={pending}
+          className={`self-center ${isPending && "opacity-50"}`}
+          aria-disabled={isPending}
         >
           <NextUIImage
             width={448}
@@ -76,6 +90,7 @@ const ProductFormBody = ({
             className="object-cover"
             alt=""
           />
+
           <Controller
             control={control}
             name="coverImage"
@@ -87,8 +102,11 @@ const ProductFormBody = ({
                 className="hidden"
                 onBlur={onBlur}
                 onChange={(e) => {
-                  handleSelectImage(e);
-                  onChange(e.target.files[0]);
+                  console.log(e.target.files);
+                  if (e.target.files.length > 0) {
+                    handleSelectImage(e);
+                    onChange(e.target.files[0]);
+                  }
                 }}
               />
             )}
@@ -98,9 +116,6 @@ const ProductFormBody = ({
           <p className="text-base text-danger">{errors.coverImage.message}</p>
         )}
 
-        {state?.errors?.coverImage && (
-          <p className="text-base text-danger">{state.errors.coverImage[0]}</p>
-        )}
         <Controller
           control={control}
           name="category"
@@ -112,7 +127,7 @@ const ProductFormBody = ({
               placeholder="Choose category..."
               value={value}
               selectedKeys={[`${value}`]}
-              isDisabled={pending}
+              isDisabled={isPending}
               onChange={(e) => onChange(e.target.value)}
               onBlur={onBlur}
             >
@@ -133,7 +148,7 @@ const ProductFormBody = ({
                 name="title"
                 labelPlacement="outside"
                 placeholder="Enter course title..."
-                isDisabled={pending}
+                isDisabled={isPending}
                 isInvalid={!!errors?.title}
                 errorMessage={errors?.title?.message}
                 value={value}
@@ -156,7 +171,7 @@ const ProductFormBody = ({
               placeholder="Enter course description..."
               isInvalid={!!errors?.description}
               errorMessage={errors?.description?.message}
-              isDisabled={pending}
+              isDisabled={isPending}
             />
           )}
         />
@@ -173,7 +188,7 @@ const ProductFormBody = ({
               type="number"
               step="any"
               value={value?.toString()}
-              isDisabled={pending}
+              isDisabled={isPending}
               isInvalid={!!errors?.sales}
               errorMessage={errors?.sales?.message}
               onBlur={onBlur}
@@ -200,7 +215,7 @@ const ProductFormBody = ({
               type="number"
               step="any"
               value={value?.toString()}
-              isDisabled={pending}
+              isDisabled={isPending}
               isInvalid={!!errors?.originalPrice}
               errorMessage={errors?.originalPrice?.message}
               onBlur={onBlur}
@@ -225,7 +240,7 @@ const ProductFormBody = ({
               type="number"
               step="any"
               value={value?.toString()}
-              isDisabled={pending}
+              isDisabled={isPending}
               isInvalid={!!errors?.salePrice}
               errorMessage={errors?.salePrice?.message}
               onBlur={onBlur}
@@ -251,7 +266,7 @@ const ProductFormBody = ({
               inputMode="decimal"
               step="any"
               value={value?.toString()}
-              isDisabled={pending}
+              isDisabled={isPending}
               isInvalid={!!errors?.rate}
               errorMessage={errors?.rate?.message}
               onBlur={onBlur}
@@ -264,17 +279,12 @@ const ProductFormBody = ({
           )}
         />
 
-        {state?.status === FORM_STATUS.ERROR && state?.message && (
-          <p className="text-base text-danger">{state.message}</p>
-        )}
-
         <Controller
           control={control}
           name="isFavorited"
           render={({ field: { value } }) => (
             <Input
               name="isFavorited"
-              type="number"
               className="hidden"
               value={value.toString()}
             />
@@ -314,7 +324,7 @@ const ProductFormBody = ({
           color="default"
           variant="flat"
           className="bg-foreground-100 text-white"
-          isDisabled={pending}
+          isDisabled={isPending}
           onPress={onClose}
         >
           Cancel
@@ -323,7 +333,9 @@ const ProductFormBody = ({
           color="primary"
           className="text-white"
           type="submit"
-          isDisabled={!isValid || pending || !isDirty}
+          spinner={<Spinner size="sm" color="white" />}
+          isLoading={isPending}
+          isDisabled={!isValid || isPending || !isDirty}
         >
           Submit
         </Button>
@@ -347,15 +359,14 @@ const MutationProductForm = ({
 }: MutationProductFormProps) => {
   const initialState: FormState<ProductForm> = {};
 
-  const [state, formAction] = useFormState<FormState<ProductForm>, FormData>(
-    mutateProduct.bind(null),
-    initialState,
-  );
-
   const {
     control,
     formState: { errors, isValid, isDirty },
     reset,
+    handleSubmit,
+    setError,
+    getValues,
+    setValue,
   } = useForm<ProductForm>({
     mode: "all",
     defaultValues: {
@@ -377,6 +388,8 @@ const MutationProductForm = ({
 
   const [selectedImage, setSelectedImage] = useState<File>();
 
+  const [isPending, setIsPending] = useState(false);
+
   const handleSelectImage = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setSelectedImage(e.target.files[0]);
@@ -397,12 +410,66 @@ const MutationProductForm = ({
     [handleCloseModal],
   );
 
-  useEffect(() => {
-    if (state?.message && state?.status === FORM_STATUS.SUCCESS) {
-      toast.success(state.message);
-      handleCloseModal();
-    }
-  }, [handleCloseModal, state?.message, state?.status]);
+  const handleClearImage = useCallback(() => {
+    selectedImage?.size > 0 && setSelectedImage(undefined);
+
+    getValues("coverImageUrl") &&
+      setValue("coverImageUrl", "", { shouldDirty: true });
+
+    getValues("coverImage") &&
+      setValue("coverImage", undefined, { shouldDirty: true });
+  }, [getValues, selectedImage, setValue]);
+
+  const onSubmit = useCallback(
+    async (data: ProductForm) => {
+      try {
+        setIsPending(true);
+
+        let imageUrl = "";
+
+        try {
+          if (data.coverImage) {
+            const imageBase64 = await convertImageToBase64(data.coverImage);
+
+            imageUrl = await uploadAndGetImageUrl(imageBase64);
+          }
+        } catch (error) {
+          setError("coverImage", {
+            message: PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE,
+          });
+          return;
+        }
+
+        const { coverImage, coverImageUrl, createdAt, ...rest } = data;
+
+        const product: Product = {
+          ...rest,
+          coverImageUrl: imageUrl || coverImageUrl,
+          createdAt: data.id ? data.createdAt : Date.now(),
+        };
+
+        const response = await mutateProduct(product);
+
+        if (response) {
+          toast.success(
+            data.id
+              ? PRODUCT_MESSAGES.SUCCESS.UPDATE
+              : PRODUCT_MESSAGES.SUCCESS.CREATE,
+          );
+          handleCloseModal();
+        }
+      } catch (error) {
+        toast.error(
+          data.id
+            ? PRODUCT_MESSAGES.ERROR.UPDATE
+            : PRODUCT_MESSAGES.ERROR.CREATE,
+        );
+      } finally {
+        setIsPending(false);
+      }
+    },
+    [handleCloseModal, setError],
+  );
 
   return (
     <Modal
@@ -414,16 +481,17 @@ const MutationProductForm = ({
         <ModalHeader className="text-2xl">
           {data?.id ? "Edit course" : "Add course"}
         </ModalHeader>
-        <form action={formAction}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <ProductFormBody
             control={control}
             errors={errors}
             handleSelectImage={handleSelectImage}
+            handleClearImage={handleClearImage}
             isValid={isValid}
+            isPending={isPending}
             isDirty={isDirty}
             selectedImage={selectedImage}
-            coverImageUrl={data?.coverImageUrl}
-            state={state}
+            coverImageUrl={getValues("coverImageUrl")}
             onClose={handleCloseModal}
           />
         </form>

@@ -1,12 +1,16 @@
 "use client";
-import { ChangeEvent } from "react";
+import { ChangeEvent, TransitionStartFunction } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 
 // Components
 import { Input, SearchIcon } from "@/components";
 
-const SearchProductForm = () => {
+const SearchProductForm = ({
+  startTransition,
+}: {
+  startTransition: TransitionStartFunction;
+}) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -23,7 +27,7 @@ const SearchProductForm = () => {
         params.delete("query");
       }
 
-      replace(`${pathname}?${params.toString()}`);
+      startTransition(() => replace(`${pathname}?${params.toString()}`));
     },
     500,
   );

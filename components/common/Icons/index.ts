@@ -36,3 +36,4 @@ export * from "./GoalIcon";
 export * from "./CommunityIcon";
 export * from "./FeedbackIcon";
 export * from "./PlayIcon";
+export * from "./ClearIcon";

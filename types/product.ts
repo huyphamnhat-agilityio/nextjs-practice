@@ -13,5 +13,5 @@ export type Product = {
 };
 
 export type ProductForm = Product & {
-  coverImage: string;
+  coverImage: File;
 };
