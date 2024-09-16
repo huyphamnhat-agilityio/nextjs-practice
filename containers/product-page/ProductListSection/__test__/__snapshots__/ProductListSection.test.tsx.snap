@@ -3,6 +3,60 @@
 exports[`ProductListSection test cases should render correctly 1`] = `
 <DocumentFragment>
   <div
+    class="flex gap-10 flex-col md:flex-row"
+  >
+    <div
+      class="group flex flex-col data-[hidden=true]:hidden w-full group relative justify-end data-[has-label=true]:mt-[calc(theme(fontSize.small)_+_10px)]"
+      data-filled="true"
+      data-filled-within="true"
+      data-slot="base"
+    >
+      <div
+        class="h-full flex flex-col"
+        data-slot="main-wrapper"
+      >
+        <div
+          class="relative w-full inline-flex tap-highlight-transparent flex-row items-center shadow-sm gap-3 data-[hover=true]:bg-default-200 group-data-[focus=true]:bg-default-100 min-h-10 rounded-small transition-background motion-reduce:transition-none !duration-150 outline-none group-data-[focus-visible=true]:z-10 group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-focus group-data-[focus-visible=true]:ring-offset-2 group-data-[focus-visible=true]:ring-offset-background bg-foreground-200 border-foreground-300 h-auto rounded-1.25 border max-w-full self-center py-3.75 px-4"
+          data-slot="input-wrapper"
+          style="cursor: text;"
+        >
+          <div
+            class="inline-flex w-full items-center h-full box-border"
+            data-slot="inner-wrapper"
+          >
+            <svg
+              fill="currentColor"
+              height="30px"
+              viewBox="0 0 30 30"
+              width="30px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
+              />
+            </svg>
+            <input
+              aria-label="Search courses..."
+              class="w-full font-normal bg-transparent !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text group-data-[has-value=true]:text-default-foreground text-foreground-100 h-auto text-sm/7"
+              data-has-start-content="true"
+              data-slot="input"
+              id="react-aria-:r0:"
+              placeholder="Search courses..."
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-24 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover px-10 py-3.75 w-auto h-auto rounded-1.25 text-white"
+      type="button"
+    >
+      Add course
+    </button>
+  </div>
+  <div
     class="flex flex-col gap-20"
   >
     <div
@@ -164,7 +218,7 @@ exports[`ProductListSection test cases should render correctly 1`] = `
               <span
                 class="text-white text-xs"
               >
-                4.9
+                0.0
               </span>
             </div>
           </div>
@@ -221,12 +275,12 @@ exports[`ProductListSection test cases should render correctly 1`] = `
             <span
               class="text-foreground-50 text-base font-bold"
             >
-              $16.48
+              $16.00
             </span>
             <span
               class="text-secondary text-base font-bold"
             >
-              $6.48
+              $6.00
             </span>
           </div>
           <div

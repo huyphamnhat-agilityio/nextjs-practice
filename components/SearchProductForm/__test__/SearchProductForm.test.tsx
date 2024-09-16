@@ -1,7 +1,8 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, renderHook, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import SearchProductForm from "@/components/SearchProductForm";
+import { useTransition } from "react";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
@@ -15,6 +16,12 @@ describe("SearchProductForm", () => {
   const mockUsePathname = usePathname as jest.Mock;
   const mockUseSearchParams = useSearchParams as jest.Mock;
 
+  const {
+    result: {
+      current: [_, mockStartTransition],
+    },
+  } = renderHook(() => useTransition());
+
   beforeEach(() => {
     mockUseRouter.mockReturnValue({ replace: mockReplace });
     mockUsePathname.mockReturnValue("/");
@@ -25,17 +32,21 @@ describe("SearchProductForm", () => {
     jest.clearAllMocks();
   });
 
-  it("should render correctly", () => {
-    const { asFragment } = render(<SearchProductForm />);
+  const setup = () =>
+    render(<SearchProductForm startTransition={mockStartTransition} />);
 
+  it("should render correctly", () => {
+    const { asFragment } = setup();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("should update the query parameter when the user types", async () => {
-    render(<SearchProductForm />);
+    setup();
+
     const input = screen.getByRole("textbox", {
       name: /search courses\.\.\./i,
     });
+
     await userEvent.type(input, "React");
 
     await waitFor(() => {
@@ -49,7 +60,7 @@ describe("SearchProductForm", () => {
       new URLSearchParams({ query: "React" }),
     );
 
-    render(<SearchProductForm />);
+    setup();
 
     const input = screen.getByPlaceholderText("Search courses...");
 
@@ -62,7 +73,8 @@ describe("SearchProductForm", () => {
   });
 
   it("should debounce the input changes", async () => {
-    render(<SearchProductForm />);
+    setup();
+
     const input = screen.getByRole("textbox", {
       name: /search courses\.\.\./i,
     });

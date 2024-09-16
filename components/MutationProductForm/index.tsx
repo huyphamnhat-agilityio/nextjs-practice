@@ -186,7 +186,6 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter sale amount..."
               type="number"
-              step="any"
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.sales}
@@ -200,6 +199,7 @@ const ProductFormBody = ({
               onKeyDown={(e: React.KeyboardEvent) =>
                 ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()
               }
+              maxLength={10}
             />
           )}
         />
@@ -214,6 +214,7 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter original price..."
               thousandSeparator
+              allowNegative={false}
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.originalPrice}
@@ -221,6 +222,7 @@ const ProductFormBody = ({
               onBlur={onBlur}
               onValueChange={({ floatValue }) => onChange(floatValue)}
               decimalScale={2}
+              maxLength={16}
             />
           )}
         />
@@ -236,6 +238,7 @@ const ProductFormBody = ({
               labelPlacement="outside"
               placeholder="Enter sale price..."
               thousandSeparator
+              allowNegative={false}
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.salePrice}
@@ -243,6 +246,7 @@ const ProductFormBody = ({
               onBlur={onBlur}
               onValueChange={({ floatValue }) => onChange(floatValue)}
               decimalScale={2}
+              maxLength={16}
             />
           )}
         />
@@ -251,24 +255,21 @@ const ProductFormBody = ({
           control={control}
           name="rate"
           render={({ field: { onChange, onBlur, value } }) => (
-            <Input
+            <NumericFormat
+              customInput={Input}
               label="Rate"
               name="rate"
               labelPlacement="outside"
               placeholder="Enter rate..."
-              type="number"
-              inputMode="decimal"
-              step="any"
+              allowNegative={false}
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.rate}
               errorMessage={errors?.rate?.message}
               onBlur={onBlur}
-              onChange={(e) => {
-                onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
-                );
-              }}
+              onValueChange={({ floatValue }) => onChange(floatValue)}
+              decimalScale={1}
+              maxLength={3}
             />
           )}
         />
@@ -351,8 +352,6 @@ const MutationProductForm = ({
   onClose,
   data,
 }: MutationProductFormProps) => {
-  const initialState: FormState<ProductForm> = {};
-
   const {
     control,
     formState: { errors, isValid, isDirty },
@@ -416,7 +415,6 @@ const MutationProductForm = ({
 
   const onSubmit = useCallback(
     async (data: ProductForm) => {
-      console.log(data);
       try {
         setIsPending(true);
 

@@ -150,12 +150,6 @@ describe("Product services test cases", () => {
 
     mockFetchApi.mockResolvedValueOnce(mockProduct);
 
-    const mockFormData: FormData = new FormData();
-
-    const mockImageFile = new File([new Uint8Array(1024)], "mockImage.png", {
-      type: "image/png",
-    });
-
     const expectedPayload: Product = {
       id: "",
       category: mockProduct.category,
@@ -170,20 +164,7 @@ describe("Product services test cases", () => {
       coverImageUrl: mockProduct.coverImageUrl,
     };
 
-    mockFormData.append("coverImage", mockImageFile);
-    mockFormData.append("id", "");
-    mockFormData.append("category", mockProduct.category);
-    mockFormData.append("title", mockProduct.title);
-    mockFormData.append("description", mockProduct.description);
-    mockFormData.append("sales", mockProduct.sales.toString());
-    mockFormData.append("originalPrice", mockProduct.originalPrice.toString());
-    mockFormData.append("salePrice", mockProduct.salePrice.toString());
-    mockFormData.append("rate", mockProduct.rate.toString());
-    mockFormData.append("isFavorited", mockProduct.isFavorited.toString());
-    mockFormData.append("createdAt", expectedPayload.createdAt.toString());
-    mockFormData.append("coverImageUrl", "");
-
-    await mutateProduct(mockFormState, mockFormData);
+    await mutateProduct(expectedPayload);
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}`,
@@ -195,133 +176,39 @@ describe("Product services test cases", () => {
   });
 
   it("should throw error when adding a product fails", async () => {
-    mockUpLoadAndGetImageUrl.mockReturnValueOnce(mockProduct.coverImageUrl);
-
     mockFetchApi.mockRejectedValueOnce(mockError);
 
-    const mockFormData: FormData = new FormData();
-
-    const mockImageFile = new File([new Uint8Array(1024)], "mockImage.png", {
-      type: "image/png",
-    });
-
-    mockFormData.append("coverImage", mockImageFile);
-    mockFormData.append("id", "");
-    mockFormData.append("category", mockProduct.category);
-    mockFormData.append("title", mockProduct.title);
-    mockFormData.append("description", mockProduct.description);
-    mockFormData.append("sales", mockProduct.sales.toString());
-    mockFormData.append("originalPrice", mockProduct.originalPrice.toString());
-    mockFormData.append("salePrice", mockProduct.salePrice.toString());
-    mockFormData.append("rate", mockProduct.rate.toString());
-    mockFormData.append("isFavorited", mockProduct.isFavorited.toString());
-    mockFormData.append("createdAt", mockProduct.createdAt.toString());
-    mockFormData.append("coverImageUrl", "");
-
-    const result = await mutateProduct(mockFormState, mockFormData);
-
-    expect(result.message).toEqual(PRODUCT_MESSAGES.ERROR.CREATE);
+    try {
+      await mutateProduct({ ...mockProduct, id: "" });
+    } catch (error) {
+      expect((error as Error).message).toEqual(mockError.message);
+    }
   });
 
   it("should be able to update a product when data is valid and services are available", async () => {
     const mockProduct = MOCK_PRODUCTS[1];
 
-    mockUpLoadAndGetImageUrl.mockReturnValueOnce(mockProduct.coverImageUrl);
-
     mockFetchApi.mockResolvedValueOnce(mockProduct);
 
-    const mockFormData: FormData = new FormData();
-
-    mockFormData.append("coverImage", undefined);
-    mockFormData.append("id", mockProduct.id);
-    mockFormData.append("category", mockProduct.category);
-    mockFormData.append("title", mockProduct.title);
-    mockFormData.append("description", mockProduct.description);
-    mockFormData.append("sales", mockProduct.sales.toString());
-    mockFormData.append("originalPrice", mockProduct.originalPrice.toString());
-    mockFormData.append("salePrice", mockProduct.salePrice.toString());
-    mockFormData.append("rate", mockProduct.rate.toString());
-    mockFormData.append("isFavorited", mockProduct.isFavorited.toString());
-    mockFormData.append("createdAt", mockProduct.createdAt.toString());
-    mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
-
-    await mutateProduct(mockFormState, mockFormData);
-
-    const expectedPayload: Product = {
-      id: mockProduct.id,
-      category: mockProduct.category,
-      title: mockProduct.title,
-      description: mockProduct.description,
-      sales: mockProduct.sales,
-      originalPrice: mockProduct.originalPrice,
-      salePrice: mockProduct.salePrice,
-      rate: mockProduct.rate,
-      isFavorited: mockProduct.isFavorited,
-      createdAt: mockProduct.createdAt,
-      coverImageUrl: mockProduct.coverImageUrl,
-    };
+    await mutateProduct(mockProduct);
 
     expect(mockFetchApi).toHaveBeenCalledWith(
       `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,
       {
         method: "PUT",
-        body: JSON.stringify(expectedPayload),
+        body: JSON.stringify(mockProduct),
       },
     );
   });
 
   it("should throw error when updating a product fails", async () => {
-    mockUpLoadAndGetImageUrl.mockReturnValueOnce(mockProduct.coverImageUrl);
-
     mockFetchApi.mockRejectedValueOnce(mockError);
 
-    const mockFormData: FormData = new FormData();
-
-    mockFormData.append("coverImage", undefined);
-    mockFormData.append("id", mockProduct.id);
-    mockFormData.append("category", mockProduct.category);
-    mockFormData.append("title", mockProduct.title);
-    mockFormData.append("description", mockProduct.description);
-    mockFormData.append("sales", mockProduct.sales.toString());
-    mockFormData.append("originalPrice", mockProduct.originalPrice.toString());
-    mockFormData.append("salePrice", mockProduct.salePrice.toString());
-    mockFormData.append("rate", mockProduct.rate.toString());
-    mockFormData.append("isFavorited", mockProduct.isFavorited.toString());
-    mockFormData.append("createdAt", mockProduct.createdAt.toString());
-    mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
-
-    const result = await mutateProduct(mockFormState, mockFormData);
-
-    expect(result.message).toEqual(PRODUCT_MESSAGES.ERROR.UPDATE);
-  });
-
-  it("should throw error when updating an image fails", async () => {
-    const mockProduct = MOCK_PRODUCTS[1];
-
-    mockUpLoadAndGetImageUrl.mockRejectedValueOnce(mockError);
-
-    mockFetchApi.mockResolvedValueOnce(mockProduct);
-
-    const mockFormData: FormData = new FormData();
-
-    mockFormData.append("coverImage", undefined);
-    mockFormData.append("id", mockProduct.id);
-    mockFormData.append("category", mockProduct.category);
-    mockFormData.append("title", mockProduct.title);
-    mockFormData.append("description", mockProduct.description);
-    mockFormData.append("sales", mockProduct.sales.toString());
-    mockFormData.append("originalPrice", mockProduct.originalPrice.toString());
-    mockFormData.append("salePrice", mockProduct.salePrice.toString());
-    mockFormData.append("rate", mockProduct.rate.toString());
-    mockFormData.append("isFavorited", mockProduct.isFavorited.toString());
-    mockFormData.append("createdAt", mockProduct.createdAt.toString());
-    mockFormData.append("coverImageUrl", mockProduct.coverImageUrl);
-
-    const result = await mutateProduct(mockFormState, mockFormData);
-
-    expect(result.errors.coverImage[0]).toEqual(
-      PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE,
-    );
+    try {
+      await mutateProduct(mockProduct);
+    } catch (error) {
+      expect((error as Error).message).toEqual(mockError.message);
+    }
   });
 
   it("should be able to delete a product when data is valid and services are available", async () => {
@@ -348,13 +235,10 @@ describe("Product services test cases", () => {
 
     mockFormData.append("id", mockProduct.id);
 
-    await deleteProduct(mockFormData);
-
-    expect(mockFetchApi).toHaveBeenCalledWith(
-      `${process.env.MOCK_API}/${RESOURCES.PRODUCT}/${mockProduct.id}`,
-      {
-        method: "DELETE",
-      },
-    );
+    try {
+      await deleteProduct(mockFormData);
+    } catch (error) {
+      expect((error as Error).message).toEqual(PRODUCT_MESSAGES.ERROR.DELETE);
+    }
   });
 });

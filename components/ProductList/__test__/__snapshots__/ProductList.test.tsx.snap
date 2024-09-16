@@ -169,7 +169,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
             <span
               class="text-white text-xs"
             >
-              4.9
+              0.0
             </span>
           </div>
         </div>
@@ -226,12 +226,12 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
           <span
             class="text-foreground-50 text-base font-bold"
           >
-            $16.48
+            $16.00
           </span>
           <span
             class="text-secondary text-base font-bold"
           >
-            $6.48
+            $6.00
           </span>
         </div>
         <div

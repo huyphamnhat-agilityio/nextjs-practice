@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner test cases should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="w-12 h-12 rounded-full animate-spin border-y-2 border-solid border-primary border-t-transparent"
+  />
+</DocumentFragment>
+`;

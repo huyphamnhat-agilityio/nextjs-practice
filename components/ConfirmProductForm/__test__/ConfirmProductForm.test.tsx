@@ -16,6 +16,9 @@ jest.mock("next/navigation", () => ({
   useSearchParams: jest.fn(),
 }));
 
+jest.mock("../../../lib/product.ts", () => ({
+  deleteProduct: jest.fn(),
+}));
 describe("ConfirmProductForm test cases", () => {
   const onClose = jest.fn();
   const onOpenChange = jest.fn();

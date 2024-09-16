@@ -2,11 +2,18 @@ import { render, screen } from "@testing-library/react";
 import { useFormStatus } from "react-dom";
 import { usePathname, useSearchParams } from "next/navigation";
 import userEvent from "@testing-library/user-event";
+
+// Components
 import MutationProductForm, { MutationProductFormProps } from "..";
 
 // Mocks
 import { MOCK_PRODUCTS, PLACEHOLDER_PRODUCT_FORM_DATA } from "@/mocks";
-import { FORM_MESSAGES } from "@/constants";
+
+// Constants
+import { FORM_MESSAGES, PRODUCT_MESSAGES } from "@/constants";
+
+// Services
+import { mutateProduct, uploadAndGetImageUrl } from "@/lib";
 
 jest.mock("react-dom", () => ({
   ...jest.requireActual("react-dom"),
@@ -19,17 +26,39 @@ jest.mock("next/navigation", () => ({
   useSearchParams: jest.fn(),
 }));
 
+jest.mock("../../../lib/image.ts", () => ({
+  uploadAndGetImageUrl: jest.fn(),
+}));
+
+jest.mock("../../../lib/product.ts", () => ({
+  mutateProduct: jest.fn(),
+}));
 describe("MutationProductForm test cases", () => {
-  beforeAll(() => {
-    window.addEventListener("submit", (e) => {
-      e.preventDefault();
-    });
-  });
+  window.URL.createObjectURL = jest.fn();
+
+  const mockUploadAndGetImageUrl = uploadAndGetImageUrl as jest.Mock;
+  const mockMutateProduct = mutateProduct as jest.Mock;
+  const mockImageFile = new File(
+    [
+      new Uint8Array([
+        137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82,
+      ]),
+    ], // Mock binary data
+    "mock-image.jpg", // File name
+    { type: "image/jpeg" }, // MIME type
+  );
 
   beforeEach(() => {
     (useFormStatus as jest.Mock).mockReturnValue({ pending: false });
     (usePathname as jest.Mock).mockReturnValue("/");
     (useSearchParams as jest.Mock).mockReturnValue(new URLSearchParams());
+    window.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   const setup = (props: MutationProductFormProps) =>
@@ -42,6 +71,28 @@ describe("MutationProductForm test cases", () => {
     onOpenChange: jest.fn(),
     data: MOCK_PRODUCTS[0],
   };
+
+  it("should display error message when uploading image fails", async () => {
+    setup(mockProps);
+
+    const imgInput = screen.getByTestId("cover-image");
+
+    await userEvent.upload(imgInput, mockImageFile);
+
+    mockUploadAndGetImageUrl.mockRejectedValueOnce("error");
+
+    const submitBtn = screen.getByRole("button", {
+      name: /submit/i,
+    });
+
+    await userEvent.click(submitBtn);
+
+    const imgError = await screen.findByText(
+      new RegExp(PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE, "i"),
+    );
+
+    expect(imgError.textContent).toEqual(PRODUCT_MESSAGES.ERROR.UPLOAD_IMAGE);
+  });
 
   it("should renders correctly with no data", () => {
     const { asFragment } = setup({
@@ -70,7 +121,62 @@ describe("MutationProductForm test cases", () => {
     expect(submitBtn).toBeDisabled();
   });
 
-  it("should be able to submit when entering valid data and clear data when close form", async () => {
+  it("should be able to add when entering valid data", async () => {
+    setup({ ...mockProps, data: { ...mockProps.data, id: "" } });
+
+    const titleInput = screen.getByRole("textbox", {
+      name: /title title/i,
+    });
+
+    await userEvent.type(titleInput, "Updated Title");
+
+    const originalPriceInput = screen.getByRole("textbox", {
+      name: /original price original price/i,
+    });
+
+    await userEvent.type(originalPriceInput, "100");
+
+    const salePriceInput = screen.getByRole("textbox", {
+      name: /sale price sale price/i,
+    });
+
+    await userEvent.type(salePriceInput, "100");
+
+    const rateInput = screen.getByRole("textbox", {
+      name: /rate rate/i,
+    });
+
+    await userEvent.type(rateInput, "2");
+
+    const submitBtn = screen.getByRole("button", {
+      name: /submit/i,
+    });
+
+    expect(submitBtn).not.toBeDisabled();
+
+    expect(originalPriceInput).toHaveValue(
+      `${mockProps.data.originalPrice},100`,
+    );
+
+    expect(salePriceInput).toHaveValue(`${mockProps.data.salePrice},100`);
+
+    expect(rateInput).toHaveValue("2");
+
+    mockUploadAndGetImageUrl.mockResolvedValueOnce("https://mock-url.com");
+
+    mockMutateProduct.mockResolvedValueOnce({
+      ...mockProps.data,
+      id: "0",
+      coverImage: "https://mock-url.com",
+      originalPrice: Number(`${mockProps.data.originalPrice}100`),
+      salePrice: Number(`${mockProps.data.salePrice}100`),
+      rate: 2,
+    });
+
+    await userEvent.click(submitBtn);
+  });
+
+  it("should be able to update when entering valid data", async () => {
     setup(mockProps);
 
     const titleInput = screen.getByRole("textbox", {
@@ -79,17 +185,53 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.type(titleInput, "Updated Title");
 
+    const imgInput = screen.getByTestId("cover-image");
+
+    await userEvent.upload(imgInput, mockImageFile);
+
+    const originalPriceInput = screen.getByRole("textbox", {
+      name: /original price original price/i,
+    });
+
+    await userEvent.type(originalPriceInput, "100");
+
+    const salePriceInput = screen.getByRole("textbox", {
+      name: /sale price sale price/i,
+    });
+
+    await userEvent.type(salePriceInput, "100");
+
+    const rateInput = screen.getByRole("textbox", {
+      name: /rate rate/i,
+    });
+
+    await userEvent.type(rateInput, "2");
+
     const submitBtn = screen.getByRole("button", {
       name: /submit/i,
     });
 
     expect(submitBtn).not.toBeDisabled();
 
-    const closeBtn = screen.getByRole("button", {
-      name: /cancel/i,
+    expect(originalPriceInput).toHaveValue(
+      `${mockProps.data.originalPrice},100`,
+    );
+
+    expect(salePriceInput).toHaveValue(`${mockProps.data.salePrice},100`);
+
+    expect(rateInput).toHaveValue("2");
+
+    mockUploadAndGetImageUrl.mockResolvedValueOnce("https://mock-url.com");
+
+    mockMutateProduct.mockResolvedValueOnce({
+      ...mockProps.data,
+      coverImage: "https://mock-url.com",
+      originalPrice: Number(`${mockProps.data.originalPrice}100`),
+      salePrice: Number(`${mockProps.data.salePrice}100`),
+      rate: 2,
     });
 
-    await userEvent.click(closeBtn);
+    await userEvent.click(submitBtn);
   });
 
   it("should be able to prevent entering invalid data", async () => {
@@ -107,19 +249,19 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.type(salesInput, "-1");
 
-    const originalPriceInput = screen.getByRole("spinbutton", {
+    const originalPriceInput = screen.getByRole("textbox", {
       name: /original price original price/i,
     });
 
-    await userEvent.type(originalPriceInput, "-1");
+    await userEvent.type(originalPriceInput, "-");
 
-    const salePriceInput = screen.getByRole("spinbutton", {
+    const salePriceInput = screen.getByRole("textbox", {
       name: /sale price sale price/i,
     });
 
-    await userEvent.type(salePriceInput, "-1");
+    await userEvent.type(salePriceInput, "-");
 
-    const rateInput = screen.getByRole("spinbutton", {
+    const rateInput = screen.getByRole("textbox", {
       name: /rate rate/i,
     });
 
@@ -138,26 +280,26 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.click(categoryOption);
 
+    const { salePrice, originalPrice } = mockProps.data;
+
     expect(titleInput).toHaveValue(`${mockProps.data.title}Updated Title`);
     expect(categorySelectList).toHaveValue("Books Library");
     expect(salesInput).toHaveValue(1);
-    expect(salePriceInput).toHaveValue(1);
-    expect(originalPriceInput).toHaveValue(1);
-    expect(rateInput).toHaveValue(1);
+    expect(salePriceInput).toHaveValue(salePrice.toString());
+    expect(originalPriceInput).toHaveValue(originalPrice.toString());
+    expect(rateInput).toHaveValue("1");
   });
 
   it("should display error message when typing invalid data", async () => {
-    window.URL.createObjectURL = jest.fn();
-
     setup({
       ...mockProps,
       data: {
         ...PLACEHOLDER_PRODUCT_FORM_DATA,
         title: "a",
         sales: -1,
-        originalPrice: -1,
-        salePrice: -1,
-        rate: -1,
+        originalPrice: 0,
+        salePrice: 0,
+        rate: 9,
       },
     });
 
@@ -204,7 +346,7 @@ describe("MutationProductForm test cases", () => {
     );
 
     const rateError = screen.getByText(
-      new RegExp(FORM_MESSAGES.PRODUCT.RATE.MIN, "i"),
+      new RegExp(FORM_MESSAGES.PRODUCT.RATE.MAX, "i"),
     );
 
     expect(imgError.textContent).toEqual(
@@ -223,6 +365,6 @@ describe("MutationProductForm test cases", () => {
       FORM_MESSAGES.PRODUCT.SALE_PRICE.MIN,
     );
 
-    expect(rateError.textContent).toEqual(FORM_MESSAGES.PRODUCT.RATE.MIN);
+    expect(rateError.textContent).toEqual(FORM_MESSAGES.PRODUCT.RATE.MAX);
   });
 });
