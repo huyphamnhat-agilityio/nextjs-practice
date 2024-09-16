@@ -2,7 +2,7 @@
 import { revalidateTag } from "next/cache";
 
 // Types
-import { FormState, Pagination, Product, ProductForm } from "@/types";
+import { Pagination, Product } from "@/types";
 
 // Constants
 import {
@@ -14,7 +14,7 @@ import {
 } from "@/constants";
 
 // Services
-import { fetchApi, uploadAndGetImageUrl } from "@/lib";
+import { fetchApi } from "@/lib";
 
 export type GetProductProps = {
   page: number;

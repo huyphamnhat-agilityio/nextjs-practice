@@ -102,7 +102,6 @@ const ProductFormBody = ({
                 className="hidden"
                 onBlur={onBlur}
                 onChange={(e) => {
-                  console.log(e.target.files);
                   if (e.target.files.length > 0) {
                     handleSelectImage(e);
                     onChange(e.target.files[0]);
