@@ -13,6 +13,7 @@ import {
   ModalFooter,
   Spinner,
 } from "@nextui-org/react";
+import { NumericFormat } from "react-number-format";
 
 // Types
 import { FormState, Product, ProductForm } from "@/types";
@@ -206,23 +207,20 @@ const ProductFormBody = ({
           control={control}
           name="originalPrice"
           render={({ field: { onChange, onBlur, value } }) => (
-            <Input
+            <NumericFormat
+              customInput={Input}
               label="Original Price"
               name="originalPrice"
               labelPlacement="outside"
               placeholder="Enter original price..."
-              type="number"
-              step="any"
+              thousandSeparator
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.originalPrice}
               errorMessage={errors?.originalPrice?.message}
               onBlur={onBlur}
-              onChange={(e) => {
-                onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
-                );
-              }}
+              onValueChange={({ floatValue }) => onChange(floatValue)}
+              decimalScale={2}
             />
           )}
         />
@@ -231,23 +229,20 @@ const ProductFormBody = ({
           control={control}
           name="salePrice"
           render={({ field: { onChange, onBlur, value } }) => (
-            <Input
+            <NumericFormat
+              customInput={Input}
               label="Sale Price"
               name="salePrice"
               labelPlacement="outside"
               placeholder="Enter sale price..."
-              type="number"
-              step="any"
+              thousandSeparator
               value={value?.toString()}
               isDisabled={isPending}
               isInvalid={!!errors?.salePrice}
               errorMessage={errors?.salePrice?.message}
               onBlur={onBlur}
-              onChange={(e) => {
-                onChange(
-                  !isNaN(e.target.valueAsNumber) ? e.target.valueAsNumber : 0,
-                );
-              }}
+              onValueChange={({ floatValue }) => onChange(floatValue)}
+              decimalScale={2}
             />
           )}
         />
@@ -421,6 +416,7 @@ const MutationProductForm = ({
 
   const onSubmit = useCallback(
     async (data: ProductForm) => {
+      console.log(data);
       try {
         setIsPending(true);
 

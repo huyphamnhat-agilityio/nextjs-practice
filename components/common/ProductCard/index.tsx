@@ -40,6 +40,9 @@ import {
   PLACEHOLDER_PRODUCT_DESCRIPTION,
 } from "@/mocks";
 
+// Utils
+import { formatNumberWithThousandSeparator } from "@/utils";
+
 // Components
 const ConfirmProductForm = dynamic(
   () => import("@/components/ConfirmProductForm/index"),
@@ -199,10 +202,10 @@ const ProductCard = (props: Product) => {
           </div>
           <div className="py-1.25 px-0.75 flex gap-1.25">
             <span className="text-foreground-50 text-base font-bold">
-              ${originalPrice.toFixed(2)}
+              {formatNumberWithThousandSeparator(originalPrice)}
             </span>
             <span className="text-secondary text-base font-bold">
-              ${salePrice.toFixed(2)}
+              {formatNumberWithThousandSeparator(salePrice)}
             </span>
           </div>
           <div className="mt-auto w-fit px-5 py-2.5 text-primary text-sm font-bold flex justify-center items-center gap-2 border-medium border-primary rounded-9.25 bg-transparent hover:bg-primary hover:bg-opacity-25 transition-transform-colors-opacity cursor-pointer">
