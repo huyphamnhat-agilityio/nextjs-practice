@@ -13,7 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  productionBrowserSourceMaps: true,
   headers: () => [
     {
       source: "/(.*)",
