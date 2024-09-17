@@ -50,7 +50,7 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
               >
                 <input
                   aria-label="Your Email"
-                  class="w-full font-normal bg-transparent !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text group-data-[has-value=true]:text-default-foreground text-foreground-100 text-sm/7 h-auto"
+                  class="w-full font-normal bg-transparent !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text peer pr-6 rtl:pr-0 rtl:pl-6 group-data-[has-value=true]:text-default-foreground text-foreground-100 text-sm/7 h-auto"
                   data-has-end-content="true"
                   data-slot="input"
                   id="react-aria-:r0:"
@@ -59,13 +59,21 @@ exports[`SubscribeSection test cases should render correctly 1`] = `
                   type="text"
                   value=""
                 />
-                <button
-                  class="z-0 group items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 w-auto h-auto rounded-1.25 hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
-                  data-testid="subscribe-button"
-                  type="submit"
+                <span
+                  aria-label="clear input"
+                  class="p-2 -m-2 z-10 hidden absolute right-3 rtl:right-auto rtl:left-3 appearance-none select-none opacity-0 hover:!opacity-100 cursor-pointer active:!opacity-70 rounded-full outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-large peer-data-[filled=true]:opacity-70 peer-data-[filled=true]:block transition-opacity motion-reduce:transition-none"
+                  data-slot="clear-button"
+                  role="button"
+                  tabindex="0"
                 >
-                  Subscribe
-                </button>
+                  <button
+                    class="z-0 group items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 w-auto h-auto rounded-1.25 hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
+                    data-testid="subscribe-button"
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </span>
               </div>
             </div>
           </div>
@@ -132,7 +140,7 @@ exports[`SubscribeSection test cases should show success toast when subscribing 
               >
                 <input
                   aria-label="Your Email"
-                  class="w-full font-normal bg-transparent !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text group-data-[has-value=true]:text-default-foreground text-foreground-100 text-sm/7 h-auto"
+                  class="w-full font-normal bg-transparent !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text peer pr-6 rtl:pr-0 rtl:pl-6 group-data-[has-value=true]:text-default-foreground text-foreground-100 text-sm/7 h-auto"
                   data-has-end-content="true"
                   data-slot="input"
                   id="react-aria-:ra:"
@@ -141,13 +149,21 @@ exports[`SubscribeSection test cases should show success toast when subscribing 
                   type="text"
                   value=""
                 />
-                <button
-                  class="z-0 group items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 w-auto h-auto rounded-1.25 hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
-                  data-testid="subscribe-button"
-                  type="submit"
+                <span
+                  aria-label="clear input"
+                  class="p-2 -m-2 z-10 hidden absolute right-3 rtl:right-auto rtl:left-3 appearance-none select-none opacity-0 hover:!opacity-100 cursor-pointer active:!opacity-70 rounded-full outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-large peer-data-[filled=true]:opacity-70 peer-data-[filled=true]:block transition-opacity motion-reduce:transition-none"
+                  data-slot="clear-button"
+                  role="button"
+                  tabindex="0"
                 >
-                  Subscribe
-                </button>
+                  <button
+                    class="z-0 group items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 min-w-20 gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-primary data-[hover=true]:opacity-hover py-3.75 w-auto h-auto rounded-1.25 hidden sm:block px-5.625 text-white text-sm/7 absolute right-0 rounded-l-none rounded-r-1.25"
+                    data-testid="subscribe-button"
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </span>
               </div>
             </div>
           </div>

@@ -88,7 +88,7 @@ const ProductFormBody = ({
                   ? coverImageUrl
                   : PLACEHOLDER_COURSE_IMAGE
             }
-            className="object-cover"
+            className="object-cover cursor-pointer"
             alt=""
           />
 
