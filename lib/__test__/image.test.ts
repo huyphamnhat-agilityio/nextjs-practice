@@ -20,7 +20,7 @@ describe("Image service test case", () => {
 
     mockFormData.append("image", mockImageFile);
 
-    const result = await uploadAndGetImageUrl(mockImageFile);
+    const result = await uploadAndGetImageUrl(mockFormData);
 
     expect(result).toEqual(MOCK_IMGBB_RESPONSE.data.url);
   });

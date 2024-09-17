@@ -16,7 +16,7 @@ import {
 import { NumericFormat } from "react-number-format";
 
 // Types
-import { FormState, Product, ProductForm } from "@/types";
+import { Product, ProductForm } from "@/types";
 
 // Schemas
 import { ProductFormSchema } from "@/schemas";
@@ -422,9 +422,11 @@ const MutationProductForm = ({
 
         try {
           if (data.coverImage) {
-            const imageBase64 = await convertImageToBase64(data.coverImage);
+            const imageFormData = new FormData();
 
-            imageUrl = await uploadAndGetImageUrl(imageBase64);
+            imageFormData.append("image", data.coverImage);
+
+            imageUrl = await uploadAndGetImageUrl(imageFormData);
           }
         } catch (error) {
           setError("coverImage", {
