@@ -33,5 +33,6 @@ export const Input = extendVariants(NextUIInput, {
     size: "md",
     radius: "sm",
     border: "default",
+    isClearable: "true",
   },
 });
