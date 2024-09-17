@@ -32,6 +32,7 @@ import {
 } from "@/components";
 import Link from "next/link";
 import { DESTINATION } from "@/constants";
+import { formatNumberWithThousandSeparator } from "@/utils";
 
 export async function generateMetadata({
   params,
@@ -177,11 +178,13 @@ export default async function Page({ params }: { params: { id: string } }) {
               isZoomed
             />
 
-            <div className="flex flex-col lg:flex-row items-center justify-evenly gap-2 w-full">
+            <div className="flex flex-col items-center justify-evenly gap-2 w-full">
               <Button className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg">
                 <p>
-                  Buy Now for ${salePrice}{" "}
-                  <span className="text-sm line-through">${originalPrice}</span>
+                  Buy Now for {formatNumberWithThousandSeparator(salePrice)}{" "}
+                  <span className="text-sm line-through">
+                    {formatNumberWithThousandSeparator(originalPrice)}
+                  </span>
                 </p>
               </Button>
               <div className="text-base text-foreground-100">or</div>
