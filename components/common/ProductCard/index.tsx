@@ -71,7 +71,6 @@ const ProductCard = (props: Product) => {
   const {
     isOpen: isConfirmModalOpen,
     onOpen: onConfirmModalOpen,
-    onOpenChange: onConfirmModalOpenChange,
     onClose: onConfirmModalClose,
   } = useDisclosure({
     defaultOpen: false,
@@ -80,7 +79,6 @@ const ProductCard = (props: Product) => {
   const {
     isOpen: isMutationModalOpen,
     onOpen: onMutationModalOpen,
-    onOpenChange: onMutationModalOpenChange,
     onClose: onMutationModalClose,
   } = useDisclosure({
     defaultOpen: false,
@@ -222,7 +220,6 @@ const ProductCard = (props: Product) => {
           isOpen={isConfirmModalOpen}
           onOpen={onConfirmModalOpen}
           onClose={onConfirmModalClose}
-          onOpenChange={onConfirmModalOpenChange}
         />
       )}
 
@@ -230,7 +227,6 @@ const ProductCard = (props: Product) => {
         <MutationProductForm
           isOpen={isMutationModalOpen}
           onOpen={onMutationModalOpen}
-          onOpenChange={onMutationModalOpenChange}
           onClose={onMutationModalClose}
           data={props}
         />

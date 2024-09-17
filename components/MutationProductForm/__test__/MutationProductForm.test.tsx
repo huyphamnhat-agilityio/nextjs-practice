@@ -14,6 +14,7 @@ import { FORM_MESSAGES, PRODUCT_MESSAGES } from "@/constants";
 
 // Services
 import { mutateProduct, uploadAndGetImageUrl } from "@/lib";
+import { act } from "react";
 
 jest.mock("react-dom", () => ({
   ...jest.requireActual("react-dom"),
@@ -68,10 +69,10 @@ describe("MutationProductForm test cases", () => {
     isOpen: true,
     onClose: jest.fn(),
     onOpen: jest.fn(),
-    onOpenChange: jest.fn(),
     data: MOCK_PRODUCTS[0],
   };
 
+  const mockError = "error";
   it("should display error message when uploading image fails", async () => {
     setup(mockProps);
 
@@ -122,7 +123,10 @@ describe("MutationProductForm test cases", () => {
   });
 
   it("should be able to add when entering valid data", async () => {
-    setup({ ...mockProps, data: { ...mockProps.data, id: "" } });
+    const { asFragment } = setup({
+      ...mockProps,
+      data: { ...mockProps.data, id: "" },
+    });
 
     const titleInput = screen.getByRole("textbox", {
       name: /title title/i,
@@ -174,6 +178,61 @@ describe("MutationProductForm test cases", () => {
     });
 
     await userEvent.click(submitBtn);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should show error toast when adding fails", async () => {
+    const { asFragment } = setup({
+      ...mockProps,
+      data: { ...mockProps.data, id: "" },
+    });
+
+    const titleInput = screen.getByRole("textbox", {
+      name: /title title/i,
+    });
+
+    await userEvent.type(titleInput, "Updated Title");
+
+    const originalPriceInput = screen.getByRole("textbox", {
+      name: /original price original price/i,
+    });
+
+    await userEvent.type(originalPriceInput, "100");
+
+    const salePriceInput = screen.getByRole("textbox", {
+      name: /sale price sale price/i,
+    });
+
+    await userEvent.type(salePriceInput, "100");
+
+    const rateInput = screen.getByRole("textbox", {
+      name: /rate rate/i,
+    });
+
+    await userEvent.type(rateInput, "2");
+
+    const submitBtn = screen.getByRole("button", {
+      name: /submit/i,
+    });
+
+    expect(submitBtn).not.toBeDisabled();
+
+    expect(originalPriceInput).toHaveValue(
+      `${mockProps.data.originalPrice},100`,
+    );
+
+    expect(salePriceInput).toHaveValue(`${mockProps.data.salePrice},100`);
+
+    expect(rateInput).toHaveValue("2");
+
+    mockUploadAndGetImageUrl.mockResolvedValueOnce("https://mock-url.com");
+
+    mockMutateProduct.mockRejectedValueOnce(mockError);
+
+    await userEvent.click(submitBtn);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should be able to update when entering valid data", async () => {
@@ -234,6 +293,28 @@ describe("MutationProductForm test cases", () => {
     await userEvent.click(submitBtn);
   });
 
+  it("should show error toast when updating fails", async () => {
+    const { asFragment } = setup(mockProps);
+
+    const titleInput = screen.getByRole("textbox", {
+      name: /title title/i,
+    });
+
+    await userEvent.type(titleInput, "Updated Title");
+
+    const submitBtn = screen.getByRole("button", {
+      name: /submit/i,
+    });
+
+    expect(submitBtn).not.toBeDisabled();
+
+    mockMutateProduct.mockRejectedValueOnce(mockError);
+
+    await userEvent.click(submitBtn);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it("should be able to prevent entering invalid data", async () => {
     setup(mockProps);
 
@@ -290,12 +371,28 @@ describe("MutationProductForm test cases", () => {
     expect(rateInput).toHaveValue("1");
   });
 
+  it("should be able to clear image", async () => {
+    setup(mockProps);
+
+    const imgInput = screen.getByTestId<HTMLInputElement>("cover-image");
+
+    await userEvent.upload(imgInput, mockImageFile);
+
+    const clearImgBtn = screen.getByRole("button", {
+      name: /clear\-image/i,
+    });
+
+    await userEvent.click(clearImgBtn);
+
+    expect(imgInput.files[0].length).toBe(undefined);
+  });
+
   it("should display error message when typing invalid data", async () => {
     setup({
       ...mockProps,
       data: {
         ...PLACEHOLDER_PRODUCT_FORM_DATA,
-        title: "a",
+        title: "",
         sales: -1,
         originalPrice: 0,
         salePrice: 0,
@@ -309,19 +406,47 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.upload(imgInput, file);
 
-    await userEvent.tab();
+    const titleInput = screen.getByRole("textbox", {
+      name: /title title/i,
+    });
+
+    act(() => titleInput.focus());
+
+    await userEvent.type(titleInput, "a");
 
     await userEvent.tab();
 
-    await userEvent.tab();
+    const salesInput = screen.getByRole("spinbutton", {
+      name: /sales sales/i,
+    });
+
+    act(() => salesInput.focus());
+
+    await userEvent.type(salesInput, "0");
 
     await userEvent.tab();
 
-    await userEvent.tab();
+    const originalPriceInput = screen.getByRole("textbox", {
+      name: /original price original price/i,
+    });
+
+    await userEvent.type(originalPriceInput, "0");
 
     await userEvent.tab();
 
+    const salePriceInput = screen.getByRole("textbox", {
+      name: /sale price sale price/i,
+    });
+
+    await userEvent.type(salePriceInput, "0");
+
     await userEvent.tab();
+
+    const rateInput = screen.getByRole("textbox", {
+      name: /rate rate/i,
+    });
+
+    await userEvent.type(rateInput, "0");
 
     await userEvent.tab();
 

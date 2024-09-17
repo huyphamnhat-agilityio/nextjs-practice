@@ -20,9 +20,6 @@ const meta: Meta<typeof ConfirmProductForm> = {
     onOpen: {
       description: "Callback function to open the form",
     },
-    onOpenChange: {
-      description: "Callback function to handle form opening/closing changes",
-    },
   },
   parameters: {
     controls: {
@@ -40,7 +37,6 @@ export const Primary: Story = {
     isOpen: true,
     id: "0",
     onOpen: () => {},
-    onOpenChange: () => {},
   },
   render: function Render(args) {
     const [, updateArgs] = useArgs<typeof args>();

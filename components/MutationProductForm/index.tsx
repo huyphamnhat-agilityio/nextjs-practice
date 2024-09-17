@@ -342,7 +342,6 @@ const ProductFormBody = ({
 export type MutationProductFormProps = {
   isOpen: boolean;
   onOpen: () => void;
-  onOpenChange: () => void;
   onClose: () => void;
   data?: Product;
 };
@@ -395,13 +394,6 @@ const MutationProductForm = ({
     setSelectedImage(undefined);
     onClose();
   }, [onClose, reset]);
-
-  const handleOnOpenChange = useCallback(
-    (isOpen: boolean) => {
-      if (!isOpen) handleCloseModal();
-    },
-    [handleCloseModal],
-  );
 
   const handleClearImage = useCallback(() => {
     selectedImage?.size > 0 && setSelectedImage(undefined);
@@ -467,11 +459,7 @@ const MutationProductForm = ({
   );
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onOpenChange={handleOnOpenChange}
-      scrollBehavior="outside"
-    >
+    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="outside">
       <ModalContent>
         <ModalHeader className="text-2xl">
           {data?.id ? "Edit course" : "Add course"}

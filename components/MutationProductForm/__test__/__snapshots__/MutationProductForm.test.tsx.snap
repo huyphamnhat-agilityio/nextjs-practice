@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MutationProductForm test cases should be able to add when entering valid data 1`] = `<DocumentFragment />`;
+
 exports[`MutationProductForm test cases should renders correctly with existing data 1`] = `<DocumentFragment />`;
 
 exports[`MutationProductForm test cases should renders correctly with no data 1`] = `<DocumentFragment />`;
+
+exports[`MutationProductForm test cases should show error toast when adding fails 1`] = `<DocumentFragment />`;
+
+exports[`MutationProductForm test cases should show error toast when updating fails 1`] = `<DocumentFragment />`;

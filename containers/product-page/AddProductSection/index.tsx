@@ -10,7 +10,7 @@ const MutationProductForm = dynamic(
 );
 
 const AddProductSection = () => {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -23,7 +23,6 @@ const AddProductSection = () => {
           isOpen={isOpen}
           onClose={onClose}
           onOpen={onOpen}
-          onOpenChange={onOpenChange}
         />
       )}
     </>

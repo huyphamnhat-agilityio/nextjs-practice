@@ -20,9 +20,6 @@ const meta: Meta<typeof MutationProductForm> = {
     onOpen: {
       description: "Callback function to open the form",
     },
-    onOpenChange: {
-      description: "Callback function to handle form opening/closing changes",
-    },
   },
   parameters: {
     controls: {
@@ -39,7 +36,6 @@ export const Primary: Story = {
   args: {
     isOpen: true,
     onOpen: () => {},
-    onOpenChange: () => {},
   },
   render: function Render(args) {
     const [, updateArgs] = useArgs<typeof args>();

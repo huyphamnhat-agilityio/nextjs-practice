@@ -60,7 +60,6 @@ const ConfirmProductFormBody = ({
 export type ConfirmProductFormProps = {
   isOpen: boolean;
   onOpen: () => void;
-  onOpenChange: () => void;
   onClose: () => void;
   id: string;
 };
@@ -69,7 +68,6 @@ const ConfirmProductForm = ({
   id,
   isOpen,
   onClose,
-  onOpenChange,
 }: ConfirmProductFormProps) => {
   const deleteAction = async (payload: FormData) => {
     try {
@@ -83,7 +81,7 @@ const ConfirmProductForm = ({
     onClose();
   };
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="outside">
+    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="outside">
       <ModalContent>
         <ModalHeader className="text-2xl">Delete course</ModalHeader>
         <form action={deleteAction}>
