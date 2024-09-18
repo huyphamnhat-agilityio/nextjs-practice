@@ -1,3 +1,5 @@
+import { RelatedProductsSectionSkeleton } from "@/containers";
+
 import { Skeleton } from "@nextui-org/react";
 
 export default async function Loading() {
@@ -29,8 +31,12 @@ export default async function Loading() {
             <Skeleton className="h-90 w-80 sm:w-120" />
 
             <Skeleton className="w-full h-13" />
+
+            <Skeleton className="w-full h-13" />
           </div>
         </div>
+
+        <RelatedProductsSectionSkeleton />
       </div>
     </main>
   );

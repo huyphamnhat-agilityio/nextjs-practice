@@ -29,10 +29,11 @@ import {
   GoalIcon,
   MediaIcon,
   PlayIcon,
+  ProductList,
 } from "@/components";
 import Link from "next/link";
 import { DESTINATION } from "@/constants";
-import { formatNumberWithThousandSeparator } from "@/utils";
+import { RelatedProductsSection } from "@/containers";
 
 export async function generateMetadata({
   params,
@@ -80,8 +81,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!product) notFound();
 
-  const { title, description, sales, originalPrice, salePrice, coverImageUrl } =
-    product;
+  const { title, description, sales, coverImageUrl } = product;
 
   return (
     <main>
@@ -180,12 +180,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
             <div className="flex flex-col items-center justify-evenly gap-2 w-full">
               <Button className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg">
-                <p>
-                  Buy Now for {formatNumberWithThousandSeparator(salePrice)}{" "}
-                  <span className="text-sm line-through">
-                    {formatNumberWithThousandSeparator(originalPrice)}
-                  </span>
-                </p>
+                <p>Buy Now</p>
               </Button>
               <div className="text-base text-foreground-100">or</div>
               <Button
@@ -193,11 +188,13 @@ export default async function Page({ params }: { params: { id: string } }) {
                 href={DESTINATION.PRODUCT}
                 className="py-3 bg-gradient-to-tr from-primary to-danger text-white text-lg w-full rounded-lg"
               >
-                See more courses
+                Back to courses
               </Button>
             </div>
           </div>
         </div>
+
+        <RelatedProductsSection id={id} />
       </div>
     </main>
   );

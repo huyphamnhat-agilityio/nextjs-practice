@@ -40,7 +40,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/1"
+                href="/products/1"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -76,91 +76,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/1"
+              href="/products/1"
             >
               <div
                 class="flex justify-between"
@@ -298,7 +218,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/2"
+                href="/products/2"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -334,91 +254,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-red-500 text-white"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/2"
+              href="/products/2"
             >
               <div
                 class="flex justify-between"
@@ -556,7 +396,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/3"
+                href="/products/3"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -592,91 +432,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/3"
+              href="/products/3"
             >
               <div
                 class="flex justify-between"
@@ -814,7 +574,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/4"
+                href="/products/4"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -850,91 +610,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/4"
+              href="/products/4"
             >
               <div
                 class="flex justify-between"
@@ -1072,7 +752,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/5"
+                href="/products/5"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -1108,91 +788,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-red-500 text-white"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/5"
+              href="/products/5"
             >
               <div
                 class="flex justify-between"
@@ -1330,7 +930,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
             >
               <a
-                href="/product/6"
+                href="/products/6"
               >
                 <div
                   class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -1366,91 +966,11 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
               </div>
               <div
                 class="flex gap-2.5 absolute bottom-6 left-24 z-10"
-              >
-                <button
-                  aria-label="favorite button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white text-black"
-                  data-testid="mark-favorite"
-                  type="button"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    id="Capa_1"
-                    version="1.1"
-                    viewBox="0 0 471.701 471.701"
-                    width="21"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="SVGRepo_bgCarrier"
-                      stroke-width="0"
-                    />
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <g
-                      id="SVGRepo_iconCarrier"
-                    >
-                      <g>
-                        <path
-                          d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1 c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3 l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4 C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3 s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4 c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3 C444.801,187.101,434.001,213.101,414.401,232.701z"
-                        />
-                         
-                      </g>
-                    </g>
-                  </svg>
-                </button>
-                <button
-                  aria-label="cart button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="update"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M 18 2 L 15.585938 4.4140625 L 19.585938 8.4140625 L 22 6 L 18 2 z M 14.076172 5.9238281 L 3 17 L 3 21 L 7 21 L 18.076172 9.9238281 L 14.076172 5.9238281 z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="watch later button"
-                  class="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none p-2.5 min-w-0 w-auto h-auto rounded-full hover:opacity-60 bg-white"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <svg
-                    height="20px"
-                    version="1.1"
-                    viewBox="0 0 21 20"
-                    width="21px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <g
-                      id="surface1"
-                    >
-                      <path
-                        d="M 15.832031 3.332031 C 16.070312 3.332031 16.269531 3.414062 16.429688 3.570312 C 16.585938 3.730469 16.667969 3.925781 16.667969 4.167969 C 16.667969 4.402344 16.585938 4.597656 16.425781 4.757812 L 11.179688 10 L 16.425781 15.242188 C 16.585938 15.402344 16.667969 15.597656 16.667969 15.832031 C 16.667969 16.070312 16.585938 16.269531 16.429688 16.429688 C 16.269531 16.585938 16.070312 16.664062 15.832031 16.664062 C 15.597656 16.664062 15.402344 16.585938 15.242188 16.425781 L 10 11.175781 L 4.757812 16.425781 C 4.597656 16.585938 4.402344 16.664062 4.167969 16.664062 C 3.929688 16.664062 3.730469 16.585938 3.570312 16.429688 C 3.414062 16.269531 3.332031 16.070312 3.332031 15.832031 C 3.332031 15.597656 3.414062 15.402344 3.574219 15.242188 L 8.820312 10 L 3.574219 4.757812 C 3.414062 4.597656 3.332031 4.402344 3.332031 4.167969 C 3.332031 3.925781 3.414062 3.730469 3.570312 3.570312 C 3.730469 3.414062 3.929688 3.332031 4.167969 3.332031 C 4.402344 3.332031 4.597656 3.414062 4.757812 3.574219 L 10 8.820312 L 15.242188 3.574219 C 15.402344 3.414062 15.597656 3.332031 15.832031 3.332031 Z M 15.832031 3.332031 "
-                        fill="#000"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <a
               class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-              href="/product/6"
+              href="/products/6"
             >
               <div
                 class="flex justify-between"
@@ -1583,7 +1103,7 @@ exports[`PopularCoursesSection test cases should render correctly 1`] = `
         </div>
         <a
           class="relative items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity flex gap-2.5 font-bold self-center"
-          href="/product"
+          href="/products"
           role="link"
           tabindex="0"
         >

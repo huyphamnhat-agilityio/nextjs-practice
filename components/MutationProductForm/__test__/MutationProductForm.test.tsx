@@ -416,6 +416,9 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.tab();
 
+    // bypass the clear button
+    await userEvent.tab();
+
     const salesInput = screen.getByRole("spinbutton", {
       name: /sales sales/i,
     });
@@ -426,12 +429,18 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.tab();
 
+    // bypass the clear button
+    await userEvent.tab();
+
     const originalPriceInput = screen.getByRole("textbox", {
       name: /original price original price/i,
     });
 
     await userEvent.type(originalPriceInput, "0");
 
+    await userEvent.tab();
+
+    // bypass the clear button
     await userEvent.tab();
 
     const salePriceInput = screen.getByRole("textbox", {
@@ -442,12 +451,18 @@ describe("MutationProductForm test cases", () => {
 
     await userEvent.tab();
 
+    // bypass the clear button
+    await userEvent.tab();
+
     const rateInput = screen.getByRole("textbox", {
       name: /rate rate/i,
     });
 
     await userEvent.type(rateInput, "0");
 
+    await userEvent.tab();
+
+    // bypass the clear button
     await userEvent.tab();
 
     const imgError = screen.getByText(

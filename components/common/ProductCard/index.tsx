@@ -134,7 +134,7 @@ const ProductCard = (props: Product) => {
             <p className="text-white text-sm/6 font-bold">Sale</p>
           </div>
           <div className="flex gap-2.5 absolute bottom-6 left-24 z-10">
-            {!(pathname === DESTINATION.HOME) && (
+            {pathname === DESTINATION.PRODUCT && (
               <>
                 <Button
                   className={`${!!isFavorited ? "bg-red-500 text-white" : "bg-white text-black"}`}

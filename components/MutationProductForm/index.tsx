@@ -1,7 +1,13 @@
 "use client";
 import React, { useCallback, useState } from "react";
 import toast from "react-hot-toast";
-import { Control, Controller, FieldErrors, useForm } from "react-hook-form";
+import {
+  Control,
+  Controller,
+  FieldErrors,
+  useForm,
+  UseFormSetValue,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Image as NextUIImage,
@@ -33,14 +39,12 @@ import { mutateProduct, uploadAndGetImageUrl } from "@/lib";
 // Constants
 import { PRODUCT_MESSAGES } from "@/constants";
 
-// Utils
-import { convertImageToBase64 } from "@/utils";
-
 export type ProductFormBodyProps = {
   selectedImage: File;
   control: Control<ProductForm, any>;
   handleSelectImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleClearImage: () => void;
+  setValue: UseFormSetValue<ProductForm>;
   errors: FieldErrors<ProductForm>;
   isValid: boolean;
   isPending: boolean;
@@ -53,6 +57,7 @@ const ProductFormBody = ({
   control,
   handleSelectImage,
   handleClearImage,
+  setValue,
   errors,
   isValid,
   isPending,
@@ -154,6 +159,7 @@ const ProductFormBody = ({
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
+                onClear={() => setValue("title", "")}
               />
             </>
           )}
@@ -199,6 +205,7 @@ const ProductFormBody = ({
               onKeyDown={(e: React.KeyboardEvent) =>
                 ["e", "E", "+", "-", "."].includes(e.key) && e.preventDefault()
               }
+              onClear={() => setValue("sales", 0)}
               maxLength={10}
             />
           )}
@@ -221,6 +228,7 @@ const ProductFormBody = ({
               errorMessage={errors?.originalPrice?.message}
               onBlur={onBlur}
               onValueChange={({ floatValue }) => onChange(floatValue)}
+              onClear={() => setValue("originalPrice", 0)}
               decimalScale={2}
               maxLength={16}
             />
@@ -245,6 +253,7 @@ const ProductFormBody = ({
               errorMessage={errors?.salePrice?.message}
               onBlur={onBlur}
               onValueChange={({ floatValue }) => onChange(floatValue)}
+              onClear={() => setValue("salePrice", 0)}
               decimalScale={2}
               maxLength={16}
             />
@@ -268,6 +277,7 @@ const ProductFormBody = ({
               errorMessage={errors?.rate?.message}
               onBlur={onBlur}
               onValueChange={({ floatValue }) => onChange(floatValue)}
+              onClear={() => setValue("rate", 0)}
               decimalScale={1}
               maxLength={3}
             />
@@ -470,6 +480,7 @@ const MutationProductForm = ({
             errors={errors}
             handleSelectImage={handleSelectImage}
             handleClearImage={handleClearImage}
+            setValue={setValue}
             isValid={isValid}
             isPending={isPending}
             isDirty={isDirty}

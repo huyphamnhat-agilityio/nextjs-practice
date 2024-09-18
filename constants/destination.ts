@@ -1,4 +1,4 @@
 export const DESTINATION = {
   HOME: "/",
-  PRODUCT: "/product",
+  PRODUCT: "/products",
 } as const;

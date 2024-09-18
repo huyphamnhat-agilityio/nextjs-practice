@@ -21,7 +21,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/1"
+          href="/products/1"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -141,7 +141,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/1"
+        href="/products/1"
       >
         <div
           class="flex justify-between"
@@ -279,7 +279,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/2"
+          href="/products/2"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -399,7 +399,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/2"
+        href="/products/2"
       >
         <div
           class="flex justify-between"
@@ -537,7 +537,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/3"
+          href="/products/3"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -657,7 +657,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/3"
+        href="/products/3"
       >
         <div
           class="flex justify-between"
@@ -795,7 +795,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/4"
+          href="/products/4"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -915,7 +915,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/4"
+        href="/products/4"
       >
         <div
           class="flex justify-between"
@@ -1053,7 +1053,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/5"
+          href="/products/5"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -1173,7 +1173,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/5"
+        href="/products/5"
       >
         <div
           class="flex justify-between"
@@ -1311,7 +1311,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
         class="flex z-10 w-full justify-start items-center shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-large relative p-0"
       >
         <a
-          href="/product/6"
+          href="/products/6"
         >
           <div
             class="shadow-black/5 shadow-none group relative overflow-hidden bg-content3 dark:bg-content2 before:opacity-100 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-content4/30 before:bg-gradient-to-r before:from-transparent before:via-content4 dark:before:via-default-700/10 before:to-transparent after:opacity-100 after:absolute after:inset-0 after:-z-10 after:bg-content3 dark:after:bg-content2 rounded-none"
@@ -1431,7 +1431,7 @@ exports[`ProductList test cases should render correctly with provided data 1`] =
       </div>
       <a
         class="relative w-full p-3 flex-auto place-content-inherit align-items-inherit h-auto break-words text-left overflow-y-auto subpixel-antialiased light px-6.25 pt-6.25 pb-8.75 bg-white flex flex-col gap-2.5"
-        href="/product/6"
+        href="/products/6"
       >
         <div
           class="flex justify-between"
