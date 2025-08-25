@@ -17,7 +17,9 @@
     "icons": "@/components/icons",
     "hooks": "@/hooks",
     "interfaces": "@/interfaces",
-    "constants": "@/constants"
+    "constants": "@/constants",
+    "services": "@/services",
+    "actions": "@/actions"
   },
   "iconLibrary": "lucide"
 }

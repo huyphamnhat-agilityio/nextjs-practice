@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Header } from "@/components/ui/common";
 
 // Local Fonts
 const coreSansC = localFont({
@@ -68,7 +69,10 @@ export default function RootLayout({
         className={`${coreSansC.variable} ${causten.variable} overflow-y-scroll antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <main className="mx-auto min-h-screen flex flex-col bg-background">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

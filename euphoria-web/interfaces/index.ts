@@ -1,7 +1,3 @@
-export type User = {
-  id: string;
-  email: string;
-  password: string;
-};
-
-export type UserPayload = Omit<User, "id">;
+export type { AuthResponse } from "./auth";
+export type { UserPayload, User } from "./user";
+export type { LoginFormData } from "./form";

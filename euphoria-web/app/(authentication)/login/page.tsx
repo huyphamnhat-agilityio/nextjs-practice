@@ -1,0 +1,65 @@
+import Image from "next/image";
+import { Button, Separator } from "@/components/ui/common";
+import { GoogleIcon, TwitterIcon } from "@/components/icons";
+import { LoginForm } from "@/components/feature/auth";
+
+export default function LoginPage() {
+  return (
+    <>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col lg:flex-row">
+        {/* Left Side - Image */}
+        <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden min-h-[400px]">
+          <Image
+            src="/images/hero-image.jpg"
+            alt="Happy friends"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+
+        {/* Right Side - Login Form */}
+        <div className="flex-1 flex items-center justify-center p-4 md:p-8 lg:p-12">
+          <div className="w-full max-w-md space-y-8">
+            <div className="text-center space-y-2">
+              <h1 className="font-core-sans-c font-bold text-left text-4xl text-foreground">
+                Sign In Page
+              </h1>
+            </div>
+
+            <div className="space-y-4">
+              {/* Social Login Buttons */}
+              <Button
+                variant="social"
+                size="lg"
+                className="text-base font-normal"
+              >
+                <GoogleIcon />
+                Continue With Google
+              </Button>
+
+              <Button
+                variant="social"
+                size="lg"
+                className="text-base font-normal"
+              >
+                <TwitterIcon />
+                Continue With Twitter
+              </Button>
+
+              {/* Divider */}
+              <div className="flex items-center space-x-4">
+                <Separator className="flex-1" />
+                <span className="text-sm text-muted-foreground">OR</span>
+                <Separator className="flex-1" />
+              </div>
+
+              {/* Client Login Form */}
+              <LoginForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -27,6 +27,7 @@ const buttonVariants = cva(
         sm: "rounded-lg py-3",
         lg: "rounded-md py-4",
         icon: "h-10 w-10",
+        auto: "p-0",
       },
       font: {
         causten: "font-causten",
@@ -56,7 +57,7 @@ const buttonVariants = cva(
       fontWeight: "normal",
       fontSize: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -77,7 +78,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       asChild = false,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -90,13 +91,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             fontSize,
             fontWeight,
             className,
-          })
+          }),
         )}
         ref={ref}
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 
