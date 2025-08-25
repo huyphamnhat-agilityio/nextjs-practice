@@ -31,3 +31,5 @@ export {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "./NavigationMenu";
+export { Slider } from "./Slider";
+export { default as FilterSidebar } from "./FilterSidebar";

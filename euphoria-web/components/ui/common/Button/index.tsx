@@ -20,12 +20,12 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         social:
           "w-full border border-input bg-background hover:bg-accent/50 text-primary",
-        icon: "hover:text-foreground flex items-center gap-1",
+        icon: "hover:bg-accent/50 flex items-center gap-1 border border-transparent",
       },
       size: {
-        default: "py-4",
-        sm: "rounded-lg py-3",
-        lg: "rounded-md py-4",
+        default: "py-4 px-4",
+        sm: "rounded-lg py-3 px-3",
+        lg: "rounded-md py-4 px-4",
         icon: "h-10 w-10",
         auto: "p-0",
       },
