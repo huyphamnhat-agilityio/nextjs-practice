@@ -15,7 +15,8 @@
       "description": "A timeless crewneck t-shirt made from soft cotton.",
       "price": 523,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Uniqlo"
     },
     {
       "id": "2",
@@ -25,7 +26,8 @@
       "description": "Cozy oversized hoodie with a front pocket and adjustable drawstring.",
       "price": 847,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "H&M"
     },
     {
       "id": "3",
@@ -35,7 +37,8 @@
       "description": "A slim fit polo shirt perfect for casual and semi-formal wear.",
       "price": 312,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Zara"
     },
     {
       "id": "4",
@@ -45,7 +48,8 @@
       "description": "Lightweight long sleeve with a stylish v-neck design.",
       "price": 754,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Nike"
     },
     {
       "id": "5",
@@ -55,7 +59,8 @@
       "description": "Casual tee featuring a bold graphic print on the front.",
       "price": 186,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Adidas"
     },
     {
       "id": "6",
@@ -65,7 +70,8 @@
       "description": "A 3-button henley shirt for a casual, layered look.",
       "price": 678,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Levi's"
     },
     {
       "id": "7",
@@ -75,7 +81,8 @@
       "description": "Breathable tank top perfect for workouts or hot weather.",
       "price": 295,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Gap"
     },
     {
       "id": "8",
@@ -85,7 +92,8 @@
       "description": "Stylish pullover with a quarter zip for versatile styling.",
       "price": 902,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Puma"
     },
     {
       "id": "9",
@@ -95,7 +103,8 @@
       "description": "Casual button-up shirt suitable for layering or standalone wear.",
       "price": 431,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Calvin Klein"
     },
     {
       "id": "10",
@@ -105,7 +114,8 @@
       "description": "Moisture-wicking jersey ideal for sports and active lifestyles.",
       "price": 759,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"],
+      "brand": "Under Armour"
     }
   ],
   "carts": [
