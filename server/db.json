@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "email": "euphoria@gmail.com",
+      "password": "$2a$10$XPf6xnpyVnLaMt8xYuMGeeTPCIKPDYjC9HfhWS2q4q0loqJD7gJzC",
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Classic Crewneck Tee",
+      "image": "https://vcdn.acfc.com.vn/media/catalog/product/cache/1590496433db240c9566f569680d296c/a/l/alternate10_710916698003_lnb3izzj49kbjbcp.webp",
+      "category": "Tops",
+      "description": "A timeless crewneck t-shirt made from soft cotton.",
+      "price": 523,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "2",
+      "name": "Oversized Hoodie",
+      "category": "Tops",
+      "image": "https://image.hm.com/assets/hm/46/6b/466beb85dff7fb235b6620eec7e1af55ee4586bb.jpg?imwidth=2160",
+      "description": "Cozy oversized hoodie with a front pocket and adjustable drawstring.",
+      "price": 847,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "3",
+      "name": "Slim Fit Polo",
+      "category": "Tops",
+      "image": "https://image.hm.com/assets/hm/61/66/616684dfd04b39e90ef6e20addd738700fdc83a7.jpg?imwidth=2160",
+      "description": "A slim fit polo shirt perfect for casual and semi-formal wear.",
+      "price": 312,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "4",
+      "name": "V-Neck Long Sleeve",
+      "category": "Tops",
+      "image": "https://www.garageclothing.com/dw/image/v2/BDRP_PRD/on/demandware.static/-/Sites-root_garage_catalog/default/dw42cc80a6/images/100092921/100092921_4DD_1920x2880.jpg?sw=500&sh=750",
+      "description": "Lightweight long sleeve with a stylish v-neck design.",
+      "price": 754,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "5",
+      "name": "Graphic Print Tee",
+      "image": "https://veirdo.in/cdn/shop/files/b_0119493a-9927-4550-8323-baefe5f625c0.jpg?v=1754546713",
+      "category": "Tops",
+      "description": "Casual tee featuring a bold graphic print on the front.",
+      "price": 186,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "6",
+      "name": "Henley Shirt",
+      "image": "https://www.90degreebyreflex.com/cdn/shop/files/a_motta_0478.webp?v=1744137857&width=1260",
+      "category": "Tops",
+      "description": "A 3-button henley shirt for a casual, layered look.",
+      "price": 678,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "7",
+      "name": "Lightweight Tank",
+      "image": "https://cdn.shopify.com/s/files/1/0098/8822/files/images-LightweightSlubTexturedJerseyLiftingTankGSOatWhiteA2B4R_WC1V_1257_0036.jpg?v=1748511464",
+      "category": "Tops",
+      "description": "Breathable tank top perfect for workouts or hot weather.",
+      "price": 295,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "8",
+      "name": "Quarter Zip Pullover",
+      "image": "https://cdn.shopify.com/s/files/1/2185/2813/files/U3040RG_01_b1_s1_a4_1_m54_7f5cad42-d432-4342-8959-6f3e79edce67_750x.jpg?v=1739423417",
+      "category": "Tops",
+      "description": "Stylish pullover with a quarter zip for versatile styling.",
+      "price": 902,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "9",
+      "name": "Button-Up Shirt",
+      "image": "https://assets.pcna.com/q_auto/Images/TM97744_435_B_FR_ONL_GRAY.jpg",
+      "category": "Tops",
+      "description": "Casual button-up shirt suitable for layering or standalone wear.",
+      "price": 431,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    },
+    {
+      "id": "10",
+      "name": "Athletic Jersey",
+      "image": "https://img.kwcdn.com/product/fancy/b67f9b5b-1a67-4e06-b1c8-93fa4d4105a2.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
+      "category": "Tops",
+      "description": "Moisture-wicking jersey ideal for sports and active lifestyles.",
+      "price": 759,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["red-900", "cyan-900", "fuchsia-900", "stone-900"]
+    }
+  ],
+  "carts": [
+    {
+      "userId": "1",
+      "items": [],
+      "id": 1
+    }
+  ]
+}
