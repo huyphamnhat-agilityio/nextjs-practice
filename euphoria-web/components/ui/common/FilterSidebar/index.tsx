@@ -1,23 +1,59 @@
 "use client";
 import { ChevronRight, SlidersHorizontal } from "lucide-react";
-import { useState } from "react";
+import { TransitionStartFunction, useEffect, useState } from "react";
 import { Card, CardContent } from "../Card";
 import { Slider } from "../Slider";
-const FilterSidebar = () => {
-  const [priceRange, setPriceRange] = useState([70, 600]);
+import { CATEGORIES } from "@/constants";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Button } from "../Button";
+import { useDebounce } from "use-debounce";
 
-  const categories = [
-    "All",
-    "Tops",
-    "Printed T-shirts",
-    "Plain T-shirts",
-    "Kurti",
-    "Boxers",
-    "Full sleeve T-shirts",
-    "Joggers",
-    "Pyjamas",
-    "Jeans",
-  ];
+export type FilterSidebarProps = {
+  isDisabled?: boolean;
+  startFilterTransition?: TransitionStartFunction;
+};
+
+const FilterSidebar = ({
+  startFilterTransition,
+  isDisabled = false,
+}: FilterSidebarProps) => {
+  const [priceRange, setPriceRange] = useState([0, 1000]);
+  const debouncedPriceRange = useDebounce(priceRange, 300);
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+
+    params.set("price_gte", debouncedPriceRange[0][0].toString());
+    params.set("price_lte", debouncedPriceRange[0][1].toString());
+
+    startFilterTransition?.(() =>
+      replace(`${pathname}?${params.toString()}`, { scroll: false }),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedPriceRange[0][0], debouncedPriceRange[0][1]]);
+
+  const handleClickCategory = (value: string | null) => {
+    if (searchParams.get("category_like") === value) return;
+
+    console.log("Category changed to:", value);
+
+    const params = new URLSearchParams(searchParams);
+
+    params.set("page", "1");
+
+    if (value) {
+      params.set("category_like", value);
+    } else {
+      params.delete("category_like");
+    }
+
+    startFilterTransition?.(() => replace(`${pathname}?${params.toString()}`));
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   return (
     <Card className="w-full bg-card border-border">
@@ -30,14 +66,18 @@ const FilterSidebar = () => {
 
         {/* Categories */}
         <div className="space-y-3">
-          {categories.map((category) => (
-            <div
-              key={category}
-              className="flex items-center justify-between py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors"
+          {CATEGORIES.map(({ label, value }) => (
+            <Button
+              key={label}
+              variant="ghost"
+              fontWeight="semibold"
+              className={`flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors ${searchParams.get("category_like") === value ? "bg-accent/50 text-accent-foreground" : ""}`}
+              onClick={() => handleClickCategory(value)}
+              disabled={isDisabled}
             >
-              <span className="text-foreground">{category}</span>
+              <span className="text-foreground">{label}</span>
               <ChevronRight className="w-4 h-4 text-muted-foreground" />
-            </div>
+            </Button>
           ))}
         </div>
 
@@ -49,10 +89,11 @@ const FilterSidebar = () => {
             <Slider
               value={priceRange}
               onValueChange={setPriceRange}
-              max={600}
+              max={1000}
               min={0}
               step={10}
               className="w-full"
+              disabled={isDisabled}
             />
           </div>
 

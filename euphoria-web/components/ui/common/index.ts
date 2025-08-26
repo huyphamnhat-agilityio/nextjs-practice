@@ -19,7 +19,7 @@ export {
   FormMessage,
   FormField,
 } from "./Form";
-export { default as Header } from "./Header";
+export { default as Header } from "../Header";
 export {
   NavigationMenu,
   NavigationMenuList,
@@ -33,3 +33,5 @@ export {
 } from "./NavigationMenu";
 export { Slider } from "./Slider";
 export { default as FilterSidebar } from "./FilterSidebar";
+export { default as SearchInput } from "./SearchInput";
+export { Skeleton } from "./Skeleton";

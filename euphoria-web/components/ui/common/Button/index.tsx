@@ -16,7 +16,8 @@ const buttonVariants = cva(
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground text-secondary-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         social:
           "w-full border border-input bg-background hover:bg-accent/50 text-primary",
@@ -46,6 +47,7 @@ const buttonVariants = cva(
         light: "font-light",
         normal: "font-normal",
         medium: "font-medium",
+        semibold: "font-semibold",
         bold: "font-bold",
       },
     },

@@ -33,6 +33,11 @@ const causten = localFont({
       style: "normal",
     },
     {
+      path: "../public/fonts/Causten-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
       path: "../public/fonts/Causten-Medium.otf",
       weight: "500",
       style: "normal",

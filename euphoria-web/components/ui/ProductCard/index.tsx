@@ -20,6 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <CardContent className="p-0">
         <div className="aspect-square overflow-hidden rounded-t-lg">
           <Image
+            priority
             src={product.image}
             alt={product.name}
             width={400}
@@ -27,14 +28,20 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <div className="p-4 space-y-2">
-          <h3 className="font-medium text-foreground truncate">
-            {product.name}
-          </h3>
-          <p className="text-sm text-muted-foreground">{product.brand}</p>
-          <p className="font-semibold text-foreground">
-            ${product.price.toFixed(2)}
-          </p>
+        <div className="p-4 flex justify-between">
+          <div className="flex flex-col">
+            <h3 className="font-causten text-accent font-semibold truncate">
+              {product.name}
+            </h3>
+            <p className="font-causten font-medium text-sm text-alternative">
+              {product.brand}
+            </p>
+          </div>
+          <div className="py-2 px-4 bg-muted rounded-lg inline-flex justify-center items-center">
+            <p className="font-semibold text-muted-foreground text-sm">
+              ${product.price.toFixed(2)}
+            </p>
+          </div>
         </div>
       </CardContent>
     </Card>

@@ -1,4 +1,4 @@
-import { Header } from "@/components/ui/common";
+import { Footer, Header } from "@/components/ui";
 import { ReactNode } from "react";
 
 const Layout = ({
@@ -10,6 +10,7 @@ const Layout = ({
     <>
       <Header includeSearch />
       {children}
+      <Footer />
     </>
   );
 };
