@@ -7,5 +7,5 @@ export type Product = {
   brand: string;
   price: number;
   sizes: string[];
-  colors: string[];
+  colors: { name: string; value: string }[];
 };
