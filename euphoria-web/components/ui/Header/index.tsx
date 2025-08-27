@@ -1,7 +1,9 @@
-"use server";
+"use client";
 import Image from "next/image";
-import { Button } from "../common/Button";
 import Link from "next/link";
+
+// Components
+import { Button } from "../common/Button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,19 +12,24 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../common/NavigationMenu";
-import { HamburgerMenuIcon } from "@/components/icons";
-import { cookies } from "next/headers";
 import SearchInput from "../common/SearchInput";
+
+// Icons
+import { HamburgerMenuIcon } from "@/components/icons";
+import { usePathname } from "next/navigation";
+import { ROUTES } from "@/constants";
 
 export type HeaderProps = {
   includeSearch?: boolean;
+  isAuthenticated?: boolean;
 };
 
-const Header = async ({ includeSearch }: HeaderProps) => {
-  const isAuthenticated = (await cookies()).has("accessToken");
+const Header = ({ includeSearch, isAuthenticated = false }: HeaderProps) => {
+  const path = usePathname();
+
   return (
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
-      <div className="flex items-center justify-between ">
+      <div className="flex items-center justify-between container mx-auto w-full px-4">
         <div className="flex items-center gap-10">
           <Image
             src="/images/logo.jpg"
@@ -45,40 +52,42 @@ const Header = async ({ includeSearch }: HeaderProps) => {
           </nav>
         </div>
 
-        {/* Search Bar */}
-        {includeSearch && (
-          <SearchInput style="relative w-full hidden md:flex flex-1 max-w-3xl mx-8" />
-        )}
+        <div className="flex flex-1 items-center justify-end gap-4">
+          {includeSearch && (
+            <SearchInput style="relative hidden md:flex flex-1 max-w-3xl mx-8" />
+          )}
 
-        {!isAuthenticated && (
-          <Button
-            variant="default"
-            size="sm"
-            fontSize="lg"
-            className="hidden md:inline-flex px-12"
-          >
-            Login
-          </Button>
-        )}
+          {!isAuthenticated && !path.startsWith("/login") && (
+            <Button
+              variant="default"
+              size="sm"
+              fontSize="lg"
+              className="hidden md:inline-flex px-12"
+              asChild
+            >
+              <Link href={ROUTES.LOGIN}>Login</Link>
+            </Button>
+          )}
 
-        {includeSearch && (
-          <div className="flex gap-2 items-center">
-            <NavigationMenu className="md:hidden">
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>
-                    <HamburgerMenuIcon width={24} height={24} />
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <NavigationMenuLink asChild>
-                      <Link href="/">Shop</Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-        )}
+          {includeSearch && (
+            <div className="flex gap-2 items-center md:hidden">
+              <NavigationMenu className="md:hidden">
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>
+                      <HamburgerMenuIcon width={24} height={24} />
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <NavigationMenuLink asChild>
+                        <Link href="/">Shop</Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+          )}
+        </div>
       </div>
 
       {includeSearch && <SearchInput style="md:hidden relative w-full" />}

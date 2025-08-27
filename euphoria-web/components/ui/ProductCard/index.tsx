@@ -1,6 +1,7 @@
-import React from "react";
-import { Card, CardContent } from "../common";
 import Image from "next/image";
+
+// Components
+import { Card, CardContent } from "../common";
 
 interface Product {
   id: string;
@@ -10,9 +11,9 @@ interface Product {
   image: string;
 }
 
-interface ProductCardProps {
+export type ProductCardProps = {
   product: Product;
-}
+};
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (

@@ -13,13 +13,7 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // ✅ Protect other routes
-  if (!token) {
-    console.log("Token not found, redirecting to login...");
-    return NextResponse.redirect(new URL("/login", req.url));
-  }
-
-  if (isJwtExpired(token)) {
+  if (token && isJwtExpired(token)) {
     const res = NextResponse.redirect(new URL("/login", req.url));
     res.cookies.set("accessToken", "", { expires: new Date(0) });
     return res;
@@ -29,5 +23,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)", "/cart"],
 };

@@ -1,9 +1,13 @@
 "use client";
-import { FilterSidebar } from "@/components/ui/common";
-import { Product } from "@/interfaces";
-import ProductList from "../ProductList";
 import { useTransition } from "react";
+
+// Components
+import { FilterSidebar } from "@/components/ui/common";
+import ProductList from "../ProductList";
 import ProductListSkeleton from "../ProductListSkeleton";
+
+// Types
+import { Product } from "@/interfaces";
 
 export type ProductPageContentProps = {
   products: Product[];

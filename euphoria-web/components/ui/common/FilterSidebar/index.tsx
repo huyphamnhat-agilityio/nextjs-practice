@@ -52,6 +52,7 @@ const FilterSidebar = ({
     }
 
     startFilterTransition?.(() => replace(`${pathname}?${params.toString()}`));
+
     replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
@@ -71,7 +72,7 @@ const FilterSidebar = ({
               key={label}
               variant="ghost"
               fontWeight="semibold"
-              className={`flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors ${searchParams.get("category_like") === value ? "bg-accent/50 text-accent-foreground" : ""}`}
+              className={`flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors ${searchParams.get("category_like") === value ? "bg-accent/50 text-muted-foreground" : ""}`}
               onClick={() => handleClickCategory(value)}
               disabled={isDisabled}
             >

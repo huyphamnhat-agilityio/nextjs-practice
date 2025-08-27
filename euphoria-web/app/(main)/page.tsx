@@ -1,5 +1,10 @@
+// Components
 import { ProductPageContent } from "@/components/feature/home";
+
+// Services
 import { getProducts } from "@/services";
+
+// Utils
 import { toQueryString } from "@/utils";
 
 const Shop = async ({

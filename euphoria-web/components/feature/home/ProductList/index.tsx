@@ -1,5 +1,10 @@
+// Components
 import { ProductCard } from "@/components/ui";
+
+// Types
 import { Product } from "@/interfaces";
+
+// Utils
 import { cn } from "@/utils";
 
 export type ProductListProps = {

@@ -3,7 +3,11 @@
 import { useState, useCallback, useMemo, ChangeEvent, memo } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+// Types
 import { UserPayload } from "@/interfaces/user";
+
+// Components
 import {
   Button,
   Form,
@@ -15,8 +19,14 @@ import {
   FormMessage,
   Input,
 } from "@/components/ui/common";
+
+// Utils
 import { clearErrorOnChange, isEnableSubmit } from "@/utils";
+
+// Constants
 import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
+
+// Actions
 import { login } from "@/actions";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];

@@ -1,3 +1,4 @@
+// Components
 import { ProductListSkeleton } from "@/components/feature/home";
 import { FilterSidebar } from "@/components/ui/common";
 

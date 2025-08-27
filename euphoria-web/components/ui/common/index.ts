@@ -35,3 +35,13 @@ export { Slider } from "./Slider";
 export { default as FilterSidebar } from "./FilterSidebar";
 export { default as SearchInput } from "./SearchInput";
 export { Skeleton } from "./Skeleton";
+export {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from "./Breadcrumb";
+export { Badge, badgeVariants } from "./Badge";

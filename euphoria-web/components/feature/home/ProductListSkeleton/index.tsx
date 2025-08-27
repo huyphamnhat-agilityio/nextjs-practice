@@ -1,3 +1,4 @@
+// Components
 import { ProductCardSkeleton } from "@/components/ui";
 
 const ProductListSkeleton = () => {

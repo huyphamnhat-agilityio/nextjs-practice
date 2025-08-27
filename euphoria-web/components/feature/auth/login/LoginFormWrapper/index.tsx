@@ -1,10 +1,14 @@
-import { GoogleIcon, TwitterIcon } from "@/components/icons";
-import { Button, Separator } from "@/components/ui/common";
 import Image from "next/image";
+
+// Icons
+import { GoogleIcon, TwitterIcon } from "@/components/icons";
+
+// Components
+import { Button, Separator } from "@/components/ui/common";
 
 const LoginFormWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex-1 flex flex-col lg:flex-row">
+    <div className="container flex-1 flex flex-col lg:flex-row mx-auto w-full">
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden min-h-[400px]">
         <Image

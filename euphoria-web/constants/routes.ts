@@ -1,4 +1,7 @@
 export const API_ROUTES = {
   LOGIN: "/api/login",
-  // Add other API routes here
+} as const;
+
+export const ROUTES = {
+  LOGIN: "/login",
 } as const;
