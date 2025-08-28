@@ -12,7 +12,7 @@ const Layout = async ({
   const isAuthenticated = (await cookies()).has("accessToken");
   return (
     <>
-      <Header includeSearch isAuthenticated={isAuthenticated} />
+      <Header isAuthenticated={isAuthenticated} />
       {children}
       <Footer />
     </>

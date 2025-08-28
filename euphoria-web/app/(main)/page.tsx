@@ -7,7 +7,7 @@ import { getProducts } from "@/services";
 // Utils
 import { toQueryString } from "@/utils";
 
-const Shop = async ({
+const HomePage = async ({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -25,4 +25,4 @@ const Shop = async ({
   );
 };
 
-export default Shop;
+export default HomePage;

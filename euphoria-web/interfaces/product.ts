@@ -8,4 +8,5 @@ export type Product = {
   price: number;
   sizes: string[];
   colors: { name: string; value: string }[];
+  shipping: number;
 };

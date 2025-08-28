@@ -14,10 +14,10 @@ import {
   Button,
   Separator,
 } from "@/components/ui/common";
-import ProductImageGallery from "../ProductImageGallery";
-import ProductFeature from "../ProductFeature";
-import ProductVariantSelection from "../ProductVariantSelection";
-import ProductDescription from "../ProductDescription";
+import ProductImageGallery from "./ProductImageGallery";
+import ProductFeature from "./ProductFeature";
+import ProductVariantSelection from "./ProductVariantSelection";
+import ProductDescription from "./ProductDescription";
 
 // Types
 import { CartItem, Product } from "@/interfaces";
@@ -44,6 +44,7 @@ const ProductDetailContent = ({
       return;
     }
     const item: CartItem = {
+      id: "1",
       name,
       price,
       image,

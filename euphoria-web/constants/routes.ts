@@ -4,4 +4,6 @@ export const API_ROUTES = {
 
 export const ROUTES = {
   LOGIN: "/login",
+  CART: "/cart",
+  HOME: "/",
 } as const;

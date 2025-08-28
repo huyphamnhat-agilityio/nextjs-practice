@@ -20,13 +20,13 @@ import { usePathname } from "next/navigation";
 import { ROUTES } from "@/constants";
 
 export type HeaderProps = {
-  includeSearch?: boolean;
   isAuthenticated?: boolean;
 };
 
-const Header = ({ includeSearch, isAuthenticated = false }: HeaderProps) => {
+const Header = ({ isAuthenticated = false }: HeaderProps) => {
   const path = usePathname();
 
+  const isHome = path === ROUTES.HOME;
   return (
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
       <div className="flex items-center justify-between container mx-auto w-full px-4">
@@ -53,7 +53,7 @@ const Header = ({ includeSearch, isAuthenticated = false }: HeaderProps) => {
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-4">
-          {includeSearch && (
+          {isHome && (
             <SearchInput style="relative hidden md:flex flex-1 max-w-3xl mx-8" />
           )}
 
@@ -69,28 +69,26 @@ const Header = ({ includeSearch, isAuthenticated = false }: HeaderProps) => {
             </Button>
           )}
 
-          {includeSearch && (
-            <div className="flex gap-2 items-center md:hidden">
-              <NavigationMenu className="md:hidden">
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>
-                      <HamburgerMenuIcon width={24} height={24} />
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <NavigationMenuLink asChild>
-                        <Link href="/">Shop</Link>
-                      </NavigationMenuLink>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
-          )}
+          <div className="flex gap-2 items-center md:hidden">
+            <NavigationMenu className="md:hidden">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    <HamburgerMenuIcon width={24} height={24} />
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NavigationMenuLink asChild>
+                      <Link href="/">Shop</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         </div>
       </div>
 
-      {includeSearch && <SearchInput style="md:hidden relative w-full" />}
+      {isHome && <SearchInput style="md:hidden relative w-full" />}
     </header>
   );
 };

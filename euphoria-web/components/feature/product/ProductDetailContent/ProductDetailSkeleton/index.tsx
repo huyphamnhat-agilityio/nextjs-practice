@@ -1,4 +1,4 @@
-import ProductFeature from "../ProductDetailContent/ProductFeature";
+import ProductFeature from "../ProductFeature";
 import { ShoppingCart } from "lucide-react";
 
 // Components
