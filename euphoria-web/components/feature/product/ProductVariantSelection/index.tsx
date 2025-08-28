@@ -1,7 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/common";
 import { Dispatch, SetStateAction } from "react";
+
+// Components
+import { Button } from "@/components/ui/common";
 
 export type ProductVariantSelectionProps = {
   sizes: string[];

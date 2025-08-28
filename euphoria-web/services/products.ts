@@ -14,6 +14,7 @@ export const getProducts = async (query: string = "") => {
     `${API_URL}/${RESOURCES.PRODUCTS}${query}`,
     {
       method: "GET",
+      cache: "force-cache",
     },
   );
 
@@ -25,6 +26,7 @@ export const getProduct = async (id: string) => {
     `${API_URL}/${RESOURCES.PRODUCTS}/${id}`,
     {
       method: "GET",
+      cache: "force-cache",
     },
   );
 

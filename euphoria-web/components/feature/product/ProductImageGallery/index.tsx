@@ -1,7 +1,9 @@
 "use client";
-import { Button } from "@/components/ui/common";
 import Image from "next/image";
 import { useState } from "react";
+
+// Components
+import { Button } from "@/components/ui/common";
 
 export type ProductImageGalleryProps = {
   data: string[];
@@ -23,6 +25,7 @@ const ProductImageGallery = ({
           width={600}
           height={600}
           className="w-full h-full object-cover"
+          unoptimized
         />
       </div>
 
@@ -43,6 +46,7 @@ const ProductImageGallery = ({
               width={68}
               height={68}
               className="w-full h-full object-cover rounded-lg"
+              unoptimized
             />
           </Button>
         ))}

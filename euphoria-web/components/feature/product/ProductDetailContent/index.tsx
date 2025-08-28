@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { ShoppingCart } from "lucide-react";
 
 // Components
 import {
@@ -17,19 +20,40 @@ import ProductVariantSelection from "../ProductVariantSelection";
 import ProductDescription from "../ProductDescription";
 
 // Types
-import { Product } from "@/interfaces";
-import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { CartItem, Product } from "@/interfaces";
+
+// Constants
+import { ROUTES } from "@/constants";
 
 export type ProductDetailContentProps = {
   product: Product;
+  isAuthenticated?: boolean;
 };
 const ProductDetailContent = ({
   product: { name, description, price, colors, sizes, image },
+  isAuthenticated = false,
 }: ProductDetailContentProps) => {
-  const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedSize, setSelectedSize] = useState("XS");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
+  const { replace } = useRouter();
+
+  const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      replace(ROUTES.LOGIN);
+      return;
+    }
+    const item: CartItem = {
+      name,
+      price,
+      image,
+      quantity: 1,
+      color: selectedColor.value,
+      size: selectedSize,
+    };
+
+    console.log(item);
+  };
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -77,6 +101,7 @@ const ProductDetailContent = ({
               fontSize="lg"
               fontWeight="semibold"
               size="sm"
+              onClick={handleAddToCart}
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               Add to cart
