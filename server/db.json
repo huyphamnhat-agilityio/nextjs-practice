@@ -16,10 +16,10 @@
       "price": 523,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#82181a" },
+        { "name": "cyan", "value": "#104e64" },
+        { "name": "fuchsia", "value": "#721378" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Uniqlo"
     },
@@ -32,10 +32,10 @@
       "price": 847,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "H&M"
     },
@@ -48,10 +48,10 @@
       "price": 312,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Zara"
     },
@@ -64,10 +64,10 @@
       "price": 754,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Nike"
     },
@@ -80,10 +80,10 @@
       "price": 186,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Adidas"
     },
@@ -96,10 +96,10 @@
       "price": 678,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Levi's"
     },
@@ -112,10 +112,10 @@
       "price": 295,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Gap"
     },
@@ -128,10 +128,10 @@
       "price": 902,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Puma"
     },
@@ -144,10 +144,10 @@
       "price": 431,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Calvin Klein"
     },
@@ -160,10 +160,10 @@
       "price": 759,
       "sizes": ["XS", "S", "M", "L", "XL"],
       "colors": [
-        { "name": "red", "value": "red-900" },
-        { "name": "cyan", "value": "cyan-900" },
-        { "name": "fuchsia", "value": "fuchsia-900" },
-        { "name": "stone", "value": "stone-900" }
+        { "name": "red", "value": "#7f1d1d" },
+        { "name": "cyan", "value": "#164e63" },
+        { "name": "fuchsia", "value": "#701a75" },
+        { "name": "stone", "value": "#1c1917" }
       ],
       "brand": "Under Armour"
     }
