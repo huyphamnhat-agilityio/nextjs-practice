@@ -25,4 +25,10 @@ export const login = async (payload: UserPayload) => {
     httpOnly: true,
     expires,
   });
+
+  return authCredential.user;
+};
+
+export const logout = async () => {
+  (await cookies()).delete("accessToken");
 };

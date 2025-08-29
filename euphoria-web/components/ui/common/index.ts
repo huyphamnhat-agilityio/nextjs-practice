@@ -45,3 +45,9 @@ export {
   BreadcrumbEllipsis,
 } from "./Breadcrumb";
 export { Badge, badgeVariants } from "./Badge";
+export {
+  Popover,
+  PopoverAnchor,
+  PopoverContent,
+  PopoverTrigger,
+} from "./Popover";

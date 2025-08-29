@@ -26,6 +26,7 @@ const ProductImageGallery = ({
           height={600}
           className="w-full h-full object-cover"
           unoptimized
+          loading="eager"
         />
       </div>
 
@@ -47,6 +48,7 @@ const ProductImageGallery = ({
               height={68}
               className="w-full h-full object-cover rounded-lg"
               unoptimized
+              loading="eager"
             />
           </Button>
         ))}

@@ -1,74 +1,91 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 // Types
-import { CartItem } from "@/interfaces";
 import { Button } from "@/components/ui/common";
 import Link from "next/link";
 import CartTable from "./CartTable";
 import CartTotal from "./CartTotal";
+import { useUserStore } from "@/stores";
+import { useCartContext, withCartProvider } from "@/contexts";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { ROUTES } from "@/constants";
+import { Loader2 } from "lucide-react";
 
-const cart: CartItem[] = [
-  {
-    id: "1",
-    name: "Blue Flower Print Crop Top",
-    color: "Yellow",
-    size: "M",
-    price: 29.0,
-    quantity: 1,
-    image:
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=150&h=150&fit=crop&crop=center",
-    shipping: 0,
-  },
-  {
-    id: "2",
-    name: "Lavender Hoodie Super Super Long Product Name To Test Truncation",
-    color: "Lavender",
-    size: "XXL",
-    price: 119.0,
-    quantity: 2,
-    image:
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=150&h=150&fit=crop&crop=center",
-    shipping: 0,
-  },
-  {
-    id: "3",
-    name: "Black Sweatshirt",
-    color: "Black",
-    size: "XXL",
-    price: 123.0,
-    quantity: 2,
-    image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=150&h=150&fit=crop&crop=center",
-    shipping: 5.0,
-  },
-];
+const userId = useUserStore.getState().user?.id ?? "";
 
 const CartContent = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>(cart);
+  const {
+    cart,
+    updateItemQuantity,
+    removeItem,
+    isLoading,
+    isUpdating,
+    totalPrice,
+    totalShipping,
+    clearCart,
+  } = useCartContext();
 
-  const updateQuantity = (id: string, newQuantity: number) => {
-    if (newQuantity < 1) return;
-    setCartItems((items) =>
-      items.map((item) =>
-        item.id === id ? { ...item, quantity: newQuantity } : item,
-      ),
-    );
-  };
+  const { items = [] } = cart || {};
 
-  const removeItem = (id: string) => {
-    setCartItems((items) => items.filter((item) => item.id !== id));
-  };
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
+  const { push } = useRouter();
+
+  const handleUpdateQuantity = useCallback(
+    async (id: string, quantity: number) => {
+      try {
+        await updateItemQuantity(id, quantity);
+      } catch (error) {
+        toast("Update quantity failed", {
+          style: { width: "fit-content" },
+          dismissible: true,
+        });
+        console.log(error);
+      }
+    },
+    [updateItemQuantity],
   );
-  const totalShipping = cartItems.reduce((sum, item) => sum + item.shipping, 0);
-  const grandTotal = subtotal + totalShipping;
 
-  if (cartItems.length === 0) {
+  const handleRemove = useCallback(
+    async (id: string) => {
+      try {
+        await removeItem(id);
+      } catch (error) {
+        toast("Update quantity failed", {
+          style: { width: "fit-content" },
+          dismissible: true,
+        });
+        console.log(error);
+      }
+    },
+    [removeItem],
+  );
+
+  const handleCheckout = useCallback(async () => {
+    try {
+      setIsConfirmed(true);
+      await clearCart();
+      push(ROUTES.ORDER);
+    } catch (error) {
+      toast("Checkout failed", {
+        style: { width: "fit-content" },
+        dismissible: true,
+      });
+      console.log(error);
+      setIsConfirmed(false);
+    }
+  }, [clearCart, push]);
+  if (!cart || isLoading)
+    return (
+      <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
+        <Loader2 className="h-6 w-6 animate-spin" />
+      </div>
+    );
+
+  if (cart?.items.length === 0 && !isConfirmed) {
     return (
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
         <div className="flex flex-col gap-3 md:gap-[50px]">
@@ -84,7 +101,7 @@ const CartContent = () => {
               Your cart is empty and sad :<span className="font-sans">(</span>
             </h3>
             <p className="font-core-sans-c font-normal text-alternative text-center text-base">
-              Add something to make it happy!
+              Add something to make it happy<span className="font-sans">!</span>
             </p>
           </div>
 
@@ -99,20 +116,22 @@ const CartContent = () => {
   return (
     <>
       <CartTable
-        data={cartItems}
-        removeItem={removeItem}
-        updateQuantity={updateQuantity}
+        data={items}
+        removeItem={handleRemove}
+        updateQuantity={handleUpdateQuantity}
+        disabled={isUpdating}
       />
 
       {/* Cart Summary */}
       <CartTotal
-        subtotal={subtotal}
+        subtotal={totalPrice}
         totalShipping={totalShipping}
-        grandTotal={grandTotal}
-        handleCheckout={() => {}}
+        grandTotal={totalPrice + totalShipping}
+        handleCheckout={handleCheckout}
+        disabled={isUpdating}
       />
     </>
   );
 };
 
-export default CartContent;
+export default withCartProvider(CartContent, userId);

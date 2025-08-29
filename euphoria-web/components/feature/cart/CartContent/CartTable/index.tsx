@@ -11,8 +11,14 @@ export type CartTableProps = {
   data: CartItem[];
   updateQuantity: (id: string, newQuantity: number) => void;
   removeItem: (id: string) => void;
+  disabled?: boolean;
 };
-const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
+const CartTable = ({
+  data,
+  updateQuantity,
+  removeItem,
+  disabled = false,
+}: CartTableProps) => {
   return (
     <div className="bg-card overflow-hidden shadow-sm">
       {/* Table Header - Hidden on mobile */}
@@ -42,6 +48,8 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                     width={120}
                     height={120}
                     className="object-cover"
+                    unoptimized
+                    loading="eager"
                   />
                 </div>
                 <div className="min-w-0">
@@ -71,6 +79,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                   size="sm"
                   className="w-8 h-8 p-0"
                   onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  disabled={disabled}
                 >
                   <Minus className="w-3 h-3" />
                 </Button>
@@ -82,6 +91,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                   size="sm"
                   className="w-8 h-8 p-0"
                   onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  disabled={disabled}
                 >
                   <Plus className="w-3 h-3" />
                 </Button>
@@ -108,6 +118,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                   size="sm"
                   className="text-primary hover:text-destructive hover:bg-destructive/10 p-2"
                   onClick={() => removeItem(item.id)}
+                  disabled={disabled}
                 >
                   <Trash2 className="w-4 h-4" />
                 </Button>
@@ -125,6 +136,8 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                     width={120}
                     height={120}
                     className="w-full h-full object-cover"
+                    unoptimized
+                    loading="eager"
                   />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -146,6 +159,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                       size="sm"
                       className="text-primary hover:text-destructive hover:bg-destructive/10 p-1 h-auto"
                       onClick={() => removeItem(item.id)}
+                      disabled={disabled}
                     >
                       <Trash2 className="w-4 h-4" />
                     </Button>
@@ -162,6 +176,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                     size="sm"
                     className="w-8 h-8 p-0"
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    disabled={disabled}
                   >
                     <Minus className="w-3 h-3" />
                   </Button>
@@ -173,6 +188,7 @@ const CartTable = ({ data, updateQuantity, removeItem }: CartTableProps) => {
                     size="sm"
                     className="w-8 h-8 p-0"
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    disabled={disabled}
                   >
                     <Plus className="w-3 h-3" />
                   </Button>

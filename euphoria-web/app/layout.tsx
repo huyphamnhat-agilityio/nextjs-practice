@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Toaster } from "@/components/ui";
 
 // Local Fonts
 const coreSansC = localFont({
@@ -76,6 +77,7 @@ export default function RootLayout({
         <main className="mx-auto min-h-screen flex flex-col bg-background">
           {children}
         </main>
+        <Toaster position="top-center" />
       </body>
     </html>
   );

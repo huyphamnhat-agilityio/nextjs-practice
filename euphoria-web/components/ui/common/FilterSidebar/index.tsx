@@ -39,8 +39,6 @@ const FilterSidebar = ({
   const handleClickCategory = (value: string | null) => {
     if (searchParams.get("category_like") === value) return;
 
-    console.log("Category changed to:", value);
-
     const params = new URLSearchParams(searchParams);
 
     params.set("page", "1");

@@ -22,7 +22,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         social:
           "w-full border border-input bg-background hover:bg-accent/50 text-primary",
-        icon: "hover:bg-accent/50 flex items-center gap-1 border border-transparent",
+        icon: "bg-muted flex items-center gap-1 border border-transparent hover:bg-primary text-alternative hover:text-white",
         image: "aspect-square overflow-hidden",
         color: "rounded-full",
       },

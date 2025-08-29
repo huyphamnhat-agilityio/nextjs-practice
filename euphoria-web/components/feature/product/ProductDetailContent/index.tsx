@@ -24,36 +24,58 @@ import { CartItem, Product } from "@/interfaces";
 
 // Constants
 import { ROUTES } from "@/constants";
+import { useUserStore } from "@/stores";
+import { useCartContext, withCartProvider } from "@/contexts";
+import { toast } from "sonner";
+
+const userId = useUserStore.getState().user?.id ?? "";
 
 export type ProductDetailContentProps = {
   product: Product;
   isAuthenticated?: boolean;
 };
 const ProductDetailContent = ({
-  product: { name, description, price, colors, sizes, image },
+  product,
   isAuthenticated = false,
 }: ProductDetailContentProps) => {
+  const { name, description, price, colors, sizes, image } = product;
   const [selectedSize, setSelectedSize] = useState("XS");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const { replace } = useRouter();
 
-  const handleAddToCart = () => {
+  const { addItem, isUpdating } = useCartContext();
+
+  const handleAddToCart = async () => {
     if (!isAuthenticated) {
       replace(ROUTES.LOGIN);
       return;
     }
+
     const item: CartItem = {
-      id: "1",
-      name,
-      price,
-      image,
+      id: product.id,
+      color: selectedColor.name,
+      image: product.image,
+      name: product.name,
       quantity: 1,
-      color: selectedColor.value,
+      price: product.price,
+      shipping: product.shipping,
       size: selectedSize,
     };
 
-    console.log(item);
+    try {
+      await addItem(item);
+      toast("The product has been added to cart!", {
+        style: { width: "fit-content" },
+        dismissible: true,
+      });
+    } catch (error) {
+      toast((error as Error).message, {
+        style: { width: "fit-content" },
+        dismissible: true,
+      });
+      console.log(error);
+    }
   };
   return (
     <div className="container mx-auto px-4 py-6">
@@ -103,6 +125,7 @@ const ProductDetailContent = ({
               fontWeight="semibold"
               size="sm"
               onClick={handleAddToCart}
+              disabled={isUpdating}
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               Add to cart
@@ -124,4 +147,4 @@ const ProductDetailContent = ({
   );
 };
 
-export default ProductDetailContent;
+export default withCartProvider(ProductDetailContent, userId);

@@ -14,7 +14,9 @@ export const getProducts = async (query: string = "") => {
     `${API_URL}/${RESOURCES.PRODUCTS}${query}`,
     {
       method: "GET",
-      cache: "force-cache",
+      next: {
+        revalidate: 3600,
+      },
     },
   );
 
@@ -26,7 +28,6 @@ export const getProduct = async (id: string) => {
     `${API_URL}/${RESOURCES.PRODUCTS}/${id}`,
     {
       method: "GET",
-      cache: "force-cache",
     },
   );
 

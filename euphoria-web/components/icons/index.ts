@@ -5,3 +5,5 @@ export { default as CreditCardIcon } from "./CreditCardIcon";
 export { default as ClothIcon } from "./ClothIcon";
 export { default as ShippingIcon } from "./ShippingIcon";
 export { default as ShippingReturnIcon } from "./ShippingReturnIcon";
+export { default as UserIcon } from "./UserIcon";
+export { default as CartIcon } from "./CartIcon";

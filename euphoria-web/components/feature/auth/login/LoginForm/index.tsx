@@ -24,10 +24,13 @@ import {
 import { clearErrorOnChange, isEnableSubmit } from "@/utils";
 
 // Constants
-import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
+import { FORM_VALIDATION_MESSAGES, REGEX, ROUTES } from "@/constants";
 
 // Actions
 import { login } from "@/actions";
+import { useUserStore } from "@/stores/user";
+import { useRouter } from "next/navigation";
+import { useCartStore } from "@/stores";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
@@ -60,6 +63,8 @@ const LoginForm = memo(() => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const setUser = useUserStore((state) => state.setUser);
+  const fetchCart = useCartStore((state) => state.fetchCart);
   const form = useForm<UserPayload>({
     mode: "onBlur",
     reValidateMode: "onBlur",
@@ -76,13 +81,17 @@ const LoginForm = memo(() => {
     formState: { errors, dirtyFields, isSubmitting },
   } = form;
 
+  const { replace } = useRouter();
   const onSubmit = useCallback(async () => {
-    const errorMessage = await login(form.getValues());
-
-    if (errorMessage) {
-      setErrorMessage(errorMessage);
+    try {
+      const userInfo = await login(form.getValues());
+      setUser(userInfo);
+      await fetchCart(userInfo.id);
+      replace(ROUTES.HOME);
+    } catch (error) {
+      setErrorMessage((error as Error).message);
     }
-  }, [form]);
+  }, [form, fetchCart, replace, setUser]);
 
   const handleInputChange = useCallback(
     (name: keyof UserPayload, onChange: (value: string) => void) => {

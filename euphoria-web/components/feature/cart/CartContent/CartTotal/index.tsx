@@ -6,6 +6,7 @@ export type CartTotalTypes = {
   totalShipping: number;
   grandTotal: number;
   handleCheckout?: () => void;
+  disabled?: boolean;
 };
 
 const CartTotal = ({
@@ -13,6 +14,7 @@ const CartTotal = ({
   totalShipping,
   grandTotal,
   handleCheckout,
+  disabled = false,
 }: CartTotalTypes) => {
   return (
     <div className="flex flex-col w-full mt-8 space-y-4">
@@ -35,6 +37,7 @@ const CartTotal = ({
         fontSize="lg"
         className="max-w-[232px] ml-auto h-12 mt-6"
         onClick={handleCheckout}
+        disabled={disabled}
       >
         Proceed To Checkout
       </Button>

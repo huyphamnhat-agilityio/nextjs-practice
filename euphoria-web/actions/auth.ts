@@ -1,9 +1,9 @@
 import { API_ROUTES } from "@/constants";
-import { UserPayload } from "@/interfaces";
-import { redirect } from "next/navigation";
+import { User, UserPayload } from "@/interfaces";
 
 export const login = async (data: UserPayload) => {
   let response: Response;
+
   try {
     response = await fetch(API_ROUTES.LOGIN, {
       method: "POST",
@@ -13,10 +13,31 @@ export const login = async (data: UserPayload) => {
       body: JSON.stringify(data),
     });
 
-    if (!response.ok) return JSON.parse(await response.text()) as string;
-  } catch (error) {
-    return (error as Error).message;
-  }
+    if (!response.ok)
+      throw new Error(JSON.parse(await response.text()) as string);
 
-  redirect("/");
+    const userInfo: Omit<User, "password"> = await response.json();
+
+    return userInfo;
+  } catch (error) {
+    throw new Error((error as Error).message);
+  }
+};
+
+export const logout = async () => {
+  let response: Response;
+
+  try {
+    response = await fetch(API_ROUTES.LOGOUT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok)
+      throw new Error(JSON.parse(await response.text()) as string);
+  } catch (error) {
+    throw new Error((error as Error).message);
+  }
 };

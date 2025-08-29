@@ -15,17 +15,31 @@ import {
 import SearchInput from "../common/SearchInput";
 
 // Icons
-import { HamburgerMenuIcon } from "@/components/icons";
-import { usePathname } from "next/navigation";
+import { CartIcon, HamburgerMenuIcon, UserIcon } from "@/components/icons";
+import { usePathname, useRouter } from "next/navigation";
 import { ROUTES } from "@/constants";
+import { useUserStore } from "@/stores";
+import { Popover, PopoverContent, PopoverTrigger } from "../common";
+import { logout } from "@/actions";
 
 export type HeaderProps = {
   isAuthenticated?: boolean;
 };
 
 const Header = ({ isAuthenticated = false }: HeaderProps) => {
+  const email = useUserStore((state) => state.user?.email ?? "");
   const path = usePathname();
 
+  const { refresh, push } = useRouter();
+
+  const handleLogout = async () => {
+    await logout();
+    refresh();
+  };
+
+  const handleNavigateToCart = () => {
+    push(ROUTES.CART);
+  };
   const isHome = path === ROUTES.HOME;
   return (
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
@@ -67,6 +81,28 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
             >
               <Link href={ROUTES.LOGIN}>Login</Link>
             </Button>
+          )}
+
+          {isAuthenticated && (
+            <>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="icon">
+                    <UserIcon />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-fit p-4 font-causten font-normal text-base flex flex-col">
+                  Hi, {email}!
+                  <Button onClick={handleLogout} size="auto" className="py-2">
+                    Logout
+                  </Button>
+                </PopoverContent>
+              </Popover>
+
+              <Button variant="icon" onClick={handleNavigateToCart}>
+                <CartIcon />
+              </Button>
+            </>
           )}
 
           <div className="flex gap-2 items-center md:hidden">
