@@ -1,29 +1,42 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
+import { useShallow } from "zustand/react/shallow";
 import { CartItem } from "@/interfaces";
 import { useCartStore } from "@/stores/cart";
 
 export const useCart = () => {
-  // ✅ Selectors from store
-  const cart = useCartStore((s) => s.cart);
-  const isLoading = useCartStore((s) => s.isLoading);
-  const isMutating = useCartStore((s) => s.isMutating);
-  const error = useCartStore((s) => s.error);
+  // ✅ Combined selector with useShallow for optimal re-renders
+  const { cart, isLoading, isMutating, fetchCart, mutateCart } = useCartStore(
+    useShallow((s) => ({
+      cart: s.cart,
+      isLoading: s.isLoading,
+      isMutating: s.isMutating,
+      fetchCart: s.fetchCart,
+      mutateCart: s.mutateCart,
+    })),
+  );
 
-  const fetchCart = useCartStore((s) => s.fetchCart);
-  const mutateCart = useCartStore((s) => s.mutateCart);
-  const setError = useCartStore((s) => s.setError);
+  // ✅ Memoized computed values to prevent unnecessary recalculations
+  const { totalItems, totalPrice, totalShipping } = useMemo(() => {
+    if (!cart) {
+      return { totalItems: 0, totalPrice: 0, totalShipping: 0 };
+    }
 
-  // ✅ Expose helpers with same signature as old hook
+    return {
+      totalItems: cart.reduce((sum, item) => sum + item.quantity, 0),
+      totalPrice: cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0,
+      ),
+      totalShipping: cart.reduce((sum, item) => sum + item.shipping, 0),
+    };
+  }, [cart]);
+
   const updateCart = useCallback(
     async (items: CartItem[]) => {
-      return await mutateCart(items, true); // optimistic by default
+      return await mutateCart(items);
     },
     [mutateCart],
   );
-
-  const clearError = useCallback(() => {
-    setError(null);
-  }, [setError]);
 
   const removeItem = useCallback(
     async (itemId: string) => {
@@ -58,32 +71,33 @@ export const useCart = () => {
     await updateCart([]);
   }, [updateCart]);
 
-  const totalItems = cart?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+  return useMemo(
+    () => ({
+      cart,
+      isLoading,
+      isUpdating: isMutating,
+      totalItems,
+      totalPrice,
+      totalShipping,
 
-  const totalPrice =
-    cart?.reduce((sum, item) => sum + item.price * item.quantity, 0) || 0;
-
-  const totalShipping =
-    cart?.reduce((sum, item) => sum + item.shipping, 0) || 0;
-
-  return {
-    // State
-    cart,
-    isLoading,
-    isUpdating: isMutating,
-    error,
-    success: !error && !isMutating,
-    totalItems,
-    totalPrice,
-    totalShipping,
-
-    // Actions
-    fetchCart,
-    updateCart,
-    clearError,
-    clearSuccess: () => {},
-    updateItemQuantity,
-    removeItem,
-    clearCart,
-  };
+      fetchCart,
+      updateCart,
+      updateItemQuantity,
+      removeItem,
+      clearCart,
+    }),
+    [
+      cart,
+      isLoading,
+      isMutating,
+      totalItems,
+      totalPrice,
+      totalShipping,
+      fetchCart,
+      updateCart,
+      updateItemQuantity,
+      removeItem,
+      clearCart,
+    ],
+  );
 };

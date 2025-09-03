@@ -51,3 +51,4 @@ export {
   PopoverContent,
   PopoverTrigger,
 } from "./Popover";
+export { default as QuantityControl } from "./QuantityControl";

@@ -18,7 +18,7 @@ const FilterSidebar = ({
   isDisabled = false,
 }: FilterSidebarProps) => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
-  const debouncedPriceRange = useDebounce(priceRange, 300);
+  const [debouncedPriceRange] = useDebounce(priceRange, 300);
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -27,14 +27,14 @@ const FilterSidebar = ({
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
 
-    params.set("price_gte", debouncedPriceRange[0][0].toString());
-    params.set("price_lte", debouncedPriceRange[0][1].toString());
+    params.set("price_gte", debouncedPriceRange[0].toString());
+    params.set("price_lte", debouncedPriceRange[1].toString());
 
     startFilterTransition?.(() =>
       replace(`${pathname}?${params.toString()}`, { scroll: false }),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedPriceRange[0][0], debouncedPriceRange[0][1]]);
+  }, [debouncedPriceRange[0], debouncedPriceRange[1]]);
 
   const handleClickCategory = (value: string | null) => {
     if (searchParams.get("category_like") === value) return;

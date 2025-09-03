@@ -23,25 +23,11 @@ export type CartStore = {
   setCart: (cart: CartItem[]) => void;
   setLoading: (isLoading: boolean) => void;
   setMutating: (isMutating: boolean) => void;
-  setError: (error: string | null) => void;
-
-  // Computed values
-  getSubtotal: () => number;
-  getShippingTotal: () => number;
-  getItemsCount: () => number;
 
   // API operations
   fetchCart: (userId: string) => Promise<void>;
-  mutateCart: (
-    newCart: CartItem[],
-    optimistic?: boolean,
-  ) => Promise<MutationResult>;
+  mutateCart: (newCart: CartItem[]) => Promise<MutationResult>;
   addToCart: (product: Product) => Promise<MutationResult>;
-
-  // Cart page operations (optimistic)
-  updateQuantityOptimistic: (productId: string, quantity: number) => CartItem[];
-  removeFromCartOptimistic: (productId: string) => CartItem[];
-  clearCartOptimistic: () => CartItem[];
 };
 
 export const useCartStore = create<CartStore>()(
@@ -50,7 +36,6 @@ export const useCartStore = create<CartStore>()(
       // State
       cart: [],
       isLoading: false,
-      isInitialized: false,
       isMutating: false,
       error: null,
 
@@ -63,30 +48,10 @@ export const useCartStore = create<CartStore>()(
         set((state) => {
           state.isLoading = isLoading;
         }),
-
       setMutating: (isMutating) =>
         set((state) => {
           state.isMutating = isMutating;
         }),
-      setError: (error) =>
-        set((state) => {
-          state.error = error;
-        }),
-
-      // Computed values
-      getSubtotal: () => {
-        const { cart } = get();
-        return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      },
-      getShippingTotal: () => {
-        const { cart } = get();
-        return cart.reduce((sum, item) => sum + item.shipping, 0);
-      },
-
-      getItemsCount: () => {
-        const { cart } = get();
-        return cart.reduce((sum, item) => sum + item.quantity, 0);
-      },
 
       // API operations
       fetchCart: async (userId: string) => {
@@ -97,14 +62,14 @@ export const useCartStore = create<CartStore>()(
           });
 
           const response = await fetch(`${API_ROUTES.CART}?userId=${userId}`);
-
           const data: Cart | null = await response.json();
 
-          if (data)
+          if (data) {
             set((state) => {
               state.cart = data.items || [];
               state.isLoading = false;
             });
+          }
         } catch (error) {
           const errorMessage =
             error instanceof Error ? error.message : "Unknown error";
@@ -114,18 +79,18 @@ export const useCartStore = create<CartStore>()(
             state.error = errorMessage;
             state.isLoading = false;
           });
+
+          throw error;
         }
       },
 
-      mutateCart: async (newCart, optimistic = true) => {
-        const previousCart = get().cart;
-
+      mutateCart: async (newCart) => {
         const userId = useUserStore.getState().user?.id ?? "";
+
         try {
           set((state) => {
             state.isMutating = true;
             state.error = null;
-            if (optimistic) state.cart = newCart;
           });
 
           const response = await fetch(`${API_ROUTES.CART}`, {
@@ -137,7 +102,7 @@ export const useCartStore = create<CartStore>()(
           const result: Cart = await response.json();
 
           set((state) => {
-            state.cart = result.items || newCart;
+            state.cart = result.items || [];
             state.isMutating = false;
           });
 
@@ -148,12 +113,11 @@ export const useCartStore = create<CartStore>()(
           console.error("Failed to mutate cart:", error);
 
           set((state) => {
-            if (optimistic) state.cart = previousCart;
             state.error = errorMessage;
             state.isMutating = false;
           });
 
-          return { success: false, error: errorMessage };
+          throw error;
         }
       },
 
@@ -181,35 +145,15 @@ export const useCartStore = create<CartStore>()(
               },
             ];
 
-        const result = await get().mutateCart(newCart, false);
+        const result = await get().mutateCart(newCart);
 
         if (result.success && result.data) {
           set((state) => {
-            state.cart = result.data?.items || newCart;
+            state.cart = result.data?.items || [];
           });
         }
 
         return result;
-      },
-
-      // Cart page optimistic operations
-      updateQuantityOptimistic: (productId, quantity) => {
-        const { cart } = get();
-        if (quantity <= 0) {
-          return get().removeFromCartOptimistic(productId);
-        }
-        return cart.map((item) =>
-          item.id === productId ? { ...item, quantity } : item,
-        );
-      },
-
-      removeFromCartOptimistic: (productId) => {
-        const { cart } = get();
-        return cart.filter((item) => item.id !== productId);
-      },
-
-      clearCartOptimistic: () => {
-        return [];
       },
     })),
     {

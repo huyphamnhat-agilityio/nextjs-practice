@@ -1,8 +1,7 @@
 "use client";
 
-import { ErrorFallback } from "@/components/ui";
-
 // Components
+import { ErrorFallback } from "@/components/ui";
 
 export default function Error({
   error,

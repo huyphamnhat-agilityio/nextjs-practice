@@ -31,15 +31,7 @@ const CartContent = () => {
 
   const handleUpdateQuantity = useCallback(
     async (id: string, quantity: number) => {
-      try {
-        await updateItemQuantity(id, quantity);
-      } catch (error) {
-        toast("Update quantity failed", {
-          style: { width: "fit-content" },
-          dismissible: true,
-        });
-        console.log(error);
-      }
+      await updateItemQuantity(id, quantity);
     },
     [updateItemQuantity],
   );
@@ -114,7 +106,6 @@ const CartContent = () => {
         data={cart}
         removeItem={handleRemove}
         updateQuantity={handleUpdateQuantity}
-        disabled={isUpdating}
       />
 
       {/* Cart Summary */}

@@ -47,6 +47,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
   };
 
   const handleNavigateToCart = () => {
+    if (path === ROUTES.CART) return;
     push(ROUTES.CART);
   };
   const isHome = path === ROUTES.HOME;
@@ -95,7 +96,10 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
           {isAuthenticated && (
             <>
               <Popover open={isOpen}>
-                <PopoverTrigger asChild onClick={() => setIsOpen(true)}>
+                <PopoverTrigger
+                  asChild
+                  onClick={() => setIsOpen((prev) => !prev)}
+                >
                   <Button variant="icon">
                     <UserIcon />
                   </Button>
