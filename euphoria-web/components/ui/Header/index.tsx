@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useShallow } from "zustand/shallow";
 // Components
 import { Button } from "../common/Button";
 import {
@@ -27,13 +27,19 @@ export type HeaderProps = {
 };
 
 const Header = ({ isAuthenticated = false }: HeaderProps) => {
-  const email = useUserStore((state) => state.user?.email ?? "");
+  const { email, clearUser } = useUserStore(
+    useShallow((state) => ({
+      email: state.user?.email ?? "",
+      clearUser: state.clearUser,
+    })),
+  );
   const path = usePathname();
 
   const { refresh, push } = useRouter();
 
   const handleLogout = async () => {
     await logout();
+    clearUser();
     refresh();
   };
 

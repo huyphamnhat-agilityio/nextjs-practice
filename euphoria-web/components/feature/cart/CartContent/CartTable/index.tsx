@@ -36,7 +36,7 @@ const CartTable = ({
       {/* Cart Items */}
       <div className="divide-y divide-border">
         {data.map((item) => (
-          <div key={item.id} className="p-4 lg:px-24">
+          <div key={`${item.id}-${item.color}`} className="p-4 lg:px-24">
             {/* Desktop Layout */}
             <div className="hidden lg:grid lg:grid-cols-12 lg:gap-4 lg:items-center">
               {/* Product Details */}

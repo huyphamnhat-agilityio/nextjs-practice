@@ -6,6 +6,7 @@ import { immer } from "zustand/middleware/immer";
 export type UserStore = {
   user: Omit<User, "password"> | undefined;
   setUser: (user: Omit<User, "password">) => void;
+  clearUser: () => void;
 };
 
 export const useUserStore = create(
@@ -16,6 +17,9 @@ export const useUserStore = create(
         set((state) => {
           state.user = user;
         }),
+      clearUser: () => {
+        set((state) => (state.user = undefined));
+      },
     })),
     {
       name: "auth-storage",

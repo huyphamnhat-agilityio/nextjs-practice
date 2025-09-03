@@ -53,7 +53,7 @@ const ProductDetailContent = ({
     }
 
     const item: CartItem = {
-      id: product.id,
+      id: `${product.id}-${selectedColor.name}`,
       color: selectedColor.name,
       image: product.image,
       name: product.name,

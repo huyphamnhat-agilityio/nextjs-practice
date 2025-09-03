@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, useCallback, useMemo, ChangeEvent, memo } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -28,9 +29,9 @@ import { FORM_VALIDATION_MESSAGES, REGEX, ROUTES } from "@/constants";
 
 // Actions
 import { login } from "@/actions";
+
+// Stores
 import { useUserStore } from "@/stores/user";
-import { useRouter } from "next/navigation";
-import { useCartStore } from "@/stores";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
@@ -64,7 +65,6 @@ const LoginForm = memo(() => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const setUser = useUserStore((state) => state.setUser);
-  const fetchCart = useCartStore((state) => state.fetchCart);
   const form = useForm<UserPayload>({
     mode: "onBlur",
     reValidateMode: "onBlur",
@@ -86,12 +86,11 @@ const LoginForm = memo(() => {
     try {
       const userInfo = await login(form.getValues());
       setUser(userInfo);
-      await fetchCart(userInfo.id);
       replace(ROUTES.HOME);
     } catch (error) {
       setErrorMessage((error as Error).message);
     }
-  }, [form, fetchCart, replace, setUser]);
+  }, [form, replace, setUser]);
 
   const handleInputChange = useCallback(
     (name: keyof UserPayload, onChange: (value: string) => void) => {

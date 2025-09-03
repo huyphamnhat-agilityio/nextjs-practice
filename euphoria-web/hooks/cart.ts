@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Cart, CartItem } from "@/interfaces";
+import { usePathname } from "next/navigation";
+import { ROUTES } from "@/constants";
 
 export type UseCartState = {
   cart: Cart | null;
@@ -19,6 +21,7 @@ export type UseCartActions = {
 export type UseCartReturn = UseCartState & UseCartActions;
 
 export const useCart = (userId: string): UseCartReturn => {
+  const path = usePathname();
   const [state, setState] = useState<UseCartState>({
     cart: null,
     isLoading: false,
@@ -137,12 +140,12 @@ export const useCart = (userId: string): UseCartReturn => {
     [userId],
   );
 
-  // Auto-fetch cart when userId changes
+  // Only fetch cart when on cart page
   useEffect(() => {
-    if (userId) {
+    if (userId && path === ROUTES.CART) {
       fetchCart();
     }
-  }, [fetchCart, userId]);
+  }, [fetchCart, userId, path]);
 
   return {
     // State
