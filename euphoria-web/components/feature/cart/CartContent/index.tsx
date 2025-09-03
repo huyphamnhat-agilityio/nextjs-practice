@@ -11,7 +11,7 @@ import { useUserStore } from "@/stores";
 import { useCartContext, withCartProvider } from "@/contexts";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { ROUTES } from "@/constants";
+import { IMAGES, ROUTES } from "@/constants";
 import { Loader2 } from "lucide-react";
 
 const userId = useUserStore.getState().user?.id ?? "";
@@ -90,7 +90,7 @@ const CartContent = () => {
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
         <div className="flex flex-col gap-3 md:gap-[50px]">
           <Image
-            src="/images/empty-cart.jpg"
+            src={IMAGES.EMPTY_CART}
             alt="Item Cart Image"
             width={448}
             height={328}

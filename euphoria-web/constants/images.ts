@@ -4,4 +4,5 @@ export const IMAGES = {
   LOGO: "/images/empty-cart.jpg",
   ORDER_CONFIRM: "/images/order-confirm.jpg",
   ERROR: "/images/error-icon.jpg",
+  NOT_FOUND: "/images/not-found.jpg",
 } as const;

@@ -5,6 +5,7 @@ import { GoogleIcon, TwitterIcon } from "@/components/icons";
 
 // Components
 import { Button, Separator } from "@/components/ui/common";
+import { IMAGES } from "@/constants";
 
 const LoginFormWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -13,7 +14,7 @@ const LoginFormWrapper = ({ children }: { children: React.ReactNode }) => {
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden min-h-[400px]">
         <Image
           priority
-          src="/images/hero-image.jpg"
+          src={IMAGES.HERO}
           alt="Happy friends"
           fill
           style={{ objectFit: "cover" }}

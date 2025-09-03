@@ -32,5 +32,9 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/login", "/cart/:path*"], // run only on /login + /cart
+  matcher: [
+    "/login",
+    "/cart/:path*",
+    "/((?!api|_next/static|_next/image|.*\\.png$).*)",
+  ],
 };

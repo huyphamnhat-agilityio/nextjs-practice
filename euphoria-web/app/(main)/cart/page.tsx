@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -8,6 +9,10 @@ import {
 } from "@/components/ui/common";
 import Link from "next/link";
 import { CartContent } from "@/components/feature/cart";
+
+export const metadata: Metadata = {
+  title: "Cart - Euphoria",
+};
 
 const CartPage = () => {
   return (

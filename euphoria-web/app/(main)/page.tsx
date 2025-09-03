@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 // Components
 import { ProductPageContent } from "@/components/feature/home";
 
@@ -6,6 +7,10 @@ import { getProducts } from "@/services";
 
 // Utils
 import { toQueryString } from "@/utils";
+
+export const metadata: Metadata = {
+  title: "Shop",
+};
 
 const HomePage = async ({
   searchParams,

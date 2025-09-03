@@ -17,7 +17,7 @@ import SearchInput from "../common/SearchInput";
 // Icons
 import { CartIcon, HamburgerMenuIcon, UserIcon } from "@/components/icons";
 import { usePathname, useRouter } from "next/navigation";
-import { ROUTES } from "@/constants";
+import { IMAGES, ROUTES } from "@/constants";
 import { useUserStore } from "@/stores";
 import { Popover, PopoverContent, PopoverTrigger } from "../common";
 import { logout } from "@/actions";
@@ -52,7 +52,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
       <div className="flex items-center justify-between container mx-auto w-full px-4">
         <div className="flex items-center gap-10">
           <Image
-            src="/images/logo.jpg"
+            src={IMAGES.LOGO}
             alt="Euphoria"
             width={92}
             height={45}

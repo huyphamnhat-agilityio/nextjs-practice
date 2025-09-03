@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/common";
+import { IMAGES } from "@/constants";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Order Confirm - Euphoria",
+};
 
 const OrderConfirm = () => {
   return (
     <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
       <div className="flex flex-col gap-3 md:gap-[50px]">
         <Image
-          src="/images/order-confirm.jpg"
+          src={IMAGES.ORDER_CONFIRM}
           alt="Order confirm Image"
           width={448}
           height={328}
