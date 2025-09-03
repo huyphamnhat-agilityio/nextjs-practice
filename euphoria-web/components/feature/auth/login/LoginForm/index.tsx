@@ -25,7 +25,7 @@ import {
 import { clearErrorOnChange, isEnableSubmit } from "@/utils";
 
 // Constants
-import { FORM_VALIDATION_MESSAGES, REGEX, ROUTES } from "@/constants";
+import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
 
 // Actions
 import { login } from "@/actions";
@@ -83,17 +83,17 @@ const LoginForm = memo(() => {
     formState: { errors, dirtyFields, isSubmitting },
   } = form;
 
-  const { replace } = useRouter();
+  const { refresh } = useRouter();
   const onSubmit = useCallback(async () => {
     try {
       const userInfo = await login(form.getValues());
       setUser(userInfo);
       await fetchCart(userInfo.id);
-      replace(ROUTES.HOME);
+      refresh();
     } catch (error) {
       setErrorMessage((error as Error).message);
     }
-  }, [form, replace, setUser, fetchCart]);
+  }, [form, setUser, fetchCart, refresh]);
 
   const handleInputChange = useCallback(
     (name: keyof UserPayload, onChange: (value: string) => void) => {
