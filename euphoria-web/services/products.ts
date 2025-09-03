@@ -14,9 +14,7 @@ export const getProducts = async (query: string = "") => {
     `${API_URL}/${RESOURCES.PRODUCTS}${query}`,
     {
       method: "GET",
-      next: {
-        revalidate: 3600,
-      },
+      cache: "force-cache",
     },
   );
 
@@ -24,12 +22,16 @@ export const getProducts = async (query: string = "") => {
 };
 
 export const getProduct = async (id: string) => {
-  const product = await fetchApi<Product>(
-    `${API_URL}/${RESOURCES.PRODUCTS}/${id}`,
-    {
-      method: "GET",
-    },
-  );
-
-  return product;
+  try {
+    const product = await fetchApi<Product>(
+      `${API_URL}/${RESOURCES.PRODUCTS}/${id}`,
+      {
+        method: "GET",
+      },
+    );
+    return product;
+  } catch (error) {
+    if ((error as Error).message === "{}") return undefined;
+    throw error;
+  }
 };

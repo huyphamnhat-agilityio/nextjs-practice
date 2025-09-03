@@ -22,3 +22,8 @@ export const FORM_VALIDATION_MESSAGES = {
     unit: string;
   }) => `Max ${item} size is ${size}${unit}`,
 };
+
+export const ERROR_MESSAGES = {
+  PAGE_NOT_FOUND: "The page you are trying to visit was not found",
+  PRODUCT_NOT_FOUND: "The product was not found",
+} as const;

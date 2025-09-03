@@ -1,29 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
 import { isJwtExpired } from "./utils";
+import { ROUTES } from "./constants";
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const token = req.cookies.get("accessToken")?.value;
 
-  // 🔒 Protect only /cart
-  if (pathname.startsWith("/cart")) {
-    // ❌ No token → redirect to login
+  if (pathname === ROUTES.LOGIN) {
+    // If user already has a valid token → redirect to home
+    if (token && !isJwtExpired(token)) {
+      return NextResponse.redirect(new URL(ROUTES.HOME, req.url));
+    }
+    return NextResponse.next();
+  }
+
+  if (pathname === ROUTES.CART) {
     if (!token) {
-      console.log("No token found, redirecting to login...");
-      return NextResponse.redirect(new URL("/login", req.url));
+      return NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
     }
 
-    // ❌ Expired token → clear + redirect
+    // Expired token → clear + redirect
     if (isJwtExpired(token)) {
-      const res = NextResponse.redirect(new URL("/login", req.url));
+      const res = NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
       res.cookies.set("accessToken", "", { expires: new Date(0) });
       return res;
     }
   }
 
-  // ✅ Everything else is public
+  //Everything else is public
   return NextResponse.next();
 }
+
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)", "/cart"],
+  matcher: ["/login", "/cart/:path*"], // run only on /login + /cart
 };

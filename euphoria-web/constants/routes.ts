@@ -9,4 +9,5 @@ export const ROUTES = {
   CART: "/cart",
   ORDER: "/order",
   HOME: "/",
+  PRODUCT: (id: string) => `/product/${id}`,
 } as const;

@@ -3,6 +3,7 @@ import Image from "next/image";
 // Components
 import { Card, CardContent } from "../common";
 import Link from "next/link";
+import { ROUTES } from "@/constants";
 
 interface Product {
   id: string;
@@ -18,7 +19,7 @@ export type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Link href={`/${product.id}`}>
+    <Link href={ROUTES.PRODUCT(product.id)}>
       <Card className="group cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 bg-card">
         <CardContent className="p-0">
           <div className="aspect-square overflow-hidden rounded-t-lg">
