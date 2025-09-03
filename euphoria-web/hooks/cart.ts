@@ -1,164 +1,89 @@
-import { useState, useEffect, useCallback } from "react";
-import { Cart, CartItem } from "@/interfaces";
-import { usePathname } from "next/navigation";
-import { ROUTES } from "@/constants";
+import { useCallback } from "react";
+import { CartItem } from "@/interfaces";
+import { useCartStore } from "@/stores/cart";
 
-export type UseCartState = {
-  cart: Cart | null;
-  isLoading: boolean;
-  isUpdating: boolean;
-  error: string | null;
-  success: boolean;
-};
+export const useCart = () => {
+  // ✅ Selectors from store
+  const cart = useCartStore((s) => s.cart);
+  const isLoading = useCartStore((s) => s.isLoading);
+  const isMutating = useCartStore((s) => s.isMutating);
+  const error = useCartStore((s) => s.error);
 
-export type UseCartActions = {
-  fetchCart: () => Promise<void>;
-  updateCart: (items: CartItem[]) => Promise<void>;
-  clearError: () => void;
-  clearSuccess: () => void;
-};
+  const fetchCart = useCartStore((s) => s.fetchCart);
+  const mutateCart = useCartStore((s) => s.mutateCart);
+  const setError = useCartStore((s) => s.setError);
 
-export type UseCartReturn = UseCartState & UseCartActions;
-
-export const useCart = (userId: string): UseCartReturn => {
-  const path = usePathname();
-  const [state, setState] = useState<UseCartState>({
-    cart: null,
-    isLoading: false,
-    isUpdating: false,
-    error: null,
-    success: false,
-  });
-
-  const clearError = useCallback(() => {
-    setState((prev) => ({ ...prev, error: null }));
-  }, []);
-
-  const clearSuccess = useCallback(() => {
-    setState((prev) => ({ ...prev, success: false }));
-  }, []);
-
-  const fetchCart = useCallback(async () => {
-    if (!userId) {
-      setState((prev) => ({ ...prev, error: "User ID is required" }));
-      return;
-    }
-
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-      error: null,
-      success: false,
-    }));
-
-    try {
-      const response = await fetch(
-        `/api/cart?userId=${encodeURIComponent(userId)}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
-
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage || "Failed to fetch cart");
-      }
-
-      const cart: Cart = await response.json();
-
-      setState((prev) => ({
-        ...prev,
-        cart,
-        isLoading: false,
-        error: null,
-      }));
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error:
-          error instanceof Error
-            ? error.message
-            : "An unexpected error occurred",
-        cart: null,
-      }));
-    }
-  }, [userId]);
-
+  // ✅ Expose helpers with same signature as old hook
   const updateCart = useCallback(
     async (items: CartItem[]) => {
-      if (!userId) {
-        setState((prev) => ({ ...prev, error: "User ID is required" }));
+      return await mutateCart(items, true); // optimistic by default
+    },
+    [mutateCart],
+  );
+
+  const clearError = useCallback(() => {
+    setError(null);
+  }, [setError]);
+
+  const removeItem = useCallback(
+    async (itemId: string) => {
+      if (!cart) return;
+
+      const updatedItems = cart.filter((item) => item.id !== itemId);
+      await updateCart(updatedItems);
+    },
+    [updateCart, cart],
+  );
+
+  const updateItemQuantity = useCallback(
+    async (itemId: string, quantity: number) => {
+      if (!cart) return;
+
+      if (quantity <= 0) {
+        // Remove item if quantity is 0 or negative
+        await removeItem(itemId);
         return;
       }
 
-      setState((prev) => ({
-        ...prev,
-        isUpdating: true,
-        error: null,
-        success: false,
-      }));
+      const updatedItems = cart.map((item) =>
+        item.id === itemId ? { ...item, quantity } : item,
+      );
 
-      try {
-        const response = await fetch("/api/cart", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId,
-            items,
-          }),
-        });
-
-        if (!response.ok) {
-          const errorMessage = await response.text();
-          throw new Error(errorMessage || "Failed to update cart");
-        }
-        setState((prev) => ({
-          ...prev,
-          cart: prev.cart ? { ...prev.cart, items } : null,
-          isUpdating: false,
-          success: true,
-          error: null,
-        }));
-      } catch (error) {
-        setState((prev) => ({
-          ...prev,
-          isUpdating: false,
-          error:
-            error instanceof Error
-              ? error.message
-              : "An unexpected error occurred",
-          success: false,
-        }));
-      }
+      await updateCart(updatedItems);
     },
-    [userId],
+    [updateCart, cart, removeItem],
   );
 
-  // Only fetch cart when on cart page
-  useEffect(() => {
-    if (userId && path === ROUTES.CART) {
-      fetchCart();
-    }
-  }, [fetchCart, userId, path]);
+  const clearCart = useCallback(async () => {
+    await updateCart([]);
+  }, [updateCart]);
+
+  const totalItems = cart?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+
+  const totalPrice =
+    cart?.reduce((sum, item) => sum + item.price * item.quantity, 0) || 0;
+
+  const totalShipping =
+    cart?.reduce((sum, item) => sum + item.shipping, 0) || 0;
 
   return {
     // State
-    cart: state.cart,
-    isLoading: state.isLoading,
-    isUpdating: state.isUpdating,
-    error: state.error,
-    success: state.success,
+    cart,
+    isLoading,
+    isUpdating: isMutating,
+    error,
+    success: !error && !isMutating,
+    totalItems,
+    totalPrice,
+    totalShipping,
 
     // Actions
     fetchCart,
     updateCart,
     clearError,
-    clearSuccess,
+    clearSuccess: () => {},
+    updateItemQuantity,
+    removeItem,
+    clearCart,
   };
 };

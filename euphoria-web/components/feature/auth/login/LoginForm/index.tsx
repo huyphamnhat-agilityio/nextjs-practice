@@ -32,6 +32,7 @@ import { login } from "@/actions";
 
 // Stores
 import { useUserStore } from "@/stores/user";
+import { useCartStore } from "@/stores";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
@@ -65,6 +66,7 @@ const LoginForm = memo(() => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const setUser = useUserStore((state) => state.setUser);
+  const fetchCart = useCartStore((state) => state.fetchCart);
   const form = useForm<UserPayload>({
     mode: "onBlur",
     reValidateMode: "onBlur",
@@ -86,11 +88,12 @@ const LoginForm = memo(() => {
     try {
       const userInfo = await login(form.getValues());
       setUser(userInfo);
+      await fetchCart(userInfo.id);
       replace(ROUTES.HOME);
     } catch (error) {
       setErrorMessage((error as Error).message);
     }
-  }, [form, replace, setUser]);
+  }, [form, replace, setUser, fetchCart]);
 
   const handleInputChange = useCallback(
     (name: keyof UserPayload, onChange: (value: string) => void) => {

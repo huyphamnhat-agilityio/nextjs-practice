@@ -7,14 +7,11 @@ import { Button } from "@/components/ui/common";
 import Link from "next/link";
 import CartTable from "./CartTable";
 import CartTotal from "./CartTotal";
-import { useUserStore } from "@/stores";
-import { useCartContext, withCartProvider } from "@/contexts";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { IMAGES, ROUTES } from "@/constants";
+import { ROUTES } from "@/constants";
 import { Loader2 } from "lucide-react";
-
-const userId = useUserStore.getState().user?.id ?? "";
+import { useCart } from "@/hooks/cart";
 
 const CartContent = () => {
   const {
@@ -26,9 +23,7 @@ const CartContent = () => {
     totalPrice,
     totalShipping,
     clearCart,
-  } = useCartContext();
-
-  const { items = [] } = cart || {};
+  } = useCart();
 
   const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -85,12 +80,12 @@ const CartContent = () => {
       </div>
     );
 
-  if (cart?.items.length === 0 && !isConfirmed) {
+  if (cart.length === 0 && !isConfirmed) {
     return (
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
         <div className="flex flex-col gap-3 md:gap-[50px]">
           <Image
-            src={IMAGES.EMPTY_CART}
+            src="/images/empty-cart.jpg"
             alt="Item Cart Image"
             width={448}
             height={328}
@@ -116,7 +111,7 @@ const CartContent = () => {
   return (
     <>
       <CartTable
-        data={items}
+        data={cart}
         removeItem={handleRemove}
         updateQuantity={handleUpdateQuantity}
         disabled={isUpdating}
@@ -134,4 +129,4 @@ const CartContent = () => {
   );
 };
 
-export default withCartProvider(CartContent, userId);
+export default CartContent;

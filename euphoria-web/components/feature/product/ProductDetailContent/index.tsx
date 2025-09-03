@@ -24,11 +24,8 @@ import { CartItem, Product } from "@/interfaces";
 
 // Constants
 import { ROUTES } from "@/constants";
-import { useUserStore } from "@/stores";
-import { useCartContext, withCartProvider } from "@/contexts";
 import { toast } from "sonner";
-
-const userId = useUserStore.getState().user?.id ?? "";
+import { useCart } from "@/hooks/cart";
 
 export type ProductDetailContentProps = {
   product: Product;
@@ -44,7 +41,7 @@ const ProductDetailContent = ({
 
   const { replace } = useRouter();
 
-  const { addItem, isUpdating } = useCartContext();
+  const { updateCart, isUpdating, cart: currentItems } = useCart();
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
@@ -52,7 +49,7 @@ const ProductDetailContent = ({
       return;
     }
 
-    const item: CartItem = {
+    const newItem: CartItem = {
       id: `${product.id}-${selectedColor.name}`,
       color: selectedColor.name,
       image: product.image,
@@ -64,7 +61,27 @@ const ProductDetailContent = ({
     };
 
     try {
-      await addItem(item);
+      const existingItemIndex = currentItems.findIndex(
+        (item) =>
+          item.id === newItem.id &&
+          item.color === newItem.color &&
+          item.size === newItem.size,
+      );
+      let updatedItems: CartItem[];
+
+      if (existingItemIndex >= 0) {
+        // Update quantity of existing item
+        updatedItems = currentItems.map((item, index) =>
+          index === existingItemIndex
+            ? { ...item, quantity: item.quantity + newItem.quantity }
+            : item,
+        );
+      } else {
+        // Add new item
+        updatedItems = [...currentItems, newItem];
+      }
+
+      await updateCart(updatedItems);
       toast("The product has been added to cart!", {
         style: { width: "fit-content" },
         dismissible: true,
@@ -147,4 +164,4 @@ const ProductDetailContent = ({
   );
 };
 
-export default withCartProvider(ProductDetailContent, userId);
+export default ProductDetailContent;

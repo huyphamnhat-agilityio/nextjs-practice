@@ -21,12 +21,14 @@ import { IMAGES, ROUTES } from "@/constants";
 import { useUserStore } from "@/stores";
 import { Popover, PopoverContent, PopoverTrigger } from "../common";
 import { logout } from "@/actions";
+import { useState } from "react";
 
 export type HeaderProps = {
   isAuthenticated?: boolean;
 };
 
 const Header = ({ isAuthenticated = false }: HeaderProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { email, clearUser } = useUserStore(
     useShallow((state) => ({
       email: state.user?.email ?? "",
@@ -38,6 +40,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
   const { refresh, push } = useRouter();
 
   const handleLogout = async () => {
+    setIsOpen(false);
     await logout();
     clearUser();
     refresh();
@@ -91,8 +94,8 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
 
           {isAuthenticated && (
             <>
-              <Popover>
-                <PopoverTrigger asChild>
+              <Popover open={isOpen}>
+                <PopoverTrigger asChild onClick={() => setIsOpen(true)}>
                   <Button variant="icon">
                     <UserIcon />
                   </Button>
