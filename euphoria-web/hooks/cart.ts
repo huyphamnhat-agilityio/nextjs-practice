@@ -55,6 +55,7 @@ export const useCart = () => {
       if (quantity <= 0) {
         // Remove item if quantity is 0 or negative
         await removeItem(itemId);
+
         return;
       }
 

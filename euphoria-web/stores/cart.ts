@@ -26,8 +26,8 @@ export type CartStore = {
 
   // API operations
   fetchCart: (userId: string) => Promise<void>;
-  mutateCart: (newCart: CartItem[]) => Promise<MutationResult>;
-  addToCart: (product: Product) => Promise<MutationResult>;
+  mutateCart: (newCart: CartItem[]) => Promise<void>;
+  addToCart: (product: Product) => Promise<void>;
 };
 
 export const useCartStore = create<CartStore>()(
@@ -66,7 +66,7 @@ export const useCartStore = create<CartStore>()(
 
           if (data) {
             set((state) => {
-              state.cart = data.items || [];
+              state.cart = data.items;
               state.isLoading = false;
             });
           }
@@ -93,20 +93,16 @@ export const useCartStore = create<CartStore>()(
             state.error = null;
           });
 
-          const response = await fetch(`${API_ROUTES.CART}`, {
+          await fetch(`${API_ROUTES.CART}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ items: newCart, userId }),
           });
 
-          const result: Cart = await response.json();
-
           set((state) => {
-            state.cart = result.items || [];
             state.isMutating = false;
+            state.cart = newCart;
           });
-
-          return { success: true, data: result };
         } catch (error) {
           const errorMessage =
             error instanceof Error ? error.message : "Unknown error";
@@ -145,15 +141,7 @@ export const useCartStore = create<CartStore>()(
               },
             ];
 
-        const result = await get().mutateCart(newCart);
-
-        if (result.success && result.data) {
-          set((state) => {
-            state.cart = result.data?.items || [];
-          });
-        }
-
-        return result;
+        await get().mutateCart(newCart);
       },
     })),
     {

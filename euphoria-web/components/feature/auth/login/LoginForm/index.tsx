@@ -32,7 +32,7 @@ import { login } from "@/actions";
 
 // Stores
 import { useUserStore } from "@/stores/user";
-import { useCartStore } from "@/stores";
+import { useCart } from "@/hooks/cart";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
@@ -66,7 +66,7 @@ const LoginForm = memo(() => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const setUser = useUserStore((state) => state.setUser);
-  const fetchCart = useCartStore((state) => state.fetchCart);
+  const { fetchCart } = useCart();
   const form = useForm<UserPayload>({
     mode: "onBlur",
     reValidateMode: "onBlur",
