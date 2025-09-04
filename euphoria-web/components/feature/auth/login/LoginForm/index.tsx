@@ -1,7 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useCallback, useMemo, ChangeEvent, memo } from "react";
+import {
+  useState,
+  useCallback,
+  useMemo,
+  ChangeEvent,
+  memo,
+  useTransition,
+} from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 
@@ -64,6 +71,7 @@ const LOGIN_FORM_VALIDATION = {
 const LoginForm = memo(() => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isPending, startTransition] = useTransition();
 
   const setUser = useUserStore((state) => state.setUser);
   const { fetchCart } = useCart();
@@ -89,7 +97,7 @@ const LoginForm = memo(() => {
       const userInfo = await login(form.getValues());
       setUser(userInfo);
       await fetchCart(userInfo.id);
-      refresh();
+      startTransition(() => refresh());
     } catch (error) {
       setErrorMessage((error as Error).message);
     }
@@ -122,7 +130,7 @@ const LoginForm = memo(() => {
         <FormField
           control={control}
           name="email"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isPending}
           render={({ field: { onChange, ...rest }, fieldState: { error } }) => (
             <FormItem>
               <FormLabel className="font-causten font-normal text-lg text-muted-foreground">
@@ -148,7 +156,7 @@ const LoginForm = memo(() => {
         <FormField
           control={control}
           name="password"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isPending}
           render={({ field: { onChange, ...rest }, fieldState: { error } }) => (
             <FormItem>
               <FormLabel className="font-causten font-normal text-lg text-muted-foreground flex justify-between">
@@ -188,7 +196,7 @@ const LoginForm = memo(() => {
           type="submit"
           className="w-full text-base font-medium"
           size="lg"
-          disabled={isDisabled || isSubmitting}
+          disabled={isDisabled || isSubmitting || isPending}
         >
           Sign In
         </Button>

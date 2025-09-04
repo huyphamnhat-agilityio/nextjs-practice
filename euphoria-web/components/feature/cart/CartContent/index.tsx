@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useTransition } from "react";
 
 // Types
 import { Button } from "@/components/ui/common";
@@ -25,7 +25,8 @@ const CartContent = () => {
     clearCart,
   } = useCart();
 
-  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [isPurchasing, setIsPurchasing] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const { push } = useRouter();
 
@@ -53,26 +54,27 @@ const CartContent = () => {
 
   const handleCheckout = useCallback(async () => {
     try {
-      setIsConfirmed(true);
+      setIsPurchasing(true);
       await clearCart();
-      push(ROUTES.ORDER);
+      startTransition(() => push(ROUTES.ORDER));
     } catch (error) {
       toast("Checkout failed", {
         style: { width: "fit-content" },
         dismissible: true,
       });
       console.log(error);
-      setIsConfirmed(false);
+    } finally {
+      setIsPurchasing(false);
     }
   }, [clearCart, push]);
-  if (!cart || isLoading)
+  if (!cart || isLoading || isPurchasing || isPending)
     return (
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
         <Loader2 className="h-6 w-6 animate-spin" />
       </div>
     );
 
-  if (cart.length === 0 && !isConfirmed) {
+  if (cart.length === 0) {
     return (
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
         <div className="flex flex-col gap-3 md:gap-[50px]">
