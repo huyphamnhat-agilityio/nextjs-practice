@@ -27,6 +27,7 @@ const QuantityControl = ({
         className="w-8 h-8 p-0"
         onClick={handleChangeQuantity(-1)}
         disabled={isDisabled}
+        data-testid="decrement-button"
       >
         <Minus className="w-3 h-3" />
       </Button>
@@ -37,6 +38,7 @@ const QuantityControl = ({
         className="w-8 h-8 p-0"
         onClick={handleChangeQuantity(1)}
         disabled={isDisabled}
+        data-testid="increment-button"
       >
         <Plus className="w-3 h-3" />
       </Button>

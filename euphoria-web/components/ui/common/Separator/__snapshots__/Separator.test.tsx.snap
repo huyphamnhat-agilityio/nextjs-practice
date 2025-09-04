@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Separator components should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="shrink-0 bg-border h-[2px] w-full"
+    data-orientation="horizontal"
+    role="none"
+  />
+</DocumentFragment>
+`;
+
+exports[`Separator components should render correctly with prop 1`] = `
+<DocumentFragment>
+  <div
+    class="shrink-0 bg-border h-full w-[1px]"
+    data-orientation="vertical"
+    role="none"
+  />
+</DocumentFragment>
+`;

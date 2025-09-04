@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Footer components should render correctly 1`] = `
+<DocumentFragment>
+  <footer
+    class="bg-gray-900 text-white py-6 mt-auto"
+  >
+    <div
+      class="container mx-auto px-4 text-center"
+    >
+      <p
+        class="text-sm"
+      >
+        Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

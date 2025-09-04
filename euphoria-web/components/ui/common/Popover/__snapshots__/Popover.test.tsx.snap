@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Popover components should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-«r0»"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    data-slot="popover-trigger"
+    data-state="closed"
+    type="button"
+  >
+    Open
+  </button>
+  <div
+    data-slot="popover-anchor"
+  >
+    Anchor
+  </div>
+</DocumentFragment>
+`;

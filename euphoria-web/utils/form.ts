@@ -13,7 +13,9 @@ export const clearErrorOnChange = <T extends FieldValues>(
   errors: FieldErrors<T>,
   clearErrorFunc: UseFormClearErrors<T>,
 ): void => {
-  errors[fieldName]?.message && clearErrorFunc(fieldName);
+  if (errors[fieldName]?.message) {
+    clearErrorFunc(fieldName);
+  }
 };
 
 /**

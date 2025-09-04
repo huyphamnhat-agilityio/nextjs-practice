@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FilterSidebar should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full bg-card border-border"
+  >
+    <div
+      class="p-6 space-y-6"
+    >
+      <div
+        class="flex items-center space-x-2"
+      >
+        <span>
+          ⚙️
+        </span>
+        <h2
+          class="text-lg font-semibold text-foreground"
+        >
+          Filter
+        </h2>
+      </div>
+      <div
+        class="space-y-3"
+      >
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors bg-accent/50 text-muted-foreground"
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            All
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Tops
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Printed T-shirts
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Plain T-shirts
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Kurti
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Boxers
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Full sleeve T-shirts
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Joggers
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Pyjamas
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+        <button
+          class="flex items-center justify-between w-full py-2 cursor-pointer hover:bg-accent/50 rounded-md px-2 -mx-2 transition-colors "
+          font-weight="semibold"
+          variant="ghost"
+        >
+          <span
+            class="text-foreground"
+          >
+            Jeans
+          </span>
+          <span>
+            →
+          </span>
+        </button>
+      </div>
+      <div
+        class="space-y-4"
+      >
+        <h3
+          class="text-lg font-semibold text-foreground"
+        >
+          Price
+        </h3>
+        <div
+          class="px-2"
+        >
+          <input
+            class="w-full"
+            max="1000"
+            min="0"
+            role="slider"
+            step="10"
+            type="range"
+            value="0"
+          />
+        </div>
+        <div
+          class="flex items-center justify-between text-sm"
+        >
+          <span
+            class="text-muted-foreground"
+          >
+            $0
+          </span>
+          <span
+            class="text-muted-foreground"
+          >
+            $1000
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

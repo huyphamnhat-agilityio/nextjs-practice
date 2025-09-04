@@ -74,7 +74,7 @@ const CartItem = memo(
               <h3 className="font-causten font-bold text-accent text-lg truncate">
                 {name}
               </h3>
-              <p className="font-causten font-bold text-sm text-alternative">
+              <p className="font-causten font-bold text-sm text-alternative capitalize">
                 Color: {color}
               </p>
               <p className="font-causten font-bold text-sm text-alternative">
@@ -159,6 +159,7 @@ const CartItem = memo(
                   size="sm"
                   className="text-primary hover:text-destructive hover:bg-destructive/10 p-1 h-auto"
                   onClick={handleRemove}
+                  data-testid="remove-button"
                 >
                   <Trash2 className="w-4 h-4" />
                 </Button>

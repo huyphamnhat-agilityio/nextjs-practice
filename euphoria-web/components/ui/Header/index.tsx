@@ -100,19 +100,28 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
                   asChild
                   onClick={() => setIsOpen((prev) => !prev)}
                 >
-                  <Button variant="icon">
+                  <Button variant="icon" data-testid="user-button">
                     <UserIcon />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-fit p-4 font-causten font-normal text-base flex flex-col">
                   Hi, {email}!
-                  <Button onClick={handleLogout} size="auto" className="py-2">
+                  <Button
+                    onClick={handleLogout}
+                    data-testid="logout-button"
+                    size="auto"
+                    className="py-2"
+                  >
                     Logout
                   </Button>
                 </PopoverContent>
               </Popover>
 
-              <Button variant="icon" onClick={handleNavigateToCart}>
+              <Button
+                variant="icon"
+                onClick={handleNavigateToCart}
+                data-testid="cart-button"
+              >
                 <CartIcon />
               </Button>
             </>

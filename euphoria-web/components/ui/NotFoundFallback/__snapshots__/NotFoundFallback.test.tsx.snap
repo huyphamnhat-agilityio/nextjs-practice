@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`NotFoundFallback components should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-center gap-3 max-w-xs sm:max-w-full"
+  >
+    <img
+      alt="Not found image"
+      class="object-cover"
+      data-nimg="1"
+      decoding="async"
+      height="276"
+      src="/_next/image?url=%2Fimages%2Fnot-found.jpg&w=828&q=75"
+      srcset="/_next/image?url=%2Fimages%2Fnot-found.jpg&w=640&q=75 1x, /_next/image?url=%2Fimages%2Fnot-found.jpg&w=828&q=75 2x"
+      style="color: transparent;"
+      width="396"
+    />
+    <div
+      class="flex flex-col gap-4"
+    >
+      <div
+        class="flex flex-col gap-2"
+      >
+        <h4
+          class="font-core-sans-c font-bold text-4xl text-center"
+        >
+          Oops
+          <span
+            class="font-sans"
+          >
+            !
+          </span>
+           Page not found
+        </h4>
+        <p
+          class="font-causten font-medium text-base text-alternative text-center"
+        >
+          The page you are looking for might have been removed or temporarily unavailable.
+        </p>
+      </div>
+      <a
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:cursor-pointer bg-primary border border-primary text-primary-foreground hover:bg-primary/90 rounded-lg py-3 font-causten text-lg font-semibold px-12 max-w-[244px] mx-auto"
+        href="/"
+      >
+        Back to Shop
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

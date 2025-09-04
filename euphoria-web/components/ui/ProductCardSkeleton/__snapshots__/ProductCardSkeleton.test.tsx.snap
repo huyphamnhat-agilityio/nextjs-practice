@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductCardSkeleton components should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="group cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 bg-card animate-pulse shadow-sm"
+  >
+    <div
+      class="p-0"
+    >
+      <div
+        class="aspect-square overflow-hidden rounded-t-lg"
+      >
+        <div
+          class="bg-accent animate-pulse rounded-md w-full h-full"
+          data-slot="skeleton"
+        />
+      </div>
+      <div
+        class="p-4 flex justify-between gap-2"
+      >
+        <div
+          class="flex flex-col flex-3/4"
+        >
+          <div
+            class="bg-accent animate-pulse h-4 rounded w-full"
+            data-slot="skeleton"
+          />
+          <div
+            class="bg-accent animate-pulse h-3 rounded w-full mt-2"
+            data-slot="skeleton"
+          />
+        </div>
+        <div
+          class="bg-accent animate-pulse py-2 flex-1/4 rounded-lg inline-flex justify-center items-center"
+          data-slot="skeleton"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

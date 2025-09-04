@@ -38,7 +38,9 @@ import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
 import { login } from "@/actions";
 
 // Stores
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores";
+
+// Hooks
 import { useCart } from "@/hooks/cart";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
@@ -133,7 +135,10 @@ const LoginForm = memo(() => {
           disabled={isSubmitting || isPending}
           render={({ field: { onChange, ...rest }, fieldState: { error } }) => (
             <FormItem>
-              <FormLabel className="font-causten font-normal text-lg text-muted-foreground">
+              <FormLabel
+                htmlFor="email"
+                className="font-causten font-normal text-lg text-muted-foreground"
+              >
                 Email address
               </FormLabel>
               <FormControl>
@@ -159,7 +164,10 @@ const LoginForm = memo(() => {
           disabled={isSubmitting || isPending}
           render={({ field: { onChange, ...rest }, fieldState: { error } }) => (
             <FormItem>
-              <FormLabel className="font-causten font-normal text-lg text-muted-foreground flex justify-between">
+              <FormLabel
+                htmlFor="password"
+                className="font-causten font-normal text-lg text-muted-foreground flex justify-between"
+              >
                 Password
                 <Button
                   type="button"

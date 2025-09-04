@@ -4,46 +4,41 @@ import Image from "next/image";
 import { Card, CardContent } from "../common";
 import Link from "next/link";
 import { ROUTES } from "@/constants";
-
-interface Product {
-  id: string;
-  name: string;
-  brand: string;
-  price: number;
-  image: string;
-}
+import { Product } from "@/interfaces";
 
 export type ProductCardProps = {
   product: Product;
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  product: { id = "", image = "", name = "", brand = "", price = 0 },
+}) => {
   return (
-    <Link href={ROUTES.PRODUCT(product.id)}>
-      <Card className="group cursor-pointer hover:shadow-lg transition-shadow duration-300 border-0 bg-card">
+    <Link href={ROUTES.PRODUCT(id)}>
+      <Card className="group cursor-pointer p-0 hover:shadow-lg transition-shadow duration-300 border-0 bg-card">
         <CardContent className="p-0">
           <div className="aspect-square overflow-hidden rounded-t-lg">
             <Image
               priority
-              src={product.image}
-              alt={product.name}
+              src={image}
+              alt={name}
               width={400}
               height={400}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="p-4 flex justify-between">
+          <div className="p-4 flex justify-between items-center">
             <div className="flex flex-col">
-              <h3 className="font-causten text-accent font-semibold truncate">
-                {product.name}
+              <h3 className="font-causten text-accent lg:max-w-25 xl:max-w-full font-semibold truncate">
+                {name}
               </h3>
-              <p className="font-causten font-medium text-sm text-alternative">
-                {product.brand}
+              <p className="font-causten font-medium max-w-25 xl:max-w-full text-sm text-alternative truncate">
+                {brand}
               </p>
             </div>
             <div className="py-2 px-4 bg-muted rounded-lg inline-flex justify-center items-center">
               <p className="font-semibold text-muted-foreground text-sm">
-                ${product.price.toFixed(2)}
+                ${price.toFixed(2)}
               </p>
             </div>
           </div>
