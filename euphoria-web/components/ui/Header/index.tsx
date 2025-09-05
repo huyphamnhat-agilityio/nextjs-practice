@@ -18,8 +18,8 @@ import SearchInput from "../common/SearchInput";
 import { CartIcon, HamburgerMenuIcon, UserIcon } from "@/components/icons";
 import { usePathname, useRouter } from "next/navigation";
 import { IMAGES, ROUTES } from "@/constants";
-import { useUserStore } from "@/stores";
-import { Popover, PopoverContent, PopoverTrigger } from "../common";
+import { useCartStore, useUserStore } from "@/stores";
+import { Badge, Popover, PopoverContent, PopoverTrigger } from "../common";
 import { logout } from "@/actions";
 import { useState } from "react";
 
@@ -35,6 +35,8 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
       clearUser: state.clearUser,
     })),
   );
+
+  const cartQuantity = useCartStore((state) => state.cart.length);
   const path = usePathname();
 
   const { refresh, push } = useRouter();
@@ -123,8 +125,18 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
                 variant="icon"
                 onClick={handleNavigateToCart}
                 data-testid="cart-button"
+                className="relative"
               >
                 <CartIcon />
+
+                {!!cartQuantity && (
+                  <Badge
+                    variant="destructive"
+                    className="absolute -top-1 -right-1"
+                  >
+                    {cartQuantity}
+                  </Badge>
+                )}
               </Button>
             </>
           )}

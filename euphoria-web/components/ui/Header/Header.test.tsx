@@ -30,9 +30,11 @@ jest.mock("next/navigation", () => ({
 
 // Mock store
 const mockClearUser = jest.fn();
+const mockCartStore = { cart: [{ id: "1" }], length: 1 };
 jest.mock("@/stores", () => ({
   useUserStore: (selector: any) =>
     selector({ user: { email: "test@example.com" }, clearUser: mockClearUser }),
+  useCartStore: (selector: any) => selector({ cart: mockCartStore.cart }),
 }));
 
 // Mock logout action

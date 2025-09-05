@@ -7,7 +7,7 @@ import { Product } from "@/interfaces";
 jest.mock("next/image", () => ({
   __esModule: true,
   default: (props: any) => {
-    const { alt, ...rest } = props;
+    const { alt, priority, ...rest } = props;
     return <img {...rest} alt={alt} />;
   },
 }));
