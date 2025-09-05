@@ -55,13 +55,15 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
       <div className="flex items-center justify-between container mx-auto w-full px-4">
         <div className="flex items-center gap-10">
-          <Image
-            src={IMAGES.LOGO}
-            alt="Euphoria"
-            width={92}
-            height={45}
-            className="hover:cursor-pointer"
-          />
+          <Link href={ROUTES.HOME}>
+            <Image
+              src={IMAGES.LOGO}
+              alt="Euphoria"
+              width={92}
+              height={45}
+              className="hover:cursor-pointer"
+            />
+          </Link>
           <nav className="hidden md:inline-flex">
             <ul className="flex space-x-4">
               <li>

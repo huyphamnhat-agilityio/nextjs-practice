@@ -14,27 +14,20 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  if (pathname === ROUTES.CART) {
-    if (!token) {
-      return NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
-    }
-
-    // Expired token → clear + redirect
-    if (isJwtExpired(token)) {
-      const res = NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
-      res.cookies.set("accessToken", "", { expires: new Date(0) });
-      return res;
-    }
+  if (!token) {
+    return NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
   }
 
+  // Expired token → clear + redirect
+  if (isJwtExpired(token)) {
+    const res = NextResponse.redirect(new URL(ROUTES.LOGIN, req.url));
+    res.cookies.set("accessToken", "", { expires: new Date(0) });
+    return res;
+  }
   //Everything else is public
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: [
-    "/login",
-    "/cart/:path*",
-    "/((?!api|_next/static|_next/image|.*\\.png$).*)",
-  ],
+  matcher: ["/login", "/order", "/cart"],
 };
