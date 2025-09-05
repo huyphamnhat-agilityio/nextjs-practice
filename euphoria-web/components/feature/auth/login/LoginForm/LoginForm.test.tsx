@@ -94,7 +94,7 @@ describe("LoginForm", () => {
         id: "123",
         email: "test@test.com",
       });
-      expect(mockFetchCart).toHaveBeenCalledWith("123");
+      waitFor(() => expect(mockFetchCart).toHaveBeenCalledWith("123"));
       expect(mockRefresh).toHaveBeenCalled();
     });
   });

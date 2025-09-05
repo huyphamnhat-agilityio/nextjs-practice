@@ -4,6 +4,7 @@ import { CartItem as CartItemType } from "@/interfaces";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
 
 export type CartItemProps = CartItemType & {
@@ -34,7 +35,11 @@ const CartItem = memo(
         try {
           await onUpdate(id, value);
         } catch (error) {
-          console.log(error);
+          const errorMessage = (error as Error).message;
+          toast(errorMessage ?? "Change quantity failed", {
+            style: { width: "fit-content" },
+            dismissible: true,
+          });
           setCurrentQuantity(quantity);
         }
       },

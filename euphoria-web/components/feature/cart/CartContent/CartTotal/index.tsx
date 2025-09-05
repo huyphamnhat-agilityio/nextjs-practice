@@ -1,7 +1,7 @@
 // Components
 import { Button } from "@/components/ui/common";
 
-export type CartTotalTypes = {
+export type CartTotalProps = {
   subtotal: number;
   totalShipping: number;
   grandTotal: number;
@@ -15,7 +15,7 @@ const CartTotal = ({
   grandTotal,
   handleCheckout,
   disabled = false,
-}: CartTotalTypes) => {
+}: CartTotalProps) => {
   return (
     <div className="flex flex-col w-full mt-8 space-y-4">
       <div className="flex justify-between items-center font-causten font-medium text-accent text-base md:text-[22px]">

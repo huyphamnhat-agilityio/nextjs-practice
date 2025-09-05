@@ -11,7 +11,8 @@ let mockPathname: string = ROUTES.HOME;
 jest.mock("next/image", () => ({
   __esModule: true,
   default: (props: any) => {
-    return <img {...props} alt="" />;
+    const { alt, ...rest } = props;
+    return <img {...rest} alt={alt} />;
   },
 }));
 

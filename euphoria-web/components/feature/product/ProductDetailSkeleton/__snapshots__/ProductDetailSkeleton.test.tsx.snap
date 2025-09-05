@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductDetailSkeleton should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="container mx-auto px-4 py-6"
+  >
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+    >
+      <div
+        class="space-y-4 lg:flex lg:flex-row-reverse"
+      >
+        <div
+          class="aspect-square overflow-hidden bg-muted"
+        >
+          <div
+            class="bg-accent animate-pulse rounded-md w-full h-full"
+            data-slot="skeleton"
+          />
+        </div>
+        <div
+          class="flex space-x-2 lg:flex-col lg:justify-center lg:gap-2"
+        >
+          <div
+            class="bg-accent animate-pulse w-20 h-20 rounded-lg"
+            data-slot="skeleton"
+          />
+          <div
+            class="bg-accent animate-pulse w-20 h-20 rounded-lg"
+            data-slot="skeleton"
+          />
+          <div
+            class="bg-accent animate-pulse w-20 h-20 rounded-lg"
+            data-slot="skeleton"
+          />
+        </div>
+      </div>
+      <div
+        class="space-y-6 flex flex-col gap-1 lg:gap-4"
+      >
+        <div
+          class="bg-accent animate-pulse rounded-md mb-6 w-20 h-4"
+          data-slot="skeleton"
+        />
+        <div>
+          <div
+            class="bg-accent animate-pulse rounded-md w-full h-10"
+            data-slot="skeleton"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-2 md:gap-4 lg:gap-6"
+        >
+          <h3
+            class="text-lg font-causten font-semibold text-quaternary-foreground"
+          >
+            Select Size
+          </h3>
+          <div
+            class="flex space-x-2 sm:gap-5"
+          >
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse w-[42px] h-[42px] rounded-xl"
+              data-slot="skeleton"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-2 md:gap-4 lg:gap-6"
+        >
+          <h3
+            class="text-lg font-causten font-semibold text-quaternary-foreground"
+          >
+            Colours Available
+          </h3>
+          <div
+            class="flex space-x-2 gap-2"
+          >
+            <div
+              class="bg-accent animate-pulse rounded-md w-8 h-8 transition-colors"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse rounded-md w-8 h-8 transition-colors"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse rounded-md w-8 h-8 transition-colors"
+              data-slot="skeleton"
+            />
+            <div
+              class="bg-accent animate-pulse rounded-md w-8 h-8 transition-colors"
+              data-slot="skeleton"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-2 items-start sm:flex-row  sm:items-center space-x-4"
+        >
+          <button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:cursor-pointer bg-primary border border-primary text-primary-foreground hover:bg-primary/90 rounded-lg py-3 font-causten text-lg font-semibold px-10"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-shopping-cart w-5 h-5 mr-2"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="8"
+                cy="21"
+                r="1"
+              />
+              <circle
+                cx="19"
+                cy="21"
+                r="1"
+              />
+              <path
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+              />
+            </svg>
+            Add to cart
+          </button>
+          <div
+            class="bg-accent animate-pulse border border-accent rounded-lg w-35 h-13"
+            data-slot="skeleton"
+          />
+        </div>
+        <div
+          class="shrink-0 h-[2px] w-full bg-accent-foreground"
+          data-orientation="horizontal"
+          role="none"
+        />
+        <div
+          class="grid grid-cols-2 gap-4"
+        >
+          <div
+            class="flex items-center space-x-3 text-sm text-muted-foreground"
+          >
+            <div
+              class="w-11 h-11 flex justify-center items-center bg-muted rounded-full"
+            >
+              <svg
+                fill="none"
+                height="17"
+                viewBox="0 0 17 17"
+                width="17"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 4.75H16M4 12.25H7M10 12.25H13M3.4 16H13.6C14.4401 16 14.8601 16 15.181 15.7956C15.4632 15.6159 15.6927 15.329 15.8365 14.9762C16 14.5751 16 14.0501 16 13V4C16 2.9499 16 2.42485 15.8365 2.02377C15.6927 1.67096 15.4632 1.38413 15.181 1.20436C14.8601 1 14.4401 1 13.6 1H3.4C2.55992 1 2.13988 1 1.81901 1.20436C1.53677 1.38413 1.3073 1.67096 1.16349 2.02377C1 2.42485 1 2.9499 1 4V13C1 14.0501 1 14.5751 1.16349 14.9762C1.3073 15.329 1.53677 15.6159 1.81901 15.7956C2.13988 16 2.55992 16 3.4 16Z"
+                  stroke="#3C4242"
+                  stroke-linecap="round"
+                  stroke-width="1.1"
+                />
+              </svg>
+            </div>
+            <span
+              class="font-causten font-medium text-lg text-muted-foreground"
+            >
+              Secure payment
+            </span>
+          </div>
+          <div
+            class="flex items-center space-x-3 text-sm text-muted-foreground"
+          >
+            <div
+              class="w-11 h-11 flex justify-center items-center bg-muted rounded-full"
+            >
+              <svg
+                fill="none"
+                height="17"
+                viewBox="0 0 17 17"
+                width="17"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.6349 17H5.36505C4.36129 17 3.54758 16.2007 3.54758 15.2147V8.57964C3.54758 8.06342 2.91221 7.8049 2.54061 8.16992C2.20135 8.50317 1.62054 8.32034 1.54167 7.85546L1.0248 4.80914C0.902057 4.08569 1.24222 3.36209 1.88247 2.98474L5.19652 1.03149C5.29304 0.974606 5.41751 0.99658 5.48783 1.08292C7.2884 3.29381 10.7116 3.29381 12.5122 1.08292C12.5825 0.99658 12.707 0.974606 12.8035 1.03149L16.1175 2.98474C16.7578 3.36209 17.0979 4.08569 16.9752 4.80914L16.4583 7.85546C16.3795 8.32034 15.7986 8.50317 15.4594 8.16992C15.0878 7.8049 14.4524 8.06342 14.4524 8.57964V15.2147C14.4524 16.2007 13.6387 17 12.6349 17Z"
+                  stroke="#3C4242"
+                  stroke-width="1.1"
+                />
+              </svg>
+            </div>
+            <span
+              class="font-causten font-medium text-lg text-muted-foreground"
+            >
+              Size & Fit
+            </span>
+          </div>
+          <div
+            class="flex items-center space-x-3 text-sm text-muted-foreground"
+          >
+            <div
+              class="w-11 h-11 flex justify-center items-center bg-muted rounded-full"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 20 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.8 12.6667V1.46667C11.8 1.20893 11.5985 1 11.35 1H1.45C1.20147 1 1 1.20893 1 1.46667V12.6667C1 12.9244 1.20147 13.1333 1.45 13.1333H2.8M11.8 12.6667C11.8 12.9244 11.5985 13.1333 11.35 13.1333H6.4M11.8 12.6667V4.26667C11.8 4.00893 12.0015 3.8 12.25 3.8H15.2136C15.333 3.8 15.4474 3.84917 15.5318 3.93668L18.8682 7.39665C18.9526 7.48417 19 7.60287 19 7.72663V12.6667C19 12.9244 18.7985 13.1333 18.55 13.1333H17.2M11.8 12.6667C11.8 12.9244 12.0015 13.1333 12.25 13.1333H13.6M2.8 13.1333C2.8 14.1643 3.60589 15 4.6 15C5.59411 15 6.4 14.1643 6.4 13.1333M2.8 13.1333C2.8 12.1024 3.60589 11.2667 4.6 11.2667C5.59411 11.2667 6.4 12.1024 6.4 13.1333M13.6 13.1333C13.6 14.1643 14.4059 15 15.4 15C16.3941 15 17.2 14.1643 17.2 13.1333M13.6 13.1333C13.6 12.1024 14.4059 11.2667 15.4 11.2667C16.3941 11.2667 17.2 12.1024 17.2 13.1333"
+                  stroke="#3C4242"
+                  stroke-width="1.1"
+                />
+              </svg>
+            </div>
+            <span
+              class="font-causten font-medium text-lg text-muted-foreground"
+            >
+              Free shipping
+            </span>
+          </div>
+          <div
+            class="flex items-center space-x-3 text-sm text-muted-foreground"
+          >
+            <div
+              class="w-11 h-11 flex justify-center items-center bg-muted rounded-full"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.44444 15.2222C5.44444 16.2041 4.64851 17 3.66667 17C2.68483 17 1.88889 16.2041 1.88889 15.2222C1.88889 14.2404 2.68483 13.4444 3.66667 13.4444C4.64851 13.4444 5.44444 14.2404 5.44444 15.2222ZM5.44444 15.2222H12.5556C13.5374 15.2222 14.3333 14.4263 14.3333 13.4444V9.88889M12.5556 2.77778C12.5556 3.75962 13.3515 4.55556 14.3333 4.55556C15.3152 4.55556 16.1111 3.75962 16.1111 2.77778C16.1111 1.79594 15.3152 1 14.3333 1C13.3515 1 12.5556 1.79594 12.5556 2.77778ZM12.5556 2.77778H5.44444C4.4626 2.77778 3.66667 3.57372 3.66667 4.55556V8.11111M17 11.6667L14.6476 9.13983C14.474 8.95339 14.1926 8.95339 14.0191 9.13983L11.6667 11.6667M6.33333 6.33333L3.98094 8.86017C3.80737 9.04661 3.52596 9.04661 3.3524 8.86017L1 6.33333"
+                  stroke="#3C4242"
+                  stroke-linecap="round"
+                  stroke-width="1.1"
+                />
+              </svg>
+            </div>
+            <span
+              class="font-causten font-medium text-lg text-muted-foreground"
+            >
+              Free Shipping & Returns
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-12 flex flex-col"
+    >
+      <div
+        class="border-l-4 border-primary pl-6"
+      >
+        <h2
+          class="text-2xl font-core-sans-c font-bold text-muted-foreground"
+        >
+          Product Description
+        </h2>
+      </div>
+      <div
+        class="mt-6 flex flex-col gap-3"
+      >
+        <div
+          class="border-b-1 border-muted-foreground w-fit"
+        >
+          <h3
+            class="font-causten font-medium text-muted-foreground mb-3 text-lg"
+          >
+            Description
+          </h3>
+        </div>
+        <div
+          class="bg-accent animate-pulse rounded-md h-7"
+          data-slot="skeleton"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

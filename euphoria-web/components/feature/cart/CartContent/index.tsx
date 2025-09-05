@@ -42,7 +42,7 @@ const CartContent = () => {
       try {
         await removeItem(id);
       } catch (error) {
-        toast("Update quantity failed", {
+        toast("Remove item failed", {
           style: { width: "fit-content" },
           dismissible: true,
         });
@@ -70,7 +70,10 @@ const CartContent = () => {
   if (!cart || isLoading || isPurchasing || isPending)
     return (
       <div className="container mx-auto flex px-4 pt-10 items-center justify-center">
-        <Loader2 className="h-6 w-6 animate-spin" />
+        <Loader2
+          data-testid="loading-spinner"
+          className="h-6 w-6 animate-spin"
+        />
       </div>
     );
 

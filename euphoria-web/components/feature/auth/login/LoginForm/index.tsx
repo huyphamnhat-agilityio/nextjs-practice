@@ -40,9 +40,6 @@ import { login } from "@/actions";
 // Stores
 import { useUserStore } from "@/stores";
 
-// Hooks
-import { useCart } from "@/hooks/cart";
-
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
 const LOGIN_FORM_VALIDATION = {
@@ -76,7 +73,6 @@ const LoginForm = memo(() => {
   const [isPending, startTransition] = useTransition();
 
   const setUser = useUserStore((state) => state.setUser);
-  const { fetchCart } = useCart();
   const form = useForm<UserPayload>({
     mode: "onBlur",
     reValidateMode: "onBlur",
@@ -98,12 +94,11 @@ const LoginForm = memo(() => {
     try {
       const userInfo = await login(form.getValues());
       setUser(userInfo);
-      await fetchCart(userInfo.id);
       startTransition(() => refresh());
     } catch (error) {
       setErrorMessage((error as Error).message);
     }
-  }, [form, setUser, fetchCart, refresh]);
+  }, [form, setUser, refresh]);
 
   const handleInputChange = useCallback(
     (name: keyof UserPayload, onChange: (value: string) => void) => {

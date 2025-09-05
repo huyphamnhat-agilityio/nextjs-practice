@@ -1,19 +1,23 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { CartItem } from "@/interfaces";
-import { useCartStore } from "@/stores/cart";
+import { useCartStore, useUserStore } from "@/stores";
 
 export const useCart = () => {
   // ✅ Combined selector with useShallow for optimal re-renders
-  const { cart, isLoading, isMutating, fetchCart, mutateCart } = useCartStore(
-    useShallow((s) => ({
-      cart: s.cart,
-      isLoading: s.isLoading,
-      isMutating: s.isMutating,
-      fetchCart: s.fetchCart,
-      mutateCart: s.mutateCart,
-    })),
-  );
+  const { cart, isLoading, isMutating, fetchCart, mutateCart, isInitialized } =
+    useCartStore(
+      useShallow((s) => ({
+        cart: s.cart,
+        isLoading: s.isLoading,
+        isMutating: s.isMutating,
+        fetchCart: s.fetchCart,
+        mutateCart: s.mutateCart,
+        isInitialized: s.isInitialized,
+      })),
+    );
+
+  const userId = useUserStore((state) => state.user?.id ?? "");
 
   // ✅ Memoized computed values to prevent unnecessary recalculations
   const { totalItems, totalPrice, totalShipping } = useMemo(() => {
@@ -71,6 +75,10 @@ export const useCart = () => {
   const clearCart = useCallback(async () => {
     await updateCart([]);
   }, [updateCart]);
+
+  useEffect(() => {
+    if (!isInitialized && userId) fetchCart(userId);
+  }, [isInitialized, userId, fetchCart]);
 
   return useMemo(
     () => ({

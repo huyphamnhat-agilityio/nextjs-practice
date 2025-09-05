@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ProductDescription should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-12 flex flex-col"
+  >
+    <div
+      class="border-l-4 border-primary pl-6"
+    >
+      <h2
+        class="text-2xl font-core-sans-c font-bold text-muted-foreground"
+      >
+        Product Description
+      </h2>
+    </div>
+    <div
+      class="mt-6 flex flex-col gap-3 flex-wrap"
+    >
+      <div
+        class="border-b-1 border-muted-foreground w-fit"
+      >
+        <h3
+          class="font-causten font-medium text-muted-foreground mb-3 text-lg"
+        >
+          Description
+        </h3>
+      </div>
+      <p
+        class="font-causten font-normal text-alternative leading-relaxed"
+      >
+        mock
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
