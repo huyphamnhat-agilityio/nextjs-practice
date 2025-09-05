@@ -22,6 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               priority
               src={image}
               alt={name}
+              fetchPriority="high"
               width={400}
               height={400}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -29,9 +30,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           <div className="p-4 flex justify-between items-center">
             <div className="flex flex-col">
-              <h3 className="font-causten text-accent lg:max-w-25 xl:max-w-full font-semibold truncate">
+              <h2 className="font-causten text-accent lg:max-w-25 xl:max-w-full font-semibold truncate">
                 {name}
-              </h3>
+              </h2>
               <p className="font-causten font-medium max-w-25 xl:max-w-full text-sm text-alternative truncate">
                 {brand}
               </p>

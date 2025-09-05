@@ -72,7 +72,7 @@ describe("products service", () => {
 
       expect(fetchApi).toHaveBeenCalledWith(
         expect.stringMatching(/\/products\/p2$/),
-        { method: "GET" },
+        { method: "GET", cache: "force-cache" },
       );
       expect(result).toEqual(fakeProduct);
     });

@@ -27,6 +27,7 @@ export const getProduct = async (id: string) => {
       `${API_URL}/${RESOURCES.PRODUCTS}/${id}`,
       {
         method: "GET",
+        cache: "force-cache",
       },
     );
     return product;

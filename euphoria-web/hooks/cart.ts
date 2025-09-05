@@ -2,8 +2,7 @@ import { useCallback, useEffect, useMemo } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { CartItem } from "@/interfaces";
 import { useCartStore, useUserStore } from "@/stores";
-
-export const useCart = () => {
+export const useCart = (isAuthenticated: boolean = false) => {
   // ✅ Combined selector with useShallow for optimal re-renders
   const { cart, isLoading, isMutating, fetchCart, mutateCart, isInitialized } =
     useCartStore(
@@ -77,8 +76,8 @@ export const useCart = () => {
   }, [updateCart]);
 
   useEffect(() => {
-    if (!isInitialized && userId) fetchCart(userId);
-  }, [isInitialized, userId, fetchCart]);
+    if (!isInitialized && userId && isAuthenticated) fetchCart(userId);
+  }, [isInitialized, userId, fetchCart, isAuthenticated]);
 
   return useMemo(
     () => ({

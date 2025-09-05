@@ -23,7 +23,7 @@ const CartContent = () => {
     totalPrice,
     totalShipping,
     clearCart,
-  } = useCart();
+  } = useCart(true);
 
   const [isPurchasing, setIsPurchasing] = useState(false);
   const [isPending, startTransition] = useTransition();

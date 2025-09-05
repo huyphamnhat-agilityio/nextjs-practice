@@ -62,11 +62,11 @@ export const useCartStore = create<CartStore>()(
         });
 
         const response = await fetch(`${API_ROUTES.CART}?userId=${userId}`);
-        const data: Cart | null = await response.json();
+        const data = await response.json();
 
-        if (data) {
+        if (typeof data === "object") {
           set((state) => {
-            state.cart = data.items;
+            state.cart = data.items ?? [];
             state.isInitialized = true;
             state.isLoading = false;
           });

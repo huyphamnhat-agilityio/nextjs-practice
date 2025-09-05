@@ -41,7 +41,11 @@ const ProductDetailContent = ({
 
   const { replace } = useRouter();
 
-  const { updateCart, isUpdating, cart: currentItems } = useCart();
+  const {
+    updateCart,
+    isUpdating,
+    cart: currentItems,
+  } = useCart(isAuthenticated);
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {

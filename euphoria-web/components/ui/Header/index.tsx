@@ -36,7 +36,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
     })),
   );
 
-  const cartQuantity = useCartStore((state) => state.cart.length);
+  const cartQuantity = useCartStore((state) => state.cart?.length ?? 0);
   const path = usePathname();
 
   const { refresh, push } = useRouter();

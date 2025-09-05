@@ -1,14 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  useState,
-  useCallback,
-  useMemo,
-  ChangeEvent,
-  memo,
-  useTransition,
-} from "react";
+import { useState, useCallback, useMemo, memo, useTransition } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 
@@ -29,7 +22,7 @@ import {
 } from "@/components/ui/common";
 
 // Utils
-import { clearErrorOnChange, isEnableSubmit } from "@/utils";
+import { isEnableSubmit } from "@/utils";
 
 // Constants
 import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
@@ -39,6 +32,9 @@ import { login } from "@/actions";
 
 // Stores
 import { useUserStore } from "@/stores";
+
+// Hooks
+import { useHandleInputChange } from "@/hooks";
 
 const REQUIRED_FIELDS: (keyof UserPayload)[] = ["email", "password"];
 
@@ -90,6 +86,7 @@ const LoginForm = memo(() => {
   } = form;
 
   const { refresh } = useRouter();
+
   const onSubmit = useCallback(async () => {
     try {
       const userInfo = await login(form.getValues());
@@ -100,14 +97,9 @@ const LoginForm = memo(() => {
     }
   }, [form, setUser, refresh]);
 
-  const handleInputChange = useCallback(
-    (name: keyof UserPayload, onChange: (value: string) => void) => {
-      return (e: ChangeEvent<HTMLInputElement>) => {
-        onChange(e.target.value);
-        clearErrorOnChange(name, errors, clearErrors);
-      };
-    },
-    [clearErrors, errors],
+  const handleInputChange = useHandleInputChange<UserPayload>(
+    errors,
+    clearErrors,
   );
 
   const dirtyFieldList = Object.keys(dirtyFields);
