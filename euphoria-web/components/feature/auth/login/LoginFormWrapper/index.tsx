@@ -14,6 +14,7 @@ const LoginFormWrapper = ({ children }: { children: React.ReactNode }) => {
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden min-h-[400px]">
         <Image
           priority
+          fetchPriority="high"
           src={IMAGES.HERO}
           alt="Happy friends"
           fill

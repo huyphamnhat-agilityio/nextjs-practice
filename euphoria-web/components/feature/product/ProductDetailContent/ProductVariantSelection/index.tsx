@@ -25,9 +25,9 @@ const ProductVariantSelection = ({
     <>
       {/* Size Selection */}
       <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
-        <h3 className="text-lg font-causten font-semibold text-quaternary-foreground">
+        <h2 className="text-lg font-causten font-semibold text-quaternary-foreground">
           Select Size
-        </h3>
+        </h2>
         <div className="flex space-x-2 sm:gap-5">
           {sizes.map((size) => (
             <Button

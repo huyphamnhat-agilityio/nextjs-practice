@@ -25,7 +25,7 @@ const ProductImageGallery = ({
           width={600}
           height={600}
           className="w-full h-full object-cover"
-          unoptimized
+          fetchPriority="high"
           loading="eager"
         />
       </div>
