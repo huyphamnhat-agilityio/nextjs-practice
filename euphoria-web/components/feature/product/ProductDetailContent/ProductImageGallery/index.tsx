@@ -47,8 +47,8 @@ const ProductImageGallery = ({
               width={68}
               height={68}
               className="w-full h-full object-cover rounded-lg"
-              unoptimized
               loading="eager"
+              fetchPriority="high"
             />
           </Button>
         ))}

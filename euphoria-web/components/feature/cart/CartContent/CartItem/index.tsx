@@ -71,8 +71,8 @@ const CartItem = memo(
                 width={120}
                 height={120}
                 className="object-cover"
-                unoptimized
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
             <div className="min-w-0">
@@ -141,8 +141,8 @@ const CartItem = memo(
                 width={120}
                 height={120}
                 className="w-full h-full object-cover"
-                unoptimized
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
             <div className="flex-1 min-w-0">
