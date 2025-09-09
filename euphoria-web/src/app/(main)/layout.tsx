@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { cookies } from "next/headers";
 
-// Components
-import { Footer, Header } from "@/components/ui";
+// Layout
+import { Footer, Header } from "@/layouts";
 
 const Layout = async ({
   children,

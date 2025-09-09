@@ -19,7 +19,6 @@ export {
   FormMessage,
   FormField,
 } from "./Form";
-export { default as Header } from "../Header";
 export {
   NavigationMenu,
   NavigationMenuList,

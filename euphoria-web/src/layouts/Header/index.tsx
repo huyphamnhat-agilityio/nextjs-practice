@@ -2,26 +2,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useShallow } from "zustand/shallow";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+
 // Components
-import { Button } from "../common/Button";
 import {
+  Badge,
+  Button,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "../common/NavigationMenu";
-import SearchInput from "../common/SearchInput";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  SearchInput,
+} from "@/components/ui/common";
 
 // Icons
 import { CartIcon, HamburgerMenuIcon, UserIcon } from "@/components/icons";
-import { usePathname, useRouter } from "next/navigation";
+
+// Constants
 import { IMAGES, ROUTES } from "@/constants";
+
+// Stores
 import { useUserStore } from "@/stores";
-import { Badge, Popover, PopoverContent, PopoverTrigger } from "../common";
+
+// Actions
 import { logout } from "@/actions";
-import { useState } from "react";
+
+// Hooks
 import { useCart } from "@/hooks";
 
 export type HeaderProps = {

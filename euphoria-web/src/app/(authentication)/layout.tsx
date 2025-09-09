@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-// Components
-import { Header } from "@/components/ui/common";
+// Layout
+import { Header } from "@/layouts";
 
 const Layout = async ({
   children,
