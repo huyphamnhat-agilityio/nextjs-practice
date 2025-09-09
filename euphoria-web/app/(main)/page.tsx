@@ -10,6 +10,12 @@ import { toQueryString } from "@/utils";
 
 export const metadata: Metadata = {
   title: "Shop",
+  openGraph: {
+    title: "Shop",
+  },
+  twitter: {
+    title: "Shop",
+  },
 };
 
 const HomePage = async ({
