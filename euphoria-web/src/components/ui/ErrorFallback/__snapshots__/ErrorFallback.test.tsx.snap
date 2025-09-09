@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ErrorFallback components should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-center gap-6 max-w-xs sm:max-w-full"
+  >
+    <img
+      alt="Error image"
+      class=" object-cover"
+      data-nimg="1"
+      decoding="async"
+      height="200"
+      src="/_next/image?url=%2Fimages%2Ferror-icon.jpg&w=640&q=75"
+      srcset="/_next/image?url=%2Fimages%2Ferror-icon.jpg&w=256&q=75 1x, /_next/image?url=%2Fimages%2Ferror-icon.jpg&w=640&q=75 2x"
+      style="color: transparent;"
+      width="200"
+    />
+    <h4
+      class="text-foreground text-4xl text-center"
+    >
+      Oops! There is something wrong
+    </h4>
+    <p
+      class="text-foreground-100 text-xl text-center whitespace-pre-line"
+    >
+      An error occurred. For more help, feel free 
+        to reach out to our support team.
+    </p>
+    <p
+      class="text-foreground text-xl text-center"
+    >
+      Please refresh the page or 
+      <a
+        class="text-primary"
+        href="/"
+      >
+        back to home
+      </a>
+    </p>
+  </div>
+</DocumentFragment>
+`;
