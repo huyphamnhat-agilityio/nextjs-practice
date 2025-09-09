@@ -5,7 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Order Confirm - Euphoria",
+  title: "Order Confirm",
+  openGraph: {
+    title: "Order Confirm",
+  },
+  twitter: {
+    title: "Order Confirm",
+  },
 };
 
 const OrderConfirm = () => {

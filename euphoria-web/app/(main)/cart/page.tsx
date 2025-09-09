@@ -11,7 +11,10 @@ import Link from "next/link";
 import { CartContent } from "@/components/feature/cart";
 
 export const metadata: Metadata = {
-  title: "Cart - Euphoria",
+  title: "Cart",
+  openGraph: {
+    title: "Cart",
+  },
 };
 
 const CartPage = () => {

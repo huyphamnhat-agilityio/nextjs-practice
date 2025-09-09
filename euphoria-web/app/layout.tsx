@@ -66,7 +66,10 @@ export const metadata: Metadata = {
   description: "A simple e-commerce web app for clothing",
   metadataBase: new URL(process.env.HOST_URL ?? ""),
   openGraph: {
-    title: "Euphoria Shop App",
+    title: {
+      template: "%s - Euphoria",
+      default: "Shop",
+    },
     description: "A simple e-commerce web app for clothing",
     url: process.env.HOST_URL,
     type: "website",
@@ -81,7 +84,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Euphoria Shop App",
+    title: {
+      template: "%s - Euphoria",
+      default: "Shop",
+    },
     description: "A simple e-commerce web app for clothing",
     images: [
       {
