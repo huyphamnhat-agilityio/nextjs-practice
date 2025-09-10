@@ -51,3 +51,9 @@ export {
   PopoverTrigger,
 } from "./Popover";
 export { default as QuantityControl } from "./QuantityControl";
+export {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./Tooltip";

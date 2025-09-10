@@ -1,7 +1,13 @@
 import Image from "next/image";
 
 // Components
-import { Card, CardContent } from "../common";
+import {
+  Card,
+  CardContent,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../common";
 import Link from "next/link";
 import { ROUTES } from "@/constants";
 import { Product } from "@/interfaces";
@@ -28,14 +34,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="p-4 flex justify-between items-center">
+          <div className="p-4 flex justify-between items-center gap-2">
             <div className="flex flex-col">
-              <h2 className="font-causten text-accent lg:max-w-25 xl:max-w-full font-semibold truncate">
-                {name}
-              </h2>
-              <p className="font-causten font-medium max-w-25 xl:max-w-full text-sm text-alternative truncate">
-                {brand}
-              </p>
+              <Tooltip>
+                <TooltipTrigger>
+                  <h2 className="font-causten text-accent lg:max-w-25 xl:max-w-full font-semibold truncate">
+                    {name}
+                  </h2>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger className="self-start">
+                  <p className="font-causten font-medium max-w-25 xl:max-w-full text-sm text-alternative truncate">
+                    {brand}
+                  </p>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{brand}</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
             <div className="py-2 px-4 bg-muted rounded-lg inline-flex justify-center items-center">
               <p className="font-semibold text-muted-foreground text-sm">

@@ -14,7 +14,7 @@ const QuantityControl = ({
 }: QuantityControlProps) => {
   const handleChangeQuantity = useCallback(
     (amount: number) => () => {
-      if (quantity === 0) return;
+      if (quantity === 1 && amount === -1) return;
       setQuantity(quantity + amount);
     },
     [quantity, setQuantity],
