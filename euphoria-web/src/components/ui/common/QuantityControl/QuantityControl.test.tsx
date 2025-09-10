@@ -31,10 +31,10 @@ describe("QuantityControl", () => {
     expect(setQuantity).toHaveBeenCalledWith(1);
   });
 
-  it("does not decrement below 0", async () => {
+  it("does not decrement below 1", async () => {
     const user = userEvent.setup();
     const setQuantity = jest.fn();
-    render(<QuantityControl quantity={0} setQuantity={setQuantity} />);
+    render(<QuantityControl quantity={1} setQuantity={setQuantity} />);
 
     const buttons = screen.getAllByRole("button");
     await user.click(buttons[0]); // minus button

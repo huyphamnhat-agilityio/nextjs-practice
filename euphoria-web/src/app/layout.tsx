@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/ui";
+import { AppSidebar, SidebarInset, SidebarProvider } from "@/layouts";
+import { cookies } from "next/headers";
 
 // Local Fonts
 const coreSansC = localFont({
@@ -99,21 +101,30 @@ export const metadata: Metadata = {
     ],
   },
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAuthenticated = (await cookies()).has("accessToken");
+
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <body
         className={`${coreSansC.variable} ${causten.variable} overflow-y-scroll antialiased`}
         suppressHydrationWarning
       >
-        <main className="mx-auto min-h-screen flex flex-col bg-background">
-          {children}
-        </main>
-        <Toaster position="top-center" />
+        <SidebarProvider className="mx-auto">
+          <AppSidebar isAuthenticated={isAuthenticated} />
+
+          <SidebarInset>
+            <main className="min-h-screen flex flex-col bg-background">
+              {children}
+            </main>
+          </SidebarInset>
+
+          <Toaster position="top-center" />
+        </SidebarProvider>
       </body>
     </html>
   );

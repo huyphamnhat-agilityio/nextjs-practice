@@ -9,20 +9,15 @@ import { useState } from "react";
 import {
   Badge,
   Button,
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
   Popover,
   PopoverContent,
   PopoverTrigger,
   SearchInput,
 } from "@/components/ui/common";
+import { SidebarTrigger } from "../Sidebar";
 
 // Icons
-import { CartIcon, HamburgerMenuIcon, UserIcon } from "@/components/icons";
+import { CartIcon, UserIcon } from "@/components/icons";
 
 // Constants
 import { IMAGES, ROUTES } from "@/constants";
@@ -65,10 +60,11 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
     if (path === ROUTES.CART) return;
     push(ROUTES.CART);
   };
+
   const isHome = path === ROUTES.HOME;
   return (
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
-      <div className="flex items-center justify-between container mx-auto w-full px-4">
+      <div className="flex items-center justify-between container mx-auto w-full">
         <div className="flex items-center gap-10">
           <Link href={ROUTES.HOME}>
             <Image
@@ -119,6 +115,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
                 <PopoverTrigger
                   asChild
                   onClick={() => setIsOpen((prev) => !prev)}
+                  className="hidden md:block"
                 >
                   <Button variant="icon" data-testid="user-button">
                     <UserIcon />
@@ -158,20 +155,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
           )}
 
           <div className="flex gap-2 items-center md:hidden">
-            <NavigationMenu className="md:hidden">
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>
-                    <HamburgerMenuIcon width={24} height={24} />
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <NavigationMenuLink asChild>
-                      <Link href="/">Shop</Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <SidebarTrigger className="hover:bg-primary w-12 h-12" />
           </div>
         </div>
       </div>

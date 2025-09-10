@@ -1,9 +1,8 @@
-// Header.test.tsx
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ROUTES, IMAGES } from "@/constants";
-import Header from ".";
+import Header, { HeaderProps } from ".";
+import { SidebarProvider } from "../Sidebar";
 
-// Mock next/navigation
 const mockPush = jest.fn();
 const mockRefresh = jest.fn();
 let mockPathname: string = ROUTES.HOME;
@@ -28,7 +27,6 @@ jest.mock("next/navigation", () => ({
     }),
 }));
 
-// Mock store
 const mockClearUser = jest.fn();
 const mockCartStore = { cart: [{ id: "1" }], length: 1 };
 jest.mock("@/stores", () => ({
@@ -37,20 +35,35 @@ jest.mock("@/stores", () => ({
   useCartStore: (selector: any) => selector({ cart: mockCartStore.cart }),
 }));
 
-// Mock logout action
 const mockLogout = jest.fn();
 jest.mock("@/actions", () => ({
   logout: () => mockLogout(),
 }));
 
 describe("Header", () => {
+  const setup = (props: HeaderProps = { isAuthenticated: false }) =>
+    render(<Header {...props} />, { wrapper: SidebarProvider });
   beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })),
+    });
+
     jest.clearAllMocks();
-    mockPathname = ROUTES.HOME; // reset to home
+    mockPathname = ROUTES.HOME;
   });
 
   it("renders logo and navigation", () => {
-    render(<Header />);
+    setup();
     expect(screen.getByAltText("Euphoria").getAttribute("src")).toContain(
       IMAGES.LOGO,
     );
@@ -61,29 +74,29 @@ describe("Header", () => {
   });
 
   it("shows login button if not authenticated", () => {
-    render(<Header isAuthenticated={false} />);
+    setup();
     expect(screen.getByRole("link", { name: /login/i })).toBeInTheDocument();
   });
 
   it("shows SearchInput on home page", () => {
-    render(<Header />);
+    setup();
     expect(screen.getAllByPlaceholderText(/search/i)).toHaveLength(2); // desktop + mobile
   });
 
   it("does not show SearchInput on non-home page", () => {
     mockPathname = "/about";
-    render(<Header />);
+    setup();
     expect(screen.queryByPlaceholderText(/search/i)).not.toBeInTheDocument();
   });
 
   it("shows user menu and cart when authenticated", () => {
-    render(<Header isAuthenticated={true} />);
+    setup({ isAuthenticated: true });
     expect(screen.getByTestId("user-button")).toBeInTheDocument();
     expect(screen.getByTestId("cart-button")).toBeInTheDocument();
   });
 
   it("handles logout flow", async () => {
-    render(<Header isAuthenticated={true} />);
+    setup({ isAuthenticated: true });
 
     // open popover
     fireEvent.click(screen.getByTestId("user-button"));
@@ -98,14 +111,16 @@ describe("Header", () => {
   });
 
   it("navigates to cart if not already there", () => {
-    render(<Header isAuthenticated={true} />);
+    setup({ isAuthenticated: true });
+
     fireEvent.click(screen.getByTestId("cart-button"));
     expect(mockPush).toHaveBeenCalledWith(ROUTES.CART);
   });
 
   it("does not navigate to cart if already on cart page", () => {
     mockPathname = ROUTES.CART;
-    render(<Header isAuthenticated={true} />);
+    setup({ isAuthenticated: true });
+
     fireEvent.click(screen.getByTestId("cart-button"));
     expect(mockPush).not.toHaveBeenCalled();
   });
