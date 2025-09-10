@@ -11,7 +11,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_0ac2135d85fced7"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -52,6 +53,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chromatic": "^13.1.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
     "eslint-plugin-storybook": "9.1.5",
