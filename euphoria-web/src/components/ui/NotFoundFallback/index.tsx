@@ -33,7 +33,9 @@ const NotFoundFallback = () => {
           className="px-12 max-w-[244px] mx-auto"
           asChild
         >
-          <Link href={ROUTES.HOME}>Back to Shop</Link>
+          <Link href={ROUTES.HOME} prefetch>
+            Back to Shop
+          </Link>
         </Button>
       </div>
     </div>

@@ -15,6 +15,9 @@ export const getProducts = async (query: string = "") => {
     {
       method: "GET",
       cache: "force-cache",
+      next: {
+        revalidate: 3600,
+      },
     },
   );
 
@@ -28,6 +31,9 @@ export const getProduct = async (id: string) => {
       {
         method: "GET",
         cache: "force-cache",
+        next: {
+          revalidate: 3600,
+        },
       },
     );
     return product;

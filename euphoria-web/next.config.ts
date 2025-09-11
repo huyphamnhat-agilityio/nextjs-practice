@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  experimental: {
+    staleTimes: {
+      dynamic: 3600,
+    },
+  },
   productionBrowserSourceMaps: true,
 };
 

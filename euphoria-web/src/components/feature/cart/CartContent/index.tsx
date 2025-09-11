@@ -101,7 +101,9 @@ const CartContent = () => {
           </div>
 
           <Button font="causten" fontSize="lg" fontWeight="semibold" asChild>
-            <Link href="/">Continue Shopping</Link>
+            <Link href="/" prefetch>
+              Continue Shopping
+            </Link>
           </Button>
         </div>
       </div>

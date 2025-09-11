@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   product: { id = "", image = "", name = "", brand = "", price = 0 },
 }) => {
   return (
-    <Link href={{ pathname: ROUTES.PRODUCT(id) }}>
+    <Link href={{ pathname: ROUTES.PRODUCT(id) }} prefetch>
       <Card className="group cursor-pointer p-0 hover:shadow-lg transition-shadow duration-300 border-0 bg-card">
         <CardContent className="p-0">
           <div className="aspect-square overflow-hidden rounded-t-lg">

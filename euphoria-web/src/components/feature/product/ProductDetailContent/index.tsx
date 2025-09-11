@@ -35,7 +35,7 @@ const ProductDetailContent = ({
   product,
   isAuthenticated = false,
 }: ProductDetailContentProps) => {
-  const { name, description, price, colors, sizes, image } = product;
+  const { name, description, price, colors, sizes, image, category } = product;
   const [selectedSize, setSelectedSize] = useState("XS");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
@@ -110,14 +110,24 @@ const ProductDetailContent = ({
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/">Shop</Link>
+                  <Link href={ROUTES.HOME}>Shop</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
 
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/?category_like=Tops">Tops</Link>
+                  <Link
+                    href={{
+                      pathname: ROUTES.HOME,
+                      query: {
+                        category_like: category,
+                        page: 1,
+                      },
+                    }}
+                  >
+                    {category}
+                  </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
             </BreadcrumbList>
