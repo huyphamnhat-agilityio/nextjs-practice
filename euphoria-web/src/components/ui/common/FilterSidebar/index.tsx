@@ -27,6 +27,10 @@ const FilterSidebar = ({
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
 
+    if (!params.has("page")) {
+      params.set("page", "1");
+    }
+
     params.set("price_gte", debouncedPriceRange[0].toString());
     params.set("price_lte", debouncedPriceRange[1].toString());
 

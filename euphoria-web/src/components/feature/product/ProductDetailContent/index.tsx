@@ -122,7 +122,6 @@ const ProductDetailContent = ({
                       pathname: ROUTES.HOME,
                       query: {
                         category_like: category,
-                        page: 1,
                       },
                     }}
                   >
