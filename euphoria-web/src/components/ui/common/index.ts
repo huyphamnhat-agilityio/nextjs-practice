@@ -67,3 +67,4 @@ export {
   SheetTitle,
   SheetDescription,
 } from "./Sheet";
+export { default as HoverPrefetchLink } from "./HoverPrefetchLink";

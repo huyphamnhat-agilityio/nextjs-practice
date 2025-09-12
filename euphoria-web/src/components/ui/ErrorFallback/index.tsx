@@ -35,7 +35,7 @@ const ErrorFallback = ({ message = "" }: ErrorFallbackProps) => {
       )}
       <p className="text-foreground text-xl text-center">
         Please refresh the page or{" "}
-        <Link href={ROUTES.HOME} prefetch className="text-primary">
+        <Link href={ROUTES.HOME} prefetch={false} className="text-primary">
           back to home
         </Link>
       </p>

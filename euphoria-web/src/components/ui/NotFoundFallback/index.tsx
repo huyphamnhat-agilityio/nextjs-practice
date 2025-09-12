@@ -1,8 +1,7 @@
 import { IMAGES, ROUTES } from "@/constants";
 import Image from "next/image";
 import React from "react";
-import { Button } from "../common";
-import Link from "next/link";
+import { Button, HoverPrefetchLink } from "../common";
 
 const NotFoundFallback = () => {
   return (
@@ -33,9 +32,7 @@ const NotFoundFallback = () => {
           className="px-12 max-w-[244px] mx-auto"
           asChild
         >
-          <Link href={ROUTES.HOME} prefetch>
-            Back to Shop
-          </Link>
+          <HoverPrefetchLink href={ROUTES.HOME}>Back to Shop</HoverPrefetchLink>
         </Button>
       </div>
     </div>

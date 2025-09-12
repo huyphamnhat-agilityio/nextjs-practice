@@ -66,7 +66,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
     <header className="flex flex-col gap-2 border-b-1 p-4 md:p-6 border-b-border">
       <div className="flex items-center justify-between container mx-auto w-full">
         <div className="flex items-center gap-10">
-          <Link href={ROUTES.HOME} prefetch>
+          <Link href={ROUTES.HOME} prefetch={false}>
             <Image
               src={IMAGES.LOGO}
               alt="Euphoria"
@@ -84,7 +84,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
                 <Link
                   href="/"
                   className="text-alternative text-lg hover:underline"
-                  prefetch
+                  prefetch={false}
                 >
                   Shop
                 </Link>
@@ -106,9 +106,7 @@ const Header = ({ isAuthenticated = false }: HeaderProps) => {
               className="hidden md:inline-flex px-12"
               asChild
             >
-              <Link href={ROUTES.LOGIN} prefetch>
-                Login
-              </Link>
+              <Link href={ROUTES.LOGIN}>Login</Link>
             </Button>
           )}
 

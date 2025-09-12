@@ -71,7 +71,7 @@ const AppSidebar = ({ isAuthenticated = false }: AppsidebarProps) => {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton onClick={handleCloseSidebar} asChild>
-                    <Link href={item.url}>
+                    <Link href={item.url} prefetch={false}>
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>

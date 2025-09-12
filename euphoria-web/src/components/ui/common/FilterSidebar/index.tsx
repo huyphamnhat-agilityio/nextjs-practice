@@ -1,6 +1,6 @@
 "use client";
 import { ChevronRight, SlidersHorizontal } from "lucide-react";
-import { TransitionStartFunction, useEffect, useState } from "react";
+import { TransitionStartFunction, useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "../Card";
 import { Slider } from "../Slider";
 import { CATEGORIES } from "@/constants";
@@ -24,7 +24,14 @@ const FilterSidebar = ({
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  const isFirstRender = useRef(true);
+
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return; // Skip the first render
+    }
+
     const params = new URLSearchParams(searchParams);
 
     if (!params.has("page")) {

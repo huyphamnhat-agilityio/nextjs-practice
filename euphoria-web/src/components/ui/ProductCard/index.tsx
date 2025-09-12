@@ -4,11 +4,11 @@ import Image from "next/image";
 import {
   Card,
   CardContent,
+  HoverPrefetchLink,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "../common";
-import Link from "next/link";
 import { ROUTES } from "@/constants";
 import { Product } from "@/interfaces";
 
@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   product: { id = "", image = "", name = "", brand = "", price = 0 },
 }) => {
   return (
-    <Link href={{ pathname: ROUTES.PRODUCT(id) }} prefetch>
+    <HoverPrefetchLink href={{ pathname: ROUTES.PRODUCT(id) }}>
       <Card className="group cursor-pointer p-0 hover:shadow-lg transition-shadow duration-300 border-0 bg-card">
         <CardContent className="p-0">
           <div className="aspect-square overflow-hidden rounded-t-lg">
@@ -65,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         </CardContent>
       </Card>
-    </Link>
+    </HoverPrefetchLink>
   );
 };
 

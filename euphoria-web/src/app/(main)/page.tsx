@@ -28,7 +28,14 @@ const HomePage = async ({
 
   const params = await searchParams;
 
-  const products = await getProducts(toQueryString(params));
+  const currentPage = Number((await searchParams).page) || 1;
+
+  const products = await getProducts(
+    toQueryString({
+      ...params,
+      page: currentPage.toString(),
+    }),
+  );
   return (
     <div className="container mx-auto px-4 py-6">
       <ProductPageContent category={category} products={products} />
