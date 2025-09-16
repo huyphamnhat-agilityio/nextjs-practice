@@ -24,8 +24,8 @@ import { Button } from "@/components/ui/common";
 // Stores
 import { useUserStore } from "@/stores";
 
-// Actions
-import { logout } from "@/actions";
+// Services
+import { logout } from "@/services";
 
 const items = [
   {

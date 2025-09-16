@@ -17,6 +17,7 @@ export const getProducts = async (query: string = "") => {
       cache: "force-cache",
       next: {
         revalidate: 3600,
+        tags: ["products"],
       },
     },
   );
@@ -33,6 +34,7 @@ export const getProduct = async (id: string) => {
         cache: "force-cache",
         next: {
           revalidate: 3600,
+          tags: ["product"],
         },
       },
     );

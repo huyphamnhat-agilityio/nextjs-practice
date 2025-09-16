@@ -25,11 +25,11 @@ import { IMAGES, ROUTES } from "@/constants";
 // Stores
 import { useUserStore } from "@/stores";
 
-// Actions
-import { logout } from "@/actions";
-
 // Hooks
 import { useCart } from "@/hooks";
+
+// Services
+import { logout } from "@/services";
 
 export type HeaderProps = {
   isAuthenticated?: boolean;

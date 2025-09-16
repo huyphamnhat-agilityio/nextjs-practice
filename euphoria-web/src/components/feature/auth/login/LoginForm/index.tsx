@@ -27,8 +27,8 @@ import { isEnableSubmit } from "@/utils";
 // Constants
 import { FORM_VALIDATION_MESSAGES, REGEX } from "@/constants";
 
-// Actions
-import { login } from "@/actions";
+// Services
+import { login } from "@/services";
 
 // Stores
 import { useUserStore } from "@/stores";
