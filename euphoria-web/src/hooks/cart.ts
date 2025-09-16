@@ -3,7 +3,6 @@ import { useShallow } from "zustand/react/shallow";
 import { CartItem } from "@/interfaces";
 import { useCartStore, useUserStore } from "@/stores";
 export const useCart = (isAuthenticated: boolean = false) => {
-  // ✅ Combined selector with useShallow for optimal re-renders
   const { cart, isLoading, isMutating, fetchCart, mutateCart, isInitialized } =
     useCartStore(
       useShallow((s) => ({
@@ -18,7 +17,6 @@ export const useCart = (isAuthenticated: boolean = false) => {
 
   const userId = useUserStore((state) => state.user?.id ?? "");
 
-  // ✅ Memoized computed values to prevent unnecessary recalculations
   const { totalItems, totalPrice, totalShipping } = useMemo(() => {
     if (!cart) {
       return { totalItems: 0, totalPrice: 0, totalShipping: 0 };
@@ -55,20 +53,13 @@ export const useCart = (isAuthenticated: boolean = false) => {
     async (itemId: string, quantity: number) => {
       if (!cart) return;
 
-      if (quantity <= 0) {
-        // Remove item if quantity is 0 or negative
-        await removeItem(itemId);
-
-        return;
-      }
-
       const updatedItems = cart.map((item) =>
         item.id === itemId ? { ...item, quantity } : item,
       );
 
       await updateCart(updatedItems);
     },
-    [updateCart, cart, removeItem],
+    [updateCart, cart],
   );
 
   const clearCart = useCallback(async () => {

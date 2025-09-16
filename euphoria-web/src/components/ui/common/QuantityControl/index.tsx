@@ -14,7 +14,6 @@ const QuantityControl = ({
 }: QuantityControlProps) => {
   const handleChangeQuantity = useCallback(
     (amount: number) => () => {
-      if (quantity === 1 && amount === -1) return;
       setQuantity(quantity + amount);
     },
     [quantity, setQuantity],
@@ -26,7 +25,7 @@ const QuantityControl = ({
         size="sm"
         className="w-8 h-8 p-0"
         onClick={handleChangeQuantity(-1)}
-        disabled={isDisabled}
+        disabled={isDisabled || quantity === 1}
         data-testid="decrement-button"
       >
         <Minus className="w-3 h-3" />
